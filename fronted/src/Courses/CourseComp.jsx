@@ -3,7 +3,7 @@ import { Heading, Text, Button, Card, CardHeader, CardBody, CardFooter, List, Li
 import { MdCheckCircle } from 'react-icons/md'
 const CourseComp = ({ title, image, opportunities, duration }) => {
     return (
-        <Card p='2'>
+        <Card p='2' borderRadius={'20px'}>
             <CardHeader>
                 <Flex justify={'center'} w='100%'>
                     <Image src={image} w='200px' />

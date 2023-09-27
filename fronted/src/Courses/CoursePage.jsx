@@ -37,11 +37,11 @@ const CoursePage = () => {
     ]
     return (
         <>
-            <Image w='100vw' position={'fixed'} zIndex={'-1'} src='utils/bg.png' />
-            <Box className='text-center'>
+            <Image w='100vw' position={'absolute'} zIndex={'-1'} src='utils/bg.png' />
+            <Box className='text-center' py='5%' px='7%'>
                 <Heading p='5' size='2xl'>Our Courses</Heading>
                 <Text>Become a Software Developer, Testing Engineer or a Data Analyst at ZERO upfront fees.</Text>
-                <SimpleGrid columns={3} spacing={'10'} p='5' mt='5'>
+                <SimpleGrid columns={3} spacing={'7'} p='5' mt='5'>
                     {
                         courses?.map((course,i)=>{
                             return <CourseComp {...course} key={i} />
