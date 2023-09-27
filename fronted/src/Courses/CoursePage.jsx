@@ -41,7 +41,7 @@ const CoursePage = () => {
             <Box className='text-center'>
                 <Heading p='5' size='2xl'>Our Courses</Heading>
                 <Text>Become a Software Developer, Testing Engineer or a Data Analyst at ZERO upfront fees.</Text>
-                <SimpleGrid columns={3} spacing={'10'}>
+                <SimpleGrid columns={3} spacing={'10'} p='5' mt='5'>
                     {
                         courses?.map((course,i)=>{
                             return <CourseComp {...course} key={i} />
