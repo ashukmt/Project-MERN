@@ -11,7 +11,7 @@ const CourseComp = ({ title, image, opportunities, duration, color }) => {
             </CardHeader>
             <CardBody textAlign={'left'}>
                 <Box py='3'>
-                    <Heading size='md' m='1'>{title}</Heading>
+                    <Heading size='md' my='1'>{title}</Heading>
                     <Text>Become job-ready in {duration} weeks</Text>
                 </Box>
                 <Divider />
