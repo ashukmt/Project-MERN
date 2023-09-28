@@ -1,10 +1,8 @@
-import CoursePage from "./Courses/CoursePage";
+import AllRoutes from "./allRoutes";
 
 function App() {
   return (
-    <div>
-      <CoursePage />
-    </div>
+    <AllRoutes />
   );
 }
 
