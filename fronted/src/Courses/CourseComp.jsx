@@ -3,9 +3,9 @@ import { Heading, Text, Button, Card, CardHeader, CardBody, CardFooter, List, Li
 import { MdCheckCircle } from 'react-icons/md'
 const CourseComp = ({ title, image, opportunities, duration }) => {
     return (
-        <Card p='2' borderRadius={'20px'}>
+        <Card minWidth={'30%'} className="sm:flex-1 sm:min-w-[410px] w-full bg-white max-w-[410px] mx-auto md:m-0 relative flex flex-col rounded-xl border border-[#f1f1f1]" box-shadow="rgba(215, 216, 222, 0.41) 0px 6px 34px 0px">
             <CardHeader>
-                <Flex justify={'center'} w='100%'>
+                <Flex className='h-[230px] flex-shrink-0 rounded-t-[12px] flex items-center justify-center'>
                     <Image src={image} w='200px' />
                 </Flex>
             </CardHeader>
