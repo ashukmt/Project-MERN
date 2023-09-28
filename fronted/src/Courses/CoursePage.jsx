@@ -1,40 +1,10 @@
 import { Box, Flex, Heading, Image, SimpleGrid, Text } from '@chakra-ui/react'
 import React from 'react'
 import CourseComp from './CourseComp'
+import { useSelector } from 'react-redux'
 
 const CoursePage = () => {
-    const courses = [
-        {
-            title: "Full Stack Web Development",
-            opportunities: "Full Stack Developer, Software Engineer & much more.",
-            duration: 30,
-            image: "https://masai-website-images.s3.ap-south-1.amazonaws.com/full_stack1_329d6b5595.png"
-        },
-        {
-            title: "Backend Development",
-            opportunities: "Backend Web Developer, API developer & much more.",
-            duration: 35,
-            image: "https://masai-website-images.s3.ap-south-1.amazonaws.com/backend_ea129d404e.png"
-        },
-        {
-            title: "Data Analytics",
-            opportunities: "Data Engineer, Data Analyst, Machine Learning Engineer & much more.",
-            duration: 25,
-            image: "https://masai-website-images.s3.ap-south-1.amazonaws.com/data_07ee77a2da.png"
-        },
-        {
-            title: "Mobile Development",
-            opportunities: "Mobile App Developer & much more.",
-            duration: 30,
-            image: "https://masai-website-images.s3.ap-south-1.amazonaws.com/mobile_ab8f5bdbf6.png"
-        },
-        {
-            title: "Become a Software Testing & Automation",
-            opportunities: "QA Tester, Automation Engineer & much more.",
-            duration: 25,
-            image: "https://masai-website-images.s3.ap-south-1.amazonaws.com/testing_faf38ba965.png"
-        },
-    ]
+    const courses = useSelector(state=>state.course.courses)
     return (
         <>
             <Image w='100vw' position={'absolute'} zIndex={'-1'} src='utils/bg.png' />
