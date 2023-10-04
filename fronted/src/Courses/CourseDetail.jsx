@@ -5,6 +5,7 @@ import { FaUserTie } from "react-icons/fa6";
 import { BiRupee } from "react-icons/bi";
 import { PiSuitcaseBold } from "react-icons/pi";
 import { AiOutlineThunderbolt } from "react-icons/ai";
+import { NavLink } from 'react-router-dom';
 
 const CourseDetail = () => {
     const courses = useSelector(state => state.course.courses)
@@ -42,6 +43,15 @@ const CourseDetail = () => {
                     </div>
                 </div>
             </Box>
+            <Flex>
+                <NavLink>Course Details</NavLink>
+                <NavLink>Elegibility</NavLink>
+                <NavLink>Career Path</NavLink>
+                <NavLink>Instructors</NavLink>
+                <NavLink>Curriculum</NavLink>
+                <NavLink>Student Stories</NavLink>
+                <NavLink>FAQ</NavLink>
+            </Flex>
         </>
     )
 }
