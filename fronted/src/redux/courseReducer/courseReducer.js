@@ -1,5 +1,6 @@
 const iniState = {
     courses: [{
+            _id: "101",
             title: "Full Stack Web Development",
             opportunities: "Full Stack Developer, Software Engineer & much more.",
             duration: 30,
@@ -7,6 +8,7 @@ const iniState = {
             image: "https://masai-website-images.s3.ap-south-1.amazonaws.com/full_stack1_329d6b5595.png"
         },
         {
+            _id: "102",
             title: "Backend Development",
             opportunities: "Backend Web Developer, API developer & much more.",
             duration: 35,
@@ -14,6 +16,7 @@ const iniState = {
             image: "https://masai-website-images.s3.ap-south-1.amazonaws.com/backend_ea129d404e.png"
         },
         {
+            _id: "103",
             title: "Data Analytics",
             opportunities: "Data Engineer, Data Analyst, Machine Learning Engineer & much more.",
             duration: 25,

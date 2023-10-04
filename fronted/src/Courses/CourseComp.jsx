@@ -1,7 +1,12 @@
 import React from 'react'
 import { Heading, Text, Button, Card, CardHeader, CardBody, CardFooter, List, ListItem, ListIcon, Image, Flex, Divider, Box } from '@chakra-ui/react'
 import { MdCheckCircle } from 'react-icons/md'
-const CourseComp = ({ title, image, opportunities, duration, color }) => {
+import { useNavigate } from 'react-router'
+const CourseComp = ({ _id,title, image, opportunities, duration, color }) => {
+    const navigate = useNavigate()
+    const goToDetails = () => {
+        navigate(`/courses/${title}`)
+    }
     return (
         <Card minWidth={'30%'} borderRadius={'20px'} className="sm:flex-1 sm:min-w-[410px] w-full bg-white max-w-[410px] mx-auto md:m-0 relative flex flex-col rounded-3xl border border-[#f1f1f1]" boxShadow="rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px">
             <CardHeader bg={color} borderRadius={'20px 20px 0 0'}>
@@ -32,7 +37,7 @@ const CourseComp = ({ title, image, opportunities, duration, color }) => {
                 </List>
             </CardBody>
             <CardFooter>
-                <Button colorScheme='red' w='100%'>View Details</Button>
+                <Button colorScheme='red' w='100%' onClick={goToDetails}>View Details</Button>
             </CardFooter>
         </Card>
     )
