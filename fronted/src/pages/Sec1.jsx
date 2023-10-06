@@ -4,8 +4,8 @@ function Sec1() {
   return (
     <div className='topsec1'>
      <div>
-        <h1>Realise Your Potential With <span>Assured Outcomes </span>  Delivered.</h1>
-        <p>India’s only outcome-based career institute.
+        <h1 className='font-bold sizes'>Realise Your Potential With <span>Assured Outcomes </span>  Delivered.</h1>
+        <p className='text-sn mb-5'>India’s only outcome-based career institute.
 Enter the tech workforce industry-ready.</p>
 <button>GET YOUR DREAM JOB</button>
      </div>

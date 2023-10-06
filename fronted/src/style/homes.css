@@ -12,10 +12,11 @@
 }
 
 .topsec1 >div:nth-child(1){
-    font-weight: 400;
-    width: 40%;
+    
+    width: 60%;
     padding:5%;
 }
+
 
 .topsec1 >div:nth-child(2){
     padding:5%;
@@ -29,6 +30,9 @@
     z-index: 1;
 }
 
+.topsec1>div>h1{
+    font-size: 35px;
+}
 
 .topsec1 >div:nth-child(1) button{
  padding: 10px 20px;
@@ -53,9 +57,39 @@
     display: flex;
     text-align: center;
    justify-content: center;
-   font-weight: 900;
+   font-weight: 700;
 }
 .sec2Main span{
     color: red;
 }
 
+.brt{
+   width: 70%;
+   margin-top: 10%;
+    border: 1px solid rgb(32, 29, 29);
+    border-radius: 10px;
+    padding: 7px;
+}
+.brt:focus{
+    border: 2px solid red;
+    color: red;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.hel{
+    display: flex;
+}
+.dat{
+    width: 63%;
+    border-radius: 20px;
+    background-color: rgb(247,247,255);
+}
+.vit{
+    border-radius: 10px;
+}
+.div1{
+    border-radius: 10px;
+    background-color: rgb(26,159,189);
+}
+.wit{
+    width: 70%;
+}
