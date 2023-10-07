@@ -43,7 +43,7 @@ const CourseDetail = () => {
                     </div>
                 </div>
             </Box>
-            <Flex className='flex items-center gap-[24px]'>
+            <Flex className='flex items-center gap-[24px] font-bold w-[100%]'>
                 <NavLink>Course Details</NavLink>
                 <NavLink>Elegibility</NavLink>
                 <NavLink>Career Path</NavLink>
