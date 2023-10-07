@@ -8,7 +8,6 @@ const userSchema = mongoose.Schema({
     number : {type : Number,required : true},
     salt : {type: String ,required : true}
 })
-
 userSchema.pre('save', async function(next) {
     try {
       // check method of registration

@@ -1,0 +1,54 @@
+.main{
+ display: flex;
+ width: 85%;
+ margin: auto;
+ margin-top: 1.7%;
+ justify-content: space-between;
+ margin-bottom: 1%;
+ 
+}
+.middle{
+    display: flex;
+     width: 52%;
+    font-size: small;
+    justify-content: space-between;
+    margin-top: 1%;
+    
+   
+}
+
+
+.link{
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+}
+.last >button{
+    padding: 10px 20px;
+}
+
+.last >button:nth-child(1){
+    padding: 10px 5px;
+    border: none;
+    border-radius: 8px;
+    margin-right: 10px;
+    background-color: #e5feff;
+    color:#7598ea;
+}
+
+.last >button:nth-child(1):hover{
+    background-color: #b6f1f3;
+}
+
+.last >button:nth-child(2){
+    padding: 10px 20px;
+    border-radius: 8px;
+    border:2px solid red;
+    color: red;
+    font-weight: 600;
+    background-color: white;
+}
+
+.last >button:nth-child(2):hover{
+  background-color: rgb(251, 218, 218);
+}
