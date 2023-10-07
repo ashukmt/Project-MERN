@@ -1,5 +1,5 @@
 import React from 'react'
-import '../style/homes.css'
+import '../Style/homes.css'
 import Sec1 from '../pages/Sec1'
 import Sec2 from '../pages/Sec2'
 function Homes() {
