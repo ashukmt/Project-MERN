@@ -4,6 +4,7 @@ function referal() {
   return (
     <div>
       <h1>Referal Page</h1>
+      <h1>Referal Page</h1>
     </div>
   )
 }
