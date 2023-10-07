@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '../style/homes.css'
+import '../Style/homes.css'
 import Contain1 from "../container/Contain1";
 
 function Sec2() {
