@@ -8,10 +8,10 @@ import Homes from './components/Homes'
 const AllRoutes = () => {
   return (
     <Routes>
+        <Route path='/'element={<Homes/>}/>
         <Route path='/courses' element={<CoursePage />} />
         <Route path='/events' element={<Events/>}/>
-        <Route path='/'element={<Homes/>}/>
-        <Route path='/courses/:idx' element={<CourseDetail />} />
+        <Route path='/courses/:title' element={<CourseDetail />} />
     </Routes>
   )
 }
