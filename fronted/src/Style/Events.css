@@ -1,6 +1,4 @@
-.myTag{
-    /* min-height: 400%; */
-}
+
 
 .cont{
     background-color: #F2F6FF;
@@ -26,8 +24,7 @@
     margin-right: 12%;
 }
 .parent{
-    /* display: grid;
-    grid-template-columns: repeat(2,1fr); */
+  
     display: flex;
     flex-direction: row;
     margin-bottom: 6%;

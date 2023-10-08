@@ -1,0 +1,21 @@
+.wd3{
+    width: 40%;
+    height: 400px;
+  
+    margin-top: 70px;
+}
+#app { height: 100% }
+
+
+
+
+
+
+.swiper-slide {
+  font-size: 18px;
+  display: block;
+  height: auto;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 30px;
+}

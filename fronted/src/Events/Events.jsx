@@ -26,11 +26,10 @@ const Events = () => {
 console.log(ashuData)
   return (
     <div>
-     
-      <div className="container-fluid cont">
-        <div className="row" style={{ minHeight: "510px" }}>
-          <div className="col-12">
-            <h1 className="fw-bold display-5 head">Webinars & Masterclasses</h1>
+     <div className=" cont">
+        <div >
+          <div >
+            <h1 className="pt-24 ml-24">Webinars & Masterclasses</h1>
             <p className="text-center text-wrap p_here fs-5 text-secondary">
               Learn from industry experts and test your skills against peers
               <br />
