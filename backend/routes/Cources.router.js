@@ -46,3 +46,7 @@ courseRouter.post("/post",async(req,res)=>{
         res.send({msg:"error"});
     }
 })
+
+module.exports={
+    courseRouter
+}
