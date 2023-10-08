@@ -6,6 +6,7 @@ require("dotenv").config();
 const app = express();
 const cors = require("cors");
 const { RewardRouter } = require("./routes/Reward.router");
+const { FAQrouter } = require("./routes/FAQ.router");
 
 app.use(cors({
   origin:"*"
@@ -22,6 +23,9 @@ app.use("/",EventRouter);
 
 // < This is for Reward ----------------------->
 app.use("/",RewardRouter);
+
+// <----------- FAQ Database Route--------->
+app.use("/",FAQrouter)
  
 app.listen(process.env.PORT,async()=>{  
     try{
