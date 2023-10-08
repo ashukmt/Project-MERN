@@ -2,7 +2,7 @@ import React from 'react';
 
 function RewardCard({ Coin_Req, Gift_name, Gift_url }) {
   return (
-    <div className='border-solid items-center justify-center' style={{ background: "#f3f2f2",boxShadow:"box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;" }}>
+    <div className='border-solid items-center rounded-2xl justify-center' style={{ background: "#f3f2f2",boxShadow:"box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;" }}>
       <div className='flex justify-center pt-8 px-4'> 
         <img src={Gift_url} alt={Gift_name} width={450} />
       </div>
