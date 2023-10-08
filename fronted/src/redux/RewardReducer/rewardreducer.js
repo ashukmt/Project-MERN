@@ -1,5 +1,5 @@
 const iniState = {
-    Reward: [
+    Rewards: [
         {
           "Gift_url":"https://masai-website-images.s3.ap-south-1.amazonaws.com/amazon_vouchor_94d330a4b2.png",
           "Gift_name":"Amazon Voucher",

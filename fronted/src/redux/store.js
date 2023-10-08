@@ -4,5 +4,5 @@ import { rewardReducer } from "./RewardReducer/rewardreducer"
 
 export const store = configureStore({reducer: {
     course: courseReducer,
-    Rewards:rewardReducer
+    Reward:rewardReducer
 }})

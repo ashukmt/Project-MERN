@@ -1,5 +1,6 @@
 import React from 'react';
 import Referal1 from './Referal1';
+import ReferalReward from './Referal&Reward';
 
 function Referal() {
   return (
@@ -18,6 +19,7 @@ function Referal() {
       </div>
     </div>
     <Referal1/>
+    <ReferalReward/>
     </>
   );
 }
