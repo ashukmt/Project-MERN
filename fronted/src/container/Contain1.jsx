@@ -1,5 +1,4 @@
 import React from "react";
-
 import "../Style/homes.css";
 function Contain1() {
   return (
