@@ -4,7 +4,7 @@ import CoursePage from './Courses/CoursePage'
 import CourseDetail from './Courses/CourseDetail'
 import Events from './Events/Events'
 import Homes from './components/Homes'
-
+import LoginAdmin from './AdminPanel/LoginAdmin'
 const AllRoutes = () => {
   return (
     <Routes>
@@ -12,6 +12,7 @@ const AllRoutes = () => {
         <Route path='/events' element={<Events/>}/>
         <Route path='/'element={<Homes/>}/>
         <Route path='/courses/:idx' element={<CourseDetail />} />
+        <Route path='/admin' element={<LoginAdmin/>}/>
     </Routes>
   )
 }

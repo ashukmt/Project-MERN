@@ -13,6 +13,7 @@ function Navbar() {
     {path:'/learn',title:'LEARN'},
     {path:'/success',title:'SUCCESS STORIES'},
     {path:'/hirefromus',title:'HIRE FROM US'},
+    {path:"/admin",title:"ADMIN"}
   ]
   return (
     <div className='main'>
