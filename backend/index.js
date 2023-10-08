@@ -5,6 +5,7 @@ const { EventRouter } = require("./routes/Event.router");
 require("dotenv").config();
 const app = express();
 const cors = require("cors");
+const { CourseRouter } = require("./routes/Course.router");
 
 app.use(cors({
   origin:"*"
@@ -15,9 +16,8 @@ app.get("/",(req,res)=>{
   res.send("this is base api")
 })
 
-// app.use("/auth",UserRouter) 
-
-app.use("/",EventRouter);
+app.use("/event",EventRouter);
+app.use("/course",CourseRouter);
  
 app.listen(process.env.PORT,async()=>{  
     try{

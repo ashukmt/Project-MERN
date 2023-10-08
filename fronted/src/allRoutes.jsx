@@ -9,6 +9,7 @@ import EventDetails from './Events/EventDetails'
 const AllRoutes = () => {
   return (
     <Routes>
+        <Route path='/'element={<Homes/>}/>
         <Route path='/courses' element={<CoursePage />} />
         <Route path='/events' element={<Events/>}/>
         <Route path='/events/:id' element={<EventDetails/>} />
