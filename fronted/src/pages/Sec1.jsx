@@ -1,5 +1,5 @@
 import React from 'react'
-import '../style/homes.css'
+import '../Style/homes.css'
 function Sec1() {
   return (
     <div className='topsec1'>

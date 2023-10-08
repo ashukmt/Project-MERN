@@ -34,6 +34,22 @@ const iniState = {
             color:"rgb(174, 198, 244)",
             image: "https://masai-website-images.s3.ap-south-1.amazonaws.com/testing_faf38ba965.png"
         },
+    ],
+    data:[
+        {
+            title: "Full Stack Web Development",
+            opportunities: "Full Stack Developer, Software Engineer & much more.",
+            duration: 30,
+            color:'rgb(183, 184, 229)',
+            image: "https://masai-website-images.s3.ap-south-1.amazonaws.com/full_stack1_329d6b5595.png"
+        },
+        {
+            title: "Backend Development",
+            opportunities: "Backend Web Developer, API developer & much more.",
+            duration: 35,
+            color:'rgb(229, 201, 183)',
+            image: "https://masai-website-images.s3.ap-south-1.amazonaws.com/backend_ea129d404e.png"
+        }
     ]
 }
 
