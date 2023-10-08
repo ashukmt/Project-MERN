@@ -93,3 +93,35 @@
 .wit{
     width: 70%;
 }
+.img5{
+    width: 60%;
+}
+
+.wid{
+    border-radius: 10px;
+    padding: 14px;
+}
+
+.bg1{
+    background-color: rgb(158,160,221)
+    ;
+}
+.bg2{
+    background-color: #1a9fbd;
+
+}
+.tex{
+    color: #6e71cc;
+}
+.tex2{
+    color: #1a9fbd;
+}
+
+.bg3{
+    background-color:#6e71cc ;
+    border-radius: 12px;
+}
+.bg4{
+    background-color: #1a9fbd;
+    border-radius: 12px;
+}
