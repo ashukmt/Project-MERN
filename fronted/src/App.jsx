@@ -1,3 +1,4 @@
+
 import AllRoutes from "./allRoutes";
 import Navbar from "./components/Navbar";
 
@@ -6,6 +7,7 @@ function App() {
     <div>
       <Navbar/>
     <AllRoutes />
+  
     </div>
   
   );

@@ -5,6 +5,7 @@ const { EventRouter } = require("./routes/Event.router");
 require("dotenv").config();
 const app = express();
 const cors = require("cors");
+const { RewardRouter } = require("./routes/Reward.router");
 
 app.use(cors({
   origin:"*"
@@ -18,6 +19,9 @@ app.get("/",(req,res)=>{
 // app.use("/auth",UserRouter) 
 
 app.use("/",EventRouter);
+
+// < This is for Reward ----------------------->
+app.use("/",RewardRouter);
  
 app.listen(process.env.PORT,async()=>{  
     try{
