@@ -100,12 +100,12 @@ const Events = () => {
             <p className="font-bold ">{elem.month}</p>
           </div>
 
-          <div className="child-2 border">
+          <div className="child-2">
             <div className="img_div">
               <img
                 src={elem.img}
                 width={500}
-                className="img-fluid"
+                className="myImage"
                 // className="w-50"
                 alt=""
               />
