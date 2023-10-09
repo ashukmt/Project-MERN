@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../Style/Events.css";
+//import "../Style/Events.css";
 const Events = () => {
 
   const[ashuData,setAshuData] = useState([]);
