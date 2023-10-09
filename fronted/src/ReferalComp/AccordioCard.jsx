@@ -7,8 +7,10 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 
 function AccordioCard({Que,Ans}) {
+    console.log('hii')
   return (
     <div style={{width:"50%", margin:"auto"}}>
+    
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
