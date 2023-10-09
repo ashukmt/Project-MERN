@@ -6,7 +6,7 @@ const Events = () => {
 
   const fetchingEventData = async () => {
     try {
-      const response = await fetch("http://localhost:8080/getevents");
+      const response = await fetch("http://localhost:8080/event/getevents");
       const data = await response.json();
       console.log(data);
       setEventData(data);
@@ -21,10 +21,10 @@ const Events = () => {
 
   const navigate = useNavigate();
   const redirect_details = (id) => {
-    navigate(`/events/${id}`);
+    navigate(`/event/getevents/${id}`);
   };
 
-  console.log(eventData);
+ 
   return (
     <div>
       <div className="cont" style={{ minHeight: "510px" }}>
@@ -41,7 +41,7 @@ const Events = () => {
           </p>
         </div>
 
-        <div className="flex mt-28 ">
+        <div className="flex mt-20 search_class">
           <div className=" btns_div">
             <button
               type="button"
@@ -64,7 +64,7 @@ const Events = () => {
           </div>
 
           <div class="max-w-md mx-auto">
-            <div class="relative flex items-center w-full h-14 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
+            <div class="pr-28 relative flex items-center w-full h-14 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
               <div class="grid place-items-center h-full w-14 text-gray-300">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -115,7 +115,7 @@ const Events = () => {
               <p className="fs-5 font-bold text-xl">{elem.title}</p>
               <p className="font-bold text-3xl posi_tion ">{elem.position}</p>
               <div className="myData_div">
-                <div>
+                <div className="mt-4">
                   <p className="hour_p font-medium">{elem.duration}</p>
 
                   <div className="time_data">
