@@ -26,6 +26,7 @@ function Sec2() {
           <div className="p-2 font-bold ml-2 hover:text-red-600">
             Career Launchpad
           </div>
+          
         </button>
         <button onClick={(e)=>setNum(2)} className="brt flex ml-32 hover:bg-red-50 hover:text-red-400">
           <div className="p-2 bg-red-200 px-4 ml-3 rounded-lg">2</div>
