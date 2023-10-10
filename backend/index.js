@@ -7,6 +7,7 @@ const app = express();
 const cors = require("cors");
 const { RewardRouter } = require("./routes/Reward.router");
 const { FAQrouter } = require("./routes/FAQ.router");
+const { CourseRouter } = require("./routes/Course.router");
 
 app.use(cors({
   origin:"*"
@@ -19,13 +20,15 @@ app.get("/",(req,res)=>{
 
 // app.use("/auth",UserRouter) 
 
-app.use("/",EventRouter);
+
 
 // < This is for Reward ----------------------->
-app.use("/",RewardRouter);
+app.use("/rewards",RewardRouter);
 
 // <----------- FAQ Database Route--------->
-app.use("/",FAQrouter)
+app.use("/faqR",FAQrouter)
+app.use("/event",EventRouter);
+app.use("/course",CourseRouter);
  
 app.listen(process.env.PORT,async()=>{  
     try{

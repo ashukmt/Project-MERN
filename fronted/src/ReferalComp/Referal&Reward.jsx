@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import RewardCard from './RewardCard'
 import {
@@ -17,10 +17,35 @@ import {
   } from '@chakra-ui/react'
 
 function ReferalReward() {
+    const [refform,setRefform]=useState[{
+        F_name:"",
+        Email:"",
+        Ph_number:"",
+        R_Code:""
+    }]
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = React.useRef()
     const Reward=useSelector(state=>state.Reward.Rewards)
     console.log(Reward)
+
+    const Handlechange=(e)=>{
+            e.preventdefault();
+            const { value } = e.target;
+            setRefform({
+              ...refform,
+              [e.target.name]: value,
+            });
+    }
+
+    const handleSubmit=async()=>{
+         try {
+            
+         } catch (error) {
+            
+         }
+    }
+
+
   return (
     <div className='py-16' style={{background:"#f2f6ff"}}>
       <div className="mb-20"> 
@@ -51,23 +76,27 @@ function ReferalReward() {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader className='text-200'>Create your account</DrawerHeader>
+          <DrawerHeader style={{ fontSize: '4rem', fontWeight: '800' }}>
+  Create your account
+</DrawerHeader>
+
 
           <DrawerBody>
           <FormControl isRequired>
   <FormLabel>Full Name</FormLabel>
-  <Input placeholder='Enter full name' />
+  <Input placeholder='Enter full name' name='F_name' onChange={Handlechange} />
   <FormLabel>Email address</FormLabel>
-  <Input placeholder='Enter email address' />
+  <Input placeholder='Enter email address' name='Email' onChange={Handlechange} />
   <FormLabel>Phone Number</FormLabel>
-  <Input placeholder='Enter your whatsapp number' />
+  <Input placeholder='Enter your whatsapp number' name='Ph_number' onChange={Handlechange} />
   <FormLabel>Referral Code (Optional)</FormLabel>
-  <Input placeholder='Enter referral Code' />
+  <Input placeholder='Enter referral Code' name='R_Code' onChange={Handlechange} />
   <Button
             mt={4}
             colorScheme='teal'
             w={'full'}
             type='submit'
+            onClick={handleSubmit}
           >
             Submit
           </Button>

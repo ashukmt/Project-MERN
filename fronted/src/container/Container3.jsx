@@ -32,20 +32,20 @@ function Container3() {
           <div className="grid grid-cols-2 mt-4 gap-4">
             <div className="px-4 py-3 bg3">
             <p className="text-yellow-400 font-bold flex justify-center text-xl">1200+ hr</p>
-            <p className="w-24 ml-2 font-bold flex justify-center text-xl text-white ">Practical Coding</p>
+            <p className="w-24 ml-2 font-bold flex justify-center  text-center text-xl text-white ">Practical Coding</p>
             </div>
             <div className="px-4 py-3 bg3">
             <p className="text-yellow-400 font-bold flex justify-center text-xl">450+ hr</p>
-            <p className="w-32 ml-2 font-bold flex justify-center text-xl text-white ">DSA, MATH & LOGIC</p>
+            <p className="w-32 text-center font-bold flex justify-center text-xl text-white ">DSA, MATH & LOGIC</p>
             </div>
             <div className="px-4 py-3 bg3">
             <p className="text-yellow-400 font-bold flex justify-center text-xl">100+ hr</p>
-            <p className="w-28 ml-2 font-bold flex justify-center items-center text-xl text-white">Soft Skill Development</p>
+            <p className="w-28 text-center font-bold flex justify-center items-center text-xl text-white">Soft Skill Development</p>
             </div>
             <div className="px-4 py-3 bg3 flex  justify-around">
             <div>
             <p className="text-yellow-400 font-bold flex justify-center items-center text-xl">1200+ hr</p>
-            <p className="w-24 ml-2 font-bold flex justify-center items-center text-xl text-white ">Project & Hackthons</p>
+            <p className="w-24 text-center font-bold flex justify-center items-center text-xl text-white ">Project & Hackthons</p>
             </div>
             </div>
           </div>
@@ -75,19 +75,19 @@ function Container3() {
           <div className="grid grid-cols-2 mt-4 gap-4">
             <div className="px-4 py-3 bg4">
             <p className="text-yellow-400 font-bold flex justify-center text-xl">1200+ hr</p>
-            <p className="w-24 ml-2 font-bold flex justify-center text-xl text-white ">Practical Coding</p>
+            <p className="w-24 text-center font-bold flex justify-center text-xl text-white ">Practical Coding</p>
             </div>
             <div className="px-4 py-3 bg4">
             <p className="text-yellow-400 font-bold flex justify-center text-xl">450+ hr</p>
-            <p className="w-24 ml-4 font-bold flex justify-center text-xl text-white ">Soft Skill Development</p>
+            <p className="w-24 ml-2 text-center font-bold flex justify-center text-xl text-white ">Soft Skill Development</p>
             </div>
             <div className="px-4 py-3 bg4">
             <p className="text-yellow-400 font-bold flex justify-center text-xl">100+ hr</p>
-            <p className="w-24 ml-2 font-bold flex justify-center text-xl text-white ">Business Skill Development</p>
+            <p className="w-24 text-center ml-4 font-bold flex justify-center text-xl text-white ">Business Skill Development</p>
             </div>
             <div className="px-4 py-3 bg4">
             <p className="text-yellow-400 font-bold flex justify-center text-xl">100+ hr</p>
-            <p className="w-32 ml-2 font-bold flex justify-center text-xl text-white ">Technical Marathons</p>
+            <p className="w-32 text-center font-bold flex justify-center text-xl text-white ">Technical Marathons</p>
             </div>
           </div>
         </div>
