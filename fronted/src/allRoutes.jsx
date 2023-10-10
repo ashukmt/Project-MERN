@@ -5,6 +5,7 @@ import CourseDetail from './Courses/CourseDetail'
 import Events from './Events/Events'
 import Homes from './components/Homes'
 import EventDetails from './Events/EventDetails'
+import Referal from './ReferalComp/referal'
 
 const AllRoutes = () => {
   return (
@@ -14,6 +15,7 @@ const AllRoutes = () => {
         <Route path='/courses/:title' element={<CourseDetail />} />
         <Route path='/events' element={<Events/>}/>
         <Route path='/event/getevents/:id' element={<EventDetails/>} />
+        <Route path='/fees' element={<Referal/>} />
     </Routes>
   )
 }
