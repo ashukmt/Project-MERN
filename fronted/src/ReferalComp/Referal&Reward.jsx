@@ -17,12 +17,12 @@ import {
   } from '@chakra-ui/react'
 
 function ReferalReward() {
-    const [refform,setRefform]=useState[{
+    const [refform,setRefform]=useState({
         F_name:"",
         Email:"",
         Ph_number:"",
         R_Code:""
-    }]
+    })
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = React.useRef()
     const Reward=useSelector(state=>state.Reward.Rewards)
@@ -36,6 +36,7 @@ function ReferalReward() {
               [e.target.name]: value,
             });
     }
+    console.log(refform)
 
     const handleSubmit=async()=>{
          try {
@@ -84,13 +85,22 @@ function ReferalReward() {
           <DrawerBody>
           <FormControl isRequired>
   <FormLabel>Full Name</FormLabel>
-  <Input placeholder='Enter full name' name='F_name' onChange={Handlechange} />
+  <Input placeholder='Enter full name' name='F_name'
+   onChange={Handlechange} />
   <FormLabel>Email address</FormLabel>
-  <Input placeholder='Enter email address' name='Email' onChange={Handlechange} />
+  <Input placeholder='Enter email address' name='Email'
+   onChange={Handlechange}
+    />
   <FormLabel>Phone Number</FormLabel>
-  <Input placeholder='Enter your whatsapp number' name='Ph_number' onChange={Handlechange} />
+  <Input placeholder='Enter your whatsapp number' name='Ph_number' 
+  onChange={Handlechange} 
+
+
+  />
   <FormLabel>Referral Code (Optional)</FormLabel>
-  <Input placeholder='Enter referral Code' name='R_Code' onChange={Handlechange} />
+  <Input placeholder='Enter referral Code' name='R_Code'
+   onChange={Handlechange}
+    />
   <Button
             mt={4}
             colorScheme='teal'
