@@ -17,6 +17,8 @@ import {
 } from "@chakra-ui/react";
 import Accordionist from "./Accordionist";
 
+import { AiOutlineInfoCircle } from "react-icons/ai";
+
 function Referal() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
@@ -42,7 +44,21 @@ function Referal() {
             </p>
             <Button
               type="button"
-              className="active:ring-0 bg-red-500 hover:bg-red-600 rounded-[8px] text-white font-[600] text-[18px] leading-[24px] font-sans tracking-[1.25px] uppercase p-[12px] bled:cursor-not-allowed max-w-fit mt-[20px] inline-block"
+              bg="red.500"
+              _hover={{ bg: "red.600" }}
+              rounded="6px"
+              color="white"
+              fontWeight="200"
+              fontSize="14px"
+              lineHeight="24px"
+              fontFamily="sans-serif"
+              letterSpacing="1.25px"
+              textTransform="uppercase"
+              padding="10px"
+              cursor="pointer"
+              maxW="fit-content"
+              mt="20px"
+              display="inline-block"
               onClick={onOpen}
             >
               refer now
@@ -57,7 +73,7 @@ function Referal() {
               <DrawerOverlay />
               <DrawerContent>
                 <DrawerCloseButton />
-                <DrawerHeader className="text-200">
+                <DrawerHeader className="text-100">
                   Create your account
                 </DrawerHeader>
 
@@ -95,6 +111,19 @@ function Referal() {
       </div>
       <Referal1 />
       <ReferalReward />
+      <div className="flex justify-center bg-[#cfeedf]">
+      <span style={{ display: 'inline-flex', alignItems: 'center' }}>
+      <AiOutlineInfoCircle style={{ marginRight: '8px', color: '#00cc6d', fontSize: '30px',fontWeight:'800' }} />
+
+  <h1 className="py-4 text-[25px] font-[700]">
+    Want to refer students for our Prepleaf courses?
+    <span className="text-[#3470e4]" style={{ marginLeft: '8px' }}>
+      Click Here
+    </span>
+  </h1>
+</span>
+        
+      </div>
       <Accordionist />
     </>
   );

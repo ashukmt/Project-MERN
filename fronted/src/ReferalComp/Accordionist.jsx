@@ -9,6 +9,7 @@ function Accordionist() {
     console.log(FAQ)
   return (
     <div>
+    <h1 className='text-center py-8 text-[35px] font-[700]'>Frequently asked questions</h1>
         {
             FAQ?.map((faq,i)=>{
                 return <AccordioCard {...faq} key={i}/>
