@@ -6,7 +6,7 @@
 }
 
 .head{
-    margin-top: 5%;
+    margin-top: 1%;
     margin-left: 31%;
 }
 
@@ -27,7 +27,7 @@
   
     display: flex;
     flex-direction: row;
-    margin-bottom: 6%;
+    margin-bottom: 7%;
     
 }
 
@@ -61,10 +61,11 @@
 .child-2{
     display: flex;
     margin-left: 4%;
-    margin-top: -3%;
+    margin-top: -4%;
     width: 65%;
-    border-radius: 10px;
-    border-color: white;
+    height: 100%;
+    border-radius: 20px;
+    border:2px solid white;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
     background-color:white;
 }
@@ -74,7 +75,7 @@
     margin-top: 25px;
 }
 
-.fs-3{
+.posi_tion{
     color: red;
     margin-top: -5px;
     margin-right: 6px;
@@ -92,20 +93,19 @@
 }
 
 .hour_p{
-    margin-left: 43%;
+    margin-left: 35%;
     margin-bottom: -4%;
 }
 
 .duration_p{
-    margin-left: 36%;
+    margin-left: 31%;
     margin-top: -6%;
     margin-bottom: -19%;
 }
-
 .btm_div{
     display: flex;
     justify-content:space-around;
-    margin-top: 6%;
+    margin-top: 7%;
 }
 
 .std_num{
@@ -148,15 +148,75 @@
 .btns_div{
     margin-left: 8%;
 }
+.btns_div > button{
+    /* border: 1px solid black; */
+}
 
 .rec_div{
     margin-left: -1%;
-    margin-top: 11%;
+    margin-top: 12%;
 }
 
 .hr_here{
     margin-top: 25%;
 }
+
+.fire{
+    color: rgb(229, 24, 24);
+}
+
+.search_class{
+    width: 130%;
+   justify-content: space-between;
+}
+
+.about_event{
+    width: 21%;
+    margin-top: 3%;
+}
+
+.about_event>p:nth-child(3){
+    color: rgb(85, 85, 231);
+}
+
+.sideAbout_div{
+    width: 80%;
+    margin-left: 3%;
+}
+.masai_desc{
+    width: 90%;
+    margin: auto;
+}
+
+.intrstuctor_desc{
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 92%;
+    background-color:rgb(241, 238, 238);
+    margin: auto;
+}
+
+.inside_div{
+    width: 70%;
+    margin-left: 5%;
+    margin-top: 2%;
+}
+
+.myImage{
+    border-radius: 20px;
+    height: 250px;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
