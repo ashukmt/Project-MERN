@@ -7,10 +7,7 @@ import { getCourse } from '../redux/courseReducer/action'
 
 const CoursePage = () => {
     const courses = useSelector(state=>state.course.courses)
-    const dispatch = useDispatch()
-    useEffect(()=>{
-        dispatch(getCourse())
-    },[])
+    
     return (
         <>
             <Image w='100vw' position={'absolute'} zIndex={'-1'} src='utils/bg.png' />

@@ -7,7 +7,7 @@ const Sec3 = () => {
     const courses = useSelector(state=>state.course.data)
     return (
         <>
-            <Image w='100vw' position={'absolute'} zIndex={'-1'} src='utils/bg.png' />
+       
             <Box className='text-center' py='5%' px='7%'>
                 <Heading p='5' size='2xl'>Our Courses</Heading>
                 <Text className='font-bold text-xl'>Practice-Based Learning Tracks, <span className='text-red-700'>Supercharged by AI</span></Text>

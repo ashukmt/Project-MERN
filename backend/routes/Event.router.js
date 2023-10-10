@@ -49,6 +49,12 @@ EventRouter.get("/getevents",async(req,res)=>{
   res.send(my_events);
 })
 
+EventRouter.get("/getevents/:eventID",async(req,res)=>{
+const {eventID} = req.params;
+const one_event = await EventModel.findOne({_id:eventID});
+res.send({one_event}); 
+})
+
 module.exports = {
     EventRouter
 }
