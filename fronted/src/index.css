@@ -8,11 +8,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-<<<<<<< HEAD
-  overflow-x: hidden;
-=======
 overflow-x:hidden;
->>>>>>> fc10fceafcb08725a655bf20c9da2b40a661fae4
 }
 
 code {

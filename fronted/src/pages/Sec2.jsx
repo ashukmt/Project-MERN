@@ -6,7 +6,6 @@ import Container5 from "../container/Container5";
 import Container3 from "../container/Container3";
 import Container4 from "../container/Container4";
 
-
 function Sec2() {
   const[num,setNum]=useState(1);
   console.log(num);
@@ -26,7 +25,7 @@ function Sec2() {
           <div className="p-2 font-bold ml-2 hover:text-red-600">
             Career Launchpad
           </div>
-          
+
         </button>
         <button onClick={(e)=>setNum(2)} className="brt flex ml-32 hover:bg-red-50 hover:text-red-400">
           <div className="p-2 bg-red-200 px-4 ml-3 rounded-lg">2</div>
