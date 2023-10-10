@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../Style/Events.css";
+import "../Style/Events.css"
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 const Events = () => {

@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router'
 const CourseComp = ({ _id,title, image, opportunities, duration, color }) => {
     const navigate = useNavigate()
     const goToDetails = () => {
-        navigate(`/courses/${title}`)
+        navigate(`/courses/${decodeURI(title).replaceAll(" ","-")}`)
     }
     return (
         <div className="sm:flex-1 sm:min-w-[410px] w-full bg-white max-w-[410px] mx-auto md:m-0 relative flex flex-col rounded-2xl border border-[#f1f1f1]" style={{boxShadow:"rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px"}}>
