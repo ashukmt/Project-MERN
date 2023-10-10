@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import '../Style/homes.css'
-import Contain1 from "../container/Contain1";
-import Container2 from "../container/Container2";
-import Container5 from "../container/Container5";
-import Container3 from "../container/Container3";
-import Container4 from "../container/Container4";
+// import Contain1 from "../container/Contain1";
+// import Container2 from "../container/Container2";
+// import Container5 from "../container/Container5";
+// import Container3 from "../container/Container3";
+// import Container4 from "../container/Container4";
 
 function Sec2() {
   const[num,setNum]=useState(1);
@@ -54,11 +54,11 @@ function Sec2() {
         <div className=" mt-9 ml-10 dat  py-6 px-4">
 
         
-       {num===1?<Contain1/>:<></>}
+       {/* {num===1?<Contain1/>:<></>}
        {num===2?<Container2/>:<></>}
        {num===3?<Container3/>:<></>}
        {num===4?<Container4/>:<></>}
-       {num===5?<Container5/>:<></>} 
+       {num===5?<Container5/>:<></>}  */}
         </div>
       </div>
     </div>
