@@ -4,8 +4,9 @@ import CoursePage from './Courses/CoursePage'
 import CourseDetail from './Courses/CourseDetail'
 import Events from './Events/Events'
 import Homes from './components/Homes'
-import Referal from './ReferalComp/Referal'
+// import Referal from './ReferalComp/Referal'
 import EventDetails from './Events/EventDetails'
+import Referal from './ReferalComp/referal'
 
 const AllRoutes = () => {
   return (
