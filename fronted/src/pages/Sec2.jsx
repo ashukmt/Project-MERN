@@ -6,6 +6,7 @@ import Container5 from "../container/Container5";
 import Container3 from "../container/Container3";
 import Container4 from "../container/Container4";
 
+
 function Sec2() {
   const[num,setNum]=useState(1);
   console.log(num);
