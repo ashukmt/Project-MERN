@@ -3,10 +3,27 @@ import "../Style/Events.css";
 import { Link, useNavigate } from "react-router-dom";
 const Events = () => {
   const [eventData, setEventData] = useState([]);
+  const[filterBy,setFilterBy] = useState("");
+  const[searchBy,setSearchBy] = useState("");
+
+  const myApi = (url,filterBy)=>{
+      if(filterBy){
+        return `${url}?position=${filterBy}`
+      }
+      else if(searchBy){
+        return `${url}/searchevents?q=${searchBy}`
+      }
+      else{
+        return `${url}/getevents`
+      }
+  }
+
+
 
   const fetchingEventData = async () => {
     try {
-      const response = await fetch("http://localhost:8080/event/getevents");
+      const myUrl = myApi(`http://localhost:8080/event/`,filterBy,searchBy)
+      const response = await fetch(myUrl);
       const data = await response.json();
       console.log(data);
       setEventData(data);
@@ -17,7 +34,7 @@ const Events = () => {
 
   useEffect(() => {
     fetchingEventData();
-  }, []);
+  }, [filterBy,searchBy]);
 
   const navigate = useNavigate();
   const redirect_details = (id) => {
@@ -44,18 +61,21 @@ const Events = () => {
         <div className="flex mt-20 search_class">
           <div className=" btns_div">
             <button
+              onClick={()=>setFilterBy("")}
               type="button"
               class=" hover:text-white hover:bg-red-400 focus:ring-2 border focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-5 mr-2 mb-2   focus:outline-none dark:focus:ring-red-600"
             >
               All
             </button>
             <button
+              onClick={()=>setFilterBy("FOUNDER WEBINAR")}
               type="button"
               class=" hover:text-white hover:bg-red-400 focus:ring-2 border focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-5 mr-2 mb-2   focus:outline-none dark:focus:ring-red-600"
             >
               Webinars
             </button>
             <button
+              onClick={()=>setFilterBy("MASTERCLASS")}
               type="button"
               class=" hover:text-white hover:bg-red-400 focus:ring-2 border focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-5 mr-2 mb-2   focus:outline-none dark:focus:ring-red-600"
             >
@@ -83,6 +103,7 @@ const Events = () => {
               </div>
 
               <input
+                onChange={(e)=>setSearchBy(e.target.value)}
                 class="peer h-full w-full outline-none text-sm text-gray-700 pr-2"
                 type="text"
                 id="search"

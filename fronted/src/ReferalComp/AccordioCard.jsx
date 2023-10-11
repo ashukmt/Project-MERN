@@ -17,27 +17,23 @@ import {
 function AccordioCard({Que,Ans}) {
     console.log('Masai')
   return (
-    <div style={{width:"60%", margin:"auto"}}>
-    
-    <Accordion allowToggle>
-  <AccordionItem>
-    <h2>
-      <AccordionButton>
-        <Box as="span" flex='1' textAlign='left'>
-          {Que}
-        </Box>
-        <AccordionIcon />
-      </AccordionButton>
-    </h2>
-    <AccordionPanel pb={4}>
-     {Ans}
-    </AccordionPanel>
-  </AccordionItem>
-
-</Accordion>
-    
-
-    </div>
+    <Box width={{ base: "100%", md: "60%" }} margin="auto">
+  <Accordion allowToggle>
+    <AccordionItem>
+      <h2>
+        <AccordionButton>
+          <Box as="span" flex="1" textAlign="left" fontSize={{ base: "14px", md: "16px" }} fontWeight="700">
+            {Que}
+          </Box>
+          <AccordionIcon />
+        </AccordionButton>
+      </h2>
+      <AccordionPanel pb={4}>
+        {Ans}
+      </AccordionPanel>
+    </AccordionItem>
+  </Accordion>
+</Box>
   )
 }
 
