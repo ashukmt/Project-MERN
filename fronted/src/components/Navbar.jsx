@@ -25,7 +25,9 @@ function Navbar() {
       ))}  
      </div>
      <div className='last'>
-         <button>REFER & EARN</button>
+         
+         <Link className='link' to={'/Refer'}>REFER & EARN</Link>
+
          <button>SIGN UP</button>
      </div>
     </div>
