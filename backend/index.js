@@ -6,7 +6,8 @@ require("dotenv").config();
 const app = express();
 const cors = require("cors");
 const {adminAccountRouter}=require("./routes/AdminAccount.router")
-const {courseRouter}=require("./routes/Cources.router")
+const { CourseRouter } = require("./routes/Course.router");
+
 app.use(cors({
   origin:"*"
 }))
@@ -18,9 +19,11 @@ app.get("/",(req,res)=>{
 
 // app.use("/auth",UserRouter) 
 
-app.use("/",EventRouter);
+
 app.use("/admin",adminAccountRouter);
-app.use("/cources",courseRouter);
+app.use("/event",EventRouter);
+app.use("/course",CourseRouter);
+ 
 app.listen(process.env.PORT,async()=>{  
     try{
       await connection   

@@ -1,15 +1,16 @@
-const mongoose = require("mongoose");
-const schema=mongoose.Schema({
-    course:{type:String,required:true},
-    courseName:{type:String,required:true},
-    courseSubheadder:{type:String,required:true},
-    des1:{type:String,required:true},
-    des2:{type:String,required:true},
-    des3:{type:String,required:true}
+const mongoose = require('mongoose')
+
+const CourseSchema = new mongoose.Schema({
+    title: String,
+    opportunities:String,
+    duration: Number,
+    color: String,
+    image: String,
+    role: String
 })
 
-const CourcesModel=mongoose.model("cources",schema);
+const CourseModel = mongoose.model("course",CourseSchema);
 
 module.exports = {
-   CourcesModel
+    CourseModel
 }
