@@ -8,6 +8,7 @@ const cors = require("cors");
 const { RewardRouter } = require("./routes/Reward.router");
 const { FAQrouter } = require("./routes/FAQ.router");
 const { CourseRouter } = require("./routes/Course.router");
+const { ShareLinkrouter } = require("./routes/ShareLink.router");
 
 app.use(cors({
   origin:"*"
@@ -29,6 +30,7 @@ app.use("/rewards",RewardRouter);
 app.use("/faqR",FAQrouter)
 app.use("/event",EventRouter);
 app.use("/course",CourseRouter);
+app.use("/sharelink",ShareLinkrouter);
  
 app.listen(process.env.PORT,async()=>{  
     try{

@@ -5,18 +5,23 @@ const { FAQModel } = require("../models/FAQ.model");
 const FAQrouter = express.Router();
 
 FAQrouter.post("/faq", async(req, res) => {
-    const {
-        Que,
-        Ans
-    } = req.body;
-  
-    const new_event = await new FAQModel({
-        Que,
-        Ans
-    })
-  
-    new_event.save();
-    res.send({msg:"Reward added successfully"});
+    try {
+        const {
+            Que,
+            Ans
+        } = req.body;
+      
+        const new_event = new FAQModel({
+            Que,
+            Ans
+        })
+       await new_event.save();
+        res.status(200).send("data inserted sucessfully")
+    } catch (error) {
+        console.log(error)
+        res.status(500).send("Internal Server Error")
+    }
+ 
   });
 
 
