@@ -6,6 +6,8 @@ require("dotenv").config();
 const app = express();
 const cors = require("cors");
 const {adminAccountRouter}=require("./routes/AdminAccount.router")
+const { RewardRouter } = require("./routes/Reward.router");
+const { FAQrouter } = require("./routes/FAQ.router");
 const { CourseRouter } = require("./routes/Course.router");
 
 app.use(cors({
@@ -17,10 +19,6 @@ app.get("/",(req,res)=>{
   res.send("this is base api")
 })
 
-// app.use("/auth",UserRouter) 
-
-
-app.use("/admin",adminAccountRouter);
 app.use("/event",EventRouter);
 app.use("/course",CourseRouter);
  
