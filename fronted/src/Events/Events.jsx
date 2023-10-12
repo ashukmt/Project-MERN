@@ -8,7 +8,7 @@ const Events = () => {
 
   const myApi = (url,filterBy)=>{
       if(filterBy){
-        return `${url}?position=${filterBy}`
+        return `${url}/getevents?position=${filterBy}`
       }
       else if(searchBy){
         return `${url}/searchevents?q=${searchBy}`
