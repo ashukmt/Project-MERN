@@ -36,16 +36,38 @@ function ReferalReward() {
 console.log(fname)
     
 
-    const handleSubmit=async()=>{
-        //  try {
-            
-        //  } catch (error) {
-            
-        //  }
-        const message = "https://masaischool.com";
-        const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-        window.open(url, "_blank");
+const handleSubmit=async()=>{
+  var refform={
+     F_name:fname,
+     Email:email,
+     Ph_number:phoneNumber,
+     R_Code:rcode
+ }
+    try {
+     const PostData = await axios.post("http://localhost:8080/sharelink/sharereferal", { ...refform });
+    console.log(PostData.status)
+     if (PostData.status === "200") {
+       const message = "https://masaischool.com";
+       const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+       window.open(url, "_blank");
+     } else if (PostData.status === "409") {
+       alert("User already registered with this Number");
+     } else {
+       console.log("Unexpected response:", PostData);
+     }
+       var refform={
+         F_name:"",
+         Email:"",
+         Ph_number:"",
+         R_Code:""
+     }
+      
+    } catch (error) {
+       console.log(error)
     }
+ 
+}
+
 
 
   return (
