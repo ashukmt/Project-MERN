@@ -5,7 +5,7 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/scrollbar';
 
-import '../Style/con2.css';
+import '../../Style/con2.css';
 
 // import required modules
 import { FreeMode, Scrollbar, Mousewheel } from 'swiper/modules';
@@ -50,7 +50,7 @@ export default function SubSec4() {
             </div>
             <p>We Prioritise Flexible Thinking & Continuous Skill Development. Stay Nimble In An Ever-Changing World By Embracing Adaptability, Curiosity & Rapid Learning.</p>
             </div>
-            <div className='mb-44'>
+            <div className='mb-2'>
             <div className='font-bold text-xl'>
             Industry Ready In Just
              <p className='text-red-500'>25 - 35 Weeks</p>
