@@ -1,15 +1,24 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
-    <footer class="text-white bg-gray-900">
+    <footer class="text-white bg-gray-900 pb-5">
   <div
-    class="mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8"
+    class="mx-auto max-w-screen-xl space-y-8 px-4 pt-16 sm:px-6 lg:space-y-16 lg:px-8"
   >
-    <div class="sm:flex sm:items-center sm:justify-between">
-      <div class="text-teal-600 dark:text-teal-300">
+    <div className='sm:flex sm:items-center flex justify-center'>
+        <img className='w-16 mr-4' src="https://www.masaischool.com/images/footer/arrow-gif.gif" alt="" />
+       <div>
+       <p className='text-yellow-100 font-bold text-2xl '>Get Started</p>
+        <p className='text-yellow-300 mr-4'>Join the Program</p>
+       </div>
+       <div className='bg-red-600 p-2 rounded-lg'><button >GET YOUR DREAM JOB</button></div>
+    </div>
+    <div class="sm:flex sm:items-center sm:justify-between border-t pt-6">
+      <Link to={'/'}><div class="text-teal-600 dark:text-teal-300">
         <img src="https://www.masaischool.com/images/footer/masai-logo-dark.svg" alt="" />
-      </div>
+      </div></Link>
 
       <ul class="mt-8 flex justify-start gap-6 sm:mt-0 sm:justify-end">
         <li>
@@ -132,17 +141,26 @@ function Footer() {
       </ul>
     </div>
 
-    <div
-      class="grid grid-cols-1 gap-8 border-t border-gray-100 pt-8 dark:border-gray-800 sm:grid-cols-2 lg:grid-cols-4 lg:pt-16"
+   <div className='border-t w-3/4'>
+    <div className='mt-6'>
+        <button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mr-4'>Full Stack Web Development - Full Time</button>
+        <button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mr-4'>Data Analytics - Full Time</button>
+        <button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold'>Mobile Development - Full Time</button>
+        <button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mt-5 mr-4'>Software Testing & Automation - Full Time</button>
+        <button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold'>Backend Development - Full Time</button>
+    </div>
+   <div
+      class="grid grid-cols-1 gap-8  border-gray-100 pt-5 dark:border-gray-800 sm:grid-cols-2 lg:grid-cols-4 lg:pt-5"
     >
+        
       <div>
-        <p class="font-medium text-gray-900 dark:text-white">Services</p>
+        <p class="font-medium text-white  dark:text-white">Services</p>
 
         <ul class="mt-6 space-y-4 text-sm">
           <li>
             <a
               href="#"
-              class="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+              class="text-white  transition hover:opacity-75 dark:text-gray-200"
             >
               1on1 Coaching
             </a>
@@ -151,7 +169,7 @@ function Footer() {
           <li>
             <a
               href="#"
-              class="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+              class="text-white  transition hover:opacity-75 dark:text-gray-200"
             >
               Company Review
             </a>
@@ -160,7 +178,7 @@ function Footer() {
           <li>
             <a
               href="#"
-              class="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+              class="text-white  transition hover:opacity-75 dark:text-gray-200"
             >
               Accounts Review
             </a>
@@ -169,7 +187,7 @@ function Footer() {
           <li>
             <a
               href="#"
-              class="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+              class="text-white  transition hover:opacity-75 dark:text-gray-200"
             >
               HR Consulting
             </a>
@@ -178,7 +196,7 @@ function Footer() {
           <li>
             <a
               href="#"
-              class="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+              class="text-white  transition hover:opacity-75 dark:text-gray-200"
             >
               SEO Optimisation
             </a>
@@ -187,13 +205,13 @@ function Footer() {
       </div>
 
       <div>
-        <p class="font-medium text-gray-900 dark:text-white">Company</p>
+        <p class="font-medium text-white  dark:text-white">Company</p>
 
         <ul class="mt-6 space-y-4 text-sm">
           <li>
             <a
               href="#"
-              class="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+              class="text-white  transition hover:opacity-75 dark:text-gray-200"
             >
               About
             </a>
@@ -202,7 +220,7 @@ function Footer() {
           <li>
             <a
               href="#"
-              class="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+              class="text-white  transition hover:opacity-75 dark:text-gray-200"
             >
               Meet the Team
             </a>
@@ -211,7 +229,7 @@ function Footer() {
           <li>
             <a
               href="#"
-              class="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+              class="text-white  transition hover:opacity-75 dark:text-gray-200"
             >
               Accounts Review
             </a>
@@ -220,13 +238,13 @@ function Footer() {
       </div>
 
       <div>
-        <p class="font-medium text-gray-900 dark:text-white">Helpful Links</p>
+        <p class="font-medium text-white  dark:text-white">Helpful Links</p>
 
         <ul class="mt-6 space-y-4 text-sm">
           <li>
             <a
               href="#"
-              class="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+              class="text-white  transition hover:opacity-75 dark:text-gray-200"
             >
               Contact
             </a>
@@ -235,7 +253,7 @@ function Footer() {
           <li>
             <a
               href="#"
-              class="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+              class="text-white  transition hover:opacity-75 dark:text-gray-200"
             >
               FAQs
             </a>
@@ -244,7 +262,7 @@ function Footer() {
           <li>
             <a
               href="#"
-              class="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+              class="text-white  transition hover:opacity-75 dark:text-gray-200"
             >
               Live Chat
             </a>
@@ -253,13 +271,13 @@ function Footer() {
       </div>
 
       <div>
-        <p class="font-medium text-gray-900 dark:text-white">Legal</p>
+        <p class="font-medium text-white  dark:text-white">Legal</p>
 
         <ul class="mt-6 space-y-4 text-sm">
           <li>
             <a
               href="#"
-              class="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+              class="text-white  transition hover:opacity-75 dark:text-gray-200"
             >
               Accessibility
             </a>
@@ -268,7 +286,7 @@ function Footer() {
           <li>
             <a
               href="#"
-              class="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+              class="text-white  transition hover:opacity-75 dark:text-gray-200"
             >
               Returns Policy
             </a>
@@ -277,7 +295,7 @@ function Footer() {
           <li>
             <a
               href="#"
-              class="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+              class="text-white  transition hover:opacity-75 dark:text-gray-200"
             >
               Refund Policy
             </a>
@@ -286,7 +304,7 @@ function Footer() {
           <li>
             <a
               href="#"
-              class="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+              class="text-white transition hover:opacity-75 dark:text-gray-200"
             >
               Hiring Statistics
             </a>
@@ -294,9 +312,10 @@ function Footer() {
         </ul>
       </div>
     </div>
+   </div>
 
-    <p class="text-xs text-gray-500 dark:text-gray-400">
-      &copy; 2022. Company Name. All rights reserved.
+    <p class="text-xs text-white  dark:text-gray-400">
+      &copy; 2022. Masai School. All rights reserved.
     </p>
   </div>
 </footer>
