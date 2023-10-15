@@ -2,13 +2,14 @@ import { Badge, Box, Button, Card, CardBody, CardHeader, Flex, Heading, Image, L
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router'
 import { FaClock, FaUser, FaUserTie } from "react-icons/fa6";
-import { BiCalendar, BiGlobe, BiIdCard, BiRupee, BiSolidIdCard, BiUser, BiUserVoice } from "react-icons/bi";
+import { BiCalendar, BiGlobe, BiIdCard, BiRupee, BiSolidIdCard, BiUser, BiUserCheck, BiUserVoice, BiVideo } from "react-icons/bi";
 import { PiCertificate, PiCertificateBold, PiMonitor, PiSuitcaseBold } from "react-icons/pi";
-import { AiOutlineIdcard, AiOutlineThunderbolt } from "react-icons/ai";
+import { AiOutlineCheck, AiOutlineIdcard, AiOutlineThunderbolt } from "react-icons/ai";
 import { BsStars } from "react-icons/bs";
 import { GrCertificate, GrPersonalComputer } from "react-icons/gr";
 import TimerComp from './TimerComp';
-import { MdExposurePlus1 } from 'react-icons/md';
+import { MdComputer, MdExposurePlus1 } from 'react-icons/md';
+import Sec5 from '../pages/Sec5';
 
 const CourseDetail = () => {
     const courses = useSelector(state => state.course.courses)
@@ -75,7 +76,7 @@ const CourseDetail = () => {
                         <BiCalendar className='text-2xl text-indigo-500' />
                         <div>
                             <p style={{ color: "rgb(110, 113, 204)" }} class="font-[700] text-[20px] leading-[28px] font-poppins transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 hidden md:block">Duration</p>
-                            <p class="!font-[600] text-[16px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 md:mt-[8px]">30 weeks(7 months)</p>
+                            <p class="!font-[600] text-[16px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 md:mt-[8px]">30 weeks ( 7 months )</p>
                         </div>
                     </div>
                     <div className='flex flex-row gap-[14px] items-center md:w-[auto] bg-[#F7F7FF] p-[4px] md:p-[24px] rounded-[16px]'>
@@ -150,6 +151,45 @@ const CourseDetail = () => {
                     </div>
                 </div>
             </div>
+            <div className="mb-10 lg:mt-8">
+                <div className="bg-[#f6ede7] pb-10 mt-0 px-5 pt-8 undefined">
+                    <h1 className="block font-poppins text-[24px] text-center font-bold undefined">Admission Process</h1>
+                    <div className='relative'>
+                        <div className="absolute top-[50%] hidden xl:block w-full max-w-[1040px] left-0 right-0 mx-auto border-t border-dashed border-[#CC926E]"></div>
+                        <div className="max-w-[1440px] xl:px-[80px] grid md:grid-cols-[repeat(auto-fit,minmax(350px,1fr))] lg:grid-cols-[repeat(auto-fit,minmax(250px,250px))] bg-extended-ms-brick-50 gap-8 items-center justify-center m-auto mt-8 undefined z-50" >
+                            <div style={{filter:"drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.1)) dropShadow(0px 1px 2px rgba(0, 0, 0, 0.06))"}} className="flex pl-2 gap-x-[16px] lg:pl-4 flex-row w-full min-h-[4rem] bg-white rounded-3xl text-base font-semibold px-5 leading-6 lg:pt-8 lg:min-h-[11rem] lg:flex-col items-center lg:justify-start text-left lg:text-start z-50">
+                                <div className="bg-[#f6ede7] p-[14px] rounded-[16px] h-fit">
+                                    <BiUserCheck class="text-[#d99d75] w-6 h-6 font-extrabold" />
+                                </div>
+                                <p className="!font-[600] text-[16px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 text-left lg:text-center lg:mt-[16px]">Crack the Admissions Test (MSAT)</p>
+                            </div>
+                            <div style={{filter:"drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.1)) dropShadow(0px 1px 2px rgba(0, 0, 0, 0.06))"}} className="flex pl-2 gap-x-[16px] lg:pl-4 flex-row w-full min-h-[4rem] bg-white rounded-3xl text-base font-semibold px-5 leading-6 lg:pt-8 lg:min-h-[11rem] lg:flex-col items-center lg:justify-start text-left lg:text-start z-50">
+                                <div className="bg-[#f6ede7] p-[14px] rounded-[16px] h-fit">
+                                    <MdComputer class="text-[#d99d75] w-6 h-6 font-extrabold" />
+                                </div>
+                                <p className="!font-[600] text-[16px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 text-left lg:text-center lg:mt-[16px]">Choose a course</p>
+                            </div>
+                            <div style={{filter:"drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.1)) dropShadow(0px 1px 2px rgba(0, 0, 0, 0.06))"}} className="flex pl-2 gap-x-[16px] lg:pl-4 flex-row w-full min-h-[4rem] bg-white rounded-3xl text-base font-semibold px-5 leading-6 lg:pt-8 lg:min-h-[11rem] lg:flex-col items-center lg:justify-start text-left lg:text-start z-50">
+                                <div className="bg-[#f6ede7] p-[14px] rounded-[16px] h-fit">
+                                    <AiOutlineCheck class="text-[#d99d75] w-6 h-6 font-extrabold" />
+                                </div>
+                                <p className="!font-[600] text-[16px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 text-left lg:text-center lg:mt-[16px]">Complete KYC</p>
+                            </div>
+                            <div style={{filter:"drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.1)) dropShadow(0px 1px 2px rgba(0, 0, 0, 0.06))"}} className="flex pl-2 gap-x-[16px] lg:pl-4 flex-row w-full min-h-[4rem] bg-white rounded-3xl text-base font-semibold px-5 leading-6 lg:pt-8 lg:min-h-[11rem] lg:flex-col items-center lg:justify-start text-left lg:text-start z-50">
+                                <div className="bg-[#f6ede7] p-[14px] rounded-[16px] h-fit">
+                                    <BiVideo class="text-[#d99d75] w-6 h-6 font-extrabold" />
+                                </div>
+                                <p className="!font-[600] text-[16px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 text-left lg:text-center lg:mt-[16px]">You are ready to join the batch</p>
+                            </div>
+                        </div>
+                        <div className='text-center mt-10 flex gap-2 justify-center'>
+                            <Button variant={'outline'} colorScheme='red'>View MSAT DETAILS</Button>
+                            <Button colorScheme='red'>APPLY NOW FOR FREE</Button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <Sec5 />
         </>
     )
 }
