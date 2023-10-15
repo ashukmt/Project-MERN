@@ -54,6 +54,7 @@ const Events = () => {
     navigate(`/event/getevents/${id}`);
   };
 
+  console.log("random console");
  
   return (
     <div>
