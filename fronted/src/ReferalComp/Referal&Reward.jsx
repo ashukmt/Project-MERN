@@ -17,33 +17,34 @@ import {
 } from '@chakra-ui/react'
 
 function ReferalReward() {
-    const [refform, setRefform] = useState({
-        F_name: "",
-        Email: "",
-        Ph_number: "",
-        R_Code: ""
+  const[fname,setFname]=useState("")
+  const[email,setEmail]=useState("")
+  const[phoneNumber,setPhnumber]=useState("")
+  const[rcode,setRcode]=useState("")
+    const [refform,setRefform]=useState({
+        F_name:fname,
+        Email:email,
+        Ph_number:phoneNumber,
+        R_Code:rcode
     })
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = React.useRef()
     const Reward = useSelector(state => state.Reward.Rewards)
     console.log(Reward)
 
-    const Handlechange = (e) => {
-        e.preventdefault();
-        const { value } = e.target;
-        setRefform({
-            ...refform,
-            [e.target.name]: value,
-        });
-    }
-    console.log(refform)
+    const PhoneNumber="+917379249116"
+console.log(fname)
+    
 
-    const handleSubmit = async () => {
-        try {
-
-        } catch (error) {
-
-        }
+    const handleSubmit=async()=>{
+        //  try {
+            
+        //  } catch (error) {
+            
+        //  }
+        const message = "https://masaischool.com";
+        const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        window.open(url, "_blank");
     }
 
 
@@ -95,35 +96,36 @@ function ReferalReward() {
                         </DrawerHeader>
 
 
-                        <DrawerBody>
-                            <FormControl isRequired>
-                                <FormLabel>Full Name</FormLabel>
-                                <Input placeholder='Enter full name' name='F_name'
-                                    onChange={Handlechange} />
-                                <FormLabel>Email address</FormLabel>
-                                <Input placeholder='Enter email address' name='Email'
-                                    onChange={Handlechange}
-                                />
-                                <FormLabel>Phone Number</FormLabel>
-                                <Input placeholder='Enter your whatsapp number' name='Ph_number'
-                                    onChange={Handlechange}
+          <DrawerBody>
+          <FormControl isRequired>
+  <FormLabel>Full Name</FormLabel>
+  <Input placeholder='Enter full name' name='F_name'
+   onChange={(e)=>setFname(e.target.value)}
+    />
+  <FormLabel>Email address</FormLabel>
+  <Input placeholder='Enter email address' name='Email'
+   onChange={(e)=>setEmail(e.target.value)}
+    />
+  <FormLabel>Phone Number</FormLabel>
+  <Input placeholder='Enter your whatsapp number' name='Ph_number' 
+  onChange={(e)=>setPhnumber(e.target.value)}
 
-                                />
-                                <FormLabel>Referral Code (Optional)</FormLabel>
-                                <Input placeholder='Enter referral Code' name='R_Code'
-                                    onChange={Handlechange}
-                                />
-                                <Button
-                                    mt={4}
-                                    colorScheme='teal'
-                                    w={'full'}
-                                    type='submit'
-                                    onClick={handleSubmit}
-                                >
-                                    Submit
-                                </Button>
-                            </FormControl>
-                        </DrawerBody>
+  />
+  <FormLabel>Referral Code (Optional)</FormLabel>
+  <Input placeholder='Enter referral Code' name='R_Code'
+   onChange={(e)=>setRcode(e.target.value)}
+    />
+  <Button
+            mt={4}
+            colorScheme='teal'
+            w={'full'}
+            type='submit'
+            onClick={handleSubmit}
+          >
+            Submit
+          </Button>
+</FormControl>
+          </DrawerBody>
 
 
                     </DrawerContent>

@@ -1,5 +1,6 @@
 import React from "react";
-import SubSec4 from "./SubSec4";
+import SubSec4 from "./subPart/SubSec4";
+import SubSec4b from "./subPart/SubSec4b";
 
 const Sec4 = () => {
   return (
@@ -12,9 +13,12 @@ const Sec4 = () => {
         <div className="wd3 mx-9 ml-28">
          <SubSec4/>
         </div>
-        <div>
-          
+        <div className="widts">
+          <SubSec4b/>
         </div>
+      </div>
+      <div className="bg-red-600 text-white font-bold text-lg w-56 m-auto p-3 my-4 rounded-lg flex justify-center">
+        <button className="">GET YOUR DREAM JOB</button>
       </div>
     </div>
   );

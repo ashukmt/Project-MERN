@@ -8,7 +8,7 @@ const Events = () => {
 
   const myApi = (url,filterBy)=>{
       if(filterBy){
-        return `${url}?position=${filterBy}`
+        return `${url}/getevents?position=${filterBy}`
       }
       else if(searchBy){
         return `${url}/searchevents?q=${searchBy}`
@@ -33,7 +33,20 @@ const Events = () => {
   };
 
   useEffect(() => {
-    fetchingEventData();
+    if(searchBy){
+      const timer = setTimeout(()=>{
+      fetchingEventData();
+      },500)
+
+      return () => {
+        clearTimeout(timer);
+      };
+
+    }
+    else{
+      fetchingEventData();
+    }
+    
   }, [filterBy,searchBy]);
 
   const navigate = useNavigate();
@@ -63,21 +76,21 @@ const Events = () => {
             <button
               onClick={()=>setFilterBy("")}
               type="button"
-              class=" hover:text-white hover:bg-red-400 focus:ring-2 border focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-5 mr-2 mb-2   focus:outline-none dark:focus:ring-red-600"
+              class=" hover:text-white hover:bg-red-400 focus:ring-2 border focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-5 mr-2 mb-2 focus:bg-red-400 focus:text-white   focus:outline-none dark:focus:ring-red-600"
             >
               All
             </button>
             <button
               onClick={()=>setFilterBy("FOUNDER WEBINAR")}
               type="button"
-              class=" hover:text-white hover:bg-red-400 focus:ring-2 border focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-5 mr-2 mb-2   focus:outline-none dark:focus:ring-red-600"
+              class=" hover:text-white focus:bg-red-400  hover:bg-red-400 focus:ring-2 border focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-5 mr-2 mb-2 focus:text-white   focus:outline-none dark:focus:ring-red-600"
             >
               Webinars
             </button>
             <button
               onClick={()=>setFilterBy("MASTERCLASS")}
               type="button"
-              class=" hover:text-white hover:bg-red-400 focus:ring-2 border focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-5 mr-2 mb-2   focus:outline-none dark:focus:ring-red-600"
+              class=" hover:text-white focus:bg-red-400  hover:bg-red-400 focus:ring-2 border focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-5 mr-2 mb-2 focus:text-white   focus:outline-none dark:focus:ring-red-600"
             >
               MasterClasses
             </button>
