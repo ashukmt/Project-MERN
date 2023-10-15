@@ -1,47 +1,25 @@
-// const express = require("express");
-// const { model } = require("mongoose");
-// const { UserModel } = require("../models/User.model");
-// const crypto = require("crypto");
-// const LocalStrategy = require("passport-local");
-// const session = require('express-session');
-// const { myPassport } = require("../middlewares/passportConfig");
-// // const passport =  require("../middlewares/passportConfig");
+const { UserModel } = require("../models/User.model");
 
+const UserRouter = express.Router();
 
-// const UserRouter = express.Router();
+UserRouter.get('/',async(req,res)=>{
+    try{
+        const users = await UserModel.find();
+        res.status(200).send(users)
+    }catch(error){
+        res.status(500).send("Internal Server Error")
+    }
+})
 
-// // console.log(passport)
+UserRouter.post('/addUser',async(req,res)=>{
+    try{
+        
+        res.status(200).send("User added")
+    }catch(error){
+        res.status(500).send("Internal Server Error")
+    }
+})
 
-
-
-// UserRouter.post("/signup/google", (req, res) => {
-//   const { name, email, number, password } = req.body;
-// });
-
-// UserRouter.post("/signup/db",
-// myPassport.authenticate('local-signup', { session: false }),
-// (req, res, next) => {
-//   // sign up
-//   res.json({
-//     user: req.user,
-//   });
-// }
-// );
-
-// UserRouter.post(
-//     "/login/db",
-//     myPassport.authenticate('local-login', { session: false }),
-//     (req, res, next) => {
-      
-//       res.json({
-//         user: req.user,
-//       });
-//     }
-//    );
-
-
-
-
-// module.exports = {
-//   UserRouter,
-// };
+module.exports = {
+  UserRouter,
+};
