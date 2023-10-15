@@ -182,11 +182,11 @@ const CourseDetail = () => {
                                 <p className="!font-[600] text-[16px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 text-left lg:text-center lg:mt-[16px]">You are ready to join the batch</p>
                             </div>
                         </div>
-                        <div className='text-center mt-10 flex gap-2 justify-center'>
+                    </div>
+                    <div className='text-center mt-10 flex gap-2 justify-center'>
                             <Button variant={'outline'} colorScheme='red'>View MSAT DETAILS</Button>
                             <Button colorScheme='red'>APPLY NOW FOR FREE</Button>
                         </div>
-                    </div>
                 </div>
             </div>
             <Sec5 />
