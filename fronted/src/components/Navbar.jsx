@@ -17,7 +17,7 @@ function Navbar() {
   return (
     <div className='main'>
      <div>
-      <Link to={'/'}><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/logo.png" alt="masai images"/></Link>
+     <Link to={'/'}><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/logo.png" alt="masai images"/></Link>
      </div>
      <div className='middle'>
       {edit?.map((el)=>(
