@@ -3,7 +3,7 @@ import '../Style/cond56.css'
 
 function Sec5() {
   return (
-    <div className="mt-4 mb-8">
+    <div className="mt-24 mb-24">
       <div className=" font-bold text-3xl m-auto p-3 mb-5 rounded-lg flex justify-center">
         <div className="">Meet Our <span className="text-red-500">4000+</span> Hiring Partners</div>
       </div>
