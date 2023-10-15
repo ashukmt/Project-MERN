@@ -4,6 +4,8 @@ import Sec1 from '../pages/Sec1'
 import Sec2 from '../pages/Sec2'
 import Sec3 from '../pages/Sec3'
 import Sec4 from '../pages/Sec4'
+import Sec5 from '../pages/Sec5'
+import Sec6 from '../pages/Sec6'
 function Homes() {
   return (
     <div>
@@ -16,7 +18,10 @@ function Homes() {
     <Sec3/>
    </div>
    <Sec4/>
+   <Sec6/>
+  <Sec5/>
     </div>
+    
   )
 }
 
