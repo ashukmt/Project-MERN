@@ -21,7 +21,7 @@ const TimerComp = ({ date }) => {
     },[])
     return (
         <Text>
-            {days} Days {hours} Hrs {minutes} Mns
+            {days} Days 
         </Text>
     )
 }
