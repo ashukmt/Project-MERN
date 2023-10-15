@@ -1,8 +1,9 @@
 const express=require("express");
 const adminAccountRouter=express.Router();
 var jwt = require('jsonwebtoken');
+
 const ADMIN_TOKEN_PASSWORD=process.env.ADMIN_TOKEN_PASSWORD;
-const {AdminModel}=require("AdminModel");
+const {AdminModel}=require("../models/Admin.model");
 adminAccountRouter.post("/login",async(req,res)=>{
     const{userName,password}=req.body;
     try {

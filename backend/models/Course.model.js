@@ -3,9 +3,9 @@ const mongoose = require('mongoose')
 const CourseSchema = new mongoose.Schema({
     title: String,
     opportunities:String,
-    duration: Number,
+    duration:Number,
     color: String,
-    image: String,
+    image:String,
     role: String
 })
 

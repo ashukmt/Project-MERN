@@ -21,7 +21,8 @@ app.get("/",(req,res)=>{
 
 app.use("/event",EventRouter);
 app.use("/course",CourseRouter);
- 
+
+//app.use("/admin",adminAccountRouter);
 app.listen(process.env.PORT,async()=>{  
     try{
       await connection   

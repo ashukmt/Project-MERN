@@ -1,10 +1,16 @@
 import React from 'react'
-import { Box, Button } from '@chakra-ui/react'
+import { Box, Button,Modal,ModalOverlay,ModalContent,ModalHeader,ModalCloseButton,ModalBody,ModalFooter,useDisclosure } from '@chakra-ui/react'
 import image from './Assets/Background.jpg'
 import img from './Assets/Forground.png'
 import { Input } from "@chakra-ui/react"
 import { Image,Badge } from '@chakra-ui/react'
+import { useState } from 'react'
+import Cources from './pages/Cources'
+const REACT_APP_BASEURL=process.env.REACT_APP_BASEURL;
 const LoginAdmin = () => {
+const [loginData,setLoginData]=useState({});
+const [error,setError]=useState(false);
+const { isOpen, onOpen, onClose } = useDisclosure()
   var sectionStyle = {
     width: "100%",
     height:"35rem",
@@ -14,6 +20,22 @@ const LoginAdmin = () => {
     backgroundImage: `url(${image})`,
     paddingTop:"5rem"
   };
+
+ async function handleSubmit() {
+  try {
+    onOpen();
+      console.log(REACT_APP_BASEURL)
+    setError(false);
+  } catch (error) {
+    
+    setError(true);
+  }
+  }
+
+  function handleLogin(e) {
+    setError(false);
+    setLoginData({...loginData,[e.target.name]:e.target.value});
+  }
 
   return (
     <div style={ sectionStyle }>
@@ -28,8 +50,8 @@ const LoginAdmin = () => {
     >
        <h1 style={{textAlign:"center",fontSize:"1.2rem" ,color:"aliceblue"}}>Admin Login</h1>
      <form action="" style={{margin:"auto"}}>
-     <Input placeholder="Username"  type='email' color="white" fontWeight="600" marginTop="2rem" marginBottom="1.5rem" />
-    <Input placeholder='Password' color="white" fontWeight="600" marginBottom="2rem"/> 
+     <Input name='userName' onChange={handleLogin} placeholder="Username"  type='email' color="white" fontWeight="600" marginTop="2rem" marginBottom="1.5rem" />
+    <Input name='password' onChange={handleLogin} placeholder='Password' color="white" fontWeight="600" marginBottom="2rem"/> 
     <Button
     size="md"
     height="1.5rem"
@@ -39,13 +61,44 @@ const LoginAdmin = () => {
     background="transparent"
    
     margin="auto"
+    onClick={handleSubmit}
     >Submit</Button>
      </form>
-
     </Box>
+    {<ReturnFocus isOpen={isOpen} onOpen={onOpen} onClose={onClose}/>}
     </div>
   )
 }
 
+function ReturnFocus({ isOpen, onOpen, onClose }) {
+  
+  const finalRef = React.useRef(null)
+
+  return (
+    <>
+      
+
+      
+      <Modal finalFocusRef={finalRef} isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader textAlign="center">Something went wrong</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody textAlign="center">
+           Wrong credentials are entered or error occured <br/>
+           please try again !
+          </ModalBody>
+
+          <ModalFooter>
+            <Button colorScheme='blue' mr={3} onClick={onClose}>
+              Close
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+      <Cources/>
+    </>
+  )
+}
 
 export default LoginAdmin
