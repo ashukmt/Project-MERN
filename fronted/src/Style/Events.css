@@ -194,6 +194,7 @@
     width: 92%;
     background-color:rgb(241, 238, 238);
     margin: auto;
+    margin-bottom: 30px;
 }
 
 .inside_div{
@@ -214,7 +215,54 @@
     background-color: #6E71CC;
 }
 
+.register_upSec{
+    background-color:#d8d9ef ;
+    border: 2px solid;
+}
 
+.main_descDiv{
+  width: 20%;
+}
+
+.main_descP:nth-child(2){
+    color: rgb(220, 58, 58);
+}
+
+#calendar{
+    width: 10%;
+}
+
+.time_monthDiv{
+    width: 20%;
+    height: fit-content;
+}
+
+.day_block{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 10px;
+    background-color: white;
+  
+}
+.hour_block{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 10px;
+    background-color: white;
+  
+}
+
+.min_block{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 10px;
+    background-color: white;
+  
+}
+
+.secs_block{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 10px;
+    background-color: white;
+  
+}
 
 
 
