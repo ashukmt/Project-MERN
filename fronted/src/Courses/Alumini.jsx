@@ -10,7 +10,7 @@ const Alumini = () => {
     return (
         <div className='mt-18 mb-5 max-w-[1280px] mx-auto'>
             <h1 className='text-[40px] text-center font-bold'>Hear From our alumni</h1>
-            <div style={{desktopCols: "repeat(auto-fit,296px)",mobileCols: "repeat(1,1fr)"}} className="hidden px-[16px] lg:grid justify-center grid-cols-3 md:grid-cols-3 gap-[16px] mt-[32px]">
+            <div style={{}} className="lg:grid-cols-[repeat(auto-fit,296px)] md:grid-cols-[repeat(1,1fr)] hidden px-[16px] lg:grid justify-center gap-[16px] mt-[32px]">
                 {aluminiDetails?.map((al, i) => (
                     <div className="mx-auto h-full md:max-w-[296px] flex flex-col rounded-[32px] relative">
                         <div class="h-[296px]">
