@@ -17,7 +17,7 @@ const FaqComp = () => {
         {que:"What is the course fee?",ans:"You can learn at INR 0 upfront fees with Masai. You only pay us after you you get placed over a certain CTC. To understand our Pay After Placement(PAP) model of course fee, you can click here and visit our Fees & PAP page"},
     ]
     return (
-        <div className='mb-10'>
+        <div className='mb-10' id='faq'>
             <h1 className='text-center py-8 text-[35px] font-[700]'>Frequently asked questions</h1>
             <Accordion width={{ base: "100%", md: "80%" }} margin="auto" allowToggle>
                 {questions?.map((q,i)=>(

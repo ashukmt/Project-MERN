@@ -8,7 +8,7 @@ const Alumini = () => {
         { dp: "https://masai-website-images.s3.ap-south-1.amazonaws.com/Aayushi_527cd1c2a3.jpg", name: "Aayushi Shah", company: "https://masai-website-images.s3.ap-south-1.amazonaws.com/sharechat_rect_73d95cd4e1.svg", quote: "I got placed within 2 days after graduation! I’m happy I am part of the Masai family, not because they helped me but because of their mission to help other lost yet...", bg:"rgb(246, 237, 231)" }
     ]
     return (
-        <div className='mt-18 mb-5 max-w-[1280px] mx-auto'>
+        <div className='mt-18 mb-5 max-w-[1280px] mx-auto' id='stories'>
             <h1 className='text-[40px] text-center font-bold'>Hear From our alumni</h1>
             <div style={{}} className="lg:grid-cols-[repeat(auto-fit,296px)] md:grid-cols-[repeat(1,1fr)] hidden px-[16px] lg:grid justify-center gap-[16px] mt-[32px]">
                 {aluminiDetails?.map((al, i) => (
