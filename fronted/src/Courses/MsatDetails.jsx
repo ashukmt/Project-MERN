@@ -18,6 +18,7 @@ const MsatDetails = () => {
                 </div>
             </div>
             <Swiper
+                style={{margin:0}}
                 effect='coverflow'
                 spaceBetween={30}
                 centeredSlides={true}
