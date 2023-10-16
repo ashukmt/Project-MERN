@@ -24,8 +24,7 @@ function Navbar() {
         <Link className='link' to={el.path}>{el.title}</Link>
       ))}  
      </div>
-     <div className='last'>
-         
+     <div className='last'>   
          <Link className='link' to={'/Refer'}>REFER & EARN</Link>
 
          <button>SIGN UP</button>

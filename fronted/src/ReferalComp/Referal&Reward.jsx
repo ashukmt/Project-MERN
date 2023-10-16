@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import RewardCard from './RewardCard'
+import axios from 'axios'
 import {
     Drawer,
     DrawerBody,
@@ -46,15 +47,16 @@ const handleSubmit=async()=>{
     try {
      const PostData = await axios.post("http://localhost:8080/sharelink/sharereferal", { ...refform });
     console.log(PostData.status)
-     if (PostData.status === "200") {
+    //  if (PostData.status === "200") {
        const message = "https://masaischool.com";
        const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
        window.open(url, "_blank");
-     } else if (PostData.status === "409") {
-       alert("User already registered with this Number");
-     } else {
-       console.log("Unexpected response:", PostData);
-     }
+    //  } 
+    //  else if (PostData.status === "409") {
+    //    alert("User already registered with this Number");
+    //  } else {
+    //    console.log("Unexpected response:", PostData);
+    //  }
        var refform={
          F_name:"",
          Email:"",
