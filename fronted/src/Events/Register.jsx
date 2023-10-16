@@ -88,9 +88,9 @@ const Register = () => {
               <p>By {myRegisterData.speaker_post}</p>
             </div>
 
-            <div className="time_monthDiv w-1/3 justify-between flex">
-              <div className="regdate_div flex">
-                <svg
+            <div className="flex py-3">
+              <div>
+              <svg className=""
                   xmlns="http://www.w3.org/2000/svg"
                   enable-background="new 0 0 24 24"
                   viewBox="0 0 24 24"
@@ -115,17 +115,16 @@ const Register = () => {
                     d="M2 9v10a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V9H2zm5 9a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm0-4a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm5 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm0-4a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm5 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm0-4a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
                   ></path>
                 </svg>
-
-                <p>
-                  {myRegisterData.date}th, {myRegisterData.month}
-                </p>
               </div>
+              <div className="sag21">
+              {myRegisterData.date}th, {myRegisterData.month}
+              </div>
+              <div class="inline-block h-[30px] min-h-[1em] w-0.5 self-stretch bg-slate-700 opacity-100 dark:opacity-20 mx-4"></div>
 
-              <div class="inline-block h-[40px] min-h-[1em] w-0.5 self-stretch bg-slate-700 opacity-100 dark:opacity-20 ml-14"></div>
-
-              <div className="flex ml-60">
-                <svg
+              <div className="">
+              <svg className="sag2"
                   xmlns="http://www.w3.org/2000/svg"
+                  enable-background="new 0 0 24 24"
                   viewBox="0 0 24 24"
                   id="clock"
                 >
@@ -138,45 +137,38 @@ const Register = () => {
                     d="M2 12A10 10 0 1 0 12 2 10 10 0 0 0 2 12Zm9-5a1 1 0 0 1 2 0v4.73l1.6 2.77a1 1 0 1 1-1.73 1l-1.69-2.93A.999.999 0 0 1 11 12Z"
                   ></path>
                 </svg>
-
-                <div className="flex">
-                  <p>
-                    {myRegisterData.start_time} {myRegisterData.type1}   
-                  </p>
-                  <p>
-                  -
-                  </p>
-                  <p>
-                  {myRegisterData.end_time} {myRegisterData.type2}
-                  </p>
-                </div>
               </div>
-            </div>
+
+              <div className="ml-2">
+              {myRegisterData.start_time} {myRegisterData.type1} {"-"}  {myRegisterData.end_time} {myRegisterData.type2}
+              </div>
+
+  </div>
 
             <div className="timer flex">
-              <div className="flex flex-col day_block">
+              <div className="flex flex-col justify-center text-center p-4 px-6 day_block ">
                 <p className="text-lg font-bold">{timeRemaining.days}</p>
                 <p className="text-lg font-bold">Days</p>
               </div>
               <div>
-                <p className="text-2xl font-bold decoration-red-500">:</p>
+                <p className="text-2xl font-bold decoration-red-500 justify-center text-center p-4">:</p>
               </div>
-              <div className="flex flex-col hour_block">
+              <div className="flex flex-col justify-center text-center p-4 px-6  hour_block">
                 <p className="text-lg font-bold">{timeRemaining.hours}</p>
                 <p className="text-lg font-bold">Hours</p>
               </div>
               <div>
-                <p className="text-2xl font-bold decoration-red-500">:</p>
+                <p className="text-2xl font-bold decoration-red-500 justify-center text-center p-4">:</p>
               </div>
-              <div className="flex flex-col min_block">
+              <div className="flex flex-col justify-center text-center p-4 px-6  min_block">
                 <p className="text-lg font-bold">{timeRemaining.minutes}</p>
                 <p className="text-lg font-bold">Mins</p>
               </div>
               <div>
-                <p className="text-2xl font-bold decoration-red-500">:</p>
+                <p className="text-2xl font-bold decoration-red-500 flex justify-center text-center p-4">:</p>
               </div>
 
-              <div className="flex flex-col secs_block">
+              <div className="flex flex-col justify-center text-center p-4 px-6  secs_block">
                 <p className="text-lg font-bold">{timeRemaining.seconds}</p>
                 <p className="text-lg font-bold">Secs</p>
               </div>
