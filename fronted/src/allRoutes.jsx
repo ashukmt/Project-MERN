@@ -7,6 +7,7 @@ import Homes from './components/Homes'
 // import Referal from './ReferalComp/Referal'
 import EventDetails from './Events/EventDetails'
 import Referal from './ReferalComp/referal'
+import Register from './Events/Register'
 
 const AllRoutes = () => {
   return (
@@ -15,9 +16,11 @@ const AllRoutes = () => {
         <Route path='/courses' element={<CoursePage />} />
         <Route path='/events' element={<Events/>}/>
         <Route path='/event/getevents/:id' element={<EventDetails/>} />
+        <Route path='/event/registerevents/:id' element={<Register/>} />
         <Route path='/'element={<Homes/>}/>
         <Route path='/courses/:idx' element={<CourseDetail />} />
         <Route path='/fees' element={<Referal/>} />
+        
     </Routes>
   )
 }

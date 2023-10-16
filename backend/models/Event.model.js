@@ -15,7 +15,11 @@ month : {type:String},
 video : {type:String},
 speaker : {type:String},
 instructor_desc : {type:String},
-instructor_img :  {type:String}
+instructor_img :  {type:String},
+btn :{type:String},
+main_desc : {type:String},
+reg_desc : {type:String},
+speaker_post:{type:String}
 })
 
 const EventModel = mongoose.model("event",eventSchema);
