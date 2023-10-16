@@ -5,12 +5,13 @@ import { useNavigate } from 'react-router'
 const CourseComp = ({ _id,title, image, opportunities, duration, color }) => {
     const navigate = useNavigate()
     const goToDetails = () => {
-        navigate(`/courses/${title}`)
+        navigate(`/courses/${decodeURI(title).replaceAll(" ","-")}`)
     }
+    const colorClassName = `bg-${color}-200`
     return (
         <div className="sm:flex-1 sm:min-w-[410px] w-full bg-white max-w-[410px] mx-auto md:m-0 relative flex flex-col rounded-2xl border border-[#f1f1f1]" style={{boxShadow:"rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px"}}>
-            <div style={{backgroundColor:color, borderRadius:'15px 15px 0 0'}} >
-                <Flex className='h-[230px] flex-shrink-0 rounded-t-[12px] flex items-center justify-center'>
+            <div style={{borderRadius:'15px 15px 0 0'}} >
+                <Flex className={`h-[230px] flex-shrink-0 rounded-t-[12px] flex items-center justify-center ${colorClassName}`}>
                     <Image className="max-h-[140px] h-full max-w-[140px] w-full object-contain rounded-t-[12px]" src={image} />
                 </Flex>
             </div>

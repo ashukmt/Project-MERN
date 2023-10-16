@@ -1,26 +1,35 @@
-import { Badge, Box, Flex, Heading, Image, Text } from '@chakra-ui/react'
-import { useSelector } from 'react-redux'
+import { Badge, Box, Button, Card, CardBody, CardHeader, Flex, Heading, Image, Link, Text } from '@chakra-ui/react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router'
-import { FaUserTie } from "react-icons/fa6";
-import { BiRupee } from "react-icons/bi";
-import { PiSuitcaseBold } from "react-icons/pi";
-import { AiOutlineThunderbolt } from "react-icons/ai";
-import { NavLink } from 'react-router-dom';
+import { FaClock, FaUser, FaUserTie } from "react-icons/fa6";
+import { BiCalendar, BiGlobe, BiIdCard, BiRupee, BiSolidIdCard, BiUser, BiUserCheck, BiUserVoice, BiVideo } from "react-icons/bi";
+import { PiCertificate, PiCertificateBold, PiMonitor, PiSuitcaseBold } from "react-icons/pi";
+import { AiOutlineCheck, AiOutlineIdcard, AiOutlineThunderbolt } from "react-icons/ai";
+import { BsStars } from "react-icons/bs";
+import { GrCertificate, GrPersonalComputer } from "react-icons/gr";
+import TimerComp from './TimerComp';
+import { MdComputer, MdExposurePlus1 } from 'react-icons/md';
+import Sec5 from '../pages/Sec5';
 
 const CourseDetail = () => {
     const courses = useSelector(state => state.course.courses)
     const { title } = useParams()
-    const course = courses.filter((c) => c.title === title)[0]
+    const course = courses.filter((c) => c.title === title?.replaceAll("-", " "))[0]
+
     return (
         <>
-            <Box bg='#6E71CC' className='relative overflow-hidden text-center p-2' h='300px' >
-                <Box bg='#B7B8E5' className='hidden md:flex items-center justify-center w-[248px] h-[248px] pointer-events-none bg-white absolute top-[35%] rounded-[100%] right-[-2%] z-[0]'>
-                    <Image className="max-h-[94px] max-w-[104px] w-full object-cover" src='https://masai-website-images.s3.ap-south-1.amazonaws.com/full_stack1_329d6b5595.png' />
+            <Box className={`bg-${course?.color}-300 relative overflow-hidden text-center p-2`} h='300px' >
+                <Image w='100vw' position={'absolute'} zIndex={'-1'} src='utils/bg.png' />
+                <Box className={`bg-${course?.color}-200 hidden md:flex items-center justify-center w-[248px] h-[248px] pointer-events-none absolute top-[35%] rounded-[100%] right-[-2%] z-[0]`}>
+                    <Image className="max-h-[94px] max-w-[104px] w-full object-cover" src={course?.image} />
                 </Box>
-                <Heading mt='60px' color='white'>Become a {title.split(" ").map(t => t[0].toUpperCase() + t.substring(1)).join(" ")}</Heading>
-                <Heading color='yellow.400' mt='2'>(Extensive Learning Course)<Badge colorScheme='yellow' fontSize={'xl'} borderRadius={'10em'} color='yellow.600' p={'5px 15px'} className='text-lg rounded-lg text-center flex justify-center items-center ml-2'>Full Time</Badge></Heading>
+                <div class="relative flex mt-[50px] items-center justify-center gap-[3px] md:gap-[10px] font-[700] text-[50px] leading-[62px] font-poppins transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 !text-white ">
+                    <BsStars style={{ position: 'relative' }} className='relative' />
+                    Become a {course?.role}
+                </div>
+                <Heading color='yellow' mt='2'>(Extensive Learning Course)<Badge colorScheme='yellow' fontSize={'xl'} borderRadius={'10em'} color='yellow.600' p={'5px 15px'} className='text-lg rounded-lg text-center flex justify-center items-center ml-2'>Full Time</Badge></Heading>
                 <Text className='text-white text-2xl mt-5 max-h-10'>
-                    Become a job-ready {title} in {course.duration} weeks.<br /> Learn at ₹0 upfront fee; pay after placement.
+                    Become a job-ready {title} in {course?.duration} weeks.<br /> Learn at ₹0 upfront fee; pay after placement.
                 </Text>
             </Box>
             <Box className='pt-8 md:pt-6 pb-8 md:pb-0 bg-[#F7F7FF]'>
@@ -31,7 +40,7 @@ const CourseDetail = () => {
                     </div>
                     <div className="max-w-full md:max-w-[192px] flex items-center md:justify-center flex-row md:flex-col py-2 md:py-8 px-6 md:px-0 ml-5">
                         <PiSuitcaseBold className="w-6 md:w-8 h-6 md:h-8" />
-                        <h5 className='font-[700] !text-[18px] leading-[24px] font-poppins transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 hidden md:block !text-ms-red-900 text-center text-[14px] md:text-[18px] md:mt-2 ml-4 md:ml-0'>4000+ hiring<br/> partners</h5>
+                        <h5 className='font-[700] !text-[18px] leading-[24px] font-poppins transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 hidden md:block !text-ms-red-900 text-center text-[14px] md:text-[18px] md:mt-2 ml-4 md:ml-0'>4000+ hiring<br /> partners</h5>
                     </div>
                     <div className="max-w-full md:max-w-[192px] flex items-center md:justify-center flex-row md:flex-col py-2 md:py-8 px-6 md:px-0 ml-5">
                         <AiOutlineThunderbolt className="w-6 md:w-8 h-6 md:h-8" />
@@ -39,19 +48,148 @@ const CourseDetail = () => {
                     </div>
                     <div className="max-w-full md:max-w-[192px] flex items-center md:justify-center flex-row md:flex-col py-2 md:py-8 px-6 md:px-0 ml-5">
                         <BiRupee className="w-6 md:w-8 h-6 md:h-8" />
-                        <h5 className='font-[700] !text-[18px] leading-[24px] font-poppins transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 hidden md:block !text-ms-red-900 text-center text-[14px] md:text-[18px] md:mt-2 ml-4 md:ml-0'>36 LPA Highest<br/> Salary</h5>
+                        <h5 className='font-[700] !text-[18px] leading-[24px] font-poppins transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 hidden md:block !text-ms-red-900 text-center text-[14px] md:text-[18px] md:mt-2 ml-4 md:ml-0'>36 LPA Highest<br /> Salary</h5>
                     </div>
                 </div>
             </Box>
-            <Flex className='flex items-center gap-[24px] font-bold w-[100%]'>
-                <NavLink>Course Details</NavLink>
-                <NavLink>Elegibility</NavLink>
-                <NavLink>Career Path</NavLink>
-                <NavLink>Instructors</NavLink>
-                <NavLink>Curriculum</NavLink>
-                <NavLink>Student Stories</NavLink>
-                <NavLink>FAQ</NavLink>
-            </Flex>
+            <div className="hidden isolate lg:flex items-center mb-[20px] sticky z-[200] h-[88px] bg-white w-full">
+                <div className='flex items-center max-w-[1280px] justify-between mx-auto px-[16px] w-[70%]'>
+                    <Link>Course Details</Link>
+                    <Link>Elegibility</Link>
+                    <Link>Instructors</Link>
+                    <Link>Curriculum</Link>
+                    <Link>Student Stories</Link>
+                    <Link>FAQ</Link>
+                    <Button colorScheme='red'>Apply Now</Button>
+                </div>
+            </div>
+            <div id="" className='max-w-xl mx-auto lg:max-w-7xl mt-[3em]'>
+                <div className='xl:px-[80px] space-y-[24px] lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-8'>
+                    <div className='flex flex-row gap-[14px] items-center md:w-[auto] bg-[#F7F7FF] p-[4px] md:p-[24px] rounded-[16px]'>
+                        <PiMonitor className='text-2xl text-indigo-500' />
+                        <div>
+                            <p style={{ color: "rgb(110, 113, 204)" }} class="font-[700] text-[20px] leading-[28px] font-poppins transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 hidden md:block">Batch Starting</p>
+                            <p class="!font-[600] text-[16px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 md:mt-[8px]">06 November, 2023</p>
+                        </div>
+                    </div>
+                    <div className='flex flex-row gap-[14px] items-center md:w-[auto] bg-[#F7F7FF] p-[4px] md:p-[24px] rounded-[16px]'>
+                        <BiCalendar className='text-2xl text-indigo-500' />
+                        <div>
+                            <p style={{ color: "rgb(110, 113, 204)" }} class="font-[700] text-[20px] leading-[28px] font-poppins transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 hidden md:block">Duration</p>
+                            <p class="!font-[600] text-[16px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 md:mt-[8px]">30 weeks ( 7 months )</p>
+                        </div>
+                    </div>
+                    <div className='flex flex-row gap-[14px] items-center md:w-[auto] bg-[#F7F7FF] p-[4px] md:p-[24px] rounded-[16px]'>
+                        <FaClock className='text-xl text-indigo-500' />
+                        <div>
+                            <p style={{ color: "rgb(110, 113, 204)" }} class="font-[700] text-[20px] leading-[28px] font-poppins transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 hidden md:block">Timings</p>
+                            <p class="!font-[600] text-[16px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 md:mt-[8px]">*11 am to 11 pm<br/>
+                                Monday to Saturday</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id='elegiblity' className='max-w-[1440px] mx-auto px-[16px] lg:px-[80px] py-[16px]'>
+                <div className='text-center'>
+                    <Heading className='mt-[1.5em] text-center'>Minium Criteria</Heading>
+                    <Text className='mt-2 mb-10 text-zinc-500'>You should meet the following requirements to be eligible for this course.</Text>
+                </div>
+                <div className="grid md:gap-[40px] grid-cols-1 md:grid-cols-[repeat(auto-fit,minmax(308px,308px))] md:justify-center">
+                    <div className="w-full h-full flex flex-row md:flex-col gap-[6px] md:justify-center md:text-center mx-auto py-4 md:border border-[#CFD0EE] rounded-[16px]">
+                        <div class="w-fit md:mx-auto p-[8px] rounded-[16px] h-fit bg-[#F7F7FF] font-bold">
+                            <PiCertificateBold className='text-2xl text-indigo-400 font-bold'/>
+                        </div>
+                        <div className="pl-4 md:pl-0 space-y-[6px]">
+                            <p className="!font-[600] text-[14px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 undefined">Qualification</p>
+                            <p className="!font-[400] text-[14px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 whitespace-pre-line !text-neutral-ms-grey-600 text-zinc-500">Graduation (Any Stream)</p>
+                        </div>
+                    </div>
+                    <div className="w-full h-full flex flex-row md:flex-col gap-[6px] md:justify-center md:text-center mx-auto py-4 md:border border-[#CFD0EE] rounded-[16px]">
+                        <div class="w-fit md:mx-auto p-[8px] rounded-[16px] h-fit font-bold bg-[#F7F7FF]">
+                            <FaUser className='text-lg text-indigo-400 font-bold'/>
+                        </div>
+                        <div className="pl-4 md:pl-0 space-y-[6px]">
+                            <p className="!font-[600] text-[14px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 undefined">Age</p>
+                            <p className="!font-[400] text-[14px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 whitespace-pre-line !text-neutral-ms-grey-600 text-zinc-500">Upto 28 years</p>
+                        </div>
+                    </div>
+                    <div className="w-full h-full flex flex-row md:flex-col gap-[6px] md:justify-center md:text-center mx-auto py-4 md:border border-[#CFD0EE] rounded-[16px]">
+                        <div class="w-fit md:mx-auto p-[8px] rounded-[16px] h-fit font-bold bg-[#F7F7FF]">
+                            <BiSolidIdCard className='text-2xl text-indigo-400 font-bold'/>
+                        </div>
+                        <div className="pl-4 md:pl-0 space-y-[6px]">
+                            <p className="!font-[600] text-[14px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 undefined">ID</p>
+                            <p className="!font-[400] text-[14px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 whitespace-pre-line !text-neutral-ms-grey-600 text-zinc-500">Valid Aadhar Card</p>
+                        </div>
+                    </div>
+                    <div className="w-full h-full flex flex-row md:flex-col gap-[6px] md:justify-center md:text-center mx-auto py-4 md:border border-[#CFD0EE] rounded-[16px]">
+                        <div class="w-fit md:mx-auto p-[8px] rounded-[16px] h-fit font-bold bg-[#F7F7FF]">
+                            <BiGlobe className='text-2xl text-indigo-400 font-bold'/>
+                        </div>
+                        <div className="pl-4 md:pl-0 space-y-[6px]">
+                            <p className="!font-[600] text-[14px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 undefined">Internet</p>
+                            <p className="text-zinc-500 !font-[400] text-[14px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 whitespace-pre-line !text-neutral-ms-grey-600">A desktop or laptop with an uninterrupted service connection.</p>
+                        </div>
+                    </div>
+                    <div className="w-full h-full flex flex-row md:flex-col gap-[6px] md:justify-center md:text-center mx-auto py-4 md:border border-[#CFD0EE] rounded-[16px]">
+                        <div class="w-fit md:mx-auto p-[8px] rounded-[16px] h-fit font-bold bg-[#F7F7FF]">
+                            <BiUserVoice className='text-2xl text-indigo-400 font-bold'/>
+                        </div>
+                        <div className="pl-4 md:pl-0 space-y-[6px]">
+                            <p className="!font-[600] text-[14px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 undefined">Communication Skills</p>
+                            <p className="text-zinc-500 !font-[400] text-[14px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 whitespace-pre-line !text-neutral-ms-grey-600">Basic English - speaking, reading and writing</p>
+                        </div>
+                    </div>
+                    <div className="w-full h-full flex flex-row md:flex-col gap-[6px] md:justify-center md:text-center mx-auto py-4 md:border border-[#CFD0EE] rounded-[16px]">
+                        <div class="w-fit md:mx-auto p-[8px] rounded-[16px] h-fit font-bold bg-[#F7F7FF]">
+                            <MdExposurePlus1 className='text-xl text-indigo-400 font-bold'/>
+                        </div>
+                        <div className="pl-4 md:pl-0 space-y-[6px]">
+                            <p className="!font-[600] text-[14px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 undefined">Cibil Score</p>
+                            <p className="text-zinc-500 !font-[400] text-[14px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 whitespace-pre-line !text-neutral-ms-grey-600">650+</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="mb-10 lg:mt-8">
+                <div className="bg-[#f6ede7] pb-10 mt-0 px-5 pt-8 undefined">
+                    <h1 className="block font-poppins text-[24px] text-center font-bold undefined">Admission Process</h1>
+                    <div className='relative'>
+                        <div className="absolute top-[50%] hidden xl:block w-full max-w-[1040px] left-0 right-0 mx-auto border-t border-dashed border-[#CC926E]"></div>
+                        <div className="max-w-[1440px] xl:px-[80px] grid md:grid-cols-[repeat(auto-fit,minmax(350px,1fr))] lg:grid-cols-[repeat(auto-fit,minmax(250px,250px))] bg-extended-ms-brick-50 gap-8 items-center justify-center m-auto mt-8 undefined z-50" >
+                            <div style={{filter:"drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.1)) dropShadow(0px 1px 2px rgba(0, 0, 0, 0.06))"}} className="flex pl-2 gap-x-[16px] lg:pl-4 flex-row w-full min-h-[4rem] bg-white rounded-3xl text-base font-semibold px-5 leading-6 lg:pt-8 lg:min-h-[11rem] lg:flex-col items-center lg:justify-start text-left lg:text-start z-50">
+                                <div className="bg-[#f6ede7] p-[14px] rounded-[16px] h-fit">
+                                    <BiUserCheck class="text-[#d99d75] w-6 h-6 font-extrabold" />
+                                </div>
+                                <p className="!font-[600] text-[16px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 text-left lg:text-center lg:mt-[16px]">Crack the Admissions Test (MSAT)</p>
+                            </div>
+                            <div style={{filter:"drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.1)) dropShadow(0px 1px 2px rgba(0, 0, 0, 0.06))"}} className="flex pl-2 gap-x-[16px] lg:pl-4 flex-row w-full min-h-[4rem] bg-white rounded-3xl text-base font-semibold px-5 leading-6 lg:pt-8 lg:min-h-[11rem] lg:flex-col items-center lg:justify-start text-left lg:text-start z-50">
+                                <div className="bg-[#f6ede7] p-[14px] rounded-[16px] h-fit">
+                                    <MdComputer class="text-[#d99d75] w-6 h-6 font-extrabold" />
+                                </div>
+                                <p className="!font-[600] text-[16px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 text-left lg:text-center lg:mt-[16px]">Choose a course</p>
+                            </div>
+                            <div style={{filter:"drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.1)) dropShadow(0px 1px 2px rgba(0, 0, 0, 0.06))"}} className="flex pl-2 gap-x-[16px] lg:pl-4 flex-row w-full min-h-[4rem] bg-white rounded-3xl text-base font-semibold px-5 leading-6 lg:pt-8 lg:min-h-[11rem] lg:flex-col items-center lg:justify-start text-left lg:text-start z-50">
+                                <div className="bg-[#f6ede7] p-[14px] rounded-[16px] h-fit">
+                                    <AiOutlineCheck class="text-[#d99d75] w-6 h-6 font-extrabold" />
+                                </div>
+                                <p className="!font-[600] text-[16px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 text-left lg:text-center lg:mt-[16px]">Complete KYC</p>
+                            </div>
+                            <div style={{filter:"drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.1)) dropShadow(0px 1px 2px rgba(0, 0, 0, 0.06))"}} className="flex pl-2 gap-x-[16px] lg:pl-4 flex-row w-full min-h-[4rem] bg-white rounded-3xl text-base font-semibold px-5 leading-6 lg:pt-8 lg:min-h-[11rem] lg:flex-col items-center lg:justify-start text-left lg:text-start z-50">
+                                <div className="bg-[#f6ede7] p-[14px] rounded-[16px] h-fit">
+                                    <BiVideo class="text-[#d99d75] w-6 h-6 font-extrabold" />
+                                </div>
+                                <p className="!font-[600] text-[16px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 text-left lg:text-center lg:mt-[16px]">You are ready to join the batch</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='text-center mt-10 flex gap-2 justify-center'>
+                            <Button variant={'outline'} colorScheme='red'>View MSAT DETAILS</Button>
+                            <Button colorScheme='red'>APPLY NOW FOR FREE</Button>
+                        </div>
+                </div>
+            </div>
+            <Sec5 />
         </>
     )
 }
