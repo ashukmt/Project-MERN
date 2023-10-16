@@ -1,15 +1,16 @@
-import { Badge, Box, Button, Card, CardBody, CardHeader, Flex, Heading, Image, Link, Text } from '@chakra-ui/react'
+import { Badge, Box, Button, Heading, Image, Link, Text } from '@chakra-ui/react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router'
 import { FaClock, FaUser, FaUserTie } from "react-icons/fa6";
 import { BiCalendar, BiGlobe, BiIdCard, BiRupee, BiSolidIdCard, BiUser, BiUserCheck, BiUserVoice, BiVideo } from "react-icons/bi";
-import { PiCertificate, PiCertificateBold, PiMonitor, PiSuitcaseBold } from "react-icons/pi";
-import { AiOutlineCheck, AiOutlineIdcard, AiOutlineThunderbolt } from "react-icons/ai";
+import { PiCertificateBold, PiMonitor, PiSuitcaseBold } from "react-icons/pi";
+import { AiOutlineCheck, AiOutlineThunderbolt } from "react-icons/ai";
 import { BsStars } from "react-icons/bs";
-import { GrCertificate, GrPersonalComputer } from "react-icons/gr";
-import TimerComp from './TimerComp';
 import { MdComputer, MdExposurePlus1 } from 'react-icons/md';
 import Sec5 from '../pages/Sec5';
+import Sec4 from '../pages/Sec4';
+import FaqComp from './FaqComp';
+import Alumini from './Alumini';
 
 const CourseDetail = () => {
     const courses = useSelector(state => state.course.courses)
@@ -190,6 +191,9 @@ const CourseDetail = () => {
                 </div>
             </div>
             <Sec5 />
+            <Sec4 />
+            <Alumini />
+            <FaqComp />
         </>
     )
 }
