@@ -16,9 +16,7 @@ function Homes() {
      </div>
        <Sec1/>
       <Sec2/>
-   <div className='w-3/5 m-auto'>
     <Sec3/>
-   </div>
    <Sec4/>
    <Sec6/>
   <Sec5/>

@@ -9,6 +9,7 @@ const { RewardRouter } = require("./routes/Reward.router");
 const { FAQrouter } = require("./routes/FAQ.router");
 const { CourseRouter } = require("./routes/Course.router");
 const { ShareLinkrouter } = require("./routes/ShareLink.router");
+const referralCodeGenerator = require('referral-code-generator')
 
 app.use(cors({
   origin:"*"
@@ -18,10 +19,6 @@ app.use(express.json());
 app.get("/",(req,res)=>{
   res.send("this is base api")
 })
-
-// app.use("/auth",UserRouter) 
-
-
 
 // < This is for Reward ----------------------->
 app.use("/rewards",RewardRouter);

@@ -1,11 +1,13 @@
 import { Box, Flex, Heading, Image, SimpleGrid, Text } from '@chakra-ui/react'
-import React from 'react'
+import React, { useEffect } from 'react'
 import CourseComp from './CourseComp'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { getCourse } from '../redux/courseReducer/action'
 
 
 const CoursePage = () => {
     const courses = useSelector(state=>state.course.courses)
+    
     return (
         <>
             <Image w='100vw' position={'absolute'} zIndex={'-1'} src='utils/bg.png' />

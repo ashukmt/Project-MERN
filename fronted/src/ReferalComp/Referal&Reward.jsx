@@ -14,7 +14,7 @@ import {
     useDisclosure,
     FormControl,
     FormLabel,
-  } from '@chakra-ui/react'
+} from '@chakra-ui/react'
 
 function ReferalReward() {
   const[fname,setFname]=useState("")
@@ -29,7 +29,7 @@ function ReferalReward() {
     })
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = React.useRef()
-    const Reward=useSelector(state=>state.Reward.Rewards)
+    const Reward = useSelector(state => state.Reward.Rewards)
     console.log(Reward)
 
     const PhoneNumber="+917379249116"
@@ -48,52 +48,52 @@ console.log(fname)
     }
 
 
-  return (
-    <div className='py-16' style={{background:"#f2f6ff"}}>
-      <div className="mb-20"> 
-    <h1 className="text-center font-[700] md:text-[55px] leading-20 text-[30px]">
-    Refer and be Rewarded
-      </h1>
-      <h1 className="text-center font-[600] md:text-[30px] leading-40 tracking-wider text-[15px]">
-      Redeem earned coins for the product of your choice.
-      </h1>
-    </div>
-    <div className='grid grid-cols-1 w-3/4 mx-auto md:grid-cols-3 gap-14'>
-    {
-        Reward?.map((Rewrd,i)=>{
-            return <RewardCard {...Rewrd} key={i}/>
-        })
-      }
-    
-    </div>
-    <div className='flex justify-center pt-10'>
-    <Button
-  color="white"
-  py={6}
-  px={6}
-  rounded="8px"
-  fontSize="16px"
-  fontWeight="500"
-  _hover={{ bg: "red.400" }}
-  onClick={onOpen}
-  bg="#ed0331"
->
-  INVITE YOUR FRIENDS
-</Button>
+    return (
+        <div className='py-16' style={{ background: "#f2f6ff" }}>
+            <div className="mb-20">
+                <h1 className="text-center font-[700] md:text-[55px] leading-20 text-[30px]">
+                    Refer and be Rewarded
+                </h1>
+                <h1 className="text-center font-[600] md:text-[30px] leading-40 tracking-wider text-[15px]">
+                    Redeem earned coins for the product of your choice.
+                </h1>
+            </div>
+            <div className='grid grid-cols-1 w-3/4 mx-auto md:grid-cols-3 gap-14'>
+                {
+                    Reward?.map((Rewrd, i) => {
+                        return <RewardCard {...Rewrd} key={i} />
+                    })
+                }
 
-        <Drawer
-        isOpen={isOpen}
-        placement='right'
-        size="lg"
-        onClose={onClose}
-        finalFocusRef={btnRef}
-      >
-        <DrawerOverlay />
-        <DrawerContent>
-          <DrawerCloseButton />
-          <DrawerHeader style={{ fontSize: '2rem', fontWeight: '600' }}>
-  Create your account
-</DrawerHeader>
+            </div>
+            <div className='flex justify-center pt-10'>
+                <Button
+                    color="white"
+                    py={6}
+                    px={6}
+                    rounded="8px"
+                    fontSize="16px"
+                    fontWeight="500"
+                    _hover={{ bg: "red.400" }}
+                    onClick={onOpen}
+                    bg="#ed0331"
+                >
+                    INVITE YOUR FRIENDS
+                </Button>
+
+                <Drawer
+                    isOpen={isOpen}
+                    placement='right'
+                    size="lg"
+                    onClose={onClose}
+                    finalFocusRef={btnRef}
+                >
+                    <DrawerOverlay />
+                    <DrawerContent>
+                        <DrawerCloseButton />
+                        <DrawerHeader style={{ fontSize: '2rem', fontWeight: '600' }}>
+                            Create your account
+                        </DrawerHeader>
 
 
           <DrawerBody>
@@ -127,12 +127,12 @@ console.log(fname)
 </FormControl>
           </DrawerBody>
 
-         
-        </DrawerContent>
-      </Drawer>
-      </div>
-    </div>
-  )
+
+                    </DrawerContent>
+                </Drawer>
+            </div>
+        </div>
+    )
 }
 
 export default ReferalReward
