@@ -47,7 +47,7 @@ function Referal() {
       const PostData = await axios.post("http://localhost:8080/sharelink/sharereferal", { ...refform });
      console.log(PostData.status)
       if (PostData.status === "200") {
-        const message = "https://masaischool.com";
+        const message = `https://masaiClone.com/${7796}`;
         const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
         window.open(url, "_blank");
       } else if (PostData.status === "409") {
