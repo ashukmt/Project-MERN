@@ -7,6 +7,7 @@ import Homes from './components/Homes'
 import EventDetails from './Events/EventDetails'
 import Referal from './ReferalComp/referal'
 import Register from './Events/Register'
+import LeaderBr_Invite_Referal from './ReferalComp/LeaderBr&Invite&Referal'
 
 const AllRoutes = () => {
   return (
@@ -20,7 +21,7 @@ const AllRoutes = () => {
         <Route path='/'element={<Homes/>}/>
         <Route path='/courses/:idx' element={<CourseDetail />} />
         <Route path='/fees' element={<Referal/>} />
-        
+        <Route path='/Profile' element={<LeaderBr_Invite_Referal/>}/>
     </Routes>
   )
 }
