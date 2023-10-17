@@ -10,7 +10,8 @@ const { FAQrouter } = require("./routes/FAQ.router");
 const { CourseRouter } = require("./routes/Course.router");
 const { ShareLinkrouter } = require("./routes/ShareLink.router");
 const { UserRouter } = require("./routes/User.router");
-const passport = require("passport");
+
+const {passport} = require("./config/google-oauth")
 
 const app = express();
 
@@ -18,13 +19,21 @@ app.use(express.json());
 // app.use(passport.initialize())
 // app.use(passport.session())
 app.use(cors({
-  origin:"*",
-  credentials: true
+  origin:"*"
 }))
 
 app.get("/",(req,res)=>{
   res.send("this is base api")
 })
+
+app.get('/auth/google',
+  passport.authenticate('google', { scope: ['profile','email','phone'] }));
+
+app.get('/auth/google/callback', 
+  passport.authenticate('google', { failureRedirect: '/login' }),
+  function(req, res) {
+    res.redirect('/');
+  });
 
 app.use("/rewards",RewardRouter);
 app.use("/faqR",FAQrouter)

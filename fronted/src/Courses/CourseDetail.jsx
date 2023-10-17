@@ -1,5 +1,5 @@
 import { Badge, Box, Button, Heading, Image, Text } from '@chakra-ui/react'
-import { Link } from "react-scroll";
+import { Link, animateScroll } from "react-scroll";
 import { useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router'
 import { FaClock, FaUser, FaUserTie } from "react-icons/fa6";
@@ -12,12 +12,16 @@ import Sec5 from '../pages/Sec5';
 import Sec4 from '../pages/Sec4';
 import FaqComp from './FaqComp';
 import Alumini from './Alumini';
+import { useEffect } from 'react';
 
 const CourseDetail = () => {
     const courses = useSelector(state => state.course.courses)
     const { title } = useParams()
     const course = courses.filter((c) => c.title === title?.replaceAll("-", " "))[0]
     const navigateTo = useNavigate()
+    useEffect(() => {
+        animateScroll.scrollToTop({ smooth: true })
+    }, [])
     return (
         <>
             <Box className={`bg-${course?.color}-300 relative overflow-hidden text-center p-2`} h='300px' >
@@ -225,7 +229,7 @@ const CourseDetail = () => {
                         </div>
                     </div>
                     <div className='text-center mt-10 flex gap-2 justify-center'>
-                        <Button onClick={()=>navigateTo('/msat')} variant={'outline'} colorScheme='red'>View MSAT DETAILS</Button>
+                        <Button onClick={() => navigateTo('/msat')} variant={'outline'} colorScheme='red'>View MSAT DETAILS</Button>
                         <Button colorScheme='red'>APPLY NOW FOR FREE</Button>
                     </div>
                 </div>
