@@ -54,8 +54,8 @@ const Register = () => {
   return (
     <div>
       <div className="">
-        <div className="register_upSec p-10">
-          <div className="left_upSec">
+        <div className="register_upSec flex ">
+          <div className="left_upSec p-10 pl-20">
             <div className="up_text flex">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -76,21 +76,22 @@ const Register = () => {
                 ></polygon>
               </svg>
 
-              <p className="text-2xl font-semibold ">
+              <p className="text-3xl font-semibold ">
                 You have registered successfully!
               </p>
             </div>
-            <div className="main_descDiv">
+            <div className="main_descDiv mt-4">
               <p className="text-4xl font-bold">Explore how</p>
               <p className="text-4xl font-bold main_descP">
                 {myRegisterData.main_desc}
               </p>
-              <p>By {myRegisterData.speaker_post}</p>
+              <p className="mt-3">By {myRegisterData.speaker_post}</p>
             </div>
 
             <div className="flex py-3">
               <div>
-              <svg className=""
+                <svg
+                  className=""
                   xmlns="http://www.w3.org/2000/svg"
                   enable-background="new 0 0 24 24"
                   viewBox="0 0 24 24"
@@ -116,13 +117,14 @@ const Register = () => {
                   ></path>
                 </svg>
               </div>
-              <div className="sag21">
-              {myRegisterData.date}th, {myRegisterData.month}
+              <div className="sag21 font-bold">
+                {myRegisterData.date}th, {myRegisterData.month}
               </div>
               <div class="inline-block h-[30px] min-h-[1em] w-0.5 self-stretch bg-slate-700 opacity-100 dark:opacity-20 mx-4"></div>
 
               <div className="">
-              <svg className="sag2"
+                <svg
+                  className="sag2"
                   xmlns="http://www.w3.org/2000/svg"
                   enable-background="new 0 0 24 24"
                   viewBox="0 0 24 24"
@@ -139,46 +141,98 @@ const Register = () => {
                 </svg>
               </div>
 
-              <div className="ml-2">
-              {myRegisterData.start_time} {myRegisterData.type1} {"-"}  {myRegisterData.end_time} {myRegisterData.type2}
+              <div className="ml-2 timeDuration_div font-bold">
+                {myRegisterData.start_time} {myRegisterData.type1} {"-"}{" "}
+                {myRegisterData.end_time} {myRegisterData.type2}
               </div>
+            </div>
 
-  </div>
-
-            <div className="timer flex">
-              <div className="flex flex-col justify-center text-center p-4 px-6 day_block ">
-                <p className="text-lg font-bold">{timeRemaining.days}</p>
-                <p className="text-lg font-bold">Days</p>
+            <div className="timer flex ">
+              <div className="flex flex-col justify-center text-center p-4 px-7 day_block ">
+                <p className="text-lg font-bold text-gray-500">
+                  {timeRemaining.days}
+                </p>
+                <p className="text-lg font-bold text-red-500">Days</p>
               </div>
               <div>
-                <p className="text-2xl font-bold decoration-red-500 justify-center text-center p-4">:</p>
+                <p className="text-4xl font-bold text-gray-500 justify-center text-center p-4">
+                  :
+                </p>
               </div>
               <div className="flex flex-col justify-center text-center p-4 px-6  hour_block">
-                <p className="text-lg font-bold">{timeRemaining.hours}</p>
-                <p className="text-lg font-bold">Hours</p>
+                <p className="text-lg font-bold text-gray-500">
+                  {timeRemaining.hours}
+                </p>
+                <p className="text-lg font-bold text-red-500">Hours</p>
               </div>
               <div>
-                <p className="text-2xl font-bold decoration-red-500 justify-center text-center p-4">:</p>
+                <p className="text-4xl font-bold text-gray-500 justify-center text-center p-4">
+                  :
+                </p>
               </div>
-              <div className="flex flex-col justify-center text-center p-4 px-6  min_block">
-                <p className="text-lg font-bold">{timeRemaining.minutes}</p>
-                <p className="text-lg font-bold">Mins</p>
+              <div className="flex flex-col justify-center text-center p-4 px-7  min_block">
+                <p className="text-lg font-bold text-gray-500 ">
+                  {timeRemaining.minutes}
+                </p>
+                <p className="text-lg font-bold text-red-500">Mins</p>
               </div>
               <div>
-                <p className="text-2xl font-bold decoration-red-500 flex justify-center text-center p-4">:</p>
+                <p className="text-4xl font-bold text-gray-500 flex justify-center text-center p-4">
+                  :
+                </p>
               </div>
 
-              <div className="flex flex-col justify-center text-center p-4 px-6  secs_block">
-                <p className="text-lg font-bold">{timeRemaining.seconds}</p>
-                <p className="text-lg font-bold">Secs</p>
+              <div className="flex flex-col justify-center text-center p-4 px-8  secs_block">
+                <p className="text-lg font-bold text-gray-500">
+                  {timeRemaining.seconds}
+                </p>
+                <p className="text-lg font-bold text-red-500">Secs</p>
               </div>
             </div>
           </div>
-          <div className="right_upSec"></div>
+          <div className="right_upSec">
+            <img className="" width={700} src={myRegisterData.instructor_img} />
+          </div>
         </div>
 
-        <div className="register_wtSec">
-          <h1>register_wtSec</h1>
+        <div className="register_wtSec mt-5">
+          <div className="flex">
+            <div>
+              <svg
+                
+                xmlns="http://www.w3.org/2000/svg"
+                // xmlns:xlink="http://www.w3.org/1999/xlink"
+                // xmlns:svgjs="http://svgjs.com/svgjs"
+                id="SvgjsSvg1026"
+                width="50"
+                height="50"
+                version="1.1"
+              >
+                <defs id="SvgjsDefs1027" />
+                <g id="SvgjsG1028">
+                  <svg
+                  
+                    xmlns="http://www.w3.org/2000/svg"
+                    enable-background="new 0 0 24 24"
+                    viewBox="0 0 24 24"
+                    width="50"
+                    height="50"
+                  >
+                    <path
+                      d="M16.6 14c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.7-.3-1.4-.7-2-1.2-.5-.5-1-1.1-1.4-1.7-.1-.2 0-.4.1-.5.1-.1.2-.3.4-.4.1-.1.2-.3.2-.4.1-.1.1-.3 0-.4-.1-.1-.6-1.3-.8-1.8-.1-.7-.3-.7-.5-.7h-.5c-.2 0-.5.2-.6.3-.6.6-.9 1.3-.9 2.1.1.9.4 1.8 1 2.6 1.1 1.6 2.5 2.9 4.2 3.7.5.2.9.4 1.4.5.5.2 1 .2 1.6.1.7-.1 1.3-.6 1.7-1.2.2-.4.2-.8.1-1.2l-.4-.2m2.5-9.1C15.2 1 8.9 1 5 4.9c-3.2 3.2-3.8 8.1-1.6 12L2 22l5.3-1.4c1.5.8 3.1 1.2 4.7 1.2 5.5 0 9.9-4.4 9.9-9.9.1-2.6-1-5.1-2.8-7m-2.7 14c-1.3.8-2.8 1.3-4.4 1.3-1.5 0-2.9-.4-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3c-2.4-4-1.2-9 2.7-11.5S16.6 3.7 19 7.5c2.4 3.9 1.3 9-2.6 11.4"
+                      fill="#114b5f"
+                      class="color000 svgShape"
+                    />
+                  </svg>
+                </g>
+              </svg>
+            </div>
+            <div>
+              <p className="text-xl font-bold mt-3 ml-3">
+                Join this event’s Whatsapp Group to get
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="register_aboutSec">
@@ -189,8 +243,34 @@ const Register = () => {
           <h1>register_evtDescSec</h1>
         </div>
 
-        <div className="register_speakerSec">
-          <h1>register_speakerSec</h1>
+        <div className="intrstuctor_desc flex justify-center">
+          <div className="flex inside_div justify-center">
+            <div className="about_event">
+              <p className="font-sans">Know Your Speaker</p>
+              <h1 className="font-sans text-xl mt-2 md:text-2xl font-bold">
+                Meet
+              </h1>
+              <p className="font-sans text-3xl mt-2 font-bold">
+                {myRegisterData.speaker}
+              </p>
+            </div>
+
+            <div class="inline-block h-[250px] min-h-[1em] w-0.5 self-stretch bg-slate-700 opacity-100 dark:opacity-20 ml-14"></div>
+
+            <div className="sideAbout_div">
+              <p className="font-medium text-lg mt-20">
+                {myRegisterData.instructor_desc}
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <img
+              src={myRegisterData.instructor_img}
+              width={300}
+              alt="instructor_img"
+            />
+          </div>
         </div>
       </div>
     </div>

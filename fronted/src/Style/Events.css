@@ -217,11 +217,11 @@
 
 .register_upSec{
     background-color:#d8d9ef ;
-    border: 2px solid;
+    /* border: 2px solid; */
 }
 
 .main_descDiv{
-  width: 20%;
+  width: 100%;
 }
 
 .main_descP:nth-child(2){
@@ -269,7 +269,32 @@
 }
 
 .sag21{
-   margin-left:-18% ;
+    margin-left: -30%;
+    margin-top: 3px;
+}
+
+.right_upSec{
+    /* width: 30%; */
+    /* margin-left: 20%; */
+    padding-right: 5%;
+    margin-top: -3%;
+}
+
+.left_upSec{
+    width: 100%;
+}
+
+.timeDuration_div{
+    margin-top: 3px;
+}
+
+.register_wtSec{
+    border: 1px solid rgb(61, 61, 211);
+}
+
+.svgShape{
+    width: 200%;
+    /* text-emphasis-color: rgb(125, 234, 125); */
 }
 
 
