@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
+import { FaBeer } from 'react-icons/fa';
+import RewardLeaderBCard from "./RewardLeaderBCard";
+import { useSelector } from "react-redux";
+
 function Invite() {
   const [copied, setCopied] = useState(false);
   const otherCopy = () => setCopied(true);
+  const UserData = useSelector(state => state.Reward.UserData)
+    console.log(UserData)
   return (
-    <div>
-            <div className="pl-4 pb-8 pt-4 rounded-[10px] mt-4" style={{width:"50%" ,boxShadow:"rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"}} >
+    <div className="flex items-center gap-10" style={{width:"70%", margin:"auto"}}>
+               <div>
+            <div className="px-4 pb-8 pt-4 rounded-[10px]" style={{boxShadow:"rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"}} >
       <h1 className="text-left pb-4 font-[700] md:text-[16px] leading-40 tracking-wider text-[#777bf2] text-[15px]">
         Refer Friends and earn rewards while they start their journey at Masai!
       </h1>
@@ -96,7 +103,7 @@ function Invite() {
       
       
     </div>
-    <div className="flex justify-center py-4" style={{width:"50%"}}>
+    <div className="flex justify-center py-4" >
     <div className="bg-[#ffe180] px-10 py-2 rounded-[10px] mt-[-40px]">
     <CopyToClipboard onCopy={otherCopy} text='grm445'>
         <span>grm445<button className="bg-[#3670e4] p-[5px] ml-2 px-4 text-[white] text-[14px] font-[600] rounded-[10px]">COPY CODE</button></span>
@@ -105,7 +112,20 @@ function Invite() {
     </div>
       
       </div>
+
     </div>
+    <div className="mt-[-35px] py-6 rounded-[10px]" style={{boxShadow:"rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"}}>
+    <h1 className="text-center text-left font-[700] md:text-[16px] leading-40 tracking-wider text-[#777bf2] text-[15px]">Current Leaderboard</h1>
+    {
+      UserData?.map((el,i)=>{
+        return   <RewardLeaderBCard key={i} {...el} />
+      })
+    }
+     
+
+    </div>
+    </div>
+ 
    
   );
 }
