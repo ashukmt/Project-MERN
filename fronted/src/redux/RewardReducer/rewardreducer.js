@@ -87,6 +87,34 @@ const iniState = {
           "Que":"What all courses can I refer people to?",
           "Ans":"You can refer people to all Masai courses, according to the eligibility of the referee."
         }
+      ],
+
+      UserData:[
+        {
+          "Name":"Tushar Sapate",
+          "Coin":4000,
+        },
+        {
+          "Name":"Tushar Sapate",
+          "Coin":4000,
+        },
+        {
+          "Name":"Tushar Sapate",
+          "Coin":4000,
+        },
+        {
+          "Name":"Tushar Sapate",
+          "Coin":4000,
+        },
+        {
+          "Name":"Tushar Sapate",
+          "Coin":4000,
+        },
+        {
+          "Name":"Tushar Sapate",
+          "Coin":4000,
+        }
+      
       ]
 }
 

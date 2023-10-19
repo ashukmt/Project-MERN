@@ -7,7 +7,7 @@ function Leaderboard() {
   const [page,setPage]=useState(1)
   return (
     <div>
-      <div className="w-100" style={{width:"100%"}} >
+      {/* <div className="w-100" style={{width:"100%"}} >
        
           <div className="flex"  style={{ border: "1px solid red", width: "100%" }}>
             <div>
@@ -34,12 +34,13 @@ function Leaderboard() {
           </div>
         
         <div>
-        {page===1?<Invite/>:<></>}
+       
        {page===2?<RewardsLeaderBoards/>:<></>}
        {page===3?<Profile_Rewards/>:<></>}
       
         </div>
-      </div>
+      </div> */}
+      <Invite/>
     </div>
   );
 }
