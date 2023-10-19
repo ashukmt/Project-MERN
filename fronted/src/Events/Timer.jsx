@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Timer = ({myData}) => {
   const [timeRemaining, setTimeRemaining] = useState({
@@ -7,6 +7,8 @@ const Timer = ({myData}) => {
     minutes: 0,
     seconds: 0,
   }); 
+
+  const intervalIdRef = useRef(null);
 
   const year_num = parseInt(myData?.year);
   const monthInNum = parseInt(myData?.month_num);
@@ -44,10 +46,11 @@ const Timer = ({myData}) => {
     };
 
     intervalId = setInterval(updateCountdown, 1000);
+    // intervalIdRef.current = intervalId;
     updateCountdown();
 
     return () => clearInterval(intervalId);
-  }, [timeRemaining]);
+  }, [targetDate]);
 
   return (
     <div>
