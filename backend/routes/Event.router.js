@@ -20,6 +20,10 @@ EventRouter.post("/addevent", async (req, res) => {
     speaker,
     instructor_desc,
     instructor_img,
+    btn,
+    main_desc,
+    reg_desc,
+    speaker_post
   } = req.body;
 
   const new_event = await new EventModel({
@@ -38,6 +42,10 @@ EventRouter.post("/addevent", async (req, res) => {
     speaker,
     instructor_desc,
     instructor_img,
+    btn,
+    main_desc,
+    reg_desc,
+    speaker_post
   });
 
   new_event.save();
@@ -82,6 +90,16 @@ EventRouter.get("/getevents/:eventID", async (req, res) => {
   const one_event = await EventModel.findOne({ _id: eventID });
   res.send({ one_event });
 });
+
+EventRouter.get("/registerevents/:eventID", async (req, res) => {
+  const { eventID } = req.params;
+  const register_data = await EventModel.findOne({ _id: eventID });
+  res.send({ register_data });
+});
+
+
+
+
 
 module.exports = {
   EventRouter,

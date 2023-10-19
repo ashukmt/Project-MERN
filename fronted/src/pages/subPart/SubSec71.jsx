@@ -4,7 +4,7 @@ import "../../Style/con71.css";
 const SubSec71 = () => {
   const [curSlide, setCurSlide] = useState(0);
   const slides = [
-    "https://www.youtube.com/embed/4GRpdIV5DAQ?si=qYhaw6SShDlYq6YC",
+    // "https://www.youtube.com/embed/4GRpdIV5DAQ?si=qYhaw6SShDlYq6YC",
     "https://source.unsplash.com/random?landscape,cars",
     "https://source.unsplash.com/random?landscape,night",
     "https://source.unsplash.com/random?landscape,city",
@@ -30,9 +30,9 @@ const SubSec71 = () => {
           className="slide7"
           style={{ transform: `translateX(${100 * (indx - curSlide)}%)` }}
         >
-          {/* <img src={slide} alt="" /> */}
+          <img src={slide} alt="" />
           {/* <video src={slide}></video> */}
-          <iframe
+          {/* <iframe
            width={600}
            height={400}
             src={slide}
@@ -40,7 +40,7 @@ const SubSec71 = () => {
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
-          ></iframe>
+          ></iframe> */}
         </div>
       ))}
       <button className="btn7 btn-prev7" onClick={prevSlide}>

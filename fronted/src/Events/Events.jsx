@@ -54,6 +54,11 @@ const Events = () => {
     navigate(`/event/getevents/${id}`);
   };
 
+  const redirect_register = (id) => {
+    navigate(`/event/registerevents/${id}`);
+  };
+
+  console.log("random console");
  
   return (
     <div>
@@ -201,13 +206,21 @@ const Events = () => {
             </div>
 
             <div className="rec_div">
-              <button
+              {
+                elem.btn == "RECORDING" ? <button
                 type="button"
                 onClick={() => redirect_details(elem._id)}
                 class="text-white bg-red-700 hover:bg-red-500  font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-500 focus:outline-none "
               >
-                RECORDING
+                {elem.btn}
+              </button> : <button
+                type="button"
+                onClick={() => redirect_register(elem._id)}
+                class="text-white bg-red-700 hover:bg-red-500  font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-500 focus:outline-none "
+              >
+                {elem.btn}
               </button>
+              }
             </div>
           </div>
         </div>
