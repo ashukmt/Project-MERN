@@ -62,7 +62,7 @@ const Events = () => {
  
   return (
     <div>
-      <div className="cont" style={{ minHeight: "510px" }}>
+      <div className="cont">
         <div>
           <h1 className="font-bold text-5xl pt-20 head">
             Webinars & Masterclasses

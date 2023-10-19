@@ -1,0 +1,1 @@
+export const GETEVENT = "GETEVENT";

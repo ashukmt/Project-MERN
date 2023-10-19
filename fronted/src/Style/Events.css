@@ -2,7 +2,7 @@
 
 .cont{
     background-color: #F2F6FF;
-    
+    min-height: 510px;
 }
 
 .head{
@@ -290,13 +290,41 @@
 
 .register_wtSec{
     border: 1px solid rgb(61, 61, 211);
+    border-radius: 10px;
+    width: 92%;
+    margin: auto;
+    margin-top: 3%;
+    margin-bottom: 30px;
 }
+
 
 .svgShape{
     width: 200%;
     /* text-emphasis-color: rgb(125, 234, 125); */
 }
 
+.register_AboutDesc{
+    width: 90%;
+    margin: auto;
+    margin-top: 3%;
+}
 
+.Register_sideAbout_div{
+    width: 50%;
+    margin-left: 10%;
+    margin-top: 5%;
+}
 
+.register_evtDescSec{
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 92%;
+    background-color: #F2F6FF;
+    margin: auto;
+    margin-bottom: 30px;
+}
 
+.register_head{
+    margin-top: 1%;
+    margin-left: 35%;
+}
