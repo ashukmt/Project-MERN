@@ -2,11 +2,13 @@ import { configureStore } from "@reduxjs/toolkit"
 import thunk from "redux-thunk"
 import { courseReducer } from "./courseReducer/courseReducer"
 import { rewardReducer } from "./RewardReducer/rewardreducer"
+import { eventReducer } from "./eventReducer/eventReducer"
 
 export const store = configureStore({
     reducer: {
         course: courseReducer,
-        Reward: rewardReducer
+        Reward: rewardReducer,
+        events : eventReducer
     },
     middleware: [thunk]
 })
