@@ -10,6 +10,8 @@ import MsatDetails from './Courses/MsatDetails'
 import { animateScroll } from 'react-scroll'
 import Register from './Events/Register'
 import LeaderBr_Invite_Referal from './ReferalComp/LeaderBr&Invite&Referal'
+import StartMsat from './Courses/StartMsat'
+import RegisterMsat from './Courses/RegisterMsat'
 
 const AllRoutes = () => {
   useEffect(()=>{
@@ -23,10 +25,10 @@ const AllRoutes = () => {
         <Route path='/events' element={<Events/>}/>
         <Route path='/event/getevents/:id' element={<EventDetails/>} />
         <Route path='/event/registerevents/:id' element={<Register/>} />
-        <Route path='/'element={<Homes/>}/>
-        <Route path='/courses/:idx' element={<CourseDetail />} />
         <Route path='/fees' element={<Referal/>} />
         <Route path='/msat' element={<MsatDetails />} />
+        <Route path='/msat/apply' element={<RegisterMsat />} />
+        <Route path='/msat/test' element={<StartMsat />} />
         <Route path='/Profile' element={<LeaderBr_Invite_Referal/>}/>
     </Routes>
   )

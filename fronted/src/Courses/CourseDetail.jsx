@@ -105,7 +105,7 @@ const CourseDetail = () => {
                     >
                         FAQ
                     </Link>
-                    <Button colorScheme='red'>Apply Now</Button>
+                    <Button onClick={()=>navigateTo('/msat/apply')} colorScheme='red'>Apply Now</Button>
                 </div>
             </div>
             <div id="course" className='max-w-xl mx-auto lg:max-w-7xl mt-[3em]'>
@@ -230,7 +230,7 @@ const CourseDetail = () => {
                     </div>
                     <div className='text-center mt-10 flex gap-2 justify-center'>
                         <Button onClick={() => navigateTo('/msat')} variant={'outline'} colorScheme='red'>View MSAT DETAILS</Button>
-                        <Button colorScheme='red'>APPLY NOW FOR FREE</Button>
+                        <Button onClick={()=> navigateTo('/msat/apply')} colorScheme='red'>APPLY NOW FOR FREE</Button>
                     </div>
                 </div>
             </div>
