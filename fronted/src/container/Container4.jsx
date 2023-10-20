@@ -40,12 +40,14 @@ export default function Container4() {
           <img
             src="https://www.psohub.com/hubfs/PSOHUB_ProjectManagement_pillar_handoff.svg"
             alt=""
+            width={370}
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src="https://img.freepik.com/free-vector/job-interview-conversation_74855-7566.jpg"
             alt=""
+            width={370}
           />
         </SwiperSlide>
         
@@ -53,12 +55,14 @@ export default function Container4() {
           <img
             src="https://media.istockphoto.com/id/1411195926/photo/project-manager-working-on-laptop-and-updating-tasks-and-milestones-progress-planning-with.webp?b=1&s=170667a&w=0&k=20&c=4mcBY_ZnWdd7lAPw6sWGLXGdvFZt2h3b-6WHy5Vcvkk="
             alt=""
+            width={370}
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src="https://media.istockphoto.com/id/1335717953/photo/project-manager-working-on-computer-at-the-office-concept-with-icons-of-management-areas-such.jpg?s=612x612&w=0&k=20&c=HKKel0F9p7u9JL54sDOtYOuR1yVv81LA2ISHmuU7mdM="
             alt=""
+            width={370}
           />
         </SwiperSlide>
         
@@ -66,6 +70,7 @@ export default function Container4() {
           <img
             src="https://media.istockphoto.com/id/1013820274/photo/project-management-scheduling-concept-with-gantt-chart-planning-with-tasks-and-milestones-to.jpg?s=612x612&w=0&k=20&c=25sBJbvcqTJgLroPFOh8hKEykJhoAnV-7a-vcNAYYrk="
             alt=""
+            width={370}
           />
         </SwiperSlide>
 

@@ -26,25 +26,25 @@ export default function SubSec4() {
          
          <div className=' '>
            
-            <div className='mb-96 mt-36'>
+            <div className='mb-32 mt-36'>
             <div className='font-bold text-xl'>
             100% <span className='text-red-500'>Live</span> Distance Learning
             </div>
             <p>India’s Only Live Tech-Learning Course With Tier 1 Instructors. Get Real-Time Feedback, Interactive Sessions & A Personalised Learning Experience.</p>
             </div>
-            <div className='mb-96'>
+            <div className='mb-32'>
             <div className='font-bold text-xl'>
             Generative <span className='text-red-500'>AI Integrated</span> Program
             </div>
             <p>Harness & Implement The Power Of AI In Coding & Data Analytics. What’s More? Use Custom AI Tools To Enhance Placement Preparation.</p>
             </div>
-            <div className='mb-96'>
+            <div className='mb-32'>
             <div className='font-bold text-xl'>
             <span className='text-red-400'>  Industry Ready</span> Curriculum
             </div>
             <p>Our Curriculum Is Regularly Updated Through Industry Feedback. In-Demand Specialisations Are Added To Aid Our Students Launch Sustainable Careers.</p>
             </div>
-            <div className='mb-96'>
+            <div className='mb-32'>
             <div className='font-bold text-xl'>
             Focus On Learning <span className='text-red-400'>Agility</span>
             </div>
