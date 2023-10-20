@@ -62,7 +62,7 @@ const Events = () => {
  
   return (
     <div>
-      <div className="cont" style={{ minHeight: "510px" }}>
+      <div className="cont">
         <div>
           <h1 className="font-bold text-5xl pt-20 head">
             Webinars & Masterclasses
@@ -136,7 +136,8 @@ const Events = () => {
         <div className="parent">
           <div className="child-1 border">
             <h3 className=".text-secondary">{elem.date}</h3>
-            <p className="font-bold ">{elem.month}</p>
+            <p className="font-bold flex justify-center month_p">{elem.month}</p>
+            
           </div>
 
           <div className="child-2">

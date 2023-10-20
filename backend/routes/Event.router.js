@@ -23,7 +23,9 @@ EventRouter.post("/addevent", async (req, res) => {
     btn,
     main_desc,
     reg_desc,
-    speaker_post
+    speaker_post,
+    month_num,
+    year
   } = req.body;
 
   const new_event = await new EventModel({
@@ -45,7 +47,9 @@ EventRouter.post("/addevent", async (req, res) => {
     btn,
     main_desc,
     reg_desc,
-    speaker_post
+    speaker_post,
+    month_num,
+    year
   });
 
   new_event.save();

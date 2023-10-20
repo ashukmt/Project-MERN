@@ -19,7 +19,9 @@ instructor_img :  {type:String},
 btn :{type:String},
 main_desc : {type:String},
 reg_desc : {type:String},
-speaker_post:{type:String}
+speaker_post:{type:String},
+month_num : {type:String},
+year : {type:String}
 })
 
 const EventModel = mongoose.model("event",eventSchema);
