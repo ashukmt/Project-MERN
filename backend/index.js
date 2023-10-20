@@ -1,34 +1,47 @@
 const express = require("express");
-const { connection } = require("./config/db");
-// const { UserRouter } = require("./routes/User.router");
-const { EventRouter } = require("./routes/Event.router");
-require("dotenv").config();
-const app = express();
 const cors = require("cors");
+
+require("dotenv").config();
+
+const { connection } = require("./config/db");
+const { EventRouter } = require("./routes/Event.router");
 const { RewardRouter } = require("./routes/Reward.router");
 const { FAQrouter } = require("./routes/FAQ.router");
 const { CourseRouter } = require("./routes/Course.router");
 const { ShareLinkrouter } = require("./routes/ShareLink.router");
-const referralCodeGenerator = require('referral-code-generator')
+const { UserRouter } = require("./routes/User.router");
 
+const {passport} = require("./config/google-oauth")
+
+const app = express();
+
+app.use(express.json());
+// app.use(passport.initialize())
+// app.use(passport.session())
 app.use(cors({
   origin:"*"
 }))
-app.use(express.json());
 
 app.get("/",(req,res)=>{
   res.send("this is base api")
 })
 
-// < This is for Reward ----------------------->
-app.use("/rewards",RewardRouter);
+app.get('/auth/google',
+  passport.authenticate('google', { scope: ['profile','email','phone'] }));
 
-// <----------- FAQ Database Route--------->
+app.get('/auth/google/callback', 
+  passport.authenticate('google', { failureRedirect: '/login' }),
+  function(req, res) {
+    res.redirect('/');
+  });
+
+app.use("/rewards",RewardRouter);
 app.use("/faqR",FAQrouter)
 app.use("/event",EventRouter);
 app.use("/course",CourseRouter);
 app.use("/sharelink",ShareLinkrouter);
- 
+app.use("/user",UserRouter)
+
 app.listen(process.env.PORT,async()=>{  
     try{
       await connection   
@@ -37,5 +50,5 @@ app.listen(process.env.PORT,async()=>{
     catch(err){
         console.log(err)
     }
-    console.log("Listening on port")
+    console.log(`Listening on port ${process.env.PORT}`)
 })

@@ -1,21 +1,27 @@
-import { Badge, Box, Button, Card, CardBody, CardHeader, Flex, Heading, Image, Link, Text } from '@chakra-ui/react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router'
+import { Badge, Box, Button, Heading, Image, Text } from '@chakra-ui/react'
+import { Link, animateScroll } from "react-scroll";
+import { useSelector } from 'react-redux'
+import { useNavigate, useParams } from 'react-router'
 import { FaClock, FaUser, FaUserTie } from "react-icons/fa6";
-import { BiCalendar, BiGlobe, BiIdCard, BiRupee, BiSolidIdCard, BiUser, BiUserCheck, BiUserVoice, BiVideo } from "react-icons/bi";
-import { PiCertificate, PiCertificateBold, PiMonitor, PiSuitcaseBold } from "react-icons/pi";
-import { AiOutlineCheck, AiOutlineIdcard, AiOutlineThunderbolt } from "react-icons/ai";
+import { BiCalendar, BiGlobe, BiRupee, BiSolidIdCard, BiUserCheck, BiUserVoice, BiVideo } from "react-icons/bi";
+import { PiCertificateBold, PiMonitor, PiSuitcaseBold } from "react-icons/pi";
+import { AiOutlineCheck, AiOutlineThunderbolt } from "react-icons/ai";
 import { BsStars } from "react-icons/bs";
-import { GrCertificate, GrPersonalComputer } from "react-icons/gr";
-import TimerComp from './TimerComp';
 import { MdComputer, MdExposurePlus1 } from 'react-icons/md';
 import Sec5 from '../pages/Sec5';
+import Sec4 from '../pages/Sec4';
+import FaqComp from './FaqComp';
+import Alumini from './Alumini';
+import { useEffect } from 'react';
 
 const CourseDetail = () => {
     const courses = useSelector(state => state.course.courses)
     const { title } = useParams()
     const course = courses.filter((c) => c.title === title?.replaceAll("-", " "))[0]
-
+    const navigateTo = useNavigate()
+    useEffect(() => {
+        animateScroll.scrollToTop({ smooth: true })
+    }, [])
     return (
         <>
             <Box className={`bg-${course?.color}-300 relative overflow-hidden text-center p-2`} h='300px' >
@@ -54,16 +60,55 @@ const CourseDetail = () => {
             </Box>
             <div className="hidden isolate lg:flex items-center mb-[20px] sticky z-[200] h-[88px] bg-white w-full">
                 <div className='flex items-center max-w-[1280px] justify-between mx-auto px-[16px] w-[70%]'>
-                    <Link>Course Details</Link>
-                    <Link>Elegibility</Link>
-                    <Link>Instructors</Link>
-                    <Link>Curriculum</Link>
-                    <Link>Student Stories</Link>
-                    <Link>FAQ</Link>
-                    <Button colorScheme='red'>Apply Now</Button>
+                    <Link
+                        to={"course"}
+                        smooth={true}
+                        duration={500}
+                        offset={-90}
+                        className='cursor-pointer hover:bg-slate-200 p-2 rounded-md'
+                    >
+                        Course Details
+                    </Link>
+                    <Link
+                        to={"elegiblity"}
+                        smooth={true}
+                        duration={500}
+                        offset={-90}
+                        className='cursor-pointer hover:bg-slate-200 p-2 rounded-md'
+                    >
+                        Elegibility
+                    </Link>
+                    <Link
+                        to={"curriculum"}
+                        smooth={true}
+                        duration={500}
+                        offset={-90}
+                        className='cursor-pointer hover:bg-slate-200 p-2 rounded-md'
+                    >
+                        Curriculum
+                    </Link>
+                    <Link
+                        to="stories"
+                        smooth={true}
+                        duration={500}
+                        offset={-90}
+                        className='cursor-pointer hover:bg-slate-200 p-2 rounded-md'
+                    >
+                        Student Stories
+                    </Link>
+                    <Link
+                        to="faq"
+                        smooth={true}
+                        duration={500}
+                        offset={-90}
+                        className='cursor-pointer hover:bg-slate-200 p-2 rounded-md'
+                    >
+                        FAQ
+                    </Link>
+                    <Button onClick={()=>navigateTo('/msat/apply')} colorScheme='red'>Apply Now</Button>
                 </div>
             </div>
-            <div id="" className='max-w-xl mx-auto lg:max-w-7xl mt-[3em]'>
+            <div id="course" className='max-w-xl mx-auto lg:max-w-7xl mt-[3em]'>
                 <div className='xl:px-[80px] space-y-[24px] lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-8'>
                     <div className='flex flex-row gap-[14px] items-center md:w-[auto] bg-[#F7F7FF] p-[4px] md:p-[24px] rounded-[16px]'>
                         <PiMonitor className='text-2xl text-indigo-500' />
@@ -83,7 +128,7 @@ const CourseDetail = () => {
                         <FaClock className='text-xl text-indigo-500' />
                         <div>
                             <p style={{ color: "rgb(110, 113, 204)" }} class="font-[700] text-[20px] leading-[28px] font-poppins transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 hidden md:block">Timings</p>
-                            <p class="!font-[600] text-[16px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 md:mt-[8px]">*11 am to 11 pm<br/>
+                            <p class="!font-[600] text-[16px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 md:mt-[8px]">*11 am to 11 pm<br />
                                 Monday to Saturday</p>
                         </div>
                     </div>
@@ -97,7 +142,7 @@ const CourseDetail = () => {
                 <div className="grid md:gap-[40px] grid-cols-1 md:grid-cols-[repeat(auto-fit,minmax(308px,308px))] md:justify-center">
                     <div className="w-full h-full flex flex-row md:flex-col gap-[6px] md:justify-center md:text-center mx-auto py-4 md:border border-[#CFD0EE] rounded-[16px]">
                         <div class="w-fit md:mx-auto p-[8px] rounded-[16px] h-fit bg-[#F7F7FF] font-bold">
-                            <PiCertificateBold className='text-2xl text-indigo-400 font-bold'/>
+                            <PiCertificateBold className='text-2xl text-indigo-400 font-bold' />
                         </div>
                         <div className="pl-4 md:pl-0 space-y-[6px]">
                             <p className="!font-[600] text-[14px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 undefined">Qualification</p>
@@ -106,7 +151,7 @@ const CourseDetail = () => {
                     </div>
                     <div className="w-full h-full flex flex-row md:flex-col gap-[6px] md:justify-center md:text-center mx-auto py-4 md:border border-[#CFD0EE] rounded-[16px]">
                         <div class="w-fit md:mx-auto p-[8px] rounded-[16px] h-fit font-bold bg-[#F7F7FF]">
-                            <FaUser className='text-lg text-indigo-400 font-bold'/>
+                            <FaUser className='text-lg text-indigo-400 font-bold' />
                         </div>
                         <div className="pl-4 md:pl-0 space-y-[6px]">
                             <p className="!font-[600] text-[14px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 undefined">Age</p>
@@ -115,7 +160,7 @@ const CourseDetail = () => {
                     </div>
                     <div className="w-full h-full flex flex-row md:flex-col gap-[6px] md:justify-center md:text-center mx-auto py-4 md:border border-[#CFD0EE] rounded-[16px]">
                         <div class="w-fit md:mx-auto p-[8px] rounded-[16px] h-fit font-bold bg-[#F7F7FF]">
-                            <BiSolidIdCard className='text-2xl text-indigo-400 font-bold'/>
+                            <BiSolidIdCard className='text-2xl text-indigo-400 font-bold' />
                         </div>
                         <div className="pl-4 md:pl-0 space-y-[6px]">
                             <p className="!font-[600] text-[14px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 undefined">ID</p>
@@ -124,7 +169,7 @@ const CourseDetail = () => {
                     </div>
                     <div className="w-full h-full flex flex-row md:flex-col gap-[6px] md:justify-center md:text-center mx-auto py-4 md:border border-[#CFD0EE] rounded-[16px]">
                         <div class="w-fit md:mx-auto p-[8px] rounded-[16px] h-fit font-bold bg-[#F7F7FF]">
-                            <BiGlobe className='text-2xl text-indigo-400 font-bold'/>
+                            <BiGlobe className='text-2xl text-indigo-400 font-bold' />
                         </div>
                         <div className="pl-4 md:pl-0 space-y-[6px]">
                             <p className="!font-[600] text-[14px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 undefined">Internet</p>
@@ -133,7 +178,7 @@ const CourseDetail = () => {
                     </div>
                     <div className="w-full h-full flex flex-row md:flex-col gap-[6px] md:justify-center md:text-center mx-auto py-4 md:border border-[#CFD0EE] rounded-[16px]">
                         <div class="w-fit md:mx-auto p-[8px] rounded-[16px] h-fit font-bold bg-[#F7F7FF]">
-                            <BiUserVoice className='text-2xl text-indigo-400 font-bold'/>
+                            <BiUserVoice className='text-2xl text-indigo-400 font-bold' />
                         </div>
                         <div className="pl-4 md:pl-0 space-y-[6px]">
                             <p className="!font-[600] text-[14px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 undefined">Communication Skills</p>
@@ -142,7 +187,7 @@ const CourseDetail = () => {
                     </div>
                     <div className="w-full h-full flex flex-row md:flex-col gap-[6px] md:justify-center md:text-center mx-auto py-4 md:border border-[#CFD0EE] rounded-[16px]">
                         <div class="w-fit md:mx-auto p-[8px] rounded-[16px] h-fit font-bold bg-[#F7F7FF]">
-                            <MdExposurePlus1 className='text-xl text-indigo-400 font-bold'/>
+                            <MdExposurePlus1 className='text-xl text-indigo-400 font-bold' />
                         </div>
                         <div className="pl-4 md:pl-0 space-y-[6px]">
                             <p className="!font-[600] text-[14px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 undefined">Cibil Score</p>
@@ -157,25 +202,25 @@ const CourseDetail = () => {
                     <div className='relative'>
                         <div className="absolute top-[50%] hidden xl:block w-full max-w-[1040px] left-0 right-0 mx-auto border-t border-dashed border-[#CC926E]"></div>
                         <div className="max-w-[1440px] xl:px-[80px] grid md:grid-cols-[repeat(auto-fit,minmax(350px,1fr))] lg:grid-cols-[repeat(auto-fit,minmax(250px,250px))] bg-extended-ms-brick-50 gap-8 items-center justify-center m-auto mt-8 undefined z-50" >
-                            <div style={{filter:"drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.1)) dropShadow(0px 1px 2px rgba(0, 0, 0, 0.06))"}} className="flex pl-2 gap-x-[16px] lg:pl-4 flex-row w-full min-h-[4rem] bg-white rounded-3xl text-base font-semibold px-5 leading-6 lg:pt-8 lg:min-h-[11rem] lg:flex-col items-center lg:justify-start text-left lg:text-start z-50">
+                            <div style={{ filter: "drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.1)) dropShadow(0px 1px 2px rgba(0, 0, 0, 0.06))" }} className="flex pl-2 gap-x-[16px] lg:pl-4 flex-row w-full min-h-[4rem] bg-white rounded-3xl text-base font-semibold px-5 leading-6 lg:pt-8 lg:min-h-[11rem] lg:flex-col items-center lg:justify-start text-left lg:text-start z-50">
                                 <div className="bg-[#f6ede7] p-[14px] rounded-[16px] h-fit">
                                     <BiUserCheck class="text-[#d99d75] w-6 h-6 font-extrabold" />
                                 </div>
                                 <p className="!font-[600] text-[16px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 text-left lg:text-center lg:mt-[16px]">Crack the Admissions Test (MSAT)</p>
                             </div>
-                            <div style={{filter:"drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.1)) dropShadow(0px 1px 2px rgba(0, 0, 0, 0.06))"}} className="flex pl-2 gap-x-[16px] lg:pl-4 flex-row w-full min-h-[4rem] bg-white rounded-3xl text-base font-semibold px-5 leading-6 lg:pt-8 lg:min-h-[11rem] lg:flex-col items-center lg:justify-start text-left lg:text-start z-50">
+                            <div style={{ filter: "drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.1)) dropShadow(0px 1px 2px rgba(0, 0, 0, 0.06))" }} className="flex pl-2 gap-x-[16px] lg:pl-4 flex-row w-full min-h-[4rem] bg-white rounded-3xl text-base font-semibold px-5 leading-6 lg:pt-8 lg:min-h-[11rem] lg:flex-col items-center lg:justify-start text-left lg:text-start z-50">
                                 <div className="bg-[#f6ede7] p-[14px] rounded-[16px] h-fit">
                                     <MdComputer class="text-[#d99d75] w-6 h-6 font-extrabold" />
                                 </div>
                                 <p className="!font-[600] text-[16px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 text-left lg:text-center lg:mt-[16px]">Choose a course</p>
                             </div>
-                            <div style={{filter:"drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.1)) dropShadow(0px 1px 2px rgba(0, 0, 0, 0.06))"}} className="flex pl-2 gap-x-[16px] lg:pl-4 flex-row w-full min-h-[4rem] bg-white rounded-3xl text-base font-semibold px-5 leading-6 lg:pt-8 lg:min-h-[11rem] lg:flex-col items-center lg:justify-start text-left lg:text-start z-50">
+                            <div style={{ filter: "drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.1)) dropShadow(0px 1px 2px rgba(0, 0, 0, 0.06))" }} className="flex pl-2 gap-x-[16px] lg:pl-4 flex-row w-full min-h-[4rem] bg-white rounded-3xl text-base font-semibold px-5 leading-6 lg:pt-8 lg:min-h-[11rem] lg:flex-col items-center lg:justify-start text-left lg:text-start z-50">
                                 <div className="bg-[#f6ede7] p-[14px] rounded-[16px] h-fit">
                                     <AiOutlineCheck class="text-[#d99d75] w-6 h-6 font-extrabold" />
                                 </div>
                                 <p className="!font-[600] text-[16px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 text-left lg:text-center lg:mt-[16px]">Complete KYC</p>
                             </div>
-                            <div style={{filter:"drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.1)) dropShadow(0px 1px 2px rgba(0, 0, 0, 0.06))"}} className="flex pl-2 gap-x-[16px] lg:pl-4 flex-row w-full min-h-[4rem] bg-white rounded-3xl text-base font-semibold px-5 leading-6 lg:pt-8 lg:min-h-[11rem] lg:flex-col items-center lg:justify-start text-left lg:text-start z-50">
+                            <div style={{ filter: "drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.1)) dropShadow(0px 1px 2px rgba(0, 0, 0, 0.06))" }} className="flex pl-2 gap-x-[16px] lg:pl-4 flex-row w-full min-h-[4rem] bg-white rounded-3xl text-base font-semibold px-5 leading-6 lg:pt-8 lg:min-h-[11rem] lg:flex-col items-center lg:justify-start text-left lg:text-start z-50">
                                 <div className="bg-[#f6ede7] p-[14px] rounded-[16px] h-fit">
                                     <BiVideo class="text-[#d99d75] w-6 h-6 font-extrabold" />
                                 </div>
@@ -184,12 +229,15 @@ const CourseDetail = () => {
                         </div>
                     </div>
                     <div className='text-center mt-10 flex gap-2 justify-center'>
-                            <Button variant={'outline'} colorScheme='red'>View MSAT DETAILS</Button>
-                            <Button colorScheme='red'>APPLY NOW FOR FREE</Button>
-                        </div>
+                        <Button onClick={() => navigateTo('/msat')} variant={'outline'} colorScheme='red'>View MSAT DETAILS</Button>
+                        <Button onClick={()=> navigateTo('/msat/apply')} colorScheme='red'>APPLY NOW FOR FREE</Button>
+                    </div>
                 </div>
             </div>
             <Sec5 />
+            <Sec4 />
+            <Alumini />
+            <FaqComp />
         </>
     )
 }
