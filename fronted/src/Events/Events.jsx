@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../Style/Events.css";
 import { Link, useNavigate } from "react-router-dom";
+import { animateScroll } from "react-scroll";
 const Events = () => {
   const [eventData, setEventData] = useState([]);
   const[filterBy,setFilterBy] = useState("");
@@ -57,6 +58,10 @@ const Events = () => {
   const redirect_register = (id) => {
     navigate(`/event/registerevents/${id}`);
   };
+
+  useEffect(() => {
+    animateScroll.scrollToTop({ smooth: true })
+}, [])
 
   console.log("random console");
  

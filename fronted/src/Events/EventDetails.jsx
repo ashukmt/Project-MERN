@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import "../Style/Events.css";
+import { animateScroll } from "react-scroll";
 const EventDetails = () => {
   let { id } = useParams();
   const [myDetailsData, setMyDetailsData] = useState({});
@@ -21,6 +22,10 @@ const EventDetails = () => {
   useEffect(() => {
     fetchingMyDetailsData();
   }, []);
+
+  useEffect(() => {
+    animateScroll.scrollToTop({ smooth: true })
+}, [])
 
   return (
     <div>
