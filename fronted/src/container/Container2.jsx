@@ -19,8 +19,8 @@ function Container2() {
                 width={70}
               />
             </div>
-            <div className="wid">
-              <img
+            <div className="wid p-2">
+              <img 
                 src="https://www.masaischool.com/images/new-homepage/outcome/jp-morgan.png"
                 alt="dream11"
                 width={70}

@@ -30,6 +30,7 @@
     padding: 10px;
     border: none;
     border-radius: 50%;
+
     z-index: 10px;
     cursor: pointer;
     background-color: #fff;
@@ -41,9 +42,15 @@
   .btn-prev7 {
     top: 45%;
     left: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .btn-next7 {
     top: 45%;
     right: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
