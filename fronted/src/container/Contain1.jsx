@@ -44,13 +44,7 @@ function Contain1() {
             alt="dream11"
           />
         </div>
-        <div>
-          <img
-            className="wit"
-            src="https://www.masaischool.com/images/new-homepage/outcome/uber.png"
-            alt="dream11"
-          />
-        </div>
+      
         <div>
           <img
             className="wit"

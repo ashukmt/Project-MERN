@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../Style/homes.css'
 import Sec1 from '../pages/Sec1'
 import Sec2 from '../pages/Sec2'
@@ -8,7 +8,11 @@ import Sec5 from '../pages/Sec5'
 import Sec6 from '../pages/Sec6'
 import Sec7 from '../pages/Sec7'
 import Sec8 from '../pages/Sec8'
+import { animateScroll } from 'react-scroll'
 function Homes() {
+  useEffect(() => {
+    animateScroll.scrollToTop({ smooth: true })
+}, [])
   return (
     <div>
      <div className='mainimage'>
