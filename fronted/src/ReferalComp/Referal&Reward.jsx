@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import RewardCard from './RewardCard'
 import axios from 'axios'
+import { Navigate, useNavigate } from "react-router-dom";
 import {
     Drawer,
     DrawerBody,
@@ -18,6 +19,7 @@ import {
 } from '@chakra-ui/react'
 
 function ReferalReward() {
+    const Navigate=useNavigate();
   const[fname,setFname]=useState("")
   const[email,setEmail]=useState("")
   const[phoneNumber,setPhnumber]=useState("")
@@ -99,61 +101,14 @@ const handleSubmit=async()=>{
                     fontSize="16px"
                     fontWeight="500"
                     _hover={{ bg: "red.400" }}
-                    onClick={onOpen}
+                    onClick={()=>{
+                        Navigate('/Profile')
+                    }}
                     bg="#ed0331"
                 >
                     INVITE YOUR FRIENDS
                 </Button>
 
-                <Drawer
-                    isOpen={isOpen}
-                    placement='right'
-                    size="lg"
-                    onClose={onClose}
-                    finalFocusRef={btnRef}
-                >
-                    <DrawerOverlay />
-                    <DrawerContent>
-                        <DrawerCloseButton />
-                        <DrawerHeader style={{ fontSize: '2rem', fontWeight: '600' }}>
-                            Create your account
-                        </DrawerHeader>
-
-
-          <DrawerBody>
-          <FormControl isRequired>
-  <FormLabel>Full Name</FormLabel>
-  <Input placeholder='Enter full name' name='F_name'
-   onChange={(e)=>setFname(e.target.value)}
-    />
-  <FormLabel>Email address</FormLabel>
-  <Input placeholder='Enter email address' name='Email'
-   onChange={(e)=>setEmail(e.target.value)}
-    />
-  <FormLabel>Phone Number</FormLabel>
-  <Input placeholder='Enter your whatsapp number' name='Ph_number' 
-  onChange={(e)=>setPhnumber(e.target.value)}
-
-  />
-  <FormLabel>Referral Code (Optional)</FormLabel>
-  <Input placeholder='Enter referral Code' name='R_Code'
-   onChange={(e)=>setRcode(e.target.value)}
-    />
-  <Button
-            mt={4}
-            colorScheme='teal'
-            w={'full'}
-            type='submit'
-            onClick={handleSubmit}
-          >
-            Submit
-          </Button>
-</FormControl>
-          </DrawerBody>
-
-
-                    </DrawerContent>
-                </Drawer>
             </div>
         </div>
     )

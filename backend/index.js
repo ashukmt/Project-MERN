@@ -11,9 +11,11 @@ const { CourseRouter } = require("./routes/Course.router");
 const { ShareLinkrouter } = require("./routes/ShareLink.router");
 const referralCodeGenerator = require('referral-code-generator')
 
-app.use(cors({
-  origin:"*"
-}))
+app.use(cors(
+//   {
+//   origin:"*"
+// }
+))
 app.use(express.json());
 
 app.get("/",(req,res)=>{

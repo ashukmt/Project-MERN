@@ -5,7 +5,7 @@ function RewardLeaderBCard({ Name,Coin }) {
   return (
     
    <div className='px-4'>
-        <div className='w-[400px] py-4' style={{borderBottom:"1px solid blue"}}>
+        <div className='w-[400px] py-4' style={{borderBottom:"1px solid #777bf2"}}>
         <div className="flex justify-between items-center">
           <div className="flex items-center">
           
