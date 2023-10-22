@@ -12,7 +12,12 @@ const { ShareLinkrouter } = require("./routes/ShareLink.router");
 const { UserRouter } = require("./routes/User.router");
 
 const {passport} = require("./config/google-oauth")
-
+app.use(cors(
+//   {
+//   origin:"*"
+// }
+))
+app.use(express.json())
 const app = express();
 
 app.use(express.json());

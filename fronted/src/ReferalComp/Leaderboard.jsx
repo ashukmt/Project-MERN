@@ -6,7 +6,7 @@ import RewardsLeaderBoards from "./RewardsLeaderBoards";
 function Leaderboard() {
   const [page,setPage]=useState(1)
   return (
-    <div>
+    <div className="">
       {/* <div className="w-100" style={{width:"100%"}} >
        
           <div className="flex"  style={{ border: "1px solid red", width: "100%" }}>

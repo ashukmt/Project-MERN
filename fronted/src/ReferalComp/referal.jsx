@@ -121,8 +121,8 @@ function Referal() {
               <DrawerOverlay />
               <DrawerContent>
                 <DrawerCloseButton />
-                <DrawerHeader className="text-100">
-                  Create your account
+                <DrawerHeader style={{ fontSize:"25px", fontWeight: '600' }}>
+                  Referral Program
                 </DrawerHeader>
 
                 <DrawerBody>

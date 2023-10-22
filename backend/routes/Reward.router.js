@@ -25,6 +25,30 @@ RewardRouter.get("/getReward", async (req, res) => {
   res.send(my_Reward);
 });
 
+
+RewardRouter.patch('/update/:_id',async(req,res)=>{
+  try{
+    const { Gift_url, Gift_name, Coin_Req } = req.body;
+      const {_id} = req.params
+      await RewardModel.findOneAndUpdate({_id},{Gift_url, Gift_name, Coin_Req});
+      res.status(200).send('Updated Sucessfully')
+  }catch(error){
+      console.log(error)
+      res.status(500).send("Internal Server Error")
+  }
+})
+
+RewardRouter.delete('/Delete/:_id',async(req,res)=>{
+  try {
+    const {_id} = req.params
+    await RewardModel.findOneAndDelete({_id});
+      res.status(200).send('Delete Sucessfully')
+  } catch (error) {
+    console.log(error)
+    res.status(500).send("Internal Server Error")
+  }
+})
+
 module.exports = {
   RewardRouter,
 };

@@ -11,7 +11,7 @@ function Invite() {
   const UserData = useSelector(state => state.Reward.UserData)
     console.log(UserData)
   return (
-    <div className="flex items-center gap-10" style={{width:"70%", margin:"auto"}}>
+    <div className="flex items-center gap-10 pt-[30px]" style={{width:"70%", margin:"auto"}}>
                <div>
             <div className="px-4 pb-8 pt-4 rounded-[10px]" style={{boxShadow:"rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"}} >
       <h1 className="text-left pb-4 font-[700] md:text-[16px] leading-40 tracking-wider text-[#777bf2] text-[15px]">
