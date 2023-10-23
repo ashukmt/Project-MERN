@@ -17,12 +17,12 @@ import {
 function AccordioCard({Que,Ans}) {
     console.log('Masai')
   return (
-    <Box width={{ base: "100%", md: "60%" }} margin="auto">
+    <Box width={{ base: "100%", md: "80%" }} margin="auto">
   <Accordion allowToggle>
     <AccordionItem>
       <h2>
         <AccordionButton>
-          <Box as="span" flex="1" textAlign="left" fontSize={{ base: "14px", md: "16px" }} fontWeight="700">
+          <Box as="span" flex="1" textAlign="left" py={2} fontSize={{ base: "14px", md: "16px" }} fontWeight="700">
             {Que}
           </Box>
           <AccordionIcon />

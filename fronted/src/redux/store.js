@@ -8,7 +8,7 @@ export const store = configureStore({
     reducer: {
         course: courseReducer,
         Reward: rewardReducer,
-        events : eventReducer
+        events: eventReducer
     },
     middleware: [thunk]
 })
