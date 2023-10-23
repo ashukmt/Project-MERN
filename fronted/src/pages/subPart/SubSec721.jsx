@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import Swiper from 'swiper';
+
 
 function SubSec721() {
 
