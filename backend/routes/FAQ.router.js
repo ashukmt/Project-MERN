@@ -25,7 +25,7 @@ FAQrouter.post("/faq", async(req, res) => {
   });
 
 
-  FAQrouter.get("/getFaq",async(req,res)=>{
+  FAQrouter.get("/",async(req,res)=>{
     const my_Reward = await FAQModel.find();
     res.send(my_Reward);
   })

@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import { FaBeer } from 'react-icons/fa';
 import RewardLeaderBCard from "./RewardLeaderBCard";
 import { useSelector } from "react-redux";
+import { animateScroll } from "react-scroll";
 
 function Invite() {
   const [copied, setCopied] = useState(false);
   const otherCopy = () => setCopied(true);
   const UserData = useSelector(state => state.Reward.UserData)
     console.log(UserData)
+    useEffect(() => {
+      animateScroll.scrollToTop({ smooth: true })
+  }, [])
   return (
     <div className="flex items-center gap-10 pt-[30px]" style={{width:"70%", margin:"auto"}}>
                <div>

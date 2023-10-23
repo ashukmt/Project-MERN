@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Flex, Heading, Image, Text, Button } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Text, Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalFooter, ModalBody } from "@chakra-ui/react";
 import Leaderboard from './Leaderboard';
 import { Navigate, useNavigate } from "react-router-dom";
 import {
@@ -21,10 +21,12 @@ function RewardCard({ Coin_Req, Gift_name, Gift_url }) {
   const [email, setEmail] = useState("")
   const [phoneNumber, setPhnumber] = useState("")
   const [rcode, setRcode] = useState("")
-  const [claibtn, setClaimbtn] = useState(100)
+  const [imgurl, setImgurl] = useState("")
+  const [claibtn, setClaimbtn] = useState(3000)
   const { isOpen, onOpen, onClose } = useDisclosure()
 
-  const btnRef = React.useRef()
+  const initialRef = React.useRef(null)
+  const finalRef = React.useRef(null)
 
 
   const Navigate = useNavigate();
@@ -47,12 +49,58 @@ function RewardCard({ Coin_Req, Gift_name, Gift_url }) {
       </div>
       <div className='pl-4 mb-6'>
         <Button className='px-2 py-2 rounded-[4px] text-center  md:text-[14px] font-[500] leading-20 text-[12px] text-[#d28187] hover:bg-red-200' style={{ border: "1px solid black" }}
-          onClick={onOpen}
+          onClick={() => {
+            setImgurl(Gift_url);
+            onOpen();
+          }}
           isDisabled={Coin_Req !== claibtn}
+
         >CLAIM FOR {Coin_Req} COIN</Button>
 
 
-        <Drawer
+
+
+        <Modal
+          initialFocusRef={initialRef}
+          finalFocusRef={finalRef}
+          isOpen={isOpen}
+          onClose={onClose}
+        >
+          <ModalOverlay />
+          <ModalContent>
+            <ModalHeader>Claim Your Reward</ModalHeader>
+            <ModalCloseButton />
+            <ModalBody pb={6}>
+            <Box boxSize='' style={{width:"80%", margin:"auto", marginBottom:"20px"}}>
+  <Image src={Gift_url} alt='Dan Abramov' />
+</Box>
+              <FormControl>
+                <FormLabel>Mobile Number</FormLabel>
+                <Input type='number' ref={initialRef} placeholder='Mobile Number' />
+              </FormControl>
+
+              <FormControl>
+                <FormLabel>Email</FormLabel>
+                <Input type='email' ref={initialRef} placeholder='Email' />
+              </FormControl>
+
+              <FormControl mt={4}>
+                <FormLabel>Pin Code</FormLabel>
+                <Input type='number' placeholder='Last name' />
+              </FormControl>
+            </ModalBody>
+
+            <ModalFooter>
+              <Button colorScheme='blue' mr={3} onClick={onClose}>
+                Redeem
+              </Button>
+              <Button onClick={onClose}>Cancel</Button>
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
+
+
+        {/* <Drawer
           isOpen={isOpen}
           placement='right'
           size="lg"
@@ -101,7 +149,7 @@ function RewardCard({ Coin_Req, Gift_name, Gift_url }) {
 
 
           </DrawerContent>
-        </Drawer>
+        </Drawer> */}
 
 
       </div>
