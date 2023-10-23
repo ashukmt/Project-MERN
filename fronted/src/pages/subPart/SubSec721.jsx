@@ -3,13 +3,8 @@ import Swiper from 'swiper';
 
 function SubSec721() {
 
-    
-    
-       
-       
-    
-  return (
-    <div class="swipe ml-20">
+    return (
+    <div class="swipe ml-20 bord">
     <div class="swiper-wrappera">
       
       <div class="swiper-slidea">

@@ -9,14 +9,14 @@ function Sec5() {
       </div>
     <div className="slider1">
       <div className="slide-track">
-        <div className="slide">
+        {/* <div className="slide">
           <img className="shad1"
             src="https://masai-website-images.s3.ap-south-1.amazonaws.com/byjus_e7b97a9c80.svg"
             height={100}
             width={250}
             alt=""
           />
-        </div>
+        </div> */}
         <div className="slide">
           <img
             src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png"
@@ -65,14 +65,14 @@ function Sec5() {
             alt=""
           />
         </div>
-        <div className="slide">
+        {/* <div className="slide">
           <img
             src="https://masai-website-images.s3.ap-south-1.amazonaws.com/dream11_d6c8d97a52.svg"
             height={20}
             width={250}
             alt=""
           />
-        </div>
+        </div> */}
         <div className="slide">
           <img
             src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png"
