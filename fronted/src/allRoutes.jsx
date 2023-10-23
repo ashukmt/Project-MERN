@@ -25,7 +25,7 @@ const AllRoutes = () => {
         <Route path='/events' element={<Events/>}/>
         <Route path='/event/getevents/:id' element={<EventDetails/>} />
         <Route path='/event/registerevents/:id' element={<Register/>} />
-        <Route path='/fees' element={<Referal/>} />
+        <Route path='/Referal' element={<Referal/>} />
         <Route path='/msat' element={<MsatDetails />} />
         <Route path='/msat/apply' element={<RegisterMsat />} />
         <Route path='/msat/test' element={<StartMsat />} />

@@ -3,6 +3,18 @@ const { RewardModel } = require("../models/Reward.model");
 
 const RewardRouter = express.Router();
 
+
+
+RewardRouter.get('/',async(req,res)=>{
+  try{
+      const rewards = await RewardModel.find();
+      res.status(200).send(rewards)
+  }catch(error){
+      res.status(500).send("Internal Server Error")
+  }
+})
+
+
 RewardRouter.post("/reward", async (req, res) => {
   try {
     const { Gift_url, Gift_name, Coin_Req } = req.body;
