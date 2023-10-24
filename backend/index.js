@@ -11,6 +11,7 @@ const { RewardRouter } = require("./routes/Reward.router");
 const { FAQrouter } = require("./routes/FAQ.router");
 const { CourseRouter } = require("./routes/Course.router");
 const { ShareLinkrouter } = require("./routes/ShareLink.router");
+const { QuestionRouter } = require("./routes/Question.router");
 require("./middlewares/Auth");
 
 const app = express();
@@ -74,6 +75,7 @@ app.use("/rewards", RewardRouter);
 app.use("/faqR", FAQrouter);
 app.use("/event", EventRouter);
 app.use("/course", CourseRouter);
+app.use("/question", QuestionRouter);
 app.use("/sharelink", ShareLinkrouter);
 
 app.listen(process.env.PORT, async () => {

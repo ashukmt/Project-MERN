@@ -7,7 +7,7 @@
 	background: white;
 	/* box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125); */
 	height: 220px;
-	overflow: hidden;
+	/* overflow: hidden; */
 	position: relative;
 	width: 95%;
 	margin: auto;
@@ -56,7 +56,7 @@
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.slider1 .slide-track:hover {
+.slider1:hover .animate-infinite-scroll {
     animation-play-state: paused;
 }
 

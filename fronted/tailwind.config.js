@@ -9,7 +9,18 @@ module.exports = {
     },
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        'infinite-scroll': 'infinite-scroll 45s linear infinite',
+        'half-spin': 'spin 1s linear'
+      },
+      keyframes: {
+        'infinite-scroll': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-100%)' },
+        }
+      }       
+    },
   },
   plugins: [],
 }

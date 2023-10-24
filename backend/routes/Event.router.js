@@ -1,6 +1,5 @@
 const express = require("express");
 const { EventModel } = require("../models/Event.model");
-const { model } = require("mongoose");
 const EventRouter = express.Router();
 
 EventRouter.post("/addevent", async (req, res) => {
