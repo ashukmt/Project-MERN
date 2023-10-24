@@ -10,8 +10,9 @@ const { FAQrouter } = require("./routes/FAQ.router");
 const { CourseRouter } = require("./routes/Course.router");
 const { ShareLinkrouter } = require("./routes/ShareLink.router");
 const { UserRouter } = require("./routes/User.router");
+const { QuestionRouter } = require("./routes/Question.router");
 
-const {passport} = require("./config/google-oauth")
+const {passport} = require("./config/google-oauth");
 
 const app = express();
 
@@ -41,6 +42,7 @@ app.use("/event",EventRouter);
 app.use("/course",CourseRouter);
 app.use("/sharelink",ShareLinkrouter);
 app.use("/user",UserRouter)
+app.use("/question",QuestionRouter)
 
 app.listen(process.env.PORT,async()=>{  
     try{
