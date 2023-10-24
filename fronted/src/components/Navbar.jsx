@@ -1,11 +1,12 @@
 import React from 'react'
 import '../Style/navbar.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 
 
 function Navbar() {
+  const Navigate = useNavigate();
   const edit=[
     {path:'/courses',title:'COURSES'},
     {path:'/events',title:'EVENTS'},
@@ -25,7 +26,11 @@ function Navbar() {
       ))}  
      </div>
      <div className='last'>   
-         <button><Link  to={'/Refer'}>REFER & EARN</Link></button>
+         <button
+         onClick={()=>{
+          Navigate('/Referal')
+         }}
+         ><Link  to={'/Refer'}>REFER & EARN</Link></button>
 
          <button>SIGN UP</button>
      </div>

@@ -22,7 +22,7 @@ function Homes() {
       <Sec2/>
     <Sec3/>
    <Sec4/>
-   <Sec6/>
+   {/* <Sec6/> */}
   <Sec5/>
  <Sec7/>
  <Sec8/>

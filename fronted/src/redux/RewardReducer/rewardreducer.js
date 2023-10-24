@@ -1,3 +1,5 @@
+import { ERROR, GET_REWARDS, LOAD,GET_FAQS } from "./actiontype"
+
 const iniState = {
     Rewards: [
         {
@@ -118,7 +120,26 @@ const iniState = {
       ]
 }
 
+// const iniState = {
+//   Rewards: [],
+//   FAQs:[]
+//   isLoading: false,
+//   isError: false
+// }
 
+// export const rewardReducer = (state = iniState, {
+//   type,
+//   payload
+// }) => {
+//   switch (type) {
+//       case LOAD: return {...state,isLoading:true}
+//       case ERROR: return {...state,isError:true}
+//       case GET_REWARDS: return {...state,isLoading:false,Rewards:payload}
+//   case GET_FAQS: return {...state,isLoading:false,FAQs:payload}
+//       default:
+//           return state
+//   }
+// }
 
 
 export const rewardReducer = (state = iniState, {
