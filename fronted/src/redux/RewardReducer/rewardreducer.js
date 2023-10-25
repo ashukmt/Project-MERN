@@ -1,4 +1,4 @@
-import { ERROR, GET_REWARDS, LOAD,GET_FAQS } from "./actionType"
+import { ERROR, GET_REWARDS, LOAD,GET_FAQS } from "./actiontype"
 
 const iniState = {
     Rewards: [
