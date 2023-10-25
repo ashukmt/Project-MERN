@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import {
   Box,
   Button,
@@ -29,14 +30,33 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { FcGoogle } from "react-icons/fc";
+import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
+import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
+import { auth } from "./FireBase";
 
 const Login = ({ onClose }) => {
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
 
-  const handleGoogle=()=>{
-    
+  const [user, setUser] = useState({});
+
+  const handleGoogleLogin = async () => {
+    const provider = new GoogleAuthProvider()
+    const result = await signInWithPopup(auth, provider)
+    // dispatch(setLOGIN(result.user))
+    console.log(result.user)
+    // toast({
+    //   title: 'Logged in successfully.',
+    //   // description: "We've created your account for you.",
+    //   status: 'success',
+    //   duration: 3000,
+    //   isClosable: true,
+    // })
+    onClose()
   }
+
+  
   return (
     <>
       <DrawerOverlay />
@@ -70,7 +90,7 @@ const Login = ({ onClose }) => {
             </Box>
 
             <div className="mt-5 flex justify-center gap-2">
-              <FcGoogle onClick={handleGoogle} className="w-24 h-[35px] -ml-12 " />
+             <FcGoogle onClick={handleGoogleLogin}  className="w-24 h-[35px] -ml-12 cursor-pointer" />
               <Center height="40px" className="pr-7">
                 <Divider orientation="vertical" borderColor={"black"} />
               </Center>
