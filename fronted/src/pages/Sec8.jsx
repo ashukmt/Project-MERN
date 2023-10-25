@@ -50,15 +50,15 @@ function Sec8() {
         <div className="grid grid-cols-3 gap-14 w-11/12 m-auto mt-14">
             <div>
                 <img className=" rounded-lg" src="https://masai-website-images.s3.ap-south-1.amazonaws.com/PR_Article_Prateek_Shukla_Gen_AI_92324e2d6b.jpeg" alt="1" />
-                <p className="font-bold text-lg mt-3">Empowering Education  Through GenAl</p>
+                <p className="font-bold text-2xl mt-3 text-center">Empowering Education  Through GenAl</p>
             </div>
             <div>
                 <img className=" rounded-lg" src="https://masai-website-images.s3.ap-south-1.amazonaws.com/PR_Thungy_1_420b226e5b.webp" alt="2" />
-                <p className="font-bold text-lg mt-3">targets fivefold revenue growth in three years</p>
+                <p className="font-bold text-2xl mt-3 text-center">Masai School targets fivefold revenue growth in three years</p>
             </div>
             <div>
                 <img className=" rounded-lg" src="https://masai-website-images.s3.ap-south-1.amazonaws.com/PR_Thingy_2_f2c52e6fcf.webp" alt="3" />
-                <p className="font-bold text-lg mt-3">Beyond Degrees: Embracing Alternative Credentialing and Micro-learning in Tech Recruitment</p>
+                <p className="font-bold text-2xl mt-3 text-center">Beyond Degrees: Embracing Alternative Credentialing and Micro-learning in Tech Recruitment</p>
             </div>
            
         </div>
