@@ -4,7 +4,7 @@ import SubSec72 from './subPart/SubSec72'
 
 function Sec7() {
   return (
-    <div className='widt7 p-12 mt-10 '>
+    <div className='widt7 p-12'>
       <div className='font-bold text-3xl flex justify-center '>Our Students Are <span className='text-red-600 ml-2'> Creating Impact</span></div>
       <div className='flex widt77 '>
       <div className='widt71  mt-10'>
