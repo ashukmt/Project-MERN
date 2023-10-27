@@ -4,7 +4,7 @@ import SubSec4b from "./subPart/SubSec4b";
 
 const Sec4 = () => {
   return (
-    <div id='curriculum'>
+    <div id='curriculum' className="overflow-hidden">
       <div className="flex justify-center font-bold text-2xl">
         Best-in-Class<span className="text-red-600 mx-3">Curriculum</span>&
         <span className="text-red-600 mx-3">Pedagogy</span>
