@@ -13,6 +13,7 @@ const userSchema = mongoose.Schema({
     msatScore: {type: Number, required: false, default: 0},
     profilePic: {type: String},
     courseName: {type: String},
+    msatDay: {type: String},
     uid : {type:String,required:true}
 })
 
