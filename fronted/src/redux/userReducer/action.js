@@ -21,7 +21,7 @@ const getUser = (id) => async (dispatch) => {
 const addUser = (user) => async (dispatch) => {
 
   try {
-    const add_user = await axios.post(`${process.env.REACT_APP_SERVER_URL}/user/addUser`, {
+    await axios.post(`${process.env.REACT_APP_SERVER_URL}/user/addUser`, {
       ...user
     })
     dispatch({
@@ -35,12 +35,12 @@ const addUser = (user) => async (dispatch) => {
 export const editUser = (user) => async (dispatch) => {
 
   try {
-    const new_user = await axios.put(`${process.env.REACT_APP_SERVER_URL}/user/edtUser/${user._id}`, {
+    await axios.put(`${process.env.REACT_APP_SERVER_URL}/user/editUser/${user._id}`, {
       ...user
     })
     dispatch({
       type: EDIT_USER,
-      payload: new_user
+      payload: user
     })
   } catch (err) {
     console.log(err)

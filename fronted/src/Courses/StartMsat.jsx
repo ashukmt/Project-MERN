@@ -14,7 +14,7 @@ import AlreadyDone from './AlreadyDone'
 
 const StartMsat = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const user = useSelector((state)=>state.user.user)
+    const user = useSelector((state) => state.user.user)
     const dispatch = useDispatch()
     useEffect(() => {
         onOpen()
@@ -30,9 +30,8 @@ const StartMsat = () => {
     const [correct, setCorrect] = useState(0);
 
     const setTotal = () => {
-        let t = 0, c=0, i=0;
+        let t = 0, c = 0, i = 0;
         for (let x in score1) {
-            console.log(score1[x])
             t += Number(score1[x].point)
             if (score1[x].point == -1) {
                 i++
@@ -61,13 +60,13 @@ const StartMsat = () => {
             setProcessing(false)
             setEnded(true)
         }, 7000)
-        onClose()
-        setTotal()
-        setProcessing(true)
-        dispatch(editUser({...user,msatDay:new Date(),msatScore:marks, coin: user.coin+100}))
+        onClose();
+        setTotal();
+        setProcessing(true);
+        dispatch(editUser({ ...user, msatDay: new Date(), msatScore: marks, coin: user.coin + 100 }));
     }
-    if(user.msatDay == new Date().getDate()) return <>
-        <AlreadyDone/>
+    if (user.msatDay == new Date().getDate()) return <>
+        <AlreadyDone />
     </>
     return (
         <>
