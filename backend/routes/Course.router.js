@@ -5,7 +5,9 @@ const CourseRouter = express.Router()
 
 CourseRouter.get('/',async(req,res)=>{
     try{
+        
         const courses = await CourseModel.find();
+        if(!courses) res.status(404).send("Courses not found")
         res.status(200).send(courses)
     }catch(error){
         res.status(500).send("Internal Server Error")
