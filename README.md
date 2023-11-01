@@ -10,22 +10,26 @@ To make the user experience even more engaging, we've implemented a reward syste
 1. Masai School Information
 Access comprehensive information about Masai School, its history, mission, and vision.
 
-3. Course Details
+2. Course Details
 Explore the range of courses offered by Masai School, complete with detailed descriptions and requirements.
+
 ![image](https://github.com/ashukmt/Project-MERN/assets/68837552/0de15f03-6062-46c5-b024-0fe8ca072d52)
 
-4. Live MSAT
+3. Live MSAT
 Take the live MSAT (entrance test) for Masai School courses directly on the website.
+
 ![image](https://github.com/ashukmt/Project-MERN/assets/68837552/180e85d6-6d96-4ebf-9c26-106e7b02a381)
 
-5. Events Section
+4. Events Section
 Stay updated with upcoming events hosted by Masai School, complete with details and joining links.
 Access recordings of past events to catch up on any missed content.
+
 ![image](https://github.com/ashukmt/Project-MERN/assets/68837552/42814da8-dbd2-44b2-935c-ad20c17922e9)
 
-6. Reward System
+5. Reward System
 Earn points by sharing your invite link with others or successfully passing the MSAT.
 Redeem your accumulated points for a variety of exciting products and rewards.
+
 ![image](https://github.com/ashukmt/Project-MERN/assets/68837552/5b8ee0f7-b81d-4085-a473-4c46aaa423d7)
 
 ## Tech Stack
