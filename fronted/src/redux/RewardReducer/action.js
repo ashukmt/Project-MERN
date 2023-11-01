@@ -1,5 +1,5 @@
 import axios from "axios"
-import { GET_REWARDS,ERROR,LOAD, GET_FAQS } from "./actiontype"
+import { GET_REWARDS,ERROR,LOAD, GET_FAQS } from "./actionType"
 
 export const getReward = () => async(dispatch)=> {
     try{
