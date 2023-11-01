@@ -1,7 +1,7 @@
 # MasaiFlow
 This repository is the result of a collaborative effort to revamp the Masai School website by creating a new user flow and enhancing the overall user experience while retaining the original design. Our team of four developers used the MERN stack, combined with Tailwind CSS, Chakra UI, and Chart.js to bring this project to life. Throughout this project, we've learned and grown together, engaging in daily group discussions and applying our knowledge to make the Masai School website even better.
 
-# Introduction
+## Introduction
 Masai School is a renowned institution that offers a variety of courses and a unique learning experience. In our redesign project, we aimed to create a new and improved user flow that retains the original website's aesthetics while enhancing functionality. Our React-based site offers users access to essential information about Masai School, its courses, and even provides a live MSAT (entrance test) for these courses. We've also included an events section where users can find information about upcoming events and their joining links, as well as access past event recordings.
 
 To make the user experience even more engaging, we've implemented a reward system. Users can earn points by sharing their invite links or passing the MSAT, which can be redeemed for various products.
