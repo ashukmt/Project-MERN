@@ -1,4 +1,4 @@
-# Masai School Website Restructure
+# MasaiFlow
 This repository is the result of a collaborative effort to revamp the Masai School website by creating a new user flow and enhancing the overall user experience while retaining the original design. Our team of four developers used the MERN stack, combined with Tailwind CSS, Chakra UI, and Chart.js to bring this project to life. Throughout this project, we've learned and grown together, engaging in daily group discussions and applying our knowledge to make the Masai School website even better.
 
 # Introduction
