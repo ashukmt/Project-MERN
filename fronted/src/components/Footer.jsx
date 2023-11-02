@@ -142,12 +142,12 @@ function Footer() {
     </div>
 
    <div className='border-t w-3/4'>
-    <div className='mt-6'>
-        <button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mr-4'>Full Stack Web Development - Full Time</button>
-        <button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mr-4'>Data Analytics - Full Time</button>
-        <button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold'>Mobile Development - Full Time</button>
-        <button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mt-5 mr-4'>Software Testing & Automation - Full Time</button>
-        <button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold'>Backend Development - Full Time</button>
+    <div className='mt-6 mb-3'>
+        <button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mr-4 mb-4'>Full Stack Web Development - Full Time</button>
+        <button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mr-4 mb-4'>Data Analytics - Full Time</button>
+        <button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mb-4 mr-4'>Mobile Development - Full Time</button>
+        <button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mt-5 mr-4 mb-4'>Software Testing & Automation - Full Time</button>
+        <button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mb-4'>Backend Development - Full Time</button>
     </div>
    <div
       class="grid grid-cols-1 gap-8  border-gray-100 pt-5 dark:border-gray-800 sm:grid-cols-2 lg:grid-cols-4 lg:pt-5"

@@ -6,7 +6,7 @@ function Container3() {
       <div className="flex justify-center font-bold text-xl">
         Don't Just Learn Theory, Practice to Learn
       </div>
-      <div className="flex justify-around mt-2">
+      <div className="flex justify-around mt-2 cont3">
         <div>
         <div className="flex ">
           <div className="mt-2">
@@ -51,7 +51,7 @@ function Container3() {
           </div>
         </div>
         <div>
-        <div className="flex ">
+        <div className="flex">
           <div className="mt-2">
             <img
               src="https://www.masaischool.com/images/new-homepage/outcome/course-icon1.png"
