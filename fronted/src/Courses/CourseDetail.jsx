@@ -38,26 +38,30 @@ const CourseDetail = () => {
                     Become a job-ready {title} in {course?.duration} weeks.<br /> Learn at ₹0 upfront fee; pay after placement.
                 </Text>
             </Box>
-            <Box className='pt-8 md:pt-6 pb-8 md:pb-0 bg-[#F7F7FF]'>
+            <div className='pt-8 md:pt-6 pb-8 md:pb-0 bg-[#F7F7FF]'>
                 <div className='max-w-[1440px] mx-auto flex flex-col md:flex-row md:justify-center'>
                     <div className='max-w-full md:max-w-[192px] flex items-center md:justify-center flex-row md:flex-col py-2 md:py-8 px-6 md:px-0'>
                         <FaUserTie className="w-6 md:w-8 h-6 md:h-8" />
                         <h5 className='font-[700] !text-[18px] leading-[24px] font-poppins transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 hidden md:block !text-ms-red-900 text-center text-[14px] md:text-[18px] md:mt-2 ml-4 md:ml-0'>6000+ students Currently Enrolled</h5>
+                        <p className='!font-[600] text-[16px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 block md:hidden !text-ms-red-900 text-[14px] md:text-[18px] md:mt-2 ml-4 md:ml-0'>6000+ students Currently Enrolled</p>
                     </div>
                     <div className="max-w-full md:max-w-[192px] flex items-center md:justify-center flex-row md:flex-col py-2 md:py-8 px-6 md:px-0 ml-5">
                         <PiSuitcaseBold className="w-6 md:w-8 h-6 md:h-8" />
                         <h5 className='font-[700] !text-[18px] leading-[24px] font-poppins transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 hidden md:block !text-ms-red-900 text-center text-[14px] md:text-[18px] md:mt-2 ml-4 md:ml-0'>4000+ hiring<br /> partners</h5>
+                        <p className='!font-[600] text-[16px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 block md:hidden !text-ms-red-900 text-[14px] md:text-[18px] md:mt-2 ml-4 md:ml-0'>4000+ hiring partners</p>
                     </div>
                     <div className="max-w-full md:max-w-[192px] flex items-center md:justify-center flex-row md:flex-col py-2 md:py-8 px-6 md:px-0 ml-5">
                         <AiOutlineThunderbolt className="w-6 md:w-8 h-6 md:h-8" />
                         <h5 className='font-[700] !text-[18px] leading-[24px] font-poppins transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 hidden md:block !text-ms-red-900 text-center text-[14px] md:text-[18px] md:mt-2 ml-4 md:ml-0'>6.9 LPA Average Salary</h5>
+                        <p className='!font-[600] text-[16px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 block md:hidden !text-ms-red-900 text-[14px] md:text-[18px] md:mt-2 ml-4 md:ml-0'>6.9 LPA Average Salary</p>
                     </div>
                     <div className="max-w-full md:max-w-[192px] flex items-center md:justify-center flex-row md:flex-col py-2 md:py-8 px-6 md:px-0 ml-5">
                         <BiRupee className="w-6 md:w-8 h-6 md:h-8" />
                         <h5 className='font-[700] !text-[18px] leading-[24px] font-poppins transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 hidden md:block !text-ms-red-900 text-center text-[14px] md:text-[18px] md:mt-2 ml-4 md:ml-0'>36 LPA Highest<br /> Salary</h5>
+                        <p className='!font-[600] text-[16px] leading-[24px] font-sans transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 block md:hidden !text-ms-red-900 text-[14px] md:text-[18px] md:mt-2 ml-4 md:ml-0'>36 LPA Highest Salary</p>
                     </div>
                 </div>
-            </Box>
+            </div>
             <div className="hidden isolate lg:flex items-center mb-[20px] sticky z-[200] h-[88px] bg-white w-full">
                 <div className='flex items-center max-w-[1280px] justify-between mx-auto px-[16px] w-[70%]'>
                     <Link

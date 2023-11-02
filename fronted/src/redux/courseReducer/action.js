@@ -12,11 +12,20 @@ export const getCourse = () => async(dispatch)=> {
     }
 }
 
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array
+}
+
 export const getQuestions = () => async(dispatch)=> {
     try{
         dispatch({type:LOAD})
         const res = await axios.get(`${process.env.REACT_APP_SERVER_URL}/question`)
-        dispatch({type:GET_QUESTIONS,payload:res.data})
+        let questions = shuffleArray(res?.data)
+        dispatch({type:GET_QUESTIONS,payload:questions})
     }catch(error){
         console.log(error)
         dispatch({type:ERROR})
