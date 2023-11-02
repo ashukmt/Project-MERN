@@ -6,7 +6,7 @@ function Container2() {
       <div className="flex justify-center font-bold text-lg z-2 mb-3">
         Re-Imagine Your Career Potential
       </div>
-      <div className="flex justify-between">
+      <div className="flex justify-between cont2">
         <div className="bg1  mt-2 p-2 rounded-xl ml-3">
           <div className="flex justify-center text-2xl font-bold text-yellow-400">
             Enterprises
@@ -105,7 +105,7 @@ function Container2() {
             </div>
           </div>
         </div>
-        <div className=" mt-2 ml-3 w-2/5">
+        <div className=" mt-2 ml-3 w-2/5 cont2">
           <div className="bg2 mb-3 font-bold rounded-xl flex justify-center items-center h-1/3 py-20">
             <div>
             <p className="text-3xl text-yellow-300">₹36 LPA</p>
