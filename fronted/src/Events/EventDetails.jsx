@@ -32,7 +32,7 @@ const EventDetails = () => {
       <div className="edParent grid grid-cols gap-20 place-content-center">
         <div className="video_div flex justify-center">
           <iframe
-            className="rounded-md"
+            className="rounded-md custom-iframe"
             width="1400"
             height="600"
             poster={myDetailsData.img}
@@ -54,8 +54,8 @@ const EventDetails = () => {
               {myDetailsData.position}
             </p>
           </div>
-          <div class="inline-block h-[250px] min-h-[1em] w-0.5 self-stretch bg-slate-700 opacity-100 dark:opacity-20 ml-14"></div>
-          <div className="sideAbout_div">
+          <div class="inline-block h-[250px] min-h-[1em] str_line w-0.5 self-stretch bg-slate-700 opacity-100 dark:opacity-20 ml-14"></div>
+          <div className="aboutDesc_div">
             <p className="font-medium">
               Pondering a career as a Software Developer? Not sure where to
               begin or what to expect? Dive into this enlightening session with
