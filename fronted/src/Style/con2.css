@@ -43,3 +43,9 @@
   display: block;
   width: 100%;
 } */
+@media only screen and (max-width: 900px) and (min-width: 500px)  {
+  .subs4{
+    margin-top: 10%;
+    margin-right: 25%;
+  }
+}

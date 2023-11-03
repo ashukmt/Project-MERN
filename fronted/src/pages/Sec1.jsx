@@ -2,7 +2,7 @@ import React from 'react'
 import '../Style/homes.css'
 function Sec1() {
   return (
-    <div className='topsec1'>
+    <div className='topsec1 block'>
      <div>
         <h1 className='font-bold sizes'>Realise Your Potential With <span>Assured Outcomes </span>  Delivered.</h1>
         <p className='text-sn mb-5'>India’s only outcome-based career institute.

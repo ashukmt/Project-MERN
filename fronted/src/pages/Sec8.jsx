@@ -3,7 +3,7 @@ import React from "react";
 function Sec8() {
   return (
     <div className="mb-10">
-    <div className="flex w-10/12 m-auto mb-16">
+    <div className="flex w-10/12 m-auto mb-16 sec88">
       <div className="widt71 p-4">
         <div className="font-bold text-2xl mb-5">
           <p>
