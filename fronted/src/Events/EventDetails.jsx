@@ -27,6 +27,8 @@ const EventDetails = () => {
     animateScroll.scrollToTop({ smooth: true })
 }, [])
 
+console.log("random clg")
+
   return (
     <div>
       <div className="edParent grid grid-cols gap-20 place-content-center">
