@@ -11,6 +11,7 @@ export const store = configureStore({
         Reward: rewardReducer,
         events: eventReducer,
         user : userReducer
+       
     },
     middleware: [thunk]
 })
