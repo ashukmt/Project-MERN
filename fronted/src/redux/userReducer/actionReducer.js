@@ -1,7 +1,7 @@
 import { EDIT_USER, GET_USER, POST_USER } from "./actionType"
 
 const initialState = {
-    user : {}
+    user : {},
 }
 
 export const userReducer = (state=initialState,{type,payload})=>{
