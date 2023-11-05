@@ -14,7 +14,7 @@ passport.use (
     }
   )
 );
-
+console.log("Auth Done")
 passport.serializeUser ((user, done) => {
   done (null, user);
 });

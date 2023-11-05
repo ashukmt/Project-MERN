@@ -1,4 +1,4 @@
-import { ERROR, GET_REWARDS, LOAD,GET_FAQS } from "./actiontype"
+import { ERROR, GET_REWARDS, LOAD,GET_FAQS, ADD_ADDRESS_REQUEST } from "./actionType"
 
 const iniState = {
     Rewards: [
@@ -122,7 +122,8 @@ const iniState = {
 
 // const iniState = {
 //   Rewards: [],
-//   FAQs:[]
+//   FAQs:[],
+//   Address:{},
 //   isLoading: false,
 //   isError: false
 // }
@@ -136,6 +137,7 @@ const iniState = {
 //       case ERROR: return {...state,isError:true}
 //       case GET_REWARDS: return {...state,isLoading:false,Rewards:payload}
 //   case GET_FAQS: return {...state,isLoading:false,FAQs:payload}
+//   case ADD_ADDRESS_REQUEST: return {...state,isLoading:false,Address:payload}
 //       default:
 //           return state
 //   }
