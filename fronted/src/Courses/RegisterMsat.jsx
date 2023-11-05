@@ -1,24 +1,21 @@
-import { FormControl, FormLabel, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Select, Tag, useDisclosure } from '@chakra-ui/react'
-import React, { useEffect } from 'react'
+import { Button, FormControl, FormLabel, Image, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Select, Tag, useDisclosure } from '@chakra-ui/react'
+import React, { useEffect, useState } from 'react'
 import Dropzone from 'react-dropzone'
+import { MdFileUpload } from 'react-icons/md';
 
 const RegisterMsat = ({ open }) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
+    const [uploadedImage, setUploadedImage] = useState(null)
     return (
         <Modal isOpen={open} onOpen={onOpen} onClose={onClose} size={'xl'}>
             <ModalOverlay />
             <ModalContent>
-                <ModalHeader>Create your account</ModalHeader>
-                <ModalCloseButton />
-                <ModalBody pb={6}>
+                <ModalHeader color={'white'} bg={'red.400'} className='text-center text-[29px] rounded-md rounded-b-0 font-bold'>Registration</ModalHeader>
+                <ModalCloseButton className='mt-2 text-white' onClick={onClose}/>
+                <ModalBody pb={6} p={9}>
                     <FormControl>
-                        <FormLabel>First name</FormLabel>
-                        <Input placeholder='First name' />
-                    </FormControl>
-
-                    <FormControl mt={4}>
-                        <FormLabel>Last name</FormLabel>
-                        <Input placeholder='Last name' />
+                        <FormLabel>Full Name</FormLabel>
+                        <Input placeholder='Full name' />
                     </FormControl>
 
                     <FormControl mt={4}>
@@ -32,17 +29,27 @@ const RegisterMsat = ({ open }) => {
 
                     <FormControl mt={4}>
                         <FormLabel>Upload Here</FormLabel>
-                        <Dropzone onDrop={acceptedFiles => console.log(acceptedFiles)}>
-                            {({ getRootProps, getInputProps }) => (
-                                <section className="border border-red-400">
-                                    <div {...getRootProps()}>
-                                        <input {...getInputProps()} />
-                                        <p>Drag 'n' drop some files here, or click to select files</p>
-                                    </div>
-                                </section>
-                            )}
-                        </Dropzone>
+                        {!uploadedImage &&
+                            <Dropzone onDrop={acceptedFiles => setUploadedImage(acceptedFiles)}>
+                                {({ getRootProps, getInputProps }) => (
+                                    <section className="mt-2 flex flex-col items-center justify-center rounded-lg border border-dashed outline-dotted outline-2 outline-gap-2 border-gray-900/25 px-6 py-10 text-center">
+                                        <div {...getRootProps()} className='text-center items-center'>
+                                            <input {...getInputProps()} />
+                                            <MdFileUpload className='h-20 w-20 m-auto' />
+                                            <p className='relative mt-2 flex w-64 cursor-pointer items-center justify-center text-md font-semibold leading-6 focus-within:outline-none focus-within:ring-2 focus-within:ring-red-600 focus-within:ring-offset-2 hover:text-red-500 text-red-600'>Choose file or Drag 'n' drop</p>
+                                            <p> </p>
+                                        </div>
+                                    </section>
+                                )}
+                            </Dropzone>
+                        }
+                        {uploadedImage && (
+                            <Image src=''/>
+                        )}
                     </FormControl>
+                    <div className='items-center w-full text-center'>
+                        <Button className='mt-3 text-center' variant={'solid'} colorScheme='red'>Submit Details</Button>
+                    </div>
                 </ModalBody>
             </ModalContent>
         </Modal>

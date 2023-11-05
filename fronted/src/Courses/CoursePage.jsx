@@ -8,8 +8,10 @@ import { animateScroll } from 'react-scroll'
 
 const CoursePage = () => {
     const courses = useSelector(state => state.course.courses)
+    const dispatch = useDispatch()
     useEffect(() => {
         animateScroll.scrollToTop({ smooth: true })
+        dispatch(getCourse())
     }, [])
     return (
         <>
