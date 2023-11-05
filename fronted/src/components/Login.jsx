@@ -26,6 +26,7 @@ import {
   ModalOverlay,
   Select,
   Stack,
+  Text,
   Textarea,
   useDisclosure,
 } from "@chakra-ui/react";
@@ -56,14 +57,16 @@ const Login = ({ onClose }) => {
     onClose()
   }
 
-  
+
   return (
     <>
       <DrawerOverlay />
       <DrawerContent>
         <DrawerCloseButton />
-        <DrawerHeader borderBottomWidth="1px" className="text-center h-[100px]">
-          Login
+        <DrawerHeader borderBottomWidth="1px" className="text-center h-[100px] font-bold">
+          <Text className="font-bold text-[25px]">
+            Login
+          </Text>
         </DrawerHeader>
 
         <DrawerBody>
@@ -90,7 +93,7 @@ const Login = ({ onClose }) => {
             </Box>
 
             <div className="mt-5 flex justify-center gap-2">
-             <FcGoogle onClick={handleGoogleLogin}  className="w-24 h-[35px] -ml-12 cursor-pointer" />
+              <FcGoogle onClick={handleGoogleLogin} className="w-24 h-[35px] -ml-12 cursor-pointer" />
               <Center height="40px" className="pr-7">
                 <Divider orientation="vertical" borderColor={"black"} />
               </Center>
@@ -101,12 +104,12 @@ const Login = ({ onClose }) => {
           </Stack>
         </DrawerBody>
 
-        <DrawerFooter borderTopWidth="1px">
+        {/* <DrawerFooter borderTopWidth="1px">
           <Button variant="outline" mr={3} onClick={onClose}>
             Cancel
           </Button>
           <Button colorScheme="blue">Submit</Button>
-        </DrawerFooter>
+        </DrawerFooter> */}
       </DrawerContent>
     </>
   );

@@ -11,7 +11,6 @@ import { animateScroll } from 'react-scroll'
 import Register from './Events/Register'
 import LeaderBr_Invite_Referal from './ReferalComp/LeaderBr&Invite&Referal'
 import StartMsat from './Courses/StartMsat'
-import RegisterMsat from './Courses/RegisterMsat'
 import Login from './components/Login'
 
 const AllRoutes = () => {
@@ -28,7 +27,6 @@ const AllRoutes = () => {
         <Route path='/event/registerevents/:id' element={<Register/>} />
         <Route path='/Referal' element={<Referal/>} />
         <Route path='/msat' element={<MsatDetails />} />
-        <Route path='/msat/apply' element={<RegisterMsat />} />
         <Route path='/msat/test' element={<StartMsat />} />
         <Route path='/Profile' element={<LeaderBr_Invite_Referal/>}/>
         <Route path='/sign' element={<Login/>}/>
