@@ -12,24 +12,27 @@ import Sec5 from '../pages/Sec5';
 import Sec4 from '../pages/Sec4';
 import FaqComp from './FaqComp';
 import Alumini from './Alumini';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import RegisterMsat from './RegisterMsat';
 
 const CourseDetail = () => {
     const courses = useSelector(state => state.course.courses)
     const { title } = useParams()
     const course = courses.filter((c) => c.title === title?.replaceAll("-", " "))[0]
     const navigateTo = useNavigate()
+    const [register,setRegister] = useState(false);
     useEffect(() => {
         animateScroll.scrollToTop({ smooth: true })
     }, [])
     return (
         <>
-            <Box className={`bg-${course?.color}-300 relative overflow-hidden text-center p-2`} h='300px' >
+            {/* top banner */}
+            <Box className={`bg-${course?.color}-300 relative overflow-hidden text-center p-2`} h='500px' >
                 <Image w='100vw' position={'absolute'} zIndex={'-1'} src='utils/bg.png' />
                 <Box className={`bg-${course?.color}-200 hidden md:flex items-center justify-center w-[248px] h-[248px] pointer-events-none absolute top-[35%] rounded-[100%] right-[-2%] z-[0]`}>
                     <Image className="max-h-[94px] max-w-[104px] w-full object-cover" src={course?.image} />
                 </Box>
-                <div class="relative flex mt-[50px] items-center justify-center gap-[3px] md:gap-[10px] font-[700] text-[50px] leading-[62px] font-poppins transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 !text-white ">
+                <div class="relative flex mt-[50px] items-center justify-center gap-[3px] md:gap-[10px] font-[700] text-[50px] leading-[62px] font-poppins transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 !text-white sm:text-[30px] xs:text-[30px]">
                     <BsStars style={{ position: 'relative' }} className='relative' />
                     Become a {course?.role}
                 </div>
@@ -38,6 +41,7 @@ const CourseDetail = () => {
                     Become a job-ready {title} in {course?.duration} weeks.<br /> Learn at ₹0 upfront fee; pay after placement.
                 </Text>
             </Box>
+            {/* secondary info banner */}
             <div className='pt-8 md:pt-6 pb-8 md:pb-0 bg-[#F7F7FF]'>
                 <div className='max-w-[1440px] mx-auto flex flex-col md:flex-row md:justify-center'>
                     <div className='max-w-full md:max-w-[192px] flex items-center md:justify-center flex-row md:flex-col py-2 md:py-8 px-6 md:px-0'>
@@ -62,6 +66,7 @@ const CourseDetail = () => {
                     </div>
                 </div>
             </div>
+            {/* page navbar */}
             <div className="hidden isolate lg:flex items-center mb-[20px] sticky z-[200] h-[88px] bg-white w-full">
                 <div className='flex items-center max-w-[1280px] justify-between mx-auto px-[16px] w-[70%]'>
                     <Link
@@ -109,9 +114,10 @@ const CourseDetail = () => {
                     >
                         FAQ
                     </Link>
-                    <Button onClick={()=>navigateTo('/msat/apply')} colorScheme='red'>Apply Now</Button>
+                    <Button onClick={()=>setRegister(true)} colorScheme='red'>Apply Now</Button>
                 </div>
             </div>
+            {/* course details */}
             <div id="course" className='max-w-xl mx-auto lg:max-w-7xl mt-[3em]'>
                 <div className='xl:px-[80px] space-y-[24px] lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-8'>
                     <div className='flex flex-row gap-[14px] items-center md:w-[auto] bg-[#F7F7FF] p-[4px] md:p-[24px] rounded-[16px]'>
@@ -200,6 +206,7 @@ const CourseDetail = () => {
                     </div>
                 </div>
             </div>
+            {/* process banner */}
             <div className="mb-10 lg:mt-8">
                 <div className="bg-[#f6ede7] pb-10 mt-0 px-5 pt-8 undefined">
                     <h1 className="block font-poppins text-[24px] text-center font-bold undefined">Admission Process</h1>
@@ -234,7 +241,7 @@ const CourseDetail = () => {
                     </div>
                     <div className='text-center mt-10 flex gap-2 justify-center'>
                         <Button onClick={() => navigateTo('/msat')} variant={'outline'} colorScheme='red'>View MSAT DETAILS</Button>
-                        <Button onClick={()=> navigateTo('/msat/apply')} colorScheme='red'>APPLY NOW FOR FREE</Button>
+                        <Button onClick={()=>setRegister(true)} colorScheme='red'>APPLY NOW FOR FREE</Button>
                     </div>
                 </div>
             </div>
@@ -242,6 +249,7 @@ const CourseDetail = () => {
             <Sec4 />
             <Alumini />
             <FaqComp />
+            <RegisterMsat register={register} setRegister={setRegister}/>
         </>
     )
 }

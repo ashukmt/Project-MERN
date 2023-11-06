@@ -15,8 +15,13 @@ import {
   FormControl,
   FormLabel,
 } from '@chakra-ui/react'
+import { useDispatch } from 'react-redux';
+import { PostData } from '../redux/RewardReducer/action';
+
 
 function RewardCard({ Coin_Req, Gift_name, Gift_url }) {
+
+  const Navigate = useNavigate();
   const [fname, setFname] = useState("")
   const [email, setEmail] = useState("")
   const [phoneNumber, setPhnumber] = useState("")
@@ -24,12 +29,40 @@ function RewardCard({ Coin_Req, Gift_name, Gift_url }) {
   const [imgurl, setImgurl] = useState("")
   const [claibtn, setClaimbtn] = useState(3000)
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const [bagEmpty,setBagEmpty]=useState(false);
+
+  const today = new Date();
+const twoDaysFromNow = new Date(today);
+twoDaysFromNow.setDate(today.getDate() + 3);
+var DateA = `${twoDaysFromNow.getFullYear()}-${(twoDaysFromNow.getMonth() + 1)
+  .toString()
+  .padStart(2, '0')}-${twoDaysFromNow.getDate().toString().padStart(2, '0')}`;
+console.log(DateA)
+
+  const [addObj,setAddObj]=useState({
+    Phnumber:"",
+    Email:"",
+    Address:"",
+    Empty:bagEmpty,
+    Imgurl:Gift_url,
+    DeliveryDate:DateA
+  })
+ 
 
   const initialRef = React.useRef(null)
   const finalRef = React.useRef(null)
 
+  const Dispatch = useDispatch();
 
-  const Navigate = useNavigate();
+
+  const HandleChange=(e)=>{
+    e.preventDefault();
+    setAddObj({...addObj,[e.target.name]:e.target.value})
+    
+  }
+  console.log(addObj)
+
+
   return (
     <div className='border-solid items-center rounded-xl justify-center' style={{ background: "#f3f2f2", boxshadow: "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;" }}>
       <div className='flex justify-center pt-8 px-4'>
@@ -57,9 +90,6 @@ function RewardCard({ Coin_Req, Gift_name, Gift_url }) {
 
         >CLAIM FOR {Coin_Req} COIN</Button>
 
-
-
-
         <Modal
           initialFocusRef={initialRef}
           finalFocusRef={finalRef}
@@ -74,27 +104,37 @@ function RewardCard({ Coin_Req, Gift_name, Gift_url }) {
             <Box boxSize='' style={{width:"80%", margin:"auto", marginBottom:"20px"}}>
   <Image src={Gift_url} alt='Dan Abramov' />
 </Box>
+
               <FormControl>
                 <FormLabel>Mobile Number</FormLabel>
-                <Input type='number' ref={initialRef} placeholder='Mobile Number' />
+                <Input type='number' name='Phnumber' ref={initialRef} placeholder='Mobile Number' onChange={HandleChange} required />
               </FormControl>
 
               <FormControl>
                 <FormLabel>Email</FormLabel>
-                <Input type='email' ref={initialRef} placeholder='Email' />
+                <Input type='email' name='Email' ref={initialRef} placeholder='Email' onChange={HandleChange} required />
               </FormControl>
 
               <FormControl mt={4}>
-                <FormLabel>Pin Code</FormLabel>
-                <Input type='number' placeholder='Last name' />
+                <FormLabel>Address</FormLabel>
+                <Input type="text" name='Address' placeholder='Enter Your Address' onChange={HandleChange} required />
               </FormControl>
             </ModalBody>
 
             <ModalFooter>
-              <Button colorScheme='blue' mr={3} onClick={onClose}>
+              <Button colorScheme='blue' mr={3} onClick={()=>{
+                
+     Dispatch(PostData(addObj))
+                  Navigate("/Profile")
+                onClose()
+              }
+                   
+                }>
                 Redeem
               </Button>
               <Button onClick={onClose}>Cancel</Button>
+
+              
             </ModalFooter>
           </ModalContent>
         </Modal>

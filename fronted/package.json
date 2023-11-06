@@ -29,6 +29,7 @@
     "react-chartjs-2": "^5.2.0",
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.2.0",
+    "react-dropzone": "^14.2.3",
     "react-icons": "^4.11.0",
     "react-lazy-load-image-component": "^1.6.0",
     "react-router": "^6.16.0",
