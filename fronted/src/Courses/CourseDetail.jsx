@@ -27,12 +27,12 @@ const CourseDetail = () => {
     return (
         <>
             {/* top banner */}
-            <Box className={`bg-${course?.color}-300 relative overflow-hidden text-center p-2`} h='300px' >
+            <Box className={`bg-${course?.color}-300 relative overflow-hidden text-center p-2`} h='500px' >
                 <Image w='100vw' position={'absolute'} zIndex={'-1'} src='utils/bg.png' />
                 <Box className={`bg-${course?.color}-200 hidden md:flex items-center justify-center w-[248px] h-[248px] pointer-events-none absolute top-[35%] rounded-[100%] right-[-2%] z-[0]`}>
                     <Image className="max-h-[94px] max-w-[104px] w-full object-cover" src={course?.image} />
                 </Box>
-                <div class="relative flex mt-[50px] items-center justify-center gap-[3px] md:gap-[10px] font-[700] text-[50px] leading-[62px] font-poppins transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 !text-white ">
+                <div class="relative flex mt-[50px] items-center justify-center gap-[3px] md:gap-[10px] font-[700] text-[50px] leading-[62px] font-poppins transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 !text-white sm:text-[30px] xs:text-[30px]">
                     <BsStars style={{ position: 'relative' }} className='relative' />
                     Become a {course?.role}
                 </div>
@@ -249,7 +249,7 @@ const CourseDetail = () => {
             <Sec4 />
             <Alumini />
             <FaqComp />
-            <RegisterMsat open={register}/>
+            <RegisterMsat register={register} setRegister={setRegister}/>
         </>
     )
 }

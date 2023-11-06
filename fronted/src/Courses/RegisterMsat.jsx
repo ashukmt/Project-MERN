@@ -3,15 +3,18 @@ import React, { useEffect, useState } from 'react'
 import Dropzone from 'react-dropzone'
 import { MdFileUpload } from 'react-icons/md';
 
-const RegisterMsat = ({ open }) => {
+const RegisterMsat = ({ register, setRegister }) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [uploadedImage, setUploadedImage] = useState(null)
+    useEffect(() => {
+        if (register) onOpen()
+    }, [register])
     return (
-        <Modal isOpen={open} onOpen={onOpen} onClose={onClose} size={'xl'}>
+        <Modal isOpen={isOpen} onOpen={onOpen} onClose={()=>{onClose(); setRegister(false)}} size={'xl'}>
             <ModalOverlay />
             <ModalContent>
                 <ModalHeader color={'white'} bg={'red.400'} className='text-center text-[29px] rounded-md rounded-b-0 font-bold'>Registration</ModalHeader>
-                <ModalCloseButton className='mt-2 text-white' onClick={onClose}/>
+                <ModalCloseButton className='mt-2 text-white' onClick={onClose} />
                 <ModalBody pb={6} p={9}>
                     <FormControl>
                         <FormLabel>Full Name</FormLabel>
@@ -44,7 +47,7 @@ const RegisterMsat = ({ open }) => {
                             </Dropzone>
                         }
                         {uploadedImage && (
-                            <Image src=''/>
+                            <Image src='' />
                         )}
                     </FormControl>
                     <div className='items-center w-full text-center'>
