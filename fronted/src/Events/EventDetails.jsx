@@ -48,11 +48,11 @@ console.log("random clg")
 
         <div className="masai_desc flex">
           <div className="about_event">
-            <p className="font-sans">About the event</p>
-            <h1 className="font-sans text-xl mt-2 md:text-2xl font-bold">
+            <p className="font-sans about_p">About the event</p>
+            <h1 className="font-sans about_h1 text-xl mt-2 md:text-2xl font-bold">
               {myDetailsData.title}
             </h1>
-            <p className="font-sans text-3xl mt-2 font-bold">
+            <p className="font-sans about_p2 text-3xl mt-2 font-bold">
               {myDetailsData.position}
             </p>
           </div>
@@ -88,17 +88,19 @@ console.log("random clg")
 
         <div className="intrstuctor_desc flex justify-center">
           <div className="flex inside_div justify-center">
-            <div className="about_event">
-              <p className="font-sans">Know Your Speaker</p>
-              <h1 className="font-sans text-xl mt-2 md:text-2xl font-bold">
+            <div className="about_event_spk flex justify-center items-center">
+              <div>
+              <p className="font-sans inst_p">Know Your Speaker</p>
+              <h1 className="font-sans inst_h2 text-xl mt-2 md:text-2xl font-bold">
                 Meet
               </h1>
-              <p className="font-sans text-3xl mt-2 font-bold">
+              <p className="font-sans inst_p2 text-3xl mt-2 font-bold">
                 {myDetailsData.speaker}
               </p>
+              </div>
             </div>
 
-            <div class="inline-block h-[250px] min-h-[1em] w-0.5 self-stretch bg-slate-700 opacity-100 dark:opacity-20 ml-14"></div>
+            <div class="inline-block h-[250px] min-h-[1em] w-0.5 inst_line self-stretch bg-slate-700 opacity-100 dark:opacity-20 ml-14"></div>
 
             <div className="sideAbout_div">
               <p className="font-medium text-lg mt-20">
@@ -107,8 +109,9 @@ console.log("random clg")
             </div>
           </div>
 
-          <div>
+          <div className="inst_img_div">
             <img
+              className="inst_img_class"
               src={myDetailsData.instructor_img}
               width={300}
               alt="instructor_img"
