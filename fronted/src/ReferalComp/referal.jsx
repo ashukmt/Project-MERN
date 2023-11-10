@@ -15,6 +15,8 @@ import {
   useDisclosure,
   FormControl,
   FormLabel,
+  Alert,
+  AlertIcon,
 } from "@chakra-ui/react";
 import Accordionist from "./Accordionist";
 
@@ -25,6 +27,7 @@ function Referal() {
   const[email,setEmail]=useState("")
   const[phoneNumber,setPhnumber]=useState("")
   const[rcode,setRcode]=useState("")
+  const [showAlert, setShowAlert] = useState(false);
    
 
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -43,10 +46,20 @@ function Referal() {
       Ph_number:phoneNumber,
       R_Code:rcode
   }
+
+  if (refform.F_name === "" || refform.Email === "" || refform.Ph_number === "") {
+    // Toggle the alert's visibility
+    setShowAlert(true);
+
+    // You can also include additional logic here
+    
+  }
+
+else
      try {
       const PostData = await axios.post("http://localhost:8080/sharelink/sharereferal", { ...refform });
      console.log(PostData.status)
-      if (PostData.status === "200") {
+      if (PostData.status !== "200") {
         const message = `https://masaiClone.com/${7796}`;
         const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
         window.open(url, "_blank");
@@ -150,9 +163,20 @@ function Referal() {
             w={'full'}
             type='submit'
             onClick={handleSubmit}
+            
           >
             Submit
           </Button>
+
+          {showAlert && (
+        <Alert status="success" variant="subtle" onClose={() => setShowAlert(false)}>
+        <AlertIcon />
+   All input filed required
+        </Alert>
+      )}
+
+
+
 </FormControl>
                 </DrawerBody>
               </DrawerContent>
