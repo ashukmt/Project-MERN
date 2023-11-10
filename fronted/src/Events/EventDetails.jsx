@@ -35,7 +35,7 @@ console.log("random clg")
         <div className="video_div flex justify-center">
           <iframe
             className="rounded-md custom-iframe"
-            width="1400"
+            width="100%"
             height="600"
             poster={myDetailsData.img}
             src={myDetailsData.video}

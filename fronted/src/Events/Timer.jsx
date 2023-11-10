@@ -59,10 +59,10 @@ const Timer = ({myData}) => {
           <p className="text-lg font-bold text-gray-500">
             {timeRemaining.days}
           </p>
-          <p className="text-lg font-bold text-red-500">Days</p>
+          <p className="text-lg font-bold days_p text-red-500">Days</p>
         </div>
-        <div>
-          <p className="text-4xl font-bold text-gray-500 justify-center text-center p-4">
+        <div className="dot_div">
+          <p className="text-4xl dot_p font-bold text-gray-500 justify-center text-center p-4">
             :
           </p>
         </div>
@@ -70,10 +70,10 @@ const Timer = ({myData}) => {
           <p className="text-lg font-bold text-gray-500">
             {timeRemaining.hours}
           </p>
-          <p className="text-lg font-bold text-red-500">Hours</p>
+          <p className="text-lg font-bold hours_p text-red-500">Hours</p>
         </div>
-        <div>
-          <p className="text-4xl font-bold text-gray-500 justify-center text-center p-4">
+        <div className="dot_div">
+          <p className="text-4xl dot_p font-bold text-gray-500 justify-center text-center p-4">
             :
           </p>
         </div>
@@ -81,10 +81,10 @@ const Timer = ({myData}) => {
           <p className="text-lg font-bold text-gray-500 ">
             {timeRemaining.minutes}
           </p>
-          <p className="text-lg font-bold text-red-500">Mins</p>
+          <p className="text-lg font-bold min_p text-red-500">Mins</p>
         </div>
         <div>
-          <p className="text-4xl font-bold text-gray-500 flex justify-center text-center p-4">
+          <p className="text-4xl dot_p spcl_dot_p font-bold text-gray-500 flex justify-center text-center p-4">
             :
           </p>
         </div>
@@ -93,7 +93,7 @@ const Timer = ({myData}) => {
           <p className="text-lg font-bold text-gray-500">
             {timeRemaining.seconds}
           </p>
-          <p className="text-lg font-bold text-red-500">Secs</p>
+          <p className="text-lg font-bold secs_p text-red-500">Secs</p>
         </div>
       </div>
     </div>
