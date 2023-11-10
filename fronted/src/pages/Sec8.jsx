@@ -2,7 +2,7 @@ import React from "react";
 
 function Sec8() {
   return (
-    <div className="mb-10">
+    <div className="mb-10" id='news'>
     <div className="flex w-10/12 m-auto mb-16 sec88">
       <div className="widt71 p-4 top22">
       <div className="">

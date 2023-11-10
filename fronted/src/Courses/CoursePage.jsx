@@ -19,7 +19,7 @@ const CoursePage = () => {
             <Box className='text-center xs:px-4 lg:px-0 mb-10'>
                 <Heading p='5' size='2xl'>Our Courses</Heading>
                 <Text>Become a Software Developer, Testing Engineer or a Data Analyst at ZERO upfront fees.</Text>
-                <div className="mx-auto mt-12 flex flex-wrap !justify-center md:gap-x-[32px] max-w-lg gap-y-[48px] lg:max-w-[1440px] px-0">
+                <div className="mx-auto mt-12 flex flex-wrap px-5 lg:px-0 !justify-center md:gap-x-[32px] max-w-lg gap-y-[48px] lg:max-w-[1440px]">
                     {
                         courses?.map((course, i) => {
                             return <CourseComp {...course} key={i} />

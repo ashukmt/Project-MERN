@@ -12,6 +12,7 @@ import Register from './Events/Register'
 import LeaderBr_Invite_Referal from './ReferalComp/LeaderBr&Invite&Referal'
 import StartMsat from './Courses/StartMsat'
 import Login from './components/Login'
+import MsatConfirm from './Courses/MsatConfirm'
 
 const AllRoutes = () => {
   useEffect(()=>{
@@ -27,6 +28,7 @@ const AllRoutes = () => {
         <Route path='/event/registerevents/:id' element={<Register/>} />
         <Route path='/Referal' element={<Referal/>} />
         <Route path='/msat' element={<MsatDetails />} />
+        <Route path='/msat/confirm' element={<MsatConfirm />} />
         <Route path='/msat/test' element={<StartMsat />} />
         <Route path='/Profile' element={<LeaderBr_Invite_Referal/>}/>
         <Route path='/sign' element={<Login/>}/>

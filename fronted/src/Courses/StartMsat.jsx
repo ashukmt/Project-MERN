@@ -1,4 +1,4 @@
-import { Box, Button, Center, Divider, Flex, HStack, Heading, Image, Modal, ModalContent, ModalOverlay, Radio, RadioGroup, Spacer, Text, Tooltip, useDisclosure, useRadioGroup } from '@chakra-ui/react'
+import { AlertDialog, AlertDialogBody, AlertDialogContent, AlertDialogFooter, AlertDialogOverlay, Box, Button, Center, Divider, Flex, HStack, Heading, Image, Modal, ModalBody, ModalContent, ModalOverlay, Radio, RadioGroup, Spacer, Text, Tooltip, useDisclosure, useRadioGroup } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { BsFillStopFill } from 'react-icons/bs'
 import { animateScroll } from 'react-scroll'
@@ -11,6 +11,7 @@ import { HiOutlineReply } from "react-icons/hi";
 import ThankYouScreen from './ThankYouScreen'
 import { editUser } from '../redux/userReducer/action'
 import AlreadyDone from './AlreadyDone'
+import { useNavigate } from 'react-router'
 
 const StartMsat = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -65,6 +66,21 @@ const StartMsat = () => {
         setProcessing(true);
         dispatch(editUser({ ...user, msatDay: new Date(), msatScore: marks, coin: user.coin + 100 }));
     }
+    const navigate = useNavigate();
+
+    if (window.innerWidth <= 1024) return <AlertDialog motionPreset='slideInTop' isCentered isOpen={true}>
+        <AlertDialogOverlay />
+        <AlertDialogContent>
+            <AlertDialogBody>
+                <Text className='font-semibold text-xl text-center p-3'>You Can only attempt the test in a pc/laptop</Text>
+            </AlertDialogBody>
+            <AlertDialogFooter alignItems={'center'} justifyContent={'center'} className='text-center flex justify-center w-full'>
+                <Button colorScheme='red' onClick={()=>navigate('/')}>
+                    Ok
+                </Button>
+            </AlertDialogFooter>
+        </AlertDialogContent>
+    </AlertDialog>
     if (user.msatDay == new Date().getDate()) return <>
         <AlreadyDone />
     </>
