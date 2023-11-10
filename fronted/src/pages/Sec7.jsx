@@ -10,7 +10,7 @@ function Sec7() {
       <div className='widt71  mt-10'>
         <SubSec71/>
       </div>
-      <div className='w-2/4 mt-10 ml-5'>
+      <div className='w-2/4 mt-10 ml-5 sub72'>
         <SubSec72/>
       </div>
       </div>

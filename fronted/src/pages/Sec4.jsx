@@ -9,7 +9,7 @@ const Sec4 = () => {
         Best-in-Class<span className="text-red-600 mx-3">Curriculum</span>&
         <span className="text-red-600 mx-3">Pedagogy</span>
       </div>
-      <div className="flex justify-between">
+      <div className="flex justify-between subb44">
         <div className="wd3 mx-9 ml-28">
          <SubSec4/>
         </div>
