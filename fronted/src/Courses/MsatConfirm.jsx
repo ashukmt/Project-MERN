@@ -1,74 +1,46 @@
-import { Button, ButtonGroup, Card, CardBody, CardFooter, Divider, Heading, Image, Stack, Text } from '@chakra-ui/react'
+import { Button, ButtonGroup, Card, CardBody, CardFooter, Divider, Heading, Image, Link, Stack, Text } from '@chakra-ui/react'
 import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router'
 import { animateScroll } from 'react-scroll'
 
 const MsatConfirm = () => {
+    const navigate = useNavigate()
     useEffect(() => {
         animateScroll.scrollToTop()
     }, [])
     return (
-        <div className='flex justify-center gap-20 m-10'>
+        <div className='flex justify-center items-center gap-20 m-10 flex-col lg:flex-row'>
             <Card maxW='sm'>
                 <CardBody>
                     <Image
-                        src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
-                        alt='Green double couch with wooden legs'
+                        src='https://geps.org/wp-content/uploads/2020/01/Preparing-1030x685.jpg'
+                        alt='prepare image'
                         borderRadius='lg'
                     />
-                    <Stack mt='6' spacing='3'>
-                        <Heading size='md'>Living room Sofa</Heading>
-                        <Text>
-                            This sofa is perfect for modern tropical spaces, baroque inspired
-                            spaces, earthy toned spaces and for people who love a chic design with a
-                            sprinkle of vintage design.
-                        </Text>
-                        <Text color='blue.600' fontSize='2xl'>
-                            $450
-                        </Text>
+                    <Stack mt='6' spacing='3' className='text-center'>
+                        <Heading size='md'>Not Ready yet</Heading>
+                        <Heading size='md' color='red.400'>Prepare for Msat</Heading>
+                        <a className='underline text-blue-500' href='https://leetcode.com/discuss/general-discussion/460599/blind-75-leetcode-questions'>
+                            Top DSA Questions Combined here
+                        </a>
+                        <a className='underline text-blue-500' href='https://www.geeksforgeeks.org/aptitude-questions-and-answers/'>
+                            Top Aptitude Questions Combined here
+                        </a>
                     </Stack>
                 </CardBody>
-                <Divider />
-                <CardFooter>
-                    <ButtonGroup spacing='2'>
-                        <Button variant='solid' colorScheme='blue'>
-                            Buy now
-                        </Button>
-                        <Button variant='ghost' colorScheme='blue'>
-                            Add to cart
-                        </Button>
-                    </ButtonGroup>
-                </CardFooter>
             </Card>
-            <Card maxW='sm'>
-                <CardBody>
+            <Card maxW='md'>
+                <CardBody p='5'>
                     <Image
-                        src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
-                        alt='Green double couch with wooden legs'
+                        src='https://ggsc.s3.amazonaws.com/images/uploads/Succeed_by_helping_others_Fb.jpg'
+                        alt='prepare image'
                         borderRadius='lg'
                     />
                     <Stack mt='6' spacing='3'>
-                        <Heading size='md'>Living room Sofa</Heading>
-                        <Text>
-                            This sofa is perfect for modern tropical spaces, baroque inspired
-                            spaces, earthy toned spaces and for people who love a chic design with a
-                            sprinkle of vintage design.
-                        </Text>
-                        <Text color='blue.600' fontSize='2xl'>
-                            $450
-                        </Text>
+                        <Heading className='text-[35px] text-center' size='md' >Feel you are Ready</Heading>
+                        <Button size={'lg'} colorScheme='red' onClick={()=>navigate('/msat/test')}>Start MSAT</Button>
                     </Stack>
                 </CardBody>
-                <Divider />
-                <CardFooter>
-                    <ButtonGroup spacing='2'>
-                        <Button variant='solid' colorScheme='blue'>
-                            Buy now
-                        </Button>
-                        <Button variant='ghost' colorScheme='blue'>
-                            Add to cart
-                        </Button>
-                    </ButtonGroup>
-                </CardFooter>
             </Card>
         </div>
     )

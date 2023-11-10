@@ -8,12 +8,27 @@ import {
   DrawerBody,
   DrawerCloseButton,
   DrawerContent,
+  DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
+  FormControl,
   FormLabel,
   Input,
+  InputGroup,
+  InputLeftAddon,
+  InputRightAddon,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  Select,
   Stack,
   Text,
+  Textarea,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { FcGoogle } from "react-icons/fc";
 import { useNavigate } from "react-router";
@@ -21,7 +36,8 @@ import { Link } from "react-router-dom";
 import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
 import { auth } from "./FireBase";
 
-const Login = ({ onClose, onOpen }) => {
+const Signup = ({ onClose, onOpen }) => {
+
   const [user, setUser] = useState({});
 
   const handleGoogleLogin = async () => {
@@ -47,12 +63,21 @@ const Login = ({ onClose, onOpen }) => {
         <DrawerCloseButton />
         <DrawerHeader borderBottomWidth="1px" className="text-center h-[100px] font-bold">
           <Text className="font-bold text-[25px]">
-            Login
+            Signup
           </Text>
         </DrawerHeader>
 
         <DrawerBody>
           <Stack spacing="24px" className="items-center mt-10">
+            <Box>
+              <FormLabel htmlFor="email">Name:</FormLabel>
+              <Input
+                width={"350px"}
+                size={"lg"}
+                id="name"
+                placeholder="Please enter username"
+              />
+            </Box>
             <Box>
               <FormLabel htmlFor="email">Email:</FormLabel>
               <Input
@@ -80,7 +105,7 @@ const Login = ({ onClose, onOpen }) => {
                 <Divider orientation="vertical" borderColor={"black"} />
               </Center>
               <Button className="" variant={"outline"} onClick={()=>{onClose(); onOpen();}} colorScheme={"blue"}>
-                Signup{" "}
+                Login{" "}
               </Button>
             </div>
           </Stack>
@@ -90,4 +115,4 @@ const Login = ({ onClose, onOpen }) => {
   );
 };
 
-export default Login;
+export default Signup;
