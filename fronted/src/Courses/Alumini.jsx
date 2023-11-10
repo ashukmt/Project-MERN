@@ -10,13 +10,13 @@ const Alumini = () => {
     return (
         <div className='mt-18 mb-5 max-w-[1280px] mx-auto' id='stories'>
             <h1 className='text-[40px] text-center font-bold'>Hear From our alumni</h1>
-            <div style={{}} className="lg:grid-cols-[repeat(auto-fit,296px)] grid-cols-[repeat(1,1fr)] px-[16px] grid justify-center gap-[16px] mt-[32px]">
+            <div style={{}} className="lg:grid-cols-[repeat(auto-fit,296px)] grid-cols-[repeat(1,1fr)] px-[20px] grid justify-center gap-[16px] mt-[32px]">
                 {aluminiDetails?.map((al, i) => (
                     <div className="mx-auto h-full md:max-w-[296px] flex flex-col rounded-[32px] relative">
                         <div class="h-[296px]">
                             <img src={al.dp} alt={al.name} class="h-full z-[-1] object-cover object-top relative rounded-[32px] w-[100%]" style={{ opacity: 1, transition: "opacity 1200ms ease-out 0s" }} />
                         </div>
-                        <div className="min-h-[252px] flex-1 flex flex-col gap-[8px] relative mt-[-50px] rounded-[32px] py-[24px] px-[16px]" style={{background: al.bg}}>
+                        <div className="min-h-[252px] flex-1 flex flex-col gap-[8px] relative mt-[-50px] rounded-[32px] py-[24px] px-[25px]" style={{background: al.bg}}>
                             <div className="h-full flex gap-[5px]">
                                 <RiDoubleQuotesL size={'lg'} className='align-top'/>
                                 <div className='flex flex-col'>
