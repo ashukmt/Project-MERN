@@ -19,7 +19,7 @@ function Sec2() {
         </div>
       </div>
       <div className="hel">
-        <div>
+        <div className="sec11">
         <button onClick={(e)=>setNum(1)} className="brt flex ml-32 hover:bg-red-50 hover:text-red-400">
           <div className="p-2 bg-red-200 px-4 ml-3 rounded-lg">1</div>
           <div className="p-2 font-bold ml-2 hover:text-red-600">
@@ -55,11 +55,13 @@ function Sec2() {
         <div className=" mt-9 ml-10 dat  py-6 px-4">
 
         
-       {num===1?<Contain1/>:<></>}
+      <div>
+      {num===1?<Contain1/>:<></>}
        {num===2?<Container2/>:<></>}
        {num===3?<Container3/>:<></>}
        {num===4?<Container4/>:<></>}
        {num===5?<Container5/>:<></>} 
+      </div>
         </div>
       </div>
     </div>

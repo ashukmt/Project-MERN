@@ -133,7 +133,7 @@
 
 .widt7{
     background-color:#f9f9f9 ;
-    height: 570px;
+    height: 100%;
     margin-bottom: 50px;
    
 }
@@ -167,6 +167,27 @@
     } */
 }
 
+@media only screen and (max-width: 800px) and (min-width: 400px)  {
+.hel{
+    display: block;
+}
+.sec11{
+    width: 50%;
+    margin: auto;
+   
+    justify-content: space-between;
+}
+.brt{
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 2%;
+}
+.dat{
+    display: flex;
+    margin: auto;
+    margin-top: 4%;
+}
+}
 @media only screen and (max-width: 900px) and (min-width: 500px)  {
     .topsec1{
         display: block;
@@ -189,6 +210,18 @@
     }
     .sec88{
         display: block;
-        color: red;
+       
+    }
+    .top22{
+        display: flex;
+        margin: auto;
+        margin-bottom: 4%;
+    }
+    .widt77{
+        display: block;
+        width: 200%;
+    }
+    .sub72{
+        margin-left: -2%;
     }
 }

@@ -4,7 +4,8 @@ function Sec8() {
   return (
     <div className="mb-10">
     <div className="flex w-10/12 m-auto mb-16 sec88">
-      <div className="widt71 p-4">
+      <div className="widt71 p-4 top22">
+      <div className="">
         <div className="font-bold text-2xl mb-5">
           <p>
             <span className="text-red-500 mr-2">Elevate</span>Your Career
@@ -26,6 +27,7 @@ function Sec8() {
         </div>
         <div className="mt-7 bg-red-600 inline-block p-3 rounded-lg text-white font-semibold">
           <button>APPLY NOW</button>
+        </div>
         </div>
       </div>
       <div className="widt71 rounded-lg ml-2">
