@@ -1,5 +1,6 @@
 import React from "react";
 import "../Style/homes.css";
+import video from "../video/Cab Driver became Software Engineer – Meet Ashish Raj from Munger, Bihar.mp4"
 function Contain1() {
   return (
     <div>
@@ -8,8 +9,8 @@ function Contain1() {
       </div>
       <div className="flex cont1">
         <div className="ml-7 my-3  ">
-         <video width="500" height="250" controls poster="https://masai-website-images.s3.ap-south-1.amazonaws.com/Komal_Raj_Website_Desktop_Thumbnail_e1b0816c60.png">
-            <source src="" type="video/mp4" />
+         <video width="500" height="250" controls poster="https://avatars.mds.yandex.net/i?id=a9e3ca8360d90dcaebb016901b2624a98c84866b-6639666-images-thumbs&n=13" >
+            <source src={video} type="video/mp4" />
             
           </video>
         </div>

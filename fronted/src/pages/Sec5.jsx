@@ -3,9 +3,9 @@ import '../Style/cond56.css'
 
 function Sec5() {
   return (
-    <div className="mt-24 overflow-hidden">
+    <div className="mt-24 overflow-hidden" id='hirefromus'>
       <div className=" font-bold text-3xl m-auto p-3 mb-10 rounded-lg flex justify-center">
-        <div className="">Meet Our <span className="text-red-500">4000+</span> Hiring Partners</div>
+        <div className="text-center">Meet Our <span className="text-red-500">4000+</span> Hiring Partners</div>
       </div>
       <div className="slider1 inline-flex flex-nowrap">
         <div className="flex animate-infinite-scroll">

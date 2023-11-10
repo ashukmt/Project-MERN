@@ -8,27 +8,12 @@ import {
   DrawerBody,
   DrawerCloseButton,
   DrawerContent,
-  DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
-  FormControl,
   FormLabel,
   Input,
-  InputGroup,
-  InputLeftAddon,
-  InputRightAddon,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  ModalOverlay,
-  Select,
   Stack,
   Text,
-  Textarea,
-  useDisclosure,
 } from "@chakra-ui/react";
 import { FcGoogle } from "react-icons/fc";
 import { useNavigate } from "react-router";
@@ -36,10 +21,7 @@ import { Link } from "react-router-dom";
 import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
 import { auth } from "./FireBase";
 
-const Login = ({ onClose }) => {
-  const initialRef = React.useRef(null);
-  const finalRef = React.useRef(null);
-
+const Login = ({ onClose, onOpen }) => {
   const [user, setUser] = useState({});
 
   const handleGoogleLogin = async () => {
@@ -97,19 +79,12 @@ const Login = ({ onClose }) => {
               <Center height="40px" className="pr-7">
                 <Divider orientation="vertical" borderColor={"black"} />
               </Center>
-              <Button className="" variant={"outline"} colorScheme={"blue"}>
+              <Button className="" variant={"outline"} onClick={()=>{onClose(); onOpen();}} colorScheme={"blue"}>
                 Signup{" "}
               </Button>
             </div>
           </Stack>
         </DrawerBody>
-
-        {/* <DrawerFooter borderTopWidth="1px">
-          <Button variant="outline" mr={3} onClick={onClose}>
-            Cancel
-          </Button>
-          <Button colorScheme="blue">Submit</Button>
-        </DrawerFooter> */}
       </DrawerContent>
     </>
   );
