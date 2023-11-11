@@ -1,8 +1,5 @@
 import axios from "axios"
 import {
-  ADD_TODOS_ERROR,
-  ADD_TODOS_REQUEST,
-  ADD_TODOS_SUCCESS,
   EDIT_USER,
   GET_USER,
   POST_USER
@@ -24,22 +21,19 @@ export const getUser = (id) => async (dispatch) => {
 export const addUser = (user) => async (dispatch) => {
 
   try {
-    console.log(user)
-    var obj=await axios.post(`${process.env.REACT_APP_SERVER_URL}/user/addUser`, {
+    const res = await axios.post(`${process.env.REACT_APP_SERVER_URL}/user/addUser`, {
       ...user
     })
-
-    console.log(obj)
     dispatch({
       type: POST_USER,
+      payload: res.data.user
     })
   } catch (err) {
     console.log(err)
   }
 }
 
- export const editUser = (user) => async (dispatch) => {
-
+export const editUser = (user) => async (dispatch) => {
   try {
     await axios.put(`${process.env.REACT_APP_SERVER_URL}/user/editUser/${user._id}`, {
       ...user
@@ -52,5 +46,3 @@ export const addUser = (user) => async (dispatch) => {
     console.log(err)
   }
 }
-
-

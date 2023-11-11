@@ -43,7 +43,7 @@ function Navbar() {
               offset={-30}>
               {el.title}
             </SL>
-              : <Link className="link" to='/'><SL>{el.title}</SL></Link>
+              : <Link className="link" to='/'>{el.title}</Link>
         ))}
       </div>
       <div className="last">
