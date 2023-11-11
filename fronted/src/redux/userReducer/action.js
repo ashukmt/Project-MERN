@@ -3,7 +3,8 @@ import {
   EDIT_USER,
   GET_USER,
   LOGIN_USER,
-  POST_USER
+  POST_USER,
+  RESET_USER
 } from "./actionType"
 
 export const getUser = (id) => async (dispatch) => {
@@ -16,6 +17,7 @@ export const getUser = (id) => async (dispatch) => {
     })
   } catch (err) {
     console.log(err)
+   
   }
 }
 
@@ -25,12 +27,17 @@ export const addUser = (user) => async (dispatch) => {
     const res = await axios.post(`${process.env.REACT_APP_SERVER_URL}/user/addUser`, {
       ...user
     })
+    console.log(res.status)
     dispatch({
       type: POST_USER,
-      status:res.status
+      payload:res.status
     })
   } catch (err) {
     console.log(err)
+    dispatch({
+      type:RESET_USER,
+      payload:err.response.status
+    })
   }
 }
 
@@ -43,10 +50,15 @@ export const LoginUser = (user) => async (dispatch) => {
     })
     dispatch({
       type: LOGIN_USER,
-      payload: res.data.user
+      payload: {currUser:res.data.user,statuscode:res.status}
     })
   } catch (err) {
     console.log(err)
+    dispatch({
+      type: RESET_USER,
+      payload:err.response.status
+    })
+
   }
 }
 
