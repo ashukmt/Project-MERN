@@ -108,7 +108,8 @@ console.log("random clg")
               </p>
             </div>
           </div>
-
+          
+            
           <div className="inst_img_div">
             <img
               className="inst_img_class"
@@ -117,6 +118,8 @@ console.log("random clg")
               alt="instructor_img"
             />
           </div>
+          
+          
         </div>
       </div>
     </div>
