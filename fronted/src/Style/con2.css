@@ -79,9 +79,9 @@
   }
 }
 
-@media only screen and (max-width: 600px) and (min-width: 400px)  {
+@media only screen and (max-width: 600px) and (min-width: 500px)  {
   .subs4{
-    margin-right: 15%;
+    margin-right: 32%;
   }
   .subb44{
     display: block;
@@ -94,5 +94,48 @@
   .widts {
     width: 78%;
     margin: auto;
+  }
+  .cir{
+    margin-right: 24px;;
+  }
+}
+@media only screen and (max-width: 500px) and (min-width: 400px)  {
+  .subs4{
+    margin-right: 45%;
+  }
+  .subb44{
+    display: block;
+  }
+  .wd3{
+    width: 60%;
+    margin: auto;
+    margin-top: 5%;
+  }
+  .widts {
+    width: 78%;
+    margin: auto;
+  }
+  .cir{
+    margin-right: 24px;;
+  }
+}
+@media only screen and (max-width: 400px) and (min-width: 300px)  {
+  .subs4{
+    margin-right: 55%;
+  }
+  .subb44{
+    display: block;
+  }
+  .wd3{
+    width: 60%;
+    margin: auto;
+    margin-top: 5%;
+  }
+  .widts {
+    width: 78%;
+    margin: auto;
+  }
+  .cir{
+    margin-right: -1px;;
   }
 }
