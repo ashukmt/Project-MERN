@@ -1359,10 +1359,26 @@
 
   /* EventDetails Responsiveness */
 
+  .video_div{
+    
+    position: relative; 
+    padding-bottom: 56.25%; 
+    padding-top: 30px; 
+    height: 0; 
+    overflow: hidden; 
+  }
+  .video_div iframe, .video_div object, .video_div embed { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+}
+
   @media ((min-width:1230px) and (max-width: 1320px)) { 
     .video_div{
         /* width: 1000px; */
-        margin-left: 10%;
+        /* margin-left: 10%; */
      }
      .about_event{
         width: 35%;
@@ -1381,7 +1397,7 @@
  @media ((min-width:1160px) and (max-width: 1230px)) { 
     .video_div{
         /* width: 1000px; */
-        margin-left: 8%;
+        /* margin-left: 8%; */
      }
      .about_event{
         width: 35%;
@@ -1403,7 +1419,7 @@
  @media ((min-width:1125px) and (max-width: 1160px)) { 
     .video_div{
         /* width: 1000px; */
-        margin-left: 6%;
+        /* margin-left: 6%; */
      }
      .about_event{
         width: 35%;
@@ -1426,7 +1442,7 @@
  @media ((min-width:1100px) and (max-width: 1125px)) { 
     .video_div{
         /* width: 1000px; */
-        margin-left: 4%;
+        /* margin-left: 4%; */
      }
      .about_event{
         width: 35%;
@@ -1449,7 +1465,7 @@
  @media ((min-width:1050px) and (max-width: 1100px)) { 
     .video_div{
         /* width: 900px; */
-        margin-left: 8%;
+        /* margin-left: 8%; */
      }
     .custom-iframe poster{
         width : 100%;
@@ -1479,7 +1495,7 @@
  @media ((min-width:1000px) and (max-width: 1050px)) { 
     .video_div{
         /* width: 900px; */
-        margin-left: 5%;
+        /* margin-left: 5%; */
      }
     .about_event{
         width: 35%;
@@ -1506,7 +1522,7 @@
  @media ((min-width:950px) and (max-width: 1000px)) { 
     .video_div{
         /* width: 800px; */
-        margin-left: 8%;
+        /* margin-left: 8%; */
      }
      .about_event{
         width: 35%;
@@ -1534,7 +1550,7 @@
  @media ((min-width:900px) and (max-width: 950px)) { 
     .video_div{
         /* width: 800px; */
-        margin-left: 6%;
+        /* margin-left: 6%; */
      }
      .about_event{
         width: 35%;
@@ -1565,7 +1581,7 @@
  @media ((min-width:850px) and (max-width: 900px)) { 
     .video_div{
         /* width: 700px; */
-        margin-left: 10%;
+        /* margin-left: 10%; */
      }
      .about_event{
         width: 35%;
@@ -1596,7 +1612,7 @@
  @media ((min-width:800px) and (max-width: 850px)) { 
     .video_div{
         /* width: 700px; */
-        margin-left: 7%;
+        /* margin-left: 7%; */
      }
      .about_event{
         width: 35%;
@@ -1627,7 +1643,7 @@
  @media ((min-width:771px) and (max-width: 800px)) { 
     .video_div{
         /* width: 600px; */
-        margin-left: 11%;
+        /* margin-left: 11%; */
      }
      .about_event{
         width: 35%;
@@ -1658,7 +1674,7 @@
  @media ((min-width:720px) and (max-width: 771px)) { 
     .video_div{
         /* width: 500px; */
-        margin-left: 16%;
+        /* margin-left: 16%; */
      }
      .about_event{
         width: fit-content;
@@ -1787,7 +1803,7 @@
 @media ((min-width:685px) and (max-width: 720px)) { 
     .video_div{
         /* width: 500px; */
-        margin-left: 16%;
+        /* margin-left: 16%; */
      }
      .about_event{
         width: fit-content;
@@ -1898,7 +1914,7 @@
  @media ((min-width:665px) and (max-width: 685px)) { 
     .video_div{
         /* width: 500px; */
-        margin-left: 16%;
+        /* margin-left: 16%; */
      }
      .about_event{
         width: fit-content;
@@ -2009,7 +2025,7 @@
  @media ((min-width:610px) and (max-width: 665px)) { 
     .video_div{
         /* width: 500px; */
-        margin-left: 16%;
+        /* margin-left: 16%; */
      }
      .about_event{
         width: fit-content;
@@ -2117,7 +2133,7 @@
  @media ((min-width:565px) and (max-width: 610px)) { 
     .video_div{
         /* width: 500px; */
-        margin-left: 16%;
+        /* margin-left: 16%; */
      }
      .about_event{
         width: fit-content;
@@ -2227,7 +2243,7 @@
  @media ((min-width:500px) and (max-width: 565px)) { 
     .video_div{
         /* width: 500px; */
-        margin-left: 16%;
+        /* margin-left: 16%; */
      }
      .about_event{
         width: fit-content;
@@ -2607,8 +2623,8 @@
 
  @media ((min-width:395px) and (max-width: 500px)) { 
     .video_div{
-        width: 500px;
-        margin-left: 16%;
+        /* width: 500px; */
+        /* margin-left: 16%; */
      }
      .about_event{
         width: fit-content;
@@ -2701,8 +2717,8 @@
 
  @media ((min-width:300px) and (max-width: 395px)) { 
     .video_div{
-        width: 500px;
-        margin-left: 16%;
+        /* width: 500px; */
+        /* margin-left: 16%; */
      }
      .about_event{
         width: fit-content;
