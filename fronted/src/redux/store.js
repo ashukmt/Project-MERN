@@ -3,7 +3,7 @@ import thunk from "redux-thunk"
 import { courseReducer } from "./courseReducer/courseReducer"
 import { rewardReducer } from "./RewardReducer/rewardreducer"
 import { eventReducer } from "./eventReducer/eventReducer"
-import { userReducer } from "./userReducer/actionReducer"
+import { userReducer } from "./userReducer/userReducer"
 
 export const store = configureStore({
     reducer: {
