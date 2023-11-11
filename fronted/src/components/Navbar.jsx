@@ -30,7 +30,7 @@ function Navbar() {
           />
         </Link>
       </div>
-      <div className="middle">
+      <div className="middle dt11">
         {edit?.map((el) => (
           el.type ? <Link className="link" to={el.path}>
             {el.title}
@@ -47,7 +47,7 @@ function Navbar() {
         ))}
       </div>
       <div className="last">
-        <button
+        <button className="refd"
           onClick={() => {
             Navigate("/Referal");
           }}
@@ -55,7 +55,7 @@ function Navbar() {
           <Link to={"/Refer"}>REFER & EARN</Link>
         </button>
 
-        <button onClick={() => onSignupOpen()}>SIGN UP</button>
+        <button className="refd" onClick={() => onSignupOpen()}>SIGN UP</button>
       </div>
 
       <Drawer size={"md"} isOpen={isLoginOpen} onOpen={onLoginOpen} onClose={onLoginClose}>

@@ -96,11 +96,11 @@ EventRouter.get("/getevents/:eventID", async (req, res) => {
   res.send({ one_event });
 });
 
-EventRouter.get("/registerevents/:eventID",authentication, async (req, res) => {
+EventRouter.get("/registerevents/:eventID",async (req, res) => {
   const { eventID } = req.params;
   const register_data = await EventModel.findOne({ _id: eventID });
   res.send({ register_data });
-});
+}); 
 
 
 

@@ -7,6 +7,7 @@ import Timer from "./Timer";
 import { animateScroll } from "react-scroll";
 const Register = () => {
   let { id } = useParams();
+
   const [myRegisterData, setMyRegisterData] = useState({});
 
   const dispatch = useDispatch();
@@ -17,6 +18,8 @@ const Register = () => {
   useEffect(() => {
     dispatch(fetchingMyRegisterData(id)); // invoking function for fetching data in use-effect
   }, []);
+
+  
 
   useEffect(() => {
     animateScroll.scrollToTop({ smooth: true })
