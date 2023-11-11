@@ -2,6 +2,7 @@ import axios from "axios"
 import {
   EDIT_USER,
   GET_USER,
+  LOGIN_USER,
   POST_USER
 } from "./actionType"
 
@@ -26,6 +27,22 @@ export const addUser = (user) => async (dispatch) => {
     })
     dispatch({
       type: POST_USER,
+      status:res.status
+    })
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+// <------------ Login User ---------------------->
+export const LoginUser = (user) => async (dispatch) => {
+
+  try {
+    const res = await axios.post(`${process.env.REACT_APP_SERVER_URL}/user/login`, {
+      ...user
+    })
+    dispatch({
+      type: LOGIN_USER,
       payload: res.data.user
     })
   } catch (err) {

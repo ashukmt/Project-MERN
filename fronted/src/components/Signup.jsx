@@ -43,6 +43,7 @@ import { useDispatch, useSelector } from "react-redux";
 const Signup = ({ onClose, onOpen }) => {
 
   const dispatch = useDispatch()
+  const status=useSelector(state=>state.user.status);
   const toast = useToast()
 
   const [user, setUser] = useState({
@@ -111,13 +112,24 @@ const Signup = ({ onClose, onOpen }) => {
 
     dispatch(addUser(user))
     setTimeout(() => {
-      if(f)
-      toast({
-        title: 'Signup successfull',
-        status: 'success',
-        duration: 3000,
-        isClosable: true,
-      })
+   if(status=="200"){
+    toast({
+      title: 'Signup successfull',
+      status: 'success',
+      duration: 3000,
+      isClosable: true,
+    })
+   }
+   else if(status=="409"){
+    toast({
+      title: 'Email Already Exist',
+      status: 'error',
+      duration: 3000,
+      isClosable: true,
+    })
+   }
+
+    
     }, 2000)
   }
 
