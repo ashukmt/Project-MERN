@@ -1,5 +1,6 @@
 const express = require("express");
 const { EventModel } = require("../models/Event.model");
+const { authentication } = require("../middlewares/Authentication");
 const EventRouter = express.Router();
 
 EventRouter.post("/addevent", async (req, res) => {
@@ -51,6 +52,7 @@ EventRouter.post("/addevent", async (req, res) => {
     year
   });
 
+
   new_event.save();
   res.send({ msg: "event added successfully" });
 });
@@ -94,11 +96,11 @@ EventRouter.get("/getevents/:eventID", async (req, res) => {
   res.send({ one_event });
 });
 
-EventRouter.get("/registerevents/:eventID", async (req, res) => {
+EventRouter.get("/registerevents/:eventID",async (req, res) => {
   const { eventID } = req.params;
   const register_data = await EventModel.findOne({ _id: eventID });
   res.send({ register_data });
-});
+}); 
 
 
 

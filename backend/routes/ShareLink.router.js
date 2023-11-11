@@ -14,7 +14,7 @@ ShareLinkrouter.post("/sharereferal", async(req, res) => {
     } = req.body;
 
     const IfPresent = await ShareLinkModel.find({
-        $or: [{ F_name: F_name }, { Ph_number: Ph_number }]
+        $or: [{ Email: Email }, { Ph_number: Ph_number }]
       }).exec();
       
       if (IfPresent.length > 0) {
