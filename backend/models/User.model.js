@@ -13,8 +13,7 @@ const userSchema = mongoose.Schema({
     profilePic: {type: String},
     courseName: {type: String},
     msatDay: {type: String},
-    registered: {type: Boolean,default:false},
-    uid : {type:String,required:true}
+    registered: {type: Boolean,default:false}
 })
 
 const UserModel = mongoose.model("user",userSchema)

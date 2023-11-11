@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {
+  AbsoluteCenter,
   Box,
   Button,
   Center,
@@ -37,20 +38,20 @@ import { Link } from "react-router-dom";
 import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
 import { auth } from "./FireBase";
 import { addUser } from "../redux/userReducer/action";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const Signup = ({ onClose, onOpen }) => {
 
-  const dispatch=useDispatch()
-  const toast=useToast()
+  const dispatch = useDispatch()
+  const toast = useToast()
 
   const [user, setUser] = useState({
-    username:"",
-    email:"",
-    password:""
+    username: "",
+    email: "",
+    password: ""
   });
 
-  const [googlesignup,setGooglesignup]=useState(false);
+  const [googlesignup, setGooglesignup] = useState(false);
 
   const handleGoogleLogin = async () => {
     const provider = new GoogleAuthProvider()
@@ -69,53 +70,55 @@ const Signup = ({ onClose, onOpen }) => {
   }
 
 
-  const handleChange=(e)=>{
+  const handleChange = (e) => {
     e.preventDefault();
-    setUser({...user,[e.target.name]:e.target.value})
+    setUser({ ...user, [e.target.name]: e.target.value })
   }
-  console.log(user)
-
-  const handleSubmit=async()=>{
-    const {username,email,password}=user
-     if(username==""){
-        toast({
-      title: 'User name can not be left.',
-      // description: "We've created your account for you.",
-      status: 'error',
-
-      duration: 3000,
-      isClosable: true,
-    })
-    return
-     }
-
-     if(email==""){
+  const curr_user = useSelector(state=>state.user.user)
+  const handleSubmit = async () => {
+    const { username, email, password } = user
+    if (username === "" || username.length<7) {
       toast({
-    title: 'email can not be left.',
-    // description: "We've created your account for you.",
-    status: 'error',
-    duration: 3000,
-    isClosable: true,
-  })
+        title: 'Enter Full Name',
+        status: 'error',
+        duration: 3000,
+        isClosable: true,
+      })
       return
-   }
+    }
 
-   
-   if(!googlesignup&&password==""){
-    toast({
-  title: 'password can not be left.',
-  // description: "We've created your account for you.",
-  status: 'error',
-  duration: 3000,
-  isClosable: true,
-})
-
-return;
- }
-
- dispatch(addUser(user))
+    if (email === "" || email.length < 12) {
+      toast({
+        title: 'Enter valid email',
+        status: 'error',
+        duration: 3000,
+        isClosable: true,
+      })
+      return
+    }
 
 
+    if (!googlesignup && (password === "" || password.length < 10)) {
+      toast({
+        title: 'Enter valid password',
+        status: 'error',
+        duration: 3000,
+        isClosable: true,
+      })
+
+      return;
+    }
+
+    dispatch(addUser(user))
+    setTimeout(() => {
+      if(f)
+      toast({
+        title: 'Signup successfull',
+        status: 'success',
+        duration: 3000,
+        isClosable: true,
+      })
+    }, 2000)
   }
 
 
@@ -171,14 +174,19 @@ return;
               />
             </Box>
 
-          <Button className="w-[77%] " colorScheme="red" size={"lg"} onClick={handleSubmit}>Submit</Button>
-
+            <Button className="w-[77%] " colorScheme="red" size={"lg"} onClick={handleSubmit}>Submit</Button>
+            <Box position='relative' className="mt-5">
+              <Divider w='25vw' borderColor={'black'} />
+              <AbsoluteCenter bg='white' px='6'>
+                OR
+              </AbsoluteCenter>
+            </Box>
             <div className="mt-5 flex justify-center gap-2">
               <FcGoogle onClick={handleGoogleLogin} className="w-24 h-[35px] -ml-12 cursor-pointer" />
-              <Center height="40px" className="pr-7">
+              <Center height="40px" className="pl-5">
                 <Divider orientation="vertical" borderColor={"black"} />
               </Center>
-              <Button className="" variant={"outline"} onClick={()=>{onClose(); onOpen();}} colorScheme={"blue"}>
+              <Button className="ml-10" variant={"outline"} onClick={() => { onClose(); onOpen(); }} colorScheme={"blue"}>
                 Login{" "}
               </Button>
             </div>
