@@ -10,6 +10,7 @@ UserRouter.get("/", async (req, res) => {
   try {
     const users = await UserModel.find()
     res.status(200).json(users)
+    console.log("f")
   } catch (error) {
     console.log(error)
     res.status(500).send("Internal Server Error")
