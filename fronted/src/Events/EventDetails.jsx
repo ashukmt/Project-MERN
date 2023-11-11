@@ -35,7 +35,7 @@ console.log("random clg")
         <div className="video_div flex justify-center">
           <iframe
             className="rounded-md custom-iframe"
-            width="100%"
+            width="1400"
             height="600"
             poster={myDetailsData.img}
             src={myDetailsData.video}
@@ -108,7 +108,8 @@ console.log("random clg")
               </p>
             </div>
           </div>
-
+          
+            
           <div className="inst_img_div">
             <img
               className="inst_img_class"
@@ -117,6 +118,8 @@ console.log("random clg")
               alt="instructor_img"
             />
           </div>
+          
+          
         </div>
       </div>
     </div>

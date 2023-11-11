@@ -418,29 +418,32 @@ const Register = () => {
           </div>
         </div>
 
-        <div className="intrstuctor_desc flex justify-center">
+        <div id="reg_inst_desc" className="intrstuctor_desc flex justify-center">
           <div className="flex inside_div justify-center">
-            <div className="about_event">
-              <p className="font-sans">Know Your Speaker</p>
-              <h1 className="font-sans text-xl mt-2 md:text-2xl font-bold">
+            <div id="reg_abt_event" className="about_event flex justify-center items-center">
+              <div>
+              <p id="reg_inst_p" className="font-sans inst_p">Know Your Speaker</p>
+              <h1 id="reg_inst_h2" className="font-sans inst_h2 text-xl mt-2 md:text-2xl font-bold">
                 Meet
               </h1>
-              <p className="font-sans text-3xl mt-2 font-bold">
+              <p id="reg_inst_p2" className="font-sans inst_p2 text-3xl mt-2 font-bold">
                 {myData?.speaker}
-              </p>
+              </p>          
+              </div>
             </div>
 
-            <div class="inline-block h-[250px] min-h-[1em] w-0.5 self-stretch bg-slate-700 opacity-100 dark:opacity-20 ml-14"></div>
+            <div class="inline-block h-[250px] inst_line min-h-[1em] w-0.5 self-stretch bg-slate-700 opacity-100 dark:opacity-20 ml-14"></div>
 
-            <div className="sideAbout_div">
+            <div id="reg_sdAbt_div" className="sideAbout_div">
               <p className="font-medium text-lg mt-20">
                 {myData?.instructor_desc}
               </p>
             </div>
           </div>
 
-          <div>
+          <div id="reg_inst_img_div" className="inst_img_div">
             <img
+              className="inst_img_class"
               src={myData?.instructor_img}
               width={300}
               alt="instructor_img"
