@@ -37,14 +37,16 @@ import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
 import { auth } from "./FireBase";
-import { addUser } from "../redux/userReducer/action";
+import { LoginUser, addUser } from "../redux/userReducer/action";
 import { useDispatch, useSelector } from "react-redux";
+import { RESET_USER } from "../redux/userReducer/actionType";
 
 const Signup = ({ onClose, onOpen }) => {
 
   const dispatch = useDispatch()
   const status=useSelector(state=>state.user.status);
   const toast = useToast()
+  console.log(status)
 
   const [user, setUser] = useState({
     username: "",
@@ -55,20 +57,21 @@ const Signup = ({ onClose, onOpen }) => {
   const [googlesignup, setGooglesignup] = useState(false);
 
   const handleGoogleLogin = async () => {
-    const provider = new GoogleAuthProvider()
-    const result = await signInWithPopup(auth, provider)
-    setGooglesignup(true);
+    const provider = new GoogleAuthProvider();
+    const result = await signInWithPopup(auth, provider);
     // dispatch(setLOGIN(result.user))
-    console.log(result.user)
-    // toast({
-    //   title: 'Logged in successfully.',
-    //   // description: "We've created your account for you.",
-    //   status: 'success',
-    //   duration: 3000,
-    //   isClosable: true,
-    // })
-    onClose()
-  }
+    console.log(result.user);
+    const { displayName, email, photoURL } = result.user;
+    let obj={
+      email,
+      username:displayName,
+      profilePic:photoURL,
+      gauth:true
+    }
+    dispatch(addUser(obj))
+    dispatch(LoginUser(obj))
+    onClose()  
+  };
 
 
   const handleChange = (e) => {
@@ -111,27 +114,30 @@ const Signup = ({ onClose, onOpen }) => {
     }
 
     dispatch(addUser(user))
-    setTimeout(() => {
-   if(status=="200"){
-    toast({
-      title: 'Signup successfull',
-      status: 'success',
-      duration: 3000,
-      isClosable: true,
-    })
-   }
-   else if(status=="409"){
-    toast({
-      title: 'Email Already Exist',
-      status: 'error',
-      duration: 3000,
-      isClosable: true,
-    })
-   }
-
+   
     
-    }, 2000)
   }
+
+  useEffect(() => {
+    console.log(status)
+ if(status=="200"){
+  toast({
+    title: 'Signup successfull',
+    status: 'success',
+    duration: 3000,
+    isClosable: true,
+  })
+ }
+ else if(status=="409"){
+  toast({
+    title: 'Email Already Exist',
+    status: 'error',
+    duration: 3000,
+    isClosable: true,
+  })
+ }
+ dispatch({type:RESET_USER,payload:""})
+  }, [status])
 
 
   return (

@@ -74,29 +74,32 @@ UserRouter.post("/addUser", async (req, res) => {
 // <-------------- Login ------------>
 UserRouter.post("/login", async (req, res) => {
   try {
-    const {
-      email,
-      password
-    } = req.body;
+
 
     const user_present = await UserModel.findOne({
-      email
+      email:req.body.email
     });
+
+    if(req.body.gauth){
+      res.status(200).send("Login Successfull")
+    } 
+   
 
     if (!user_present) {
       res.status(409).send(
         "Email Does not exist!"
       );
     }
+   
     else if (user_present) {
       const hash_pass = await user_present.password;
       const Result = bcrypt.compareSync(password, hash_pass); // true
       if (!Result) {
-        res.status(409).send(
+        res.status(410).send(
           "Password Does not match"
         );
       } else {
-        res.send({ msg: "Login successfull"});
+        res.status(200).send({ msg: "Login successfull"});
       }
     }
   } catch (error) {
