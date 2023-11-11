@@ -35,9 +35,11 @@ console.log("random clg")
         <div className="video_div flex justify-center">
           <iframe
             className="rounded-md custom-iframe"
-            width="1400"
-            height="600"
-            poster={myDetailsData.img}
+            width="90%"
+            height="900vh"
+            // width="1400"
+            // height="600"
+            // poster={myDetailsData.img}
             src={myDetailsData.video}
             title="YouTube video player"
             frameborder="0"

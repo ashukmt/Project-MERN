@@ -8,6 +8,7 @@ export const fetchingMyRegisterData = (id) => async(dispatch) =>{
       const myData = await axios.get(
         `http://localhost:8080/event/registerevents/${id}`
       );
+      console.log(myData);
       dispatch({type:GETEVENT,payload:myData.data});
     } catch (err) {
       console.log(err);
