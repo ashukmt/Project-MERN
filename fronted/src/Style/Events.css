@@ -2031,7 +2031,7 @@
         width: fit-content;
         margin: auto;
         margin-top: 3%;
-        margin-left: 29%;
+        margin-left: 25%;
     }
 
     #reg_abt_event{
@@ -2139,7 +2139,7 @@
         width: fit-content;
         margin: auto;
         margin-top: 3%;
-        margin-left: 29%;
+        margin-left: 22%;
     }
 
     #reg_abt_event{
@@ -2249,7 +2249,7 @@
         width: fit-content;
         margin: auto;
         margin-top: 3%;
-        margin-left: 29%;
+        margin-left: 21%;
     }
 
     #reg_abt_event{
@@ -2305,6 +2305,7 @@
         width: 120%;
     }
     .inst_p2{
+        width: 200%;
         font-size: 150%;
         /* margin-left: -16%; */
         margin-top: -4px;
@@ -2617,9 +2618,168 @@
     }
  }
 
+/* regis about section ends  */
+
+/* again continue event details responsiveness */
 
 
 
+@media ((min-width:470px) and (max-width: 500px)) { 
+
+    .inst_img_div{
+        width: 32%;
+        border: 2px solid;
+        border-radius: 10px;
+        margin-top: -341px;
+        margin-bottom: 82%;
+        margin-left: 32%;
+    
+    }
+
+    .about_event_spk {
+        width: 90%;
+        margin-top: -10%;
+        margin-left: 18%;
+    }
+    .inst_p2 {
+        width: 200%;
+        font-size: 140%;
+        margin-left: -15%;
+        margin-top: -4px;
+    }
+
+}
+
+@media ((min-width:440px) and (max-width: 470px)) { 
+
+    .inst_img_div{
+        width: 34%;
+        border: 2px solid;
+        border-radius: 10px;
+        margin-top: -337px;
+        margin-bottom: 84%;
+        margin-left: 32%;
+    
+    }
+
+    .about_event_spk {
+        width: 90%;
+        margin-top: -10%;
+        margin-left: 15%;
+    }
+    .inst_p2 {
+        width: 200%;
+        font-size: 140%;
+        margin-left: -15%;
+        margin-top: -4px;
+    }
+
+}
+
+@media ((min-width:410px) and (max-width: 440px)) { 
+
+    .inst_img_div{
+        width: 38%;
+        border: 2px solid;
+        border-radius: 10px;
+        margin-top: -367px;
+        margin-bottom: 98%;
+        margin-left: 28%;
+    
+    }
+
+    .about_event_spk {
+        width: 90%;
+        margin-top: -10%;
+        margin-left: 15%;
+    }
+    .inst_p2 {
+        width: 130%;
+        font-size: 140%;
+        margin-left: 13%;
+        margin-top: -4px;
+    }
+}
+
+
+@media ((min-width:391px) and (max-width: 410px)) { 
+
+    .inst_img_div{
+        width: 38%;
+        border: 2px solid;
+        border-radius: 10px;
+        margin-top: -363px;
+        margin-bottom: 107%;
+        margin-left: 28%;
+    
+    }
+
+    .about_event_spk {
+        width: 90%;
+        margin-top: -10%;
+        margin-left: 15%;
+    }
+    .inst_p2 {
+        width: 130%;
+        font-size: 140%;
+        margin-left: 13%;
+        margin-top: -4px;
+    }
+
+}
+
+@media ((min-width:361px) and (max-width: 391px)) {  
+
+    .inst_img_div{
+        width: 38%;
+        border: 2px solid;
+        border-radius: 10px;
+        margin-top: -346px;
+        margin-bottom: 105%;
+        margin-left: 28%;
+    
+    }
+
+    .about_event_spk {
+        width: 90%;
+        margin-top: -10%;
+        margin-left: 10%;
+    }
+    .inst_p2 {
+        width: 130%;
+        font-size: 140%;
+        margin-left: 13%;
+        margin-top: -4px;
+    }
+
+}
+
+
+@media ((min-width:300px) and (max-width: 361px)) { 
+
+    .inst_img_div{
+        width: 43%;
+        border: 2px solid;
+        border-radius: 10px;
+        margin-top: -363px;
+        margin-bottom: 117%;
+        margin-left: 26%;
+    
+    }
+
+    .about_event_spk {
+        width: 90%;
+        margin-top: -10%;
+        margin-left: 10%;
+    }
+    .inst_p2 {
+        width: 130%;
+        font-size: 140%;
+        margin-left: 13%;
+        margin-top: -4px;
+    }
+
+}
 
  @media ((min-width:395px) and (max-width: 500px)) { 
     .video_div{
@@ -2630,7 +2790,7 @@
         width: fit-content;
         margin: auto;
         margin-top: 3%;
-        margin-left: 21%;
+        margin-left: 17%;
     }
 
    
@@ -2654,11 +2814,7 @@
         /* justify-content: center; */
     }
    
-    .about_event_spk {
-        width: 90%;
-        margin-top: -10%;
-        margin-left: 21%;
-    }
+    
     .inst_h2 {
         margin-left: 33%;
         margin-top: -1%;
@@ -2667,13 +2823,7 @@
         margin-left: 15%;
         width: 120%;
     }
-    .inst_p2{
-        width: 200%;
-        font-size: 140%;
-        margin-left: -15%;
-        margin-top: -4px;
-
-    }
+    
     .sideAbout_div{
         width: 104%;
         margin-top: 22%;
@@ -2698,15 +2848,7 @@
     .inst_line{
         display: none;
     }
-    .inst_img_div{
-        width: 31%;
-        border: 2px solid;
-        border-radius: 10px;
-        margin-top: -319px;
-        margin-bottom: 70%;
-        margin-left: 34%;
     
-    }
     .intrstuctor_desc{
         width: 68%;
         display: flex;
@@ -2724,7 +2866,7 @@
         width: fit-content;
         margin: auto;
         margin-top: 3%;
-        margin-left: 21%;
+        margin-left: 8%;
     }
     .about_p{
         margin-left: 29%;
@@ -2746,11 +2888,7 @@
         /* justify-content: center; */
     }
    
-    .about_event_spk {
-        width: 90%;
-        margin-top: -10%;
-        margin-left: 21%;
-    }
+    
     .inst_h2 {
         margin-left: 33%;
         margin-top: -1%;
@@ -2759,17 +2897,11 @@
         margin-left: 15%;
         width: 120%;
     }
-    .inst_p2{
-        width: 135%;
-        font-size: 140%;
-        margin-left: 13%;
-        margin-top: -4px;
-
-    }
+    
     .sideAbout_div{
         width: 118%;
         margin-top: 31%;
-        margin-left: 20px;
+        margin-left: 12px;
     }
     .str_line{
         display: none;
@@ -2790,17 +2922,9 @@
     .inst_line{
         display: none;
     }
-    .inst_img_div{
-        width: 35%;
-        border: 2px solid;
-        border-radius: 10px;
-        margin-top: -337px;
-        margin-bottom: 85%;
-        margin-left: 34%;
     
-    }
     .intrstuctor_desc{
-        width: 60%;
+        width: 68%;
         display: flex;
         flex-direction: column;
         padding-top: 7%;
