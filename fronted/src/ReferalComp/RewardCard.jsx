@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Flex, Heading, Image, Text, Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalFooter, ModalBody } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Text, Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalFooter, ModalBody, AlertIcon, Alert, AlertTitle, AlertDescription } from "@chakra-ui/react";
 import Leaderboard from './Leaderboard';
 import { Navigate, useNavigate } from "react-router-dom";
 import {
@@ -30,6 +30,7 @@ function RewardCard({ Coin_Req, Gift_name, Gift_url }) {
   const [claibtn, setClaimbtn] = useState(3000)
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [bagEmpty,setBagEmpty]=useState(false);
+  const [showAlert, setShowAlert] = useState(false);
 
   const today = new Date();
 const twoDaysFromNow = new Date(today);
@@ -122,19 +123,35 @@ console.log(DateA)
             </ModalBody>
 
             <ModalFooter>
-              <Button colorScheme='blue' mr={3} onClick={()=>{
-                
-     Dispatch(PostData(addObj))
-                  Navigate("/Profile")
-                onClose()
-              }
-                   
-                }>
-                Redeem
-              </Button>
-              <Button onClick={onClose}>Cancel</Button>
+          
+      <Button
+        colorScheme="blue"
+        mr={3}
+        onClick={() => {
+          if (addObj.Phnumber === "" || addObj.Email === "" || addObj.Address === "") {
+            // Toggle the alert's visibility
+            setShowAlert(true);
 
-              
+            // You can also include additional logic here
+            
+          }
+          else{
+            Dispatch(PostData(addObj));
+            Navigate("/Profile");
+            onClose();
+          }
+        }}
+      >
+        Redeem
+      </Button>
+
+      {showAlert && (
+        <Alert status="success" variant="subtle" onClose={() => setShowAlert(false)}>
+        <AlertIcon />
+   All input filed required
+        </Alert>
+      )}
+  
             </ModalFooter>
           </ModalContent>
         </Modal>

@@ -8,7 +8,7 @@ import {
   POST_USER
 } from "./actionType"
 
-const getUser = (id) => async (dispatch) => {
+export const getUser = (id) => async (dispatch) => {
 
   try {
     const user = await axios.get(`${process.env.REACT_APP_SERVER_URL}/user/${id}`)
@@ -21,12 +21,15 @@ const getUser = (id) => async (dispatch) => {
   }
 }
 
-const addUser = (user) => async (dispatch) => {
+export const addUser = (user) => async (dispatch) => {
 
   try {
-    await axios.post(`${process.env.REACT_APP_SERVER_URL}/user/addUser`, {
+    console.log(user)
+    var obj=await axios.post(`${process.env.REACT_APP_SERVER_URL}/user/addUser`, {
       ...user
     })
+
+    console.log(obj)
     dispatch({
       type: POST_USER,
     })
@@ -35,7 +38,7 @@ const addUser = (user) => async (dispatch) => {
   }
 }
 
-export const editUser = (user) => async (dispatch) => {
+ export const editUser = (user) => async (dispatch) => {
 
   try {
     await axios.put(`${process.env.REACT_APP_SERVER_URL}/user/editUser/${user._id}`, {
