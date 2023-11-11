@@ -3,8 +3,6 @@ const { RewardModel } = require("../models/Reward.model");
 
 const RewardRouter = express.Router();
 
-
-
 RewardRouter.get('/',async(req,res)=>{
   try{
       const rewards = await RewardModel.find();
