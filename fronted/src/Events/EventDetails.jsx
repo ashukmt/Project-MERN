@@ -32,20 +32,24 @@ console.log("random clg")
   return (
     <div>
       <div className="edParent grid grid-cols gap-20 place-content-center">
+        <div className="w-[90%] m-auto">
         <div className="video_div flex justify-center">
           <iframe
             className="rounded-md custom-iframe"
-            width="90%"
-            height="900vh"
+            // width="90%"
+            // height="200%"
             // width="1400"
             // height="600"
             // poster={myDetailsData.img}
+            
             src={myDetailsData.video}
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
           ></iframe>
+        </div>
+
         </div>
 
         <div className="masai_desc flex">
