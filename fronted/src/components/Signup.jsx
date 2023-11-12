@@ -111,7 +111,6 @@ const Signup = ({ onClose, onOpen }) => {
 
     dispatch(addUser(user))
     setTimeout(() => {
-      if(f)
       toast({
         title: 'Signup successfull',
         status: 'success',
