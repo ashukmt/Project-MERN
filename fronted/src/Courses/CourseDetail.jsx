@@ -23,16 +23,27 @@ const CourseDetail = () => {
     const [register, setRegister] = useState(false);
     const curr_user = useSelector(state => state.user.user)
     const toast = useToast();
+    const navigate = useNavigate()
     const handleReg = () => {
-        if (curr_user)
-            setRegister(true);
-        else {
+        if (!curr_user.email) {
             toast({
                 title: "Please Login First",
                 status: "error",
                 duration: 3000,
                 isClosable: true,
             });
+            animateScroll.scrollToTop({ smooth: true })
+        } else {
+            if (curr_user.registered) {
+                toast({
+                    title: "You have registered already.",
+                    status: "success",
+                    duration: 3000,
+                    isClosable: true,
+                });
+                navigate('/msat/confirm')
+            }
+            else setRegister(true);
         }
     }
     useEffect(() => {

@@ -112,11 +112,12 @@ UserRouter.post("/login", async (req, res) => {
 
 UserRouter.patch("/editUser/:id", async (req, res) => {
   try {
-    await UserModel.findByIdAndUpdate(req.params.id, {
+    const currUser = await UserModel.findByIdAndUpdate(req.params.id, {
       ...req.body,
     });
     res.status(200).send({
-      msg: "User Updated Successfully"
+      msg: "User Updated Successfully",
+      user: currUser
     });
   } catch (error) {
     console.log(error);
