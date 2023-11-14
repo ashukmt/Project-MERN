@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Style/navbar.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Link as SL } from "react-scroll"
-import { Drawer, Modal, useDisclosure } from "@chakra-ui/react";
+import { Button, Drawer, Modal, Text, useDisclosure } from "@chakra-ui/react";
 import Login from "./Login";
 import Signup from "./Signup";
 import { ScrollLink } from "react-scroll";
+import { useSelector } from "react-redux";
 
 function Navbar() {
   const { isOpen: isLoginOpen, onOpen: onLoginOpen, onClose: onLoginClose } = useDisclosure();
@@ -20,9 +21,55 @@ function Navbar() {
     { path: "success", title: "SUCCESS STORIES", type: false },
     { path: "hirefromus", title: "HIRE FROM US", type: false },
   ];
+  const curr_user = useSelector(state => state.user.user)
+  const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+
+  const toggleNavbar = () => {
+    setIsNavbarOpen(!isNavbarOpen);
+  };
  return (
     <div className="main">
-      <div>
+      
+     
+      <div className="flex">
+      <nav className="stnav">
+      <div className=" flex  ">
+       
+        <button
+          data-collapse-toggle="navbar-hamburger"
+          type="button"
+          className="inline-flex items-center justify-center w-10 h-10 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          aria-controls="navbar-hamburger"
+          aria-expanded={isNavbarOpen}
+          onClick={toggleNavbar}
+        >
+          <span className="sr-only">Open main menu</span>
+          <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
+          </svg>
+        </button>
+        <div className={`w-full ${isNavbarOpen ? '' : 'hidden'}`} id="navbar-hamburger">
+          <ul className="flex flex-col font-medium mt-[4rem]
+          ml-[-33px] rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+          {edit?.map((el) => (
+          el.type ? <Link className="link" to={el.path}>
+            {el.title}
+          </Link>
+            : location.pathname === '/' ? <SL
+              className='link'
+              to={el.path}
+              smooth={true}
+              duration={500}
+              offset={-30}>
+              {el.title}
+            </SL>
+              : <Link className="link" to='/'>{el.title}</Link>
+        ))}
+           
+          </ul>
+        </div>
+      </div>
+    </nav>
         <Link to={"/"}>
           <img
             src="https://masai-website-images.s3.ap-south-1.amazonaws.com/logo.png"
@@ -44,8 +91,13 @@ function Navbar() {
               offset={-30}>
               {el.title}
             </SL>
-              : <Link className="link" to='/'><SL>{el.title}</SL></Link>
+              : <Link className="link" to='/'>{el.title}</Link>
         ))}
+      </div>
+      <div>
+        
+
+
       </div>
       <div className="last">
         <button className="refd"
@@ -53,10 +105,12 @@ function Navbar() {
             Navigate("/Referal");
           }}
         >
-          <Link to={"/Refer"}>REFER & EARN</Link>
+          <Link className="-pt-2" to={"/Refer"}>REFER & EARN</Link>
         </button>
-
-        <button className="refd" onClick={() => onSignupOpen()}>SIGN UP</button>
+        {
+          curr_user?.username ? <Button className="rounded-full bold uppercase">{curr_user?.username[0]}</Button>
+           : <button className="refd" onClick={() => onSignupOpen()}>SIGN UP</button>
+        }
       </div>
 
       <Drawer size={"md"} isOpen={isLoginOpen} onOpen={onLoginOpen} onClose={onLoginClose}>
