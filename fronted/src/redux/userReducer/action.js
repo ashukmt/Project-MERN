@@ -17,7 +17,6 @@ export const getUser = (id) => async (dispatch) => {
     })
   } catch (err) {
     console.log(err)
-   
   }
 }
 
@@ -53,7 +52,6 @@ export const LoginUser = (user) => async (dispatch) => {
       payload: {currUser:res.data.user,statuscode:res.status}
     })
   } catch (err) {
-    console.log(err)
     dispatch({
       type: RESET_USER,
       payload:err.response.status
@@ -64,7 +62,7 @@ export const LoginUser = (user) => async (dispatch) => {
 
 export const editUser = (user) => async (dispatch) => {
   try {
-    await axios.put(`${process.env.REACT_APP_SERVER_URL}/user/editUser/${user._id}`, {
+    await axios.patch(`${process.env.REACT_APP_SERVER_URL}/user/editUser/${user._id}`, {
       ...user
     })
     dispatch({

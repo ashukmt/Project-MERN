@@ -8,7 +8,7 @@ function Contain1() {
         Launch A Sustainable Career
       </div>
       <div className="flex cont1">
-        <div className="ml-7 my-3  ">
+        <div className="ml-7 sm:ml-1 my-3  ">
          <video width="500" height="250" controls poster="https://avatars.mds.yandex.net/i?id=a9e3ca8360d90dcaebb016901b2624a98c84866b-6639666-images-thumbs&n=13" >
             <source src={video} type="video/mp4" />
             
