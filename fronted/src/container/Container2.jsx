@@ -3,10 +3,10 @@ import React from "react";
 function Container2() {
   return (
     <div>
-      <div className="flex justify-center font-bold text-lg z-2 mb-3">
+      <div className="flex justify-center  font-bold text-lg z-2 mb-3">
         Re-Imagine Your Career Potential
       </div>
-      <div className="flex justify-between cont2">
+      <div className="flex justify-between cont22">
         <div className="bg1  mt-2 p-2 rounded-xl ml-3">
           <div className="flex justify-center text-2xl font-bold text-yellow-400">
             Enterprises
@@ -116,7 +116,7 @@ function Container2() {
             <div>
             <p className="text-3xl  text-yellow-300 ml-16" >500+</p>
             <p className="text-white">Students With a CTC of 10 </p>
-            <p className="text-white ml-12">LPA or More</p>
+            <p className="text-white ml-12 lpa">LPA or More</p>
             </div>
           </div>
         </div>
