@@ -1,4 +1,4 @@
-import { Badge, Box, Button, Flex, Heading, Image, Text } from '@chakra-ui/react'
+import { Badge, Box, Button, Flex, Heading, Image, Text, Toast, useToast } from '@chakra-ui/react'
 import { Link, animateScroll } from "react-scroll";
 import { useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router'
@@ -21,6 +21,20 @@ const CourseDetail = () => {
     const course = courses.filter((c) => c.title === title?.replaceAll("-", " "))[0]
     const navigateTo = useNavigate()
     const [register, setRegister] = useState(false);
+    const curr_user = useSelector(state => state.user.user)
+    const toast = useToast();
+    const handleReg = () => {
+        if (curr_user)
+            setRegister(true);
+        else {
+            toast({
+                title: "Please Login First",
+                status: "error",
+                duration: 3000,
+                isClosable: true,
+            });
+        }
+    }
     useEffect(() => {
         animateScroll.scrollToTop({ smooth: true })
     }, [])
@@ -28,7 +42,7 @@ const CourseDetail = () => {
         <>
             {/* top banner */}
             <Box className={`bg-${course?.color}-300 relative overflow-hidden text-center p-2`} h={{ base: '470px', md: '300px' }} >
-                <Image w={{base:'0',lg:'100vw'}} position={'absolute'} zIndex={'-1'} src='utils/bg.png' />
+                <Image w={{ base: '0', lg: '100vw' }} position={'absolute'} zIndex={'-1'} src='utils/bg.png' />
                 <Box className={`bg-${course?.color}-200 hidden md:flex items-center justify-center w-[248px] h-[248px] pointer-events-none absolute top-[35%] rounded-[100%] right-[-2%] z-[0]`}>
                     <Image className="max-h-[94px] max-w-[104px] w-full object-cover" src={course?.image} />
                 </Box>
@@ -36,7 +50,7 @@ const CourseDetail = () => {
                     <BsStars style={{ position: 'relative' }} className='relative' />
                     Become a {course?.role}
                 </div>
-                <Heading color='yellow' mt='2' size={{base:'lg',lg:'xl'}}>(Extensive Learning Course)<Badge colorScheme='yellow' fontSize={'xl'} borderRadius={'10em'} color='yellow.600' p={'5px 15px'} className='text-lg rounded-lg text-center flex justify-center items-center ml-2'>Full Time</Badge></Heading>
+                <Heading color='yellow' mt='2' size={{ base: 'lg', lg: 'xl' }}>(Extensive Learning Course)<Badge colorScheme='yellow' fontSize={'xl'} borderRadius={'10em'} color='yellow.600' p={'5px 15px'} className='text-lg rounded-lg text-center flex justify-center items-center ml-2'>Full Time</Badge></Heading>
                 <Text className='text-white text-xl mt-5 max-h-10 lg:text-2xl'>
                     Become a job-ready {title} in {course?.duration} weeks.<br /> Learn at ₹0 upfront fee; pay after placement.
                 </Text>
@@ -114,7 +128,7 @@ const CourseDetail = () => {
                     >
                         FAQ
                     </Link>
-                    <Button onClick={() => setRegister(true)} colorScheme='red'>Apply Now</Button>
+                    <Button onClick={() => handleReg()} colorScheme='red'>Apply Now</Button>
                 </div>
             </div>
             {/* course details */}
@@ -241,13 +255,13 @@ const CourseDetail = () => {
                     </div>
                     <div className='text-center mt-10 flex gap-2 justify-center'>
                         <Button onClick={() => navigateTo('/msat')} variant={'outline'} colorScheme='red'>View MSAT DETAILS</Button>
-                        <Button onClick={() => setRegister(true)} colorScheme='red'>APPLY NOW FOR FREE</Button>
+                        <Button onClick={() => handleReg()} colorScheme='red'>APPLY NOW FOR FREE</Button>
                     </div>
                 </div>
             </div>
             <Sec5 />
             {/* <Flex display={{base:'hidden',md:'block'}}> */}
-                <Sec4 />
+            <Sec4 />
             {/* </Flex> */}
             <Alumini />
             <FaqComp />

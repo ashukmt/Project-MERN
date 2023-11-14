@@ -13,15 +13,18 @@ const { CourseRouter } = require("./routes/Course.router");
 const { ShareLinkrouter } = require("./routes/ShareLink.router");
 const { QuestionRouter } = require("./routes/Question.router");
 const { UserRouter } = require("./routes/User.router");
-require("./middlewares/Auth");
+
+// require("./middlewares/Auth");
 
 const app = express();
 
 app.use(express.json());
 
-function isLoggedIn(req, res, next) {
-  req.user ? next() : res.sendStatus(401);
-}
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
+});
 
 app.use(
   cors({
@@ -29,48 +32,52 @@ app.use(
   })
 );
 
-app.use(
-  session({
-    secret: "mysecret",
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: false },
-  })
-);
+// app.use(
+//   session({
+//     secret: "mysecret",
+//     resave: false,
+//     saveUninitialized: true,
+//     cookie: {
+//       secure: false
+//     },
+//   })
+// );
 
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 app.get("/", (req, res) => {
   res.send("this is base api");
 });
 
-app.get(
-  "/google",
-  passport.authenticate("google", { scope: ["email", "profile"] })
-);
+// app.get(
+//   "/google",
+//   passport.authenticate("google", {
+//     scope: ["email", "profile"]
+//   })
+// );
 
-app.get(
-  "/auth/google/callback",
-  passport.authenticate("google", {
-    successRedirect: "/auth/protected",
-    failureRedirect: "/auth/google/failure",
-  })
-);
+// app.get(
+//   "/auth/google/callback",
+//   passport.authenticate("google", {
+//     successRedirect: "/auth/protected",
+//     failureRedirect: "/auth/google/failure",
+//   })
+// );
 
-app.get("/auth/google/failure", (req, res) => {
-  res.send("Something went wrong!");
-});
+// app.get("/auth/google/failure", (req, res) => {
+//   res.send("Something went wrong!");
+// });
 
-app.get("/auth/protected", isLoggedIn, (req, res) => {
-  let name = req.user.displayName;
-  res.send(`Hello ${name}`);
-});
+// app.get("/auth/protected", isLoggedIn, (req, res) => {
+//   let name = req.user.displayName;
+//   res.send(`Hello ${name}`);
+// });
 
-app.use("/auth/logout", (req, res) => {
-  req.session.destroy();
-  res.send("See you again!");
-});
+// app.use("/auth/logout", (req, res) => {
+//   req.session.destroy();
+//   res.send("See you again!");
+// });
 
 app.use("/rewards", RewardRouter);
 app.use("/faqR", FAQrouter);

@@ -2,10 +2,11 @@ import React from "react";
 import "../Style/navbar.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Link as SL } from "react-scroll"
-import { Drawer, Modal, useDisclosure } from "@chakra-ui/react";
+import { Button, Drawer, Modal, Text, useDisclosure } from "@chakra-ui/react";
 import Login from "./Login";
 import Signup from "./Signup";
 import { ScrollLink } from "react-scroll";
+import { useSelector } from "react-redux";
 
 function Navbar() {
   const { isOpen: isLoginOpen, onOpen: onLoginOpen, onClose: onLoginClose } = useDisclosure();
@@ -20,8 +21,10 @@ function Navbar() {
     { path: "success", title: "SUCCESS STORIES", type: false },
     { path: "hirefromus", title: "HIRE FROM US", type: false },
   ];
- return (
-    <div className="main">
+
+  const curr_user = useSelector(state => state.user.user)
+  return (
+   <div className="main">
       <div>
         <Link to={"/"}>
           <img
@@ -44,7 +47,7 @@ function Navbar() {
               offset={-30}>
               {el.title}
             </SL>
-              : <Link className="link" to='/'><SL>{el.title}</SL></Link>
+              : <Link className="link" to='/'>{el.title}</Link>
         ))}
       </div>
       <div className="last">
@@ -53,10 +56,12 @@ function Navbar() {
             Navigate("/Referal");
           }}
         >
-          <Link to={"/Refer"}>REFER & EARN</Link>
+          <Link className="-pt-2" to={"/Refer"}>REFER & EARN</Link>
         </button>
-
-        <button className="refd" onClick={() => onSignupOpen()}>SIGN UP</button>
+        {
+          curr_user?.username ? <Button className="rounded-full bold uppercase">{curr_user?.username[0]}</Button>
+           : <button className="refd" onClick={() => onSignupOpen()}>SIGN UP</button>
+        }
       </div>
 
       <Drawer size={"md"} isOpen={isLoginOpen} onOpen={onLoginOpen} onClose={onLoginClose}>

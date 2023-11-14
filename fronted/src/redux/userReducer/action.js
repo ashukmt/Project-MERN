@@ -1,11 +1,10 @@
 import axios from "axios"
 import {
-  ADD_TODOS_ERROR,
-  ADD_TODOS_REQUEST,
-  ADD_TODOS_SUCCESS,
   EDIT_USER,
   GET_USER,
-  POST_USER
+  LOGIN_USER,
+  POST_USER,
+  RESET_USER
 } from "./actionType"
 
 export const getUser = (id) => async (dispatch) => {
@@ -24,24 +23,46 @@ export const getUser = (id) => async (dispatch) => {
 export const addUser = (user) => async (dispatch) => {
 
   try {
-    console.log(user)
-    var obj=await axios.post(`${process.env.REACT_APP_SERVER_URL}/user/addUser`, {
+    const res = await axios.post(`${process.env.REACT_APP_SERVER_URL}/user/addUser`, {
       ...user
     })
-
-    console.log(obj)
+    console.log(res.status)
     dispatch({
       type: POST_USER,
+      payload:res.status
     })
   } catch (err) {
     console.log(err)
+    dispatch({
+      type:RESET_USER,
+      payload:err.response.status
+    })
   }
 }
 
- export const editUser = (user) => async (dispatch) => {
+// <------------ Login User ---------------------->
+export const LoginUser = (user) => async (dispatch) => {
 
   try {
-    await axios.put(`${process.env.REACT_APP_SERVER_URL}/user/editUser/${user._id}`, {
+    const res = await axios.post(`${process.env.REACT_APP_SERVER_URL}/user/login`, {
+      ...user
+    })
+    dispatch({
+      type: LOGIN_USER,
+      payload: {currUser:res.data.user,statuscode:res.status}
+    })
+  } catch (err) {
+    dispatch({
+      type: RESET_USER,
+      payload:err.response.status
+    })
+
+  }
+}
+
+export const editUser = (user) => async (dispatch) => {
+  try {
+    await axios.patch(`${process.env.REACT_APP_SERVER_URL}/user/editUser/${user._id}`, {
       ...user
     })
     dispatch({
@@ -52,5 +73,3 @@ export const addUser = (user) => async (dispatch) => {
     console.log(err)
   }
 }
-
-

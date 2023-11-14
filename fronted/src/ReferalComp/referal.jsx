@@ -37,7 +37,7 @@ function Referal() {
   const PhoneNumber="+917379249116"
   console.log(fname)
 
- 
+ console.log("object")
 
   const handleSubmit=async()=>{
    var refform={
