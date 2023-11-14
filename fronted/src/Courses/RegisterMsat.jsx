@@ -5,7 +5,9 @@ import { AiOutlineLoading } from 'react-icons/ai';
 import { BiSolidSpreadsheet, BiSolidUserCircle } from 'react-icons/bi';
 import { BsCardImage, BsCloudArrowUpFill } from 'react-icons/bs';
 import { MdCancel } from 'react-icons/md';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
+import { editUser } from '../redux/userReducer/action';
 
 const RegisterMsat = ({ register, setRegister }) => {
     const [formObj, setFormObj] = useState({ name: '', verification_id: '', doc_image: '' })
@@ -29,7 +31,7 @@ const RegisterMsat = ({ register, setRegister }) => {
             if (!formObj[x]) {
                 toast({
                     title: "Fill all the details",
-                    description: `${x.toLocaleUpperCase()} not filled`,
+                    description: `${x[0].toLocaleUpperCase()+x.substring(1).toLocaleLowerCase()} not filled`,
                     status: 'error',
                     duration: 3000,
                     isClosable: true,
@@ -45,8 +47,11 @@ const RegisterMsat = ({ register, setRegister }) => {
         })
         return true;
     }
+    const dispatch = useDispatch();
+    const user = useSelector((state) => state.user.user)
     const handleSubmit = () => {
         if (!handleForm()) return;
+        dispatch(editUser({ ...user, registered: true }));
         onClose()
         setRegister(false)
         setLoading(true)
