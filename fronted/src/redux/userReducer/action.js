@@ -62,7 +62,7 @@ export const LoginUser = (user) => async (dispatch) => {
 
 export const editUser = (user) => async (dispatch) => {
   try {
-    await axios.put(`${process.env.REACT_APP_SERVER_URL}/user/editUser/${user._id}`, {
+    await axios.patch(`${process.env.REACT_APP_SERVER_URL}/user/editUser/${user._id}`, {
       ...user
     })
     dispatch({

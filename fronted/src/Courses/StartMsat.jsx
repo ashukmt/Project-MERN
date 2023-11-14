@@ -61,8 +61,8 @@ const StartMsat = () => {
             setProcessing(false)
             setEnded(true)
         }, 7000)
-        onClose();
         setTotal();
+        onClose();
         setProcessing(true);
         dispatch(editUser({ ...user, msatDay: new Date(), msatScore: marks, coin: user.coin + 100 }));
     }
