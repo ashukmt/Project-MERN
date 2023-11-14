@@ -81,7 +81,7 @@ UserRouter.post("/login", async (req, res) => {
     });
 
     if(req.body.gauth){
-      res.status(200).send("Login Successfull")
+      res.status(200).json({ msg: "Login successfull", user:user_present})
     } 
     else {
 
@@ -99,7 +99,7 @@ UserRouter.post("/login", async (req, res) => {
             "Password Does not match"
           );
         } else {
-          res.status(200).send({ msg: "Login successfull"});
+          res.status(200).send({ msg: "Login successfull", user:user_present});
         }
       }
     }

@@ -2,7 +2,7 @@ import React from "react";
 import "../Style/navbar.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Link as SL } from "react-scroll"
-import { Drawer, Modal, Text, useDisclosure } from "@chakra-ui/react";
+import { Button, Drawer, Modal, Text, useDisclosure } from "@chakra-ui/react";
 import Login from "./Login";
 import Signup from "./Signup";
 import { ScrollLink } from "react-scroll";
@@ -22,7 +22,6 @@ function Navbar() {
     { path: "hirefromus", title: "HIRE FROM US", type: false },
   ];
   const curr_user = useSelector(state => state.user.user)
-  console.log(curr_user)
   return (
     <div className="main">
       <div>
@@ -55,10 +54,10 @@ function Navbar() {
             Navigate("/Referal");
           }}
         >
-          <Link to={"/Refer"}>REFER & EARN</Link>
+          <Link className="-pt-2" to={"/Refer"}>REFER & EARN</Link>
         </button>
         {
-          curr_user?.username ? <Text>{curr_user?.username}</Text>
+          curr_user?.username ? <Button className="rounded-full bold uppercase">{curr_user?.username[0]}</Button>
            : <button className="refd" onClick={() => onSignupOpen()}>SIGN UP</button>
         }
       </div>

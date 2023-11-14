@@ -17,7 +17,6 @@ export const getUser = (id) => async (dispatch) => {
     })
   } catch (err) {
     console.log(err)
-   
   }
 }
 
