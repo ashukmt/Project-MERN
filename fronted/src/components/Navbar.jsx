@@ -20,7 +20,7 @@ function Navbar() {
     { path: "success", title: "SUCCESS STORIES", type: false },
     { path: "hirefromus", title: "HIRE FROM US", type: false },
   ];
-  return (
+ return (
     <div className="main">
       <div>
         <Link to={"/"}>
@@ -30,6 +30,7 @@ function Navbar() {
           />
         </Link>
       </div>
+     
       <div className="middle dt11">
         {edit?.map((el) => (
           el.type ? <Link className="link" to={el.path}>

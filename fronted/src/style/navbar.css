@@ -86,3 +86,9 @@ color: rgb(230, 14, 14);
     }
     
 }
+
+@media only screen and (max-width: 370px){
+    .last >button:nth-child(1){
+        margin-right: 0px;
+    }
+}

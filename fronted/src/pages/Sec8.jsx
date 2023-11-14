@@ -49,7 +49,7 @@ function Sec8() {
         <div className="font-bold flex justify-center text-3xl">
         Masai In <span className="text-red-600 ml-2"> News</span>
         </div>
-        <div className="grid grid-cols-3 gap-14 w-11/12 m-auto mt-14">
+        <div className="grid grid-cols-3 gap-14 w-11/12 m-auto gids mt-14">
             <div>
                 <img className=" rounded-lg" src="https://masai-website-images.s3.ap-south-1.amazonaws.com/PR_Article_Prateek_Shukla_Gen_AI_92324e2d6b.jpeg" alt="1" />
                 <p className="font-bold text-2xl mt-3 text-center">Empowering Education  Through GenAl</p>
