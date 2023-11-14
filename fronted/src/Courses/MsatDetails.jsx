@@ -1,14 +1,45 @@
-import { Button, Divider, Image } from '@chakra-ui/react'
-import React, { useEffect, useState } from 'react'
+import { Button, Divider, Image, useToast } from '@chakra-ui/react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router'
 import { animateScroll } from 'react-scroll'
 import { Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import RegisterMsat from './RegisterMsat'
+import { useSelector } from 'react-redux'
+import { BsNodePlusFill } from 'react-icons/bs'
 
 const MsatDetails = () => {
     const navigateTo = useNavigate()
     const [register, setRegister] = useState(false);
+    const [registered, setRegistered] = useState(false);
+    const curr_user = useSelector(state => state.user.user)
+    const ref = useRef(BsNodePlusFill)
+    const toast = useToast();
+    const handleStartMsat = () => {
+        if (registered)
+            navigateTo('/msat/test')
+        else {
+            toast({
+                title: "Please Register first!",
+                status: "error",
+                duration: 3000,
+                isClosable: true,
+            });
+            ref.current.scrollIntoView({ behavior:'smooth' })
+        }
+    }
+    const handleReg = () => {
+        if (curr_user)
+            setRegister(true);
+        else {
+            toast({
+                title: "Please Login First",
+                status: "error",
+                duration: 3000,
+                isClosable: true,
+            });
+        }
+    }
     useEffect(() => {
         animateScroll.scrollToTop({ smooth: true })
     }, [])
@@ -27,7 +58,7 @@ const MsatDetails = () => {
             </div>
             <Swiper
                 className="xs:hidden md:hidden sm:hidden p-0 lg:block z-0"
-                style={{ margin: 0, padding: 0}}
+                style={{ margin: 0, padding: 0 }}
                 spaceBetween={30}
                 centeredSlides={true}
                 autoplay={{
@@ -35,14 +66,14 @@ const MsatDetails = () => {
                     disableOnInteraction: false,
                 }}
                 modules={[Autoplay]}
-            > 
+            >
                 <SwiperSlide>
                     <div>
                         <Image h='400px' src="https://masaischool.com/images/msat/developer.svg" />
                     </div>
                     <div>
                         <Image h='400px' src="https://masaischool.com/images/msat/analyst.svg" />
-                        <button onClick={()=>navigateTo('/courses/Data-Analytics')} className='w-[350px] justify-center lg:w-auto swiper-button inline-flex items-center rounded-full border border-transparent bg-red-500 px-6 lg:px-8 py-2.5 lg:py-4 text-xl lg:text-3xl font-bold text-white shadow-sm focus:outline-none font-poppins'>Data Analyst</button>
+                        <button onClick={() => navigateTo('/courses/Data-Analytics')} className='w-[350px] justify-center lg:w-auto swiper-button inline-flex items-center rounded-full border border-transparent bg-red-500 px-6 lg:px-8 py-2.5 lg:py-4 text-xl lg:text-3xl font-bold text-white shadow-sm focus:outline-none font-poppins'>Data Analyst</button>
                     </div>
                     <div>
                         <Image h='400px' src="https://masaischool.com/images/msat/engineer.svg" />
@@ -54,7 +85,7 @@ const MsatDetails = () => {
                     </div>
                     <div>
                         <Image h='400px' src="https://masaischool.com/images/msat/engineer.svg" />
-                        <button onClick={()=>navigateTo('/courses/Become-a-Software-Testing-&-Automation')} className='w-[350px] justify-center lg:w-auto swiper-button inline-flex items-center rounded-full border border-transparent bg-red-500 px-6 lg:px-8 py-2.5 lg:py-4 text-xl lg:text-3xl font-bold text-white shadow-sm focus:outline-none font-poppins'>Test Engineer</button>
+                        <button onClick={() => navigateTo('/courses/Become-a-Software-Testing-&-Automation')} className='w-[350px] justify-center lg:w-auto swiper-button inline-flex items-center rounded-full border border-transparent bg-red-500 px-6 lg:px-8 py-2.5 lg:py-4 text-xl lg:text-3xl font-bold text-white shadow-sm focus:outline-none font-poppins'>Test Engineer</button>
                     </div>
                     <div>
                         <Image h='400px' src="https://masaischool.com/images/msat/developer.svg" />
@@ -66,7 +97,7 @@ const MsatDetails = () => {
                     </div>
                     <div>
                         <Image h='400px' src="https://masaischool.com/images/msat/developer.svg" />
-                        <button onClick={()=>navigateTo('/courses/Full-Stack-Web-Development')} className='w-[350px] justify-center lg:w-auto swiper-button inline-flex items-center rounded-full border border-transparent bg-red-500 px-6 lg:px-8 py-2.5 lg:py-4 text-xl lg:text-3xl font-bold text-white shadow-sm focus:outline-none font-poppins'>Software Developer</button>
+                        <button onClick={() => navigateTo('/courses/Full-Stack-Web-Development')} className='w-[350px] justify-center lg:w-auto swiper-button inline-flex items-center rounded-full border border-transparent bg-red-500 px-6 lg:px-8 py-2.5 lg:py-4 text-xl lg:text-3xl font-bold text-white shadow-sm focus:outline-none font-poppins'>Software Developer</button>
                     </div>
                     <div>
                         <Image h='400px' src="https://masaischool.com/images/msat/analyst.svg" />
@@ -78,7 +109,7 @@ const MsatDetails = () => {
                     </div>
                     <div>
                         <Image h='400px' src="https://masaischool.com/images/msat/analyst.svg" />
-                        <button onClick={()=>navigateTo('/courses/Data-Analytics')} className='w-[350px] justify-center lg:w-auto swiper-button inline-flex items-center rounded-full border border-transparent bg-red-500 px-6 lg:px-8 py-2.5 lg:py-4 text-xl lg:text-3xl font-bold text-white shadow-sm focus:outline-none font-poppins'>Data Analyst</button>
+                        <button onClick={() => navigateTo('/courses/Data-Analytics')} className='w-[350px] justify-center lg:w-auto swiper-button inline-flex items-center rounded-full border border-transparent bg-red-500 px-6 lg:px-8 py-2.5 lg:py-4 text-xl lg:text-3xl font-bold text-white shadow-sm focus:outline-none font-poppins'>Data Analyst</button>
                     </div>
                     <div>
                         <Image h='400px' src="https://masaischool.com/images/msat/engineer.svg" />
@@ -90,7 +121,7 @@ const MsatDetails = () => {
                     </div>
                     <div>
                         <Image h='400px' src="https://masaischool.com/images/msat/engineer.svg" />
-                        <button onClick={()=>navigateTo('/courses/Become-a-Software-Testing-&-Automation')} className='w-[350px] justify-center lg:w-auto swiper-button inline-flex items-center rounded-full border border-transparent bg-red-500 px-6 lg:px-8 py-2.5 lg:py-4 text-xl lg:text-3xl font-bold text-white shadow-sm focus:outline-none font-poppins'>Test Engineer</button>
+                        <button onClick={() => navigateTo('/courses/Become-a-Software-Testing-&-Automation')} className='w-[350px] justify-center lg:w-auto swiper-button inline-flex items-center rounded-full border border-transparent bg-red-500 px-6 lg:px-8 py-2.5 lg:py-4 text-xl lg:text-3xl font-bold text-white shadow-sm focus:outline-none font-poppins'>Test Engineer</button>
                     </div>
                     <div>
                         <Image h='400px' src="https://masaischool.com/images/msat/developer.svg" />
@@ -102,7 +133,7 @@ const MsatDetails = () => {
                     </div>
                     <div>
                         <Image h='400px' src="https://masaischool.com/images/msat/developer.svg" />
-                        <button onClick={()=>navigateTo('/courses/Full-Stack-Web-Development')} className='w-[350px] justify-center lg:w-auto swiper-button inline-flex items-center rounded-full border border-transparent bg-red-500 px-6 lg:px-8 py-2.5 lg:py-4 text-xl lg:text-3xl font-bold text-white shadow-sm focus:outline-none font-poppins'>Software Developer</button>
+                        <button onClick={() => navigateTo('/courses/Full-Stack-Web-Development')} className='w-[350px] justify-center lg:w-auto swiper-button inline-flex items-center rounded-full border border-transparent bg-red-500 px-6 lg:px-8 py-2.5 lg:py-4 text-xl lg:text-3xl font-bold text-white shadow-sm focus:outline-none font-poppins'>Software Developer</button>
                     </div>
                     <div>
                         <Image h='400px' src="https://masaischool.com/images/msat/analyst.svg" />
@@ -114,7 +145,7 @@ const MsatDetails = () => {
                     </div>
                     <div>
                         <Image h='400px' src="https://masaischool.com/images/msat/analyst.svg" />
-                        <button onClick={()=>navigateTo('/courses/Data-Analytics')} className='w-[350px] justify-center lg:w-auto swiper-button inline-flex items-center rounded-full border border-transparent bg-red-500 px-6 lg:px-8 py-2.5 lg:py-4 text-xl lg:text-3xl font-bold text-white shadow-sm focus:outline-none font-poppins'>Data Analyst</button>
+                        <button onClick={() => navigateTo('/courses/Data-Analytics')} className='w-[350px] justify-center lg:w-auto swiper-button inline-flex items-center rounded-full border border-transparent bg-red-500 px-6 lg:px-8 py-2.5 lg:py-4 text-xl lg:text-3xl font-bold text-white shadow-sm focus:outline-none font-poppins'>Data Analyst</button>
                     </div>
                     <div>
                         <Image h='400px' src="https://masaischool.com/images/msat/engineer.svg" />
@@ -126,7 +157,7 @@ const MsatDetails = () => {
                     </div>
                     <div>
                         <Image h='400px' src="https://masaischool.com/images/msat/engineer.svg" />
-                        <button onClick={()=>navigateTo('/courses/Become-a-Software-Testing-&-Automation')} className='w-[350px] justify-center lg:w-auto swiper-button inline-flex items-center rounded-full border border-transparent bg-red-500 px-6 lg:px-8 py-2.5 lg:py-4 text-xl lg:text-3xl font-bold text-white shadow-sm focus:outline-none font-poppins'>Test Engineer</button>
+                        <button onClick={() => navigateTo('/courses/Become-a-Software-Testing-&-Automation')} className='w-[350px] justify-center lg:w-auto swiper-button inline-flex items-center rounded-full border border-transparent bg-red-500 px-6 lg:px-8 py-2.5 lg:py-4 text-xl lg:text-3xl font-bold text-white shadow-sm focus:outline-none font-poppins'>Test Engineer</button>
                     </div>
                     <div>
                         <Image h='400px' src="https://masaischool.com/images/msat/developer.svg" />
@@ -138,7 +169,7 @@ const MsatDetails = () => {
                     </div>
                     <div>
                         <Image h='400px' src="https://masaischool.com/images/msat/developer.svg" />
-                        <button onClick={()=>navigateTo('/courses/Full-Stack-Web-Development')} className='w-[350px] justify-center lg:w-auto swiper-button inline-flex items-center rounded-full border border-transparent bg-red-500 px-6 lg:px-8 py-2.5 lg:py-4 text-xl lg:text-3xl font-bold text-white shadow-sm focus:outline-none font-poppins'>Software Developer</button>
+                        <button onClick={() => navigateTo('/courses/Full-Stack-Web-Development')} className='w-[350px] justify-center lg:w-auto swiper-button inline-flex items-center rounded-full border border-transparent bg-red-500 px-6 lg:px-8 py-2.5 lg:py-4 text-xl lg:text-3xl font-bold text-white shadow-sm focus:outline-none font-poppins'>Software Developer</button>
                     </div>
                     <div>
                         <Image h='400px' src="https://masaischool.com/images/msat/analyst.svg" />
@@ -154,7 +185,7 @@ const MsatDetails = () => {
                     </p>
                 </div>
             </div>
-            <Divider p='4'/>
+            <Divider p='4' />
             <div class="relative bg-[#FEDFE5] px-4 pt-1 pb-20 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28">
                 <div className="absolute inset-0">
                     <div className="h-96 bg-[#FFFAFB] sm:h-2/4"></div>
@@ -167,7 +198,7 @@ const MsatDetails = () => {
                             <br class="hidden sm:block" />
                             Your score paves the way to eligible courses, shaping your journey to success.
                         </p>
-                        <Button onClick={()=>navigateTo('/msat/test')} colorScheme='red' class="active:!ring-0 bg-red-500 hover:bg-red-600 rounded-[8px] text-white  !font-[600] text-[14px] leading-[24px] font-sans tracking-[1.25px] uppercase p-[12px_16px]  inline-block focus:!ring-0 outline-offset-[5px] outline-[1px] outline-[transparent] focus-visible:!shadow-[0_0_0_3px_rgba(66,_153,_225,_0.6)] disabled:opacity-[0.6] disabled:cursor-not-allowed transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200" >Start MSAT</Button>
+                        <Button onClick={handleStartMsat} colorScheme='red' class="active:!ring-0 bg-red-500 hover:bg-red-600 rounded-[8px] text-white  !font-[600] text-[14px] leading-[24px] font-sans tracking-[1.25px] uppercase p-[12px_16px]  inline-block focus:!ring-0 outline-offset-[5px] outline-[1px] outline-[transparent] focus-visible:!shadow-[0_0_0_3px_rgba(66,_153,_225,_0.6)] disabled:opacity-[0.6] disabled:cursor-not-allowed transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200" >Start MSAT</Button>
                         <div className='flex justify-center mt-20'>
                             <iframe style={{ borderRadius: '15px' }} className='w-[450px] h-[250px] lg:w-[860px] lg:h-[415px]' src="https://www.youtube.com/embed/0867JeIfyLY?si=k-bpg4MMAQElzd7Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
@@ -310,22 +341,22 @@ const MsatDetails = () => {
                     </div>
                 </div>
             </div>
-            <div className="bg-[#FEDFE5]">
+            <div className="bg-[#FEDFE5]" ref={ref}>
                 <div className="mx-auto max-w-7xl py-10 px-4 sm:px-6 lg:px-8">
                     <div className="overflow-hidden rounded-lg lg:grid lg:grid-cols-2 lg:gap-4">
                         <div className="px-6 pt-10 pb-12 sm:px-16 sm:pt-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
                             <div className="lg:self-center">
                                 <h2 className="text-3xl font-poppins font-bold tracking-tight text-red-500 sm:text-4xl">
                                     <span class="block">Ready to start your Journey with Masai</span>
-                                </h2> 
+                                </h2>
                                 <p className="mt-3.5 text-xl text-[#3B3435] font-poppins font-medium">MSAT is your first step towards a transformative education at Masai School. Let's walk this path together!</p>
                                 <div className="mt-5 inline-flex items-center rounded-md">
-                                    <button onClick={()=>setRegister(true)} type="button" class="active:!ring-0 bg-red-500 hover:bg-red-600 rounded-[8px] text-white  !font-[600] text-[14px] leading-[24px] font-sans tracking-[1.25px] uppercase p-[12px_16px]  inline-block focus:!ring-0 outline-offset-[5px] outline-[1px] outline-[transparent] focus-visible:!shadow-[0_0_0_3px_rgba(66,_153,_225,_0.6)] disabled:opacity-[0.6] disabled:cursor-not-allowed transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 ">register for msat</button>
+                                    <button onClick={handleReg} type="button" class="active:!ring-0 bg-red-500 hover:bg-red-600 rounded-[8px] text-white  !font-[600] text-[14px] leading-[24px] font-sans tracking-[1.25px] uppercase p-[12px_16px]  inline-block focus:!ring-0 outline-offset-[5px] outline-[1px] outline-[transparent] focus-visible:!shadow-[0_0_0_3px_rgba(66,_153,_225,_0.6)] disabled:opacity-[0.6] disabled:cursor-not-allowed transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200 ">register for msat</button>
                                 </div>
                             </div>
                         </div>
                         <div class="hidden lg:flex items-center justify-center">
-                            <img height="340" width="644.21" class="transform rounded-md object-cover object-left-top" src="https://www.masaischool.com/images/msat/msat-cta.png" alt="App screenshot"/>
+                            <img height="340" width="644.21" class="transform rounded-md object-cover object-left-top" src="https://www.masaischool.com/images/msat/msat-cta.png" alt="App screenshot" />
                         </div>
                     </div>
                 </div>
