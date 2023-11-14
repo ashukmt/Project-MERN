@@ -16,6 +16,7 @@ UserRouter.get("/", async (req, res) => {
     res.status(500).send("Internal Server Error")
   }
 })
+
 UserRouter.get("/:_id", async (req, res) => {
   try {
     const {
@@ -44,7 +45,7 @@ UserRouter.post("/addUser", async (req, res) => {
     });
 
     if (user_present) {
-      res.status(405).send(
+      res.status(409).send(
         "Email Already Exist In Database"
       );
     } else {
@@ -58,7 +59,7 @@ UserRouter.post("/addUser", async (req, res) => {
         await new_user.save();
         res.status(200).send({
           msg: "User Added Successfully",
-          user: new_user
+       
         });
       });
 
@@ -68,6 +69,46 @@ UserRouter.post("/addUser", async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 });
+
+
+// <-------------- Login ------------>
+UserRouter.post("/login", async (req, res) => {
+  try {
+
+
+    const user_present = await UserModel.findOne({
+      email:req.body.email
+    });
+
+    if(req.body.gauth){
+      res.status(200).send("Login Successfull")
+    } 
+    else {
+
+      if (!user_present) {
+        res.status(409).send(
+          "Email Does not exist!"
+        );
+      }
+    
+      else if (user_present) {
+        const hash_pass = await user_present.password;
+        const Result = bcrypt.compareSync(req.body.password, hash_pass); // true
+        if (!Result) {
+          res.status(410).send(
+            "Password Does not match"
+          );
+        } else {
+          res.status(200).send({ msg: "Login successfull"});
+        }
+      }
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
 
 UserRouter.patch("/editUser/:id", async (req, res) => {
   try {
