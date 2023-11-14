@@ -2,10 +2,11 @@ import React from "react";
 import "../Style/navbar.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Link as SL } from "react-scroll"
-import { Drawer, Modal, useDisclosure } from "@chakra-ui/react";
+import { Drawer, Modal, Text, useDisclosure } from "@chakra-ui/react";
 import Login from "./Login";
 import Signup from "./Signup";
 import { ScrollLink } from "react-scroll";
+import { useSelector } from "react-redux";
 
 function Navbar() {
   const { isOpen: isLoginOpen, onOpen: onLoginOpen, onClose: onLoginClose } = useDisclosure();
@@ -20,6 +21,8 @@ function Navbar() {
     { path: "success", title: "SUCCESS STORIES", type: false },
     { path: "hirefromus", title: "HIRE FROM US", type: false },
   ];
+  const curr_user = useSelector(state => state.user.user)
+  console.log(curr_user)
   return (
     <div className="main">
       <div>
@@ -54,8 +57,10 @@ function Navbar() {
         >
           <Link to={"/Refer"}>REFER & EARN</Link>
         </button>
-
-        <button className="refd" onClick={() => onSignupOpen()}>SIGN UP</button>
+        {
+          curr_user?.username ? <Text>{curr_user?.username}</Text>
+           : <button className="refd" onClick={() => onSignupOpen()}>SIGN UP</button>
+        }
       </div>
 
       <Drawer size={"md"} isOpen={isLoginOpen} onOpen={onLoginOpen} onClose={onLoginClose}>

@@ -53,7 +53,6 @@ export const LoginUser = (user) => async (dispatch) => {
       payload: {currUser:res.data.user,statuscode:res.status}
     })
   } catch (err) {
-    console.log(err)
     dispatch({
       type: RESET_USER,
       payload:err.response.status

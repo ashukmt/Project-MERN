@@ -83,23 +83,24 @@ UserRouter.post("/login", async (req, res) => {
     if(req.body.gauth){
       res.status(200).send("Login Successfull")
     } 
-   
+    else {
 
-    if (!user_present) {
-      res.status(409).send(
-        "Email Does not exist!"
-      );
-    }
-   
-    else if (user_present) {
-      const hash_pass = await user_present.password;
-      const Result = bcrypt.compareSync(password, hash_pass); // true
-      if (!Result) {
-        res.status(410).send(
-          "Password Does not match"
+      if (!user_present) {
+        res.status(409).send(
+          "Email Does not exist!"
         );
-      } else {
-        res.status(200).send({ msg: "Login successfull"});
+      }
+    
+      else if (user_present) {
+        const hash_pass = await user_present.password;
+        const Result = bcrypt.compareSync(req.body.password, hash_pass); // true
+        if (!Result) {
+          res.status(410).send(
+            "Password Does not match"
+          );
+        } else {
+          res.status(200).send({ msg: "Login successfull"});
+        }
       }
     }
   } catch (error) {

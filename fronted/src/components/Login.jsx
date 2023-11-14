@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import {
   Box,
   Button,
@@ -17,11 +16,8 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { FcGoogle } from "react-icons/fc";
-import { useNavigate } from "react-router";
-import { Link } from "react-router-dom";
 import {
   GoogleAuthProvider,
-  signInWithEmailAndPassword,
   signInWithPopup,
 } from "firebase/auth";
 import { auth } from "./FireBase";
@@ -33,7 +29,6 @@ const Login = ({ onClose, onOpen }) => {
   const dispatch = useDispatch();
   const status = useSelector((state) => state.user.status);
   const toast = useToast();
-  const [googlesignup, setGooglesignup] = useState(false);
  
   const [user, setUser] = useState({
     email: "",
@@ -59,7 +54,7 @@ const Login = ({ onClose, onOpen }) => {
       return;
     }
 
-    if (!googlesignup && (password === "" || password.length < 10)) {
+    if (password === "" || password.length < 10) {
       toast({
         title: "Enter valid password",
         status: "error",
@@ -74,7 +69,6 @@ const Login = ({ onClose, onOpen }) => {
   };
 
   useEffect(() => {
-    console.log(status);
     if (status == "200") {
       toast({
         title: "Login successfull",
@@ -104,8 +98,6 @@ const Login = ({ onClose, onOpen }) => {
   const handleGoogleLogin = async () => {
     const provider = new GoogleAuthProvider();
     const result = await signInWithPopup(auth, provider);
-    // dispatch(setLOGIN(result.user))
-    console.log(result.user);
     const { displayName, email, photoURL } = result.user;
     let obj={
       email,
@@ -116,7 +108,6 @@ const Login = ({ onClose, onOpen }) => {
     dispatch(addUser(obj))
     dispatch(LoginUser(obj))
     onclose()
-    
   };
 
   return (
