@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Flex, Heading, Image, Text, Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalFooter, ModalBody, AlertIcon, Alert, AlertTitle, AlertDescription } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Text, Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalFooter, ModalBody, AlertIcon, Alert, AlertTitle, AlertDescription, useToast } from "@chakra-ui/react";
 import Leaderboard from './Leaderboard';
 import { Navigate, useNavigate } from "react-router-dom";
 import {
@@ -31,6 +31,7 @@ function RewardCard({ Coin_Req, Gift_name, Gift_url }) {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [bagEmpty,setBagEmpty]=useState(false);
   const [showAlert, setShowAlert] = useState(false);
+  const toast=useToast()
 
   const today = new Date();
 const twoDaysFromNow = new Date(today);
@@ -46,7 +47,8 @@ console.log(DateA)
     Address:"",
     Empty:bagEmpty,
     Imgurl:Gift_url,
-    DeliveryDate:DateA
+    DeliveryDate:DateA,
+    Name:Gift_name
   })
  
 
@@ -87,7 +89,7 @@ console.log(DateA)
             setImgurl(Gift_url);
             onOpen();
           }}
-          isDisabled={Coin_Req !== claibtn}
+          isDisabled={Coin_Req>claibtn}
 
         >CLAIM FOR {Coin_Req} COIN</Button>
 
@@ -129,10 +131,12 @@ console.log(DateA)
         mr={3}
         onClick={() => {
           if (addObj.Phnumber === "" || addObj.Email === "" || addObj.Address === "") {
-            // Toggle the alert's visibility
-            setShowAlert(true);
-
-            // You can also include additional logic here
+            toast({
+      title: "All inpute fill are required",
+      status: "error",
+      duration: 3000,
+      isClosable: true,
+    });
             
           }
           else{
@@ -145,68 +149,11 @@ console.log(DateA)
         Redeem
       </Button>
 
-      {showAlert && (
-        <Alert status="success" variant="subtle" onClose={() => setShowAlert(false)}>
-        <AlertIcon />
-   All input filed required
-        </Alert>
-      )}
-  
             </ModalFooter>
           </ModalContent>
         </Modal>
 
 
-        {/* <Drawer
-          isOpen={isOpen}
-          placement='right'
-          size="lg"
-          onClose={onClose}
-          finalFocusRef={btnRef}
-        >
-          <DrawerOverlay />
-          <DrawerContent>
-            <DrawerCloseButton />
-            <DrawerHeader style={{ fontSize: "25px", fontWeight: '600' }}>
-              Referral Program
-            </DrawerHeader>
-
-
-            <DrawerBody>
-              <FormControl isRequired>
-                <FormLabel>Full Name</FormLabel>
-                <Input placeholder='Enter full name' name='F_name'
-                  onChange={(e) => setFname(e.target.value)}
-                />
-                <FormLabel>Email address</FormLabel>
-                <Input placeholder='Enter email address' name='Email'
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-                <FormLabel>Phone Number</FormLabel>
-                <Input placeholder='Enter your whatsapp number' name='Ph_number'
-                  onChange={(e) => setPhnumber(e.target.value)}
-
-                />
-                <FormLabel>Referral Code (Optional)</FormLabel>
-                <Input placeholder='Enter referral Code' name='R_Code'
-                  onChange={(e) => setRcode(e.target.value)}
-                />
-                <Button
-                  mt={4}
-                  colorScheme='teal'
-                  w={'full'}
-                  type='submit'
-
-                // onClick={handleSubmit}
-                >
-                  Submit
-                </Button>
-              </FormControl>
-            </DrawerBody>
-
-
-          </DrawerContent>
-        </Drawer> */}
 
 
       </div>

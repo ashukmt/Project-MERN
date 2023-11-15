@@ -17,6 +17,7 @@ import {
   FormLabel,
   Alert,
   AlertIcon,
+  useToast,
 } from "@chakra-ui/react";
 import Accordionist from "./Accordionist";
 
@@ -32,6 +33,7 @@ function Referal() {
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
+  const toast=useToast()
 
 
   const PhoneNumber="+917379249116"
@@ -48,10 +50,12 @@ function Referal() {
   }
 
   if (refform.F_name === "" || refform.Email === "" || refform.Ph_number === "") {
-    // Toggle the alert's visibility
-    setShowAlert(true);
-
-    // You can also include additional logic here
+    toast({
+      title: "All inpute fill are required",
+      status: "error",
+      duration: 3000,
+      isClosable: true,
+    });
     
   }
 
@@ -129,7 +133,7 @@ else
             <Drawer
               isOpen={isOpen}
               placement="right"
-              size="lg"
+              size="md"
               onClose={onClose}
               finalFocusRef={btnRef}
             >
@@ -137,7 +141,7 @@ else
               <DrawerContent>
                 <DrawerCloseButton />
                 <DrawerHeader style={{ fontSize:"25px", fontWeight: '600' }}>
-                  Referral Program
+                  Referring To
                 </DrawerHeader>
 
                 <DrawerBody>
