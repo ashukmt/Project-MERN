@@ -56,10 +56,14 @@ Redeem your accumulated points for a variety of exciting products and rewards.
 ## Tech Stack
 Our project utilizes a robust tech stack to provide a seamless user experience. Here are the key technologies and libraries we've incorporated:
 
-MERN Stack: MongoDB, Express.js, React, Node.js form the foundation of our web application.
-Tailwind CSS: A utility-first CSS framework used for quick and efficient styling.
-Chakra UI: A component library that makes it easy to create accessible and visually pleasing user interfaces.
-Chart.js: Used to create interactive and informative charts for data visualization.
-Team
-Our project was a collaborative effort by a team of four dedicated developers who learned and grew together during this journey. We had daily group discussions, which played a significant role in the success of this project. 
+MERN Stack: MongoDB, Express.js, React, Node.js form the foundation of our web application.<br/>
+
+Tailwind CSS: A utility-first CSS framework used for quick and efficient styling.<br/>
+
+Chakra UI: A component library that makes it easy to create accessible and visually pleasing user interfaces.<br/>
+
+Chart.js: Used to create interactive and informative charts for data visualization.<br/>
+
+Team: Our project was a collaborative effort by a team of four dedicated developers who learned and grew together during this journey. We had daily group discussions, which played a                 significant role in the success of this project. <br/>
+
 Feel free to explore our project, contribute, and help us make the Masai School website even more user-friendly and engaging. We appreciate your support and welcome your feedback and contributions.
