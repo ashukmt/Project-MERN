@@ -2,10 +2,14 @@ import React, { useEffect, useState } from "react";
 import "../Style/Events.css";
 import { Link, useNavigate } from "react-router-dom";
 import { animateScroll } from "react-scroll";
+import { useToast } from "@chakra-ui/react";
+import { useSelector } from "react-redux";
 const Events = () => {
   const [eventData, setEventData] = useState([]);
   const[filterBy,setFilterBy] = useState("");
   const[searchBy,setSearchBy] = useState("");
+  const toast=useToast()
+  const curr_user = useSelector(state => state.user.user)
 
   const myApi = (url,filterBy)=>{
       if(filterBy){
@@ -225,7 +229,38 @@ const Events = () => {
                 {elem.btn}
               </button> : <button
                 type="button"
-                onClick={() => redirect_register(elem._id)}
+                onClick={() => {
+                  if (!curr_user.email) {
+            toast({
+                title: "Please Login First",
+                status: "error",
+                duration: 3000,
+                isClosable: true,
+            });
+            animateScroll.scrollToTop({ smooth: true })
+        } 
+          else if (curr_user.registered) {
+                toast({
+                    title: "You have registered already.",
+                    status: "success",
+                    duration: 3000,
+                    isClosable: true,
+                });
+                // navigate('/msat/confirm')
+                redirect_register(elem._id)
+        }
+
+               
+     
+                }}
+
+
+
+
+                
+                
+                
+                
                 class="text-white bg-red-700 hover:bg-red-500 reg_btn font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-500 focus:outline-none "
               >
                 {elem.btn}

@@ -141,8 +141,8 @@ else
                 isClosable: true,
             });
             animateScroll.scrollToTop({ smooth: true })
-        } else {
-            if (curr_user.registered) {
+        } 
+          else if (curr_user.registered) {
                 toast({
                     title: "You have registered already.",
                     status: "success",
@@ -151,8 +151,6 @@ else
                 });
                 // navigate('/msat/confirm')
                 onOpen()
-            }
-            else setRegister(true);
         }
               }}
 
