@@ -10,7 +10,7 @@ To make the user experience even more engaging, we've implemented a reward syste
 1. Masai School Information
 Access comprehensive information about Masai School, its history, mission, and vision.
 
-![image](https://github.com/ashukmt/Project-MERN/assets/68837552/99f1d1e5-2abc-471c-bcf3-1bf9be303370)
+![image](https://github.com/ashukmt/Project-MERN/assets/68837552/e3d7d8e5-a40c-46d8-ab6a-37f65febdc0a)
 
 3. Course Details
 Explore the range of courses offered by Masai School, complete with detailed descriptions and requirements.
