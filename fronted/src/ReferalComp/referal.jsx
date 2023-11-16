@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Referal1 from "./Referal1";
 import ReferalReward from "./Referal&Reward";
 import axios from "axios"
+import { Link, animateScroll } from "react-scroll";
 import {
   Drawer,
   DrawerBody,
@@ -22,6 +23,7 @@ import {
 import Accordionist from "./Accordionist";
 
 import { AiOutlineInfoCircle } from "react-icons/ai";
+import { useSelector } from "react-redux";
 
 function Referal() {
   const[fname,setFname]=useState("")
@@ -29,6 +31,8 @@ function Referal() {
   const[phoneNumber,setPhnumber]=useState("")
   const[rcode,setRcode]=useState("")
   const [showAlert, setShowAlert] = useState(false);
+  const [register, setRegister] = useState(false);
+  const curr_user = useSelector(state => state.user.user)
    
 
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -126,7 +130,32 @@ else
               maxW="fit-content"
               mt="20px"
               display="inline-block"
-              onClick={onOpen}
+              // onClick={onOpen}
+
+              onClick={()=>{
+                if (!curr_user.email) {
+            toast({
+                title: "Please Login First",
+                status: "error",
+                duration: 3000,
+                isClosable: true,
+            });
+            animateScroll.scrollToTop({ smooth: true })
+        } else {
+            if (curr_user.registered) {
+                toast({
+                    title: "You have registered already.",
+                    status: "success",
+                    duration: 3000,
+                    isClosable: true,
+                });
+                // navigate('/msat/confirm')
+                onOpen()
+            }
+            else setRegister(true);
+        }
+              }}
+
             >
               refer now
             </Button>
