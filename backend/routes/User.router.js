@@ -72,7 +72,7 @@ UserRouter.post("/login", async (req, res) => {
         res.status(409).send("Email Does not exist!");
       } else if (user_present) {
         const hash_pass = await user_present.password;
-        const Result = bcrypt.compareSync(password, hash_pass); // true
+        const Result = bcrypt.compareSync(req.body.password, hash_pass); // true
         if (!Result) {
           res.status(410).send("Password Does not match");
         } else {
