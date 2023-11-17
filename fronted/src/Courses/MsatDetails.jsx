@@ -54,7 +54,6 @@ const MsatDetails = () => {
             else setRegister(true);
         }
     }
-    console.log(curr_user.msatDay.getDate(), new Date().getDate())
     useEffect(() => {
         animateScroll.scrollToTop({ smooth: true })
     }, [])

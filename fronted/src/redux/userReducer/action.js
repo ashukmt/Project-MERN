@@ -47,6 +47,7 @@ export const LoginUser = (user) => async (dispatch) => {
     const res = await axios.post(`${process.env.REACT_APP_SERVER_URL}/user/login`, {
       ...user
     })
+    console.log(res)
     dispatch({
       type: LOGIN_USER,
       payload: {currUser:res.data.user,statuscode:res.status}

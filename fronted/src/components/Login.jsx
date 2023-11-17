@@ -107,7 +107,6 @@ const Login = ({ onClose, onOpen }) => {
     }
     dispatch(addUser(obj))
     dispatch(LoginUser(obj))
-    onclose()
   };
 
   return (
