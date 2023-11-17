@@ -1,5 +1,7 @@
 const express = require("express");
-const { UserModel } = require("../models/User.model");
+const {
+  UserModel
+} = require("../models/User.model");
 const referralCodeGenerator = require("referral-code-generator");
 const bcrypt = require("bcrypt");
 
@@ -16,7 +18,9 @@ UserRouter.get("/", async (req, res) => {
 
 UserRouter.get("/:_id", async (req, res) => {
   try {
-    const { _id } = req.params;
+    const {
+      _id
+    } = req.params;
     const user = await UserModel.find({
       _id,
     });
@@ -29,7 +33,11 @@ UserRouter.get("/:_id", async (req, res) => {
 
 UserRouter.post("/addUser", async (req, res) => {
   try {
-    const { username, email, password } = req.body;
+    const {
+      username,
+      email,
+      password
+    } = req.body;
 
     const user_present = await UserModel.findOne({
       email,
@@ -60,12 +68,26 @@ UserRouter.post("/addUser", async (req, res) => {
 // <-------------- Login ------------>
 UserRouter.post("/login", async (req, res) => {
   try {
-    const user_present = await UserModel.findOne({
-      email: req.body.email,
+    const {email} = req.body
+    let user_present = await UserModel.findOne({
+      email,
     });
 
     if (req.body.gauth) {
-      res.status(200).send({user:user_present, msg: "Google Login Successfull" });
+      if (!user_present) {
+          const {username,profilePic} = req.body
+          user_present = await new UserModel({
+            username,
+            email,
+            profilePic,
+            referalCode: referralCodeGenerator.alpha("lowercase", 12),
+          });
+          await user_present.save();
+      }
+      res.status(201).send({
+        user: user_present,
+        msg: "Google Login Successfull"
+      });
     } else {
       if (!user_present) {
         res.status(409).send("Email Does not exist!");
@@ -75,7 +97,10 @@ UserRouter.post("/login", async (req, res) => {
         if (!Result) {
           res.status(410).send("Password Does not match");
         } else {
-          res.status(200).send({user:user_present, msg: "Login successfull" });
+          res.status(200).send({
+            user: user_present,
+            msg: "Login successfull"
+          });
         }
       }
     }

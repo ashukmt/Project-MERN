@@ -69,7 +69,7 @@ const Login = ({ onClose, onOpen }) => {
   };
 
   useEffect(() => {
-    if (status == "200") {
+    if (status == "200" || status=='201') {
       toast({
         title: "Login successfull",
         status: "success",
@@ -105,7 +105,6 @@ const Login = ({ onClose, onOpen }) => {
       profilePic:photoURL,
       gauth:true
     }
-    dispatch(addUser(obj))
     dispatch(LoginUser(obj))
   };
 
