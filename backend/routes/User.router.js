@@ -8,7 +8,6 @@ UserRouter.get("/", async (req, res) => {
   try {
     const users = await UserModel.find();
     res.status(200).json(users);
-    console.log("f");
   } catch (error) {
     console.log(error);
     res.status(500).send("Internal Server Error");
@@ -66,17 +65,17 @@ UserRouter.post("/login", async (req, res) => {
     });
 
     if (req.body.gauth) {
-      res.status(200).send({ msg: "Login Successfull" });
+      res.status(200).send({user:user_present, msg: "Google Login Successfull" });
     } else {
       if (!user_present) {
         res.status(409).send("Email Does not exist!");
       } else if (user_present) {
         const hash_pass = await user_present.password;
-        const Result = bcrypt.compareSync(password, hash_pass); // true
+        const Result = bcrypt.compareSync(req.body.password, hash_pass); // true
         if (!Result) {
           res.status(410).send("Password Does not match");
         } else {
-          res.status(200).send({ msg: "Login successfull" });
+          res.status(200).send({user:user_present, msg: "Login successfull" });
         }
       }
     }

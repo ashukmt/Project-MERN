@@ -31,7 +31,7 @@ function Navbar() {
   ];
   const curr_user = useSelector((state) => state.user.user);
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
-
+  console.log(curr_user)
   const toggleNavbar = () => {
     setIsNavbarOpen(!isNavbarOpen);
   };
