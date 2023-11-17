@@ -9,7 +9,7 @@ const EventDetails = () => {
   const fetchingMyDetailsData = async () => {
     try {
       const myResponse = await fetch(
-        `http://localhost:8080/event/getevents/${id}`
+        `${process.env.REACT_APP_SERVER_URL}/event/getevents/${id}`
       );
       const myData = await myResponse.json();
       setMyDetailsData(myData.one_event);
