@@ -6,17 +6,19 @@ import { useToast } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
 const Events = () => {
   const [eventData, setEventData] = useState([]);
+  const [register, setRegister] = useState(false);
   const[filterBy,setFilterBy] = useState("");
   const[searchBy,setSearchBy] = useState("");
   const toast=useToast()
   const curr_user = useSelector(state => state.user.user)
 
   const myApi = (url,filterBy)=>{
-      if(filterBy){
-        return `${url}/getevents?position=${filterBy}`
-      }
-      else if(searchBy){
+     
+       if(searchBy){
         return `${url}/searchevents?q=${searchBy}`
+      }
+      else if(filterBy){
+        return `${url}/getevents?position=${filterBy}`
       }
       else{
         return `${url}/getevents`
@@ -238,19 +240,23 @@ const Events = () => {
                 isClosable: true,
             });
             animateScroll.scrollToTop({ smooth: true })
-        } 
-          else if (curr_user.registered) {
-                toast({
-                    title: "You have registered already.",
-                    status: "success",
-                    duration: 3000,
-                    isClosable: true,
-                });
-                // navigate('/msat/confirm')
-                redirect_register(elem._id)
         }
+        else {
+          if (curr_user.registered) {
+              toast({
+                  title: "You have registered already.",
+                  status: "success",
+                  duration: 3000,
+                  isClosable: true,
+              });
+              redirect_register(elem._id) 
+              navigate(`/event/registerevents/${elem._id}`)
+          }
+          else setRegister(true);
+      }
+          
 
-               
+       
      
                 }}
 
