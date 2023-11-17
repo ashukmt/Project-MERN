@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import "../Style/navbar.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Link as SL } from "react-scroll";
-import { Button, Drawer, Modal, Text, useDisclosure } from "@chakra-ui/react";
+import { Avatar, Button, Drawer, Menu, MenuButton, MenuItem, MenuList, Modal, Text, useDisclosure, useToast } from "@chakra-ui/react";
 import Login from "./Login";
 import Signup from "./Signup";
 import { ScrollLink } from "react-scroll";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { LOGOUT_USER } from "../redux/userReducer/actionType";
 
 function Navbar() {
   const {
@@ -31,7 +32,17 @@ function Navbar() {
   ];
   const curr_user = useSelector((state) => state.user.user);
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
-  console.log(curr_user)
+  
+  const dispatch = useDispatch();
+  const toast = useToast();
+  const handleLogout = () => {
+    dispatch({type:LOGOUT_USER})
+    toast({
+      status:'error',
+      title:'Logged Out',
+      duration:3000
+    })
+  }
   const toggleNavbar = () => {
     setIsNavbarOpen(!isNavbarOpen);
   };
@@ -142,9 +153,14 @@ function Navbar() {
           </Link>
         </button>
         {curr_user?.username ? (
-          <Button className="rounded-full bold uppercase">
-            {curr_user?.username[0]}
-          </Button>
+          <Menu size={'xs'}>
+            <MenuButton><Avatar name={curr_user?.username} src={curr_user?.profilePic ? curr_user?.profilePic : ''} /></MenuButton>
+            <MenuList>
+              <MenuItem className="items-end">
+                <Button colorScheme="red" onClick={handleLogout} className="ml-auto">Logout</Button>
+              </MenuItem>
+            </MenuList>
+          </Menu>
         ) : (
           <button className="refd" onClick={() => onSignupOpen()}>
             SIGN UP
