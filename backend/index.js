@@ -13,6 +13,7 @@ const { CourseRouter } = require("./routes/Course.router");
 const { ShareLinkrouter } = require("./routes/ShareLink.router");
 const { QuestionRouter } = require("./routes/Question.router");
 const { UserRouter } = require("./routes/User.router");
+const { UserModel } = require("./models/User.model");
 
 // require("./middlewares/Auth");
 
@@ -31,7 +32,6 @@ app.use(
     origin: "*",
   })
 );
-
 // app.use(
 //   session({
 //     secret: "mysecret",
