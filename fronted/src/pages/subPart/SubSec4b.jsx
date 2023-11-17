@@ -10,14 +10,14 @@ import 'swiper/css/pagination';
 
 
 // import required modules
-import { EffectCoverflow, Pagination } from 'swiper/modules';
+import { Autoplay, EffectCoverflow, Pagination } from 'swiper/modules';
 
 export default function SubSec4b() {
   return (
     <>
       <Swiper
         effect={'coverflow'}
-        grabCursor={true}
+        grabCursor={false}
         centeredSlides={true}
         slidesPerView={'auto'}
         coverflowEffect={{
@@ -27,8 +27,12 @@ export default function SubSec4b() {
           modifier: 1,
           slideShadows: true,
         }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
         pagination={true}
-        modules={[EffectCoverflow, Pagination]}
+        modules={[Autoplay,EffectCoverflow, Pagination]}
         className="mySwiper"
       >
         <SwiperSlide>

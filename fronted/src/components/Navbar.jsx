@@ -32,15 +32,15 @@ function Navbar() {
   ];
   const curr_user = useSelector((state) => state.user.user);
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
-  
+  console.log(curr_user.profilePic)
   const dispatch = useDispatch();
   const toast = useToast();
   const handleLogout = () => {
-    dispatch({type:LOGOUT_USER})
+    dispatch({ type: LOGOUT_USER })
     toast({
-      status:'error',
-      title:'Logged Out',
-      duration:3000
+      status: 'error',
+      title: 'Logged Out',
+      duration: 3000
     })
   }
   const toggleNavbar = () => {
@@ -153,11 +153,13 @@ function Navbar() {
           </Link>
         </button>
         {curr_user?.username ? (
-          <Menu size={'xs'}>
-            <MenuButton><Avatar name={curr_user?.username} src={curr_user?.profilePic ? curr_user?.profilePic : ''} /></MenuButton>
-            <MenuList>
-              <MenuItem className="items-end">
-                <Button colorScheme="red" onClick={handleLogout} className="ml-auto">Logout</Button>
+          <Menu placement="bottom">
+            <MenuButton>
+              <Avatar name={curr_user?.username} src={curr_user?.profilePic} />
+            </MenuButton>
+            <MenuList className="text-center items-center" w='20px'>
+              <MenuItem className="text-center uppercase bold items-center flex  " onClick={handleLogout}>
+                Logout
               </MenuItem>
             </MenuList>
           </Menu>
@@ -165,6 +167,7 @@ function Navbar() {
           <button className="refd" onClick={() => onSignupOpen()}>
             SIGN UP
           </button>
+          // <Avatar src={'https://lh3.googleusercontent.com/a/ACg8ocIhO2KX2Q6F0cic83NgAj538ZAUPEMwoOKSANL94sb-RtE=s96-c'} />
         )}
       </div>
 

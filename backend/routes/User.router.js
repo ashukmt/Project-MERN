@@ -74,6 +74,7 @@ UserRouter.post("/login", async (req, res) => {
     });
 
     if (req.body.gauth) {
+      console.log(req.body)
       if (!user_present) {
           const {username,profilePic} = req.body
           user_present = await new UserModel({
