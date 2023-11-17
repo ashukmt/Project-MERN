@@ -46,8 +46,7 @@ const Signup = ({ onClose, onOpen }) => {
       profilePic: photoURL,
       gauth: true
     }
-    dispatch(addUser(obj))
-    dispatch(LoginUser(obj))
+    dispatch(LoginUser(obj));
   };
 
 
@@ -96,7 +95,16 @@ const Signup = ({ onClose, onOpen }) => {
   }
 
   useEffect(() => {
-    if (status == "200") {
+    if(status=='201'){
+      toast({
+        title: 'Login successfull',
+        status: 'success',
+        duration: 3000,
+        isClosable: true,
+      })
+      onClose()
+    }
+    else if (status == "200") {
       toast({
         title: 'Signup successfull',
         status: 'success',
