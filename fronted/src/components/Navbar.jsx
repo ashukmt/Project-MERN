@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../Style/navbar.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Link as SL } from "react-scroll";
-import { Avatar, Button, Drawer, Menu, MenuButton, MenuItem, MenuList, Modal, Text, useDisclosure, useToast } from "@chakra-ui/react";
+import { Avatar, Button, Drawer, Menu, MenuButton, MenuItem, MenuList, Text, useDisclosure, useToast } from "@chakra-ui/react";
 import Login from "./Login";
 import Signup from "./Signup";
-import { ScrollLink } from "react-scroll";
 import { useDispatch, useSelector } from "react-redux";
-import { LOGOUT_USER } from "../redux/userReducer/actionType";
+import { LOADING, LOGOUT_USER, NOT_LOADING } from "../redux/userReducer/actionType";
+import { getCookie, setUser } from "../redux/userReducer/action";
 
 function Navbar() {
   const {
@@ -32,17 +32,34 @@ function Navbar() {
   ];
   const curr_user = useSelector((state) => state.user.user);
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
-  console.log(curr_user.profilePic)
   const dispatch = useDispatch();
   const toast = useToast();
   const handleLogout = () => {
     dispatch({ type: LOGOUT_USER })
+    dispatch({type:LOADING})
+    setTimeout(()=>{
+      dispatch({type:NOT_LOADING})
+      toast({
+        status: 'error',
+        title: 'Logged Out Successfully',
+        duration: 3000
+      })
+    },3000)
+    document.cookie = "user=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  }
+  const handleAccount = () => {
     toast({
-      status: 'error',
-      title: 'Logged Out',
+      status: 'info',
+      title: 'Feature Coming out soon',
       duration: 3000
     })
   }
+  useEffect(()=>{
+    let checkId = getCookie()
+    if(checkId){
+      dispatch(setUser(checkId))
+    }
+  },[])
   const toggleNavbar = () => {
     setIsNavbarOpen(!isNavbarOpen);
   };
@@ -155,18 +172,25 @@ function Navbar() {
         {curr_user?.username ? (
           <Menu placement="bottom">
             <MenuButton>
-              <Avatar name={curr_user?.username} src={curr_user?.profilePic} />
+              <Avatar name={curr_user?.username} size={'sm'} className="-mt-1 p-0" src={curr_user?.profilePic} />
             </MenuButton>
             <MenuList className="text-center items-center" w='20px'>
-              <MenuItem className="text-center uppercase bold items-center flex  " onClick={handleLogout}>
-                Logout
+              <MenuItem className="text-center uppercase items-center flex  ">
+                <Button onClick={handleAccount} colorScheme="linkedin" _hover={{bg:'blue.100'}} variant={'outline'} className="m-auto uppercase font-extrabold border-slate-500 border w-full p-2 rounded-md text-center text-red-500 ">
+                  Account
+                </Button>
+              </MenuItem>
+              <MenuItem className="text-center uppercase items-center flex  ">
+                <Button onClick={handleLogout} colorScheme="red" className="m-auto uppercase font-extrabold border-slate-500 border w-full p-2 rounded-md text-center text-red-500 ">
+                  Log out
+                </Button>
               </MenuItem>
             </MenuList>
           </Menu>
         ) : (
-          <button className="refd" onClick={() => onSignupOpen()}>
+          <Button color='red' colorScheme="red" borderColor={'red'} variant={'outline'} className="refd mb-2" onClick={() => onSignupOpen()}>
             SIGN UP
-          </button>
+          </Button>
           // <Avatar src={'https://lh3.googleusercontent.com/a/ACg8ocIhO2KX2Q6F0cic83NgAj538ZAUPEMwoOKSANL94sb-RtE=s96-c'} />
         )}
       </div>

@@ -1,9 +1,10 @@
-import { EDIT_USER, GET_USER, LOGIN_USER, LOGOUT_USER, POST_USER, RESET_USER } from "./actionType"
+import { EDIT_USER, GET_USER, LOADING, LOGIN_USER, LOGOUT_USER, NOT_LOADING, POST_USER, RESET_USER } from "./actionType"
 
 const initialState = {
     user : {},
     loggedIn: false,
-    status:""
+    status:"",
+    isLoading: false
 }
 
 export const userReducer = (state=initialState,{type,payload})=>{
@@ -14,6 +15,8 @@ export const userReducer = (state=initialState,{type,payload})=>{
         case LOGIN_USER: return {...state,user:payload.currUser,status:payload.statuscode,loggedIn:true}
         case LOGOUT_USER :return{...state,user:{},loggedIn:false}
         case RESET_USER :return{...state,status:payload}
+        case LOADING: return {...state,isLoading:true}
+        case NOT_LOADING: return {...state,isLoading:false}
         default : return state
     }
 }
