@@ -15,9 +15,13 @@ const MsatDetails = () => {
     const curr_user = useSelector(state => state.user.user)
     const ref = useRef(BsNodePlusFill)
     const toast = useToast();
+    const navigate = useNavigate()
+    useEffect(()=>{
+        setRegistered(curr_user?.registered)
+    },[curr_user])
     const handleStartMsat = () => {
         if (registered)
-            navigateTo('/msat/test')
+            navigateTo('/msat/confirm')
         else {
             toast({
                 title: "Please Register first!",
@@ -25,19 +29,29 @@ const MsatDetails = () => {
                 duration: 3000,
                 isClosable: true,
             });
-            ref.current.scrollIntoView({ behavior:'smooth' })
+            ref.current.scrollIntoView({ behavior: 'smooth' })
         }
     }
     const handleReg = () => {
-        if (curr_user)
-            setRegister(true);
-        else {
+        if (!curr_user.email) {
             toast({
                 title: "Please Login First",
                 status: "error",
                 duration: 3000,
                 isClosable: true,
             });
+            animateScroll.scrollToTop({ smooth: true })
+        } else {
+            if (curr_user.registered) {
+                toast({
+                    title: "You have registered already.",
+                    status: "success",
+                    duration: 3000,
+                    isClosable: true,
+                });
+                navigate('/msat/confirm')
+            }
+            else setRegister(true);
         }
     }
     useEffect(() => {

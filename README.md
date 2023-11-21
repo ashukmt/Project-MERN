@@ -2,15 +2,40 @@
 This repository is the result of a collaborative effort to revamp the Masai School website by creating a new user flow and enhancing the overall user experience while retaining the original design. Our team of four developers used the MERN stack, combined with Tailwind CSS, Chakra UI, and Chart.js to bring this project to life. Throughout this project, we've learned and grown together, engaging in daily group discussions and applying our knowledge to make the Masai School website even better.
 
 ## Introduction
-Masai School is a renowned institution that offers a variety of courses and a unique learning experience. In our redesign project, we aimed to create a new and improved user flow that retains the original website's aesthetics while enhancing functionality. Our React-based site offers users access to essential information about Masai School, its courses, and even provides a live MSAT (entrance test) for these courses. We've also included an events section where users can find information about upcoming events and their joining links, as well as access past event recordings.
-
-To make the user experience even more engaging, we've implemented a reward system. Users can earn points by sharing their invite links or passing the MSAT, which can be redeemed for various products.
+<ul>
+  <li>Masai School: Renowned institution offering a variety of courses and a unique learning experience</li>
+  <li>Redesign project goal: Create a new and improved user flow while retaining original website aesthetics and enhancing functionality</li>
+  <li>Website technology: React-based site</li>
+  <li>Features:
+    <ul>
+      <li>Access to essential information about Masai School and its courses</li>
+      <li>Live MSAT (entrance test) for courses</li>
+      <li>Events section:
+        <ul>
+          <li>Information about upcoming events</li>
+          <li>Joining links for events</li>
+          <li>Access to past event recordings</li>
+        </ul>
+      </li>
+      <li>Reward system implementation for an engaging user experience:
+        <ul>
+          <li>Points earned by sharing invite links or passing the MSAT</li>
+          <li>Points can be redeemed for various products</li>
+        </ul>
+      </li>
+    </ul></li></ul>
 
 ## Features
 1. Masai School Information
 Access comprehensive information about Masai School, its history, mission, and vision.
 
-2. Course Details
+<p align='center'>
+
+![image](https://github.com/ashukmt/Project-MERN/assets/68837552/e3d7d8e5-a40c-46d8-ab6a-37f65febdc0a) ![1](https://github.com/ashukmt/Project-MERN/assets/68837552/52ce95da-f6a8-44a4-8629-dd0fa5ba72b2)
+
+</p>
+
+3. Course Details
 Explore the range of courses offered by Masai School, complete with detailed descriptions and requirements.
 
 ![image](https://github.com/ashukmt/Project-MERN/assets/68837552/0de15f03-6062-46c5-b024-0fe8ca072d52)
@@ -35,10 +60,19 @@ Redeem your accumulated points for a variety of exciting products and rewards.
 ## Tech Stack
 Our project utilizes a robust tech stack to provide a seamless user experience. Here are the key technologies and libraries we've incorporated:
 
-MERN Stack: MongoDB, Express.js, React, Node.js form the foundation of our web application.
-Tailwind CSS: A utility-first CSS framework used for quick and efficient styling.
-Chakra UI: A component library that makes it easy to create accessible and visually pleasing user interfaces.
-Chart.js: Used to create interactive and informative charts for data visualization.
-Team
-Our project was a collaborative effort by a team of four dedicated developers who learned and grew together during this journey. We had daily group discussions, which played a significant role in the success of this project. 
+MERN Stack: MongoDB, Express.js, React, Node.js form the foundation of our web application.<br/>
+<img src="https://skillicons.dev/icons?i=mongodb,express,react,nodejs" />
+
+Tailwind CSS: A utility-first CSS framework used for quick and efficient styling.<br/>
+<img src="https://skillicons.dev/icons?i=tailwind" />
+
+Chakra UI: A component library that makes it easy to create accessible and visually pleasing user interfaces.<br/>
+<img src="https://skillicons.dev/icons?i=fastapi" />
+
+Chart.js: Used to create interactive and informative charts for data visualization.<br/>
+<img src="https://skillicons.dev/icons?i=matlab" />
+
+Team: Our project was a collaborative effort by a team of four dedicated developers who learned and grew together during this journey. We had daily group discussions, which played a                 significant role in the success of this project. <br/>
+<img src="https://skillicons.dev/icons?i=discord" />
+
 Feel free to explore our project, contribute, and help us make the Masai School website even more user-friendly and engaging. We appreciate your support and welcome your feedback and contributions.

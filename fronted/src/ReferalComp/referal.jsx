@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Referal1 from "./Referal1";
 import ReferalReward from "./Referal&Reward";
 import axios from "axios"
+import { Link, animateScroll } from "react-scroll";
 import {
   Drawer,
   DrawerBody,
@@ -17,10 +18,12 @@ import {
   FormLabel,
   Alert,
   AlertIcon,
+  useToast,
 } from "@chakra-ui/react";
 import Accordionist from "./Accordionist";
 
 import { AiOutlineInfoCircle } from "react-icons/ai";
+import { useSelector } from "react-redux";
 
 function Referal() {
   const[fname,setFname]=useState("")
@@ -28,10 +31,13 @@ function Referal() {
   const[phoneNumber,setPhnumber]=useState("")
   const[rcode,setRcode]=useState("")
   const [showAlert, setShowAlert] = useState(false);
+  const [register, setRegister] = useState(false);
+  const curr_user = useSelector(state => state.user.user)
    
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
+  const toast=useToast()
 
 
   const PhoneNumber="+917379249116"
@@ -48,10 +54,12 @@ function Referal() {
   }
 
   if (refform.F_name === "" || refform.Email === "" || refform.Ph_number === "") {
-    // Toggle the alert's visibility
-    setShowAlert(true);
-
-    // You can also include additional logic here
+    toast({
+      title: "All inpute fill are required",
+      status: "error",
+      duration: 3000,
+      isClosable: true,
+    });
     
   }
 
@@ -122,14 +130,37 @@ else
               maxW="fit-content"
               mt="20px"
               display="inline-block"
-              onClick={onOpen}
+              // onClick={onOpen}
+
+              onClick={()=>{
+                if (!curr_user.email) {
+            toast({
+                title: "Please Login First",
+                status: "error",
+                duration: 3000,
+                isClosable: true,
+            });
+            animateScroll.scrollToTop({ smooth: true })
+        } 
+          else if (curr_user.registered) {
+                toast({
+                    title: "You have registered already.",
+                    status: "success",
+                    duration: 3000,
+                    isClosable: true,
+                });
+                // navigate('/msat/confirm')
+                onOpen()
+        }
+              }}
+
             >
               refer now
             </Button>
             <Drawer
               isOpen={isOpen}
               placement="right"
-              size="lg"
+              size="md"
               onClose={onClose}
               finalFocusRef={btnRef}
             >
@@ -137,7 +168,7 @@ else
               <DrawerContent>
                 <DrawerCloseButton />
                 <DrawerHeader style={{ fontSize:"25px", fontWeight: '600' }}>
-                  Referral Program
+                  Referring To
                 </DrawerHeader>
 
                 <DrawerBody>

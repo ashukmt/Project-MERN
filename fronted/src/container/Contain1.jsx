@@ -7,7 +7,7 @@ function Contain1() {
         Launch A Sustainable Career
       </div>
       <div className="flex cont1">
-        
+ 
         <div className="w-[90%] m-auto">
         <div className="video_div flex justify-center">
           {/* <iframe
@@ -29,7 +29,7 @@ function Contain1() {
             <div className="text-yellow-500 text-2xl">₹6.9 LPA</div>
             <div className="ml-4 text-lg text-white">Average CTC</div>
           </div>
-          
+
           <div className="flex div1 p-3 font-bold ml-5 mt-4 text-lg lg:mr-[11%] lg:justify-around">
             <div className="text-yellow-500 text-1xl">3500+</div>
             <div className="ml-4 text-lg text-white">Careers Launched</div>
@@ -55,7 +55,7 @@ function Contain1() {
             alt="dream11"
           />
         </div>
-      
+
         <div>
           <img
             className="wit"

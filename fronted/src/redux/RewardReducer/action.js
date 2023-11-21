@@ -5,6 +5,7 @@ export const getReward = () => async(dispatch)=> {
     try{
         dispatch({type:LOAD})
         const res = await axios.get(`${process.env.REACT_APP_SERVER_URL}/rewards`)
+        console.log(res.data)
         dispatch({type:GET_REWARDS,payload:res.data})
     }catch(error){
         console.log(error)
@@ -23,13 +24,13 @@ export const getFaq = () => async(dispatch)=> {
     }
 }
 
-export const PostData=(payload)=>async(Dispatch)=>{
+export const PostData=(payload)=>async(dispatch)=>{
     try {
-        Dispatch({type:ADD_ADDRESS_REQUEST})
-       
-        Dispatch({type:ADD_ADDRESS_SUCCESS})
+      console.log(payload)
+        dispatch({type:ADD_ADDRESS_REQUEST,payload:payload})
+    
     } catch (error) {
         console.log(error)
-       Dispatch({type:ADD_ADDRESS_ERROR})
+       dispatch({type:ADD_ADDRESS_ERROR})
     }
   }
