@@ -44,6 +44,10 @@ color: rgb(230, 14, 14);
     background-color: #b6f1f3;
 }
 
+/* #navbar-hamburger{
+    position: absolute;
+} */
+
 /* .last >button:nth-child(2){
     padding: 10px 20px;
     border-radius: 8px;
@@ -108,6 +112,12 @@ color: rgb(230, 14, 14);
 @media only screen and (max-width: 445px){
     .refd{
         display: block;
+    }
+}
+
+@media only screen and (min-width: 470px){
+    .ref2{
+        display: none;
     }
 }
 
