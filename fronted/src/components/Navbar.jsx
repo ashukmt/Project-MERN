@@ -29,6 +29,7 @@ function Navbar() {
     { path: "news", title: "MASAI NEWS", type: false },
     { path: "success", title: "SUCCESS STORIES", type: false },
     { path: "hirefromus", title: "HIRE FROM US", type: false },
+    
   ];
   const curr_user = useSelector((state) => state.user.user);
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
@@ -103,7 +104,7 @@ function Navbar() {
               >
                 {edit?.map((el) =>
                   el.type ? (
-                    <Link className="link" to={el.path}>
+                    <Link className="link" onClick={toggleNavbar} to={el.path}>
                       {el.title}
                     </Link>
                   ) : location.pathname === "/" ? (
@@ -122,6 +123,7 @@ function Navbar() {
                     </Link>
                   )
                 )}
+                <Link onClick={toggleNavbar} className="ref2 link" to={"/Referal"}>REFER & EARN</Link>
               </ul>
             </div>
           </div>
