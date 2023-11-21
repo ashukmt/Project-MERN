@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchingMyRegisterData } from "../redux/eventReducer/action";
 import Timer from "./Timer";
 import { animateScroll } from "react-scroll";
+import { Link } from "react-router-dom";
 const Register = () => {
   let { id } = useParams();
 
@@ -232,7 +233,7 @@ const Register = () => {
           </div>
 
           <div className="wt_button_div">
-            <button className="wt_button"><a href="https://chat.whatsapp.com/JhSduD5Rg162QX7RdMjKQw" target="_blank"></a><div className="flex"><div className="mr-2">JOIN NOW</div><div className="mt-0.5"><svg
+           <Link to={'https://chat.whatsapp.com/JhSduD5Rg162QX7RdMjKQw'} target="_blank"> <button className="wt_button"><div className="flex"><div className="mr-2">JOIN NOW</div><div className="mt-0.5"><svg
                   xmlns="http://www.w3.org/2000/svg"
                   // xmlns:xlink="http://www.w3.org/1999/xlink"
                   // xmlns:svgjs="http://svgjs.com/svgjs"
@@ -257,7 +258,7 @@ const Register = () => {
                       />
                     </svg>
                   </g>
-                </svg> </div> </div></button>
+                </svg> </div> </div></button></Link>
           </div>
 
           <div className="right_wt_sec mr-20 mt-5">
