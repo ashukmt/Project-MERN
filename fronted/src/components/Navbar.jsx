@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import "/Style/navbar.css";
+import "../Style/navbar.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Link as SL } from "react-scroll";
 import { Avatar, Button, Drawer, Menu, MenuButton, MenuItem, MenuList, useDisclosure, useToast } from "@chakra-ui/react";
