@@ -99,7 +99,7 @@ function Navbar() {
             >
               <ul
                 className="flex flex-col font-medium mt-[4rem]
-          ml-[-33px] rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700"
+          ml-[-33px] rounded-lg bg-white"
               >
                 {edit?.map((el) =>
                   el.type ? (
