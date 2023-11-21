@@ -26,60 +26,52 @@ const SubSec71 = () => {
 
   return (
     <div className="slider7">
-   
+
+{/*    
         <div
-          // key={indx}
+        
           className="slide7"
           style={{ transform: `translateX(${100 * (0 - curSlide)}%)` }}
         >
-          {/* <img src={slide} alt="" /> */}
-          {/* <video src={slide}></video> */}
-          {/* <iframe
-           width={600}
-           height={400}
-            src={slide}
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe> */}
+         
         <iframe width="660" height="315" src="https://www.youtube.com/embed/hkcPely1S8c?si=nOXWn-1t9x12RhhZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div
-          // key={indx}
+       
           className="slide7"
           style={{ transform: `translateX(${100 * (1 - curSlide)}%)` }}
         >
-          {/* <img src={slide} alt="" /> */}
-          {/* <video src={slide}></video> */}
-          {/* <iframe
-           width={600}
-           height={400}
-            src={slide}
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe> */}
+         
         <iframe width="640" height="315" src="https://www.youtube.com/embed/4GRpdIV5DAQ?si=31894l8i1o8VzJHh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div
-          // key={indx}
+       
           className="slide7"
           style={{ transform: `translateX(${100 * (1 - curSlide)}%)` }}
         >
-          {/* <img src={slide} alt="" /> */}
-          {/* <video src={slide}></video> */}
-          {/* <iframe
-           width={600}
-           height={400}
-            src={slide}
+         
+        <iframe width="640" height="315" src="https://www.youtube.com/embed/Od24_p8QtyA?si=KJtt0vuPc5p8cF4C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div> */}
+
+<div className="w-[90%] m-auto slide7 " style={{ transform: `translateX(${100 * (0 - curSlide)}%)` }}>
+  
+        <div className="video_div flex justify-center">
+          <iframe
+            className="rounded-md custom-iframe"
+            // width="90%"
+            // height="200%"
+            // width="1400"
+            // height="600"
+            // poster={myDetailsData.img}
+            
+            src={slides[0]}
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
-          ></iframe> */}
-        <iframe width="640" height="315" src="https://www.youtube.com/embed/Od24_p8QtyA?si=KJtt0vuPc5p8cF4C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          ></iframe>
+        </div>
+
         </div>
   
       <button className="btn7 btn-prev7" onClick={prevSlide}>
