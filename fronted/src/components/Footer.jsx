@@ -9,14 +9,14 @@ function Footer() {
     class="mx-auto max-w-screen-xl space-y-8 px-4 pt-16 sm:px-6 lg:space-y-16 lg:px-8"
   >
     <div className='sm:flex sm:items-center flex justify-center part1 items-center side11'>
-       <div className='footerimg'>
+      <Link to={"/"}> <div className='footerimg'>
        <img className='w-16 mr-4' src="https://www.masaischool.com/images/footer/arrow-gif.gif" alt="" />
-       </div>
+       </div></Link>
        <div>
        <p className='text-yellow-100 font-bold text-2xl '>Get Started</p>
         <p className='text-yellow-300 mr-4'>Join the Program</p>
        </div>
-       <div className='bg-red-600 p-2 rounded-lg part2'><button >GET YOUR DREAM JOB</button></div>
+       <div className='bg-red-600 p-2 rounded-lg part2'><Link to={'/courses'}><button >GET YOUR DREAM JOB</button></Link></div>
     </div>
     <div class="sm:flex sm:items-center sm:justify-between border-t pt-6">
       <Link to={'/'}><div class="text-teal-600 dark:text-teal-300">
@@ -50,7 +50,7 @@ function Footer() {
 
         <li>
           <a
-            href="https://www.facebook.com/"
+            href="https://www.instagram.com/"
             rel="noreferrer"
             target="_blank"
             class="text-gray-200 transition hover:opacity-75 dark:text-gray-200"
@@ -147,7 +147,7 @@ function Footer() {
    <div className='border-t w-3/4'>
     <div className='mt-6 mb-3'>
         <Link to={'http://localhost:3000/courses/Full-Stack-Web-Development'}><button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mr-4 mb-4'>Full Stack Web Development - Full Time</button></Link>
-        <Link to={'http://localhost:3000/courses/Data-Analytics'}> <button buttom className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mr-4 mb-4'>Data Analytics - Full Time</button></Link>
+        <Link to={'http://localhost:3000/courses/Data-Analytics'}> <button buttom className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mr-4 mb-4'>Data Analytics Course - Full Time</button></Link>
        <Link to={'http://localhost:3000/courses/Mobile-Development'}> <button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mb-4 mr-4'>Mobile Development - Full Time</button></Link>
         <Link to={'http://localhost:3000/courses/Become-a-Software-Testing-&-Automation'}><button  className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mt-5 mr-4 mb-4'>Software Testing & Automation - Full Time</button></Link>
         <Link to={'http://localhost:3000/courses/Backend-Development'}><button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mb-4'>Backend Development - Full Time</button></Link>
@@ -162,19 +162,22 @@ function Footer() {
         <ul class="mt-6 space-y-4 text-sm">
           <li>
             <a
-              href="#"
+              href="https://www.masaischool.com/success-stories"
               class="text-white  transition hover:opacity-75 dark:text-gray-200"
+              target='_blank'
             >
               Success Stories
             </a>
           </li>
           <li>
-            <a
-              href="#"
+           <Link to={'/msat'}>
+           <a
+              
               class="text-white  transition hover:opacity-75 dark:text-gray-200"
             >
             Masai School Admissions Test (MSAT)
             </a>
+           </Link>
           </li>
 
         
@@ -187,8 +190,9 @@ function Footer() {
         <ul class="mt-6 space-y-4 text-sm">
           <li>
             <a
-              href="#"
+              href="https://www.masaischool.com/about"
               class="text-white  transition hover:opacity-75 dark:text-gray-200"
+              target='_blank'
             >
               About
             </a>
@@ -196,7 +200,7 @@ function Footer() {
 
           <li>
             <a
-              href="#"
+              href="https://www.masaischool.com/teams"
               class="text-white  transition hover:opacity-75 dark:text-gray-200"
             >
               Meet the Team
@@ -205,10 +209,11 @@ function Footer() {
 
           <li>
             <a
-              href="#"
+              href="https://www.masaischool.com/blog/"
               class="text-white  transition hover:opacity-75 dark:text-gray-200"
+              target='_blank'
             >
-             Become Coach
+             Masai Blogs
             </a>
           </li>
         </ul>
@@ -220,8 +225,9 @@ function Footer() {
         <ul class="mt-6 space-y-4 text-sm">
           <li>
             <a
-              href="#"
+              href="https://www.masaischool.com/contact"
               class="text-white  transition hover:opacity-75 dark:text-gray-200"
+              target='_blank'
             >
               Contact Us
             </a>
@@ -229,8 +235,9 @@ function Footer() {
 
           <li>
             <a
-              href="#"
+              href="https://www.masaischool.com/media?page=1"
               class="text-white  transition hover:opacity-75 dark:text-gray-200"
+              target='_blank'
             >
              Newsroom
             </a>
@@ -238,8 +245,9 @@ function Footer() {
 
           <li>
             <a
-              href="#"
+              href="https://www.masaischool.com/our-investors"
               class="text-white  transition hover:opacity-75 dark:text-gray-200"
+              target='_blank'
             >
              Our Investors
             </a>
@@ -253,17 +261,18 @@ function Footer() {
         <ul class="mt-6 space-y-4 text-sm">
           <li>
             <a
-              href="#"
+              href="/Referal"
               class="text-white  transition hover:opacity-75 dark:text-gray-200"
             >
-              Our Investors
+              Referral Program
             </a>
           </li>
 
           <li>
             <a
-              href="#"
+              href="https://www.masaischool.com/hire-masai-graduates"
               class="text-white  transition hover:opacity-75 dark:text-gray-200"
+              target='_blank'
             >
            Hire From Us
             </a>
@@ -271,10 +280,11 @@ function Footer() {
 
           <li>
             <a
-              href="#"
+              href="https://www.masaischool.com/industry-mentors"
               class="text-white  transition hover:opacity-75 dark:text-gray-200"
+              target='_blank'
             >
-              Refund Policy
+             Industry Mentors
             </a>
           </li>
 

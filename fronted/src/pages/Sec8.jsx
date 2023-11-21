@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Sec8() {
   return (
@@ -26,7 +27,7 @@ function Sec8() {
           </p>
         </div>
         <div className="mt-7 bg-red-600 inline-block p-3 rounded-lg text-white font-semibold">
-          <button>APPLY NOW</button>
+          <Link to={'/event/registerevents/652be9ef31897664dc1ddf99'}><button>APPLY NOW</button></Link>
         </div>
         </div>
       </div>
