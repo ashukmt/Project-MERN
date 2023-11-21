@@ -84,7 +84,7 @@ const StartMsat = () => {
             </AlertDialogFooter>
         </AlertDialogContent>
     </AlertDialog>
-    if (user.msatDay.getDate() == new Date().getDate()) return <>
+    if (user.msatDay && user.msatDay.getDate() == new Date().getDate()) return <>
         <AlreadyDone />
     </>
     return (
