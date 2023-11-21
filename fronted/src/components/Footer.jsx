@@ -177,32 +177,10 @@ function Footer() {
             </a>
           </li>
 
-          <li>
-            <a
-              href="#"
-              class="text-white  transition hover:opacity-75 dark:text-gray-200"
-            >
-             Our Team
-            </a>
-          </li>
+        
 
-          <li>
-            <a
-              href="#"
-              class="text-white  transition hover:opacity-75 dark:text-gray-200"
-            >
-              Careers
-            </a>
-          </li>
 
-          <li>
-            <a
-              href="#"
-              class="text-white  transition hover:opacity-75 dark:text-gray-200"
-            >
-             Masai Blog
-            </a>
-          </li>
+          
 
           <li>
             <a
@@ -312,14 +290,7 @@ function Footer() {
             </a>
           </li>
 
-          <li>
-            <a
-              href="#"
-              class="text-white transition hover:opacity-75 dark:text-gray-200"
-            >
-              Hiring Statistics
-            </a>
-          </li>
+        
         </ul>
       </div>
     </div>
