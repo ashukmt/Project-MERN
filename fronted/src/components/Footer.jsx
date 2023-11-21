@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import '../Style/footer.css'
 
 function Footer() {
   return (
@@ -7,13 +8,15 @@ function Footer() {
   <div
     class="mx-auto max-w-screen-xl space-y-8 px-4 pt-16 sm:px-6 lg:space-y-16 lg:px-8"
   >
-    <div className='sm:flex sm:items-center flex justify-center'>
-        <img className='w-16 mr-4' src="https://www.masaischool.com/images/footer/arrow-gif.gif" alt="" />
+    <div className='sm:flex sm:items-center flex justify-center part1 items-center side11'>
+       <div className='footerimg'>
+       <img className='w-16 mr-4' src="https://www.masaischool.com/images/footer/arrow-gif.gif" alt="" />
+       </div>
        <div>
        <p className='text-yellow-100 font-bold text-2xl '>Get Started</p>
         <p className='text-yellow-300 mr-4'>Join the Program</p>
        </div>
-       <div className='bg-red-600 p-2 rounded-lg'><button >GET YOUR DREAM JOB</button></div>
+       <div className='bg-red-600 p-2 rounded-lg part2'><button >GET YOUR DREAM JOB</button></div>
     </div>
     <div class="sm:flex sm:items-center sm:justify-between border-t pt-6">
       <Link to={'/'}><div class="text-teal-600 dark:text-teal-300">
@@ -23,7 +26,7 @@ function Footer() {
       <ul class="mt-8 flex justify-start gap-6 sm:mt-0 sm:justify-end">
         <li>
           <a
-            href="/"
+            href="https://www.facebook.com"
             rel="noreferrer"
             target="_blank"
             class="text-gray-200 transition hover:opacity-75 dark:text-gray-200"
@@ -47,7 +50,7 @@ function Footer() {
 
         <li>
           <a
-            href="/"
+            href="https://www.facebook.com/"
             rel="noreferrer"
             target="_blank"
             class="text-gray-200 transition hover:opacity-75 dark:text-gray-200"
@@ -71,7 +74,7 @@ function Footer() {
 
         <li>
           <a
-            href="/"
+            href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiZW4ifQ%3D%3D%22%7D"
             rel="noreferrer"
             target="_blank"
             class="text-gray-200 transition hover:opacity-75 dark:text-gray-200"
@@ -93,7 +96,7 @@ function Footer() {
 
         <li>
           <a
-            href="/"
+            href="https://github.com/"
             rel="noreferrer"
             target="_blank"
             class="text-gray-200 transition hover:opacity-75 dark:text-gray-200"
@@ -117,7 +120,7 @@ function Footer() {
 
         <li>
           <a
-            href="/"
+            href="https://dribbble.com/"
             rel="noreferrer"
             target="_blank"
             class="text-gray-200 transition hover:opacity-75 dark:text-gray-200"
@@ -143,14 +146,14 @@ function Footer() {
 
    <div className='border-t w-3/4'>
     <div className='mt-6 mb-3'>
-        <button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mr-4 mb-4'>Full Stack Web Development - Full Time</button>
-        <button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mr-4 mb-4'>Data Analytics - Full Time</button>
-        <button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mb-4 mr-4'>Mobile Development - Full Time</button>
-        <button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mt-5 mr-4 mb-4'>Software Testing & Automation - Full Time</button>
-        <button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mb-4'>Backend Development - Full Time</button>
+        <Link to={'http://localhost:3000/courses/Full-Stack-Web-Development'}><button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mr-4 mb-4'>Full Stack Web Development - Full Time</button></Link>
+        <Link to={'http://localhost:3000/courses/Data-Analytics'}> <button buttom className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mr-4 mb-4'>Data Analytics - Full Time</button></Link>
+       <Link to={'http://localhost:3000/courses/Mobile-Development'}> <button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mb-4 mr-4'>Mobile Development - Full Time</button></Link>
+        <Link to={'http://localhost:3000/courses/Become-a-Software-Testing-&-Automation'}><button  className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mt-5 mr-4 mb-4'>Software Testing & Automation - Full Time</button></Link>
+        <Link to={'http://localhost:3000/courses/Backend-Development'}><button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mb-4'>Backend Development - Full Time</button></Link>
     </div>
    <div
-      class="grid grid-cols-1 gap-8  border-gray-100 pt-5 dark:border-gray-800 sm:grid-cols-2 lg:grid-cols-4 lg:pt-5"
+      class="grid grid-cols-2 gap-8  border-gray-100 pt-5 dark:border-gray-800 sm:grid-cols-2 lg:grid-cols-4 lg:pt-5"
     >
         
       <div>
@@ -162,7 +165,15 @@ function Footer() {
               href="#"
               class="text-white  transition hover:opacity-75 dark:text-gray-200"
             >
-              1on1 Coaching
+              Success Stories
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="text-white  transition hover:opacity-75 dark:text-gray-200"
+            >
+            Masai School Admissions Test (MSAT)
             </a>
           </li>
 
@@ -171,7 +182,7 @@ function Footer() {
               href="#"
               class="text-white  transition hover:opacity-75 dark:text-gray-200"
             >
-              Company Review
+             Our Team
             </a>
           </li>
 
@@ -180,7 +191,7 @@ function Footer() {
               href="#"
               class="text-white  transition hover:opacity-75 dark:text-gray-200"
             >
-              Accounts Review
+              Careers
             </a>
           </li>
 
@@ -189,7 +200,7 @@ function Footer() {
               href="#"
               class="text-white  transition hover:opacity-75 dark:text-gray-200"
             >
-              HR Consulting
+             Masai Blog
             </a>
           </li>
 
@@ -198,7 +209,7 @@ function Footer() {
               href="#"
               class="text-white  transition hover:opacity-75 dark:text-gray-200"
             >
-              SEO Optimisation
+              Talent Circle
             </a>
           </li>
         </ul>
@@ -231,7 +242,7 @@ function Footer() {
               href="#"
               class="text-white  transition hover:opacity-75 dark:text-gray-200"
             >
-              Accounts Review
+             Become Coach
             </a>
           </li>
         </ul>
@@ -246,7 +257,7 @@ function Footer() {
               href="#"
               class="text-white  transition hover:opacity-75 dark:text-gray-200"
             >
-              Contact
+              Contact Us
             </a>
           </li>
 
@@ -255,7 +266,7 @@ function Footer() {
               href="#"
               class="text-white  transition hover:opacity-75 dark:text-gray-200"
             >
-              FAQs
+             Newsroom
             </a>
           </li>
 
@@ -264,7 +275,7 @@ function Footer() {
               href="#"
               class="text-white  transition hover:opacity-75 dark:text-gray-200"
             >
-              Live Chat
+             Our Investors
             </a>
           </li>
         </ul>
@@ -279,7 +290,7 @@ function Footer() {
               href="#"
               class="text-white  transition hover:opacity-75 dark:text-gray-200"
             >
-              Accessibility
+              Our Investors
             </a>
           </li>
 
@@ -288,7 +299,7 @@ function Footer() {
               href="#"
               class="text-white  transition hover:opacity-75 dark:text-gray-200"
             >
-              Returns Policy
+           Hire From Us
             </a>
           </li>
 
@@ -315,7 +326,7 @@ function Footer() {
    </div>
 
     <p class="text-xs text-white  dark:text-gray-400">
-      &copy; 2022. Masai School. All rights reserved.
+      &copy; 2023. Masai School. All rights reserved.
     </p>
   </div>
 </footer>

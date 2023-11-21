@@ -4,7 +4,7 @@ import React, { useEffect } from 'react'
 function SubSec721() {
 
     return (
-    <div class="swipe ml-20 bord">
+    <div class="swipe ml-[2rem] bord">
     <div class="swiper-wrappera">
       
       <div class="swiper-slidea">

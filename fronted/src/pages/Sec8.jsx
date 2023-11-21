@@ -30,7 +30,7 @@ function Sec8() {
         </div>
         </div>
       </div>
-      <div className="widt71 rounded-lg ml-2">
+      {/* <div className="widt71 rounded-lg ml-2">
         <div className="rounded-lg">
           <iframe className="rounded-xl"
             width="560"
@@ -42,7 +42,28 @@ function Sec8() {
             allowfullscreen
           ></iframe>
         </div>
-      </div>
+      </div> */}
+
+
+<div className="w-[90%] m-auto">
+        <div className="video_div flex justify-center">
+          <iframe
+            className="rounded-md custom-iframe"
+            // width="90%"
+            // height="200%"
+            // width="1400"
+            // height="600"
+            // poster={myDetailsData.img}
+            
+            src="https://www.youtube.com/embed/1N2xjy_iPSE?si=GlB3G7A-kwOMSqFA"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        </div>
       
     </div>
     <div>
