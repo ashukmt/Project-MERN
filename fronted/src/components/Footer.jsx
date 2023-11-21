@@ -178,18 +178,6 @@ function Footer() {
           </li>
 
         
-
-
-          
-
-          <li>
-            <a
-              href="#"
-              class="text-white  transition hover:opacity-75 dark:text-gray-200"
-            >
-              Talent Circle
-            </a>
-          </li>
         </ul>
       </div>
 
