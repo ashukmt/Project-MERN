@@ -8,7 +8,7 @@ function Contain1() {
       </div>
       <div className="flex cont1">
  
-        <div className="w-[90%] m-auto">
+        <div className="w-[90%] m-auto video1">
         <div className="video_div flex justify-center">
           {/* <iframe
             className="rounded-md custom-iframe"
@@ -26,7 +26,7 @@ function Contain1() {
         </div>
         <div>
           <div className="flex div1 p-3 font-bold ml-5 mt-3 text-lg lg:mr-[11%] lg:justify-around">
-            <div className="text-yellow-500 text-2xl">₹6.9 LPA</div>
+            <div className="text-yellow-500 text-xl">₹6.9 LPA</div>
             <div className="ml-4 text-lg text-white">Average CTC</div>
           </div>
 

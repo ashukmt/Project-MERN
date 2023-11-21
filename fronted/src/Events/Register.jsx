@@ -6,8 +6,7 @@ import { fetchingMyRegisterData } from "../redux/eventReducer/action";
 import Timer from "./Timer";
 import { FaWhatsapp } from "react-icons/fa";
 import { animateScroll } from "react-scroll";
-import {Link} from "react-router-dom"
-
+import { Link } from "react-router-dom";
 const Register = () => {
   let { id } = useParams();
 

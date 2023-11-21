@@ -9,7 +9,7 @@ function Sec7() {
       {/* <div className='font-bold text-3xl flex justify-center '>Our Students Are <span className='text-red-600 ml-2'> Creating Impact</span></div> */}
       <Box className='text-center' py='5%' px='7%'>
                 
-                <Text className='font-bold text-2xl'>Our Students Are<span className='text-red-600'>Creating Impact</span > </Text>
+                <Text className='font-bold text-2xl'>Our Students Are <span className='text-red-600'>Creating Impact</span > </Text>
                
             </Box>
       <div className='flex widt77 '>
