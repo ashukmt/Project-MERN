@@ -73,3 +73,8 @@
       height: 160px;
     }
   }
+  @media only screen and  (max-width: 900px){
+    .slider7{
+      width: 68%;
+    }
+  }
