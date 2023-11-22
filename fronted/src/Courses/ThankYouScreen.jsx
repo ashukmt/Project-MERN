@@ -3,7 +3,6 @@ import React from 'react'
 
 const ThankYouScreen = ({close}) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
-    console.log('here')
     return (
         <Modal closeOnOverlayClick={false} isCentered={true} size={'xl'} isOpen={!close}>
             <ModalOverlay />

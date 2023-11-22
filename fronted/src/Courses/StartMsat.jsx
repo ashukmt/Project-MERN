@@ -65,9 +65,12 @@ const StartMsat = () => {
             navigate('/')
         }, 14000)
         setTotal();
+        updateCoin()
         onClose();
         setProcessing(true);
-        dispatch(editUser({ ...user, msatDay: new Date(), msatScore: marks, coin: user.coin + (marks * 10) }));
+    }
+    const updateCoin = () => {
+        dispatch(editUser({ ...user, msatDay: new Date(), msatScore: marks, coin: +user.coin + (+marks * 10) }));
     }
     const navigate = useNavigate();
 
@@ -84,9 +87,9 @@ const StartMsat = () => {
             </AlertDialogFooter>
         </AlertDialogContent>
     </AlertDialog>
-    if (!processing && !ended && user.msatDay && user.msatDay.getDate() == new Date().getDate()) return <>
-        <AlreadyDone />
-    </>
+    // if (!processing && !ended && user.msatDay && new Date(user?.msatDay).getDate() == new Date().getDate()) return <>
+    //     <AlreadyDone />
+    // </>
     return (
         <>
             <div className='h-[100vh] w-[100vw] bg-white'>
