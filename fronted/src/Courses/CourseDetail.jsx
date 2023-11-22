@@ -48,7 +48,7 @@ const CourseDetail = () => {
     }
     useEffect(() => {
         animateScroll.scrollToTop({ smooth: true })
-    }, [])
+    }, [title])
     return (
         <>
             {/* top banner */}

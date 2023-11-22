@@ -104,12 +104,12 @@ function Navbar() {
               >
                 {edit?.map((el) =>
                   el.type ? (
-                    <Link className="link pb-1" onClick={toggleNavbar} to={el.path}>
+                    <Link className="link pb-1 cursor-pointer" onClick={toggleNavbar} to={el.path}>
                       {el.title}
                     </Link>
                   ) : location.pathname === "/" ? (
                     <SL
-                      className="link pb-1"
+                      className="link pb-1 cursor-pointer"
                       to={el.path}
                       smooth={true}
                       duration={500}
@@ -118,12 +118,12 @@ function Navbar() {
                       {el.title}
                     </SL>
                   ) : (
-                    <Link className="link " to="/">
+                    <Link className="link cursor-pointer" to="/">
                       {el.title}
                     </Link>
                   )
                 )}
-                <Link onClick={toggleNavbar} className="ref2 link" to={"/Referal"}>REFER & EARN</Link>
+                <Link onClick={toggleNavbar} className="ref2 link cursor-pointer" to={"/Referal"}>REFER & EARN</Link>
               </ul>
             </div>
           </div>
@@ -139,12 +139,12 @@ function Navbar() {
       <div className="middle dt11">
         {edit?.map((el) =>
           el.type ? (
-            <Link className="link" to={el.path}>
+            <Link className="link cursor-pointer" to={el.path}>
               {el.title}
             </Link>
           ) : location.pathname === "/" ? (
             <SL
-              className="link"
+              className="link cursor-pointer"
               to={el.path}
               smooth={true}
               duration={500}
@@ -153,7 +153,7 @@ function Navbar() {
               {el.title}
             </SL>
           ) : (
-            <Link className="link" to="/">
+            <Link className="link cursor-pointer" to="/">
               {el.title}
             </Link>
           )
@@ -167,7 +167,7 @@ function Navbar() {
             Navigate("/Referal");
           }}
         >
-          <Link className="-pt-2" to={"/Refer"}>
+          <Link className="-pt-2 cursor-pointer" to={"/Refer"}>
             REFER & EARN
           </Link>
         </button>
