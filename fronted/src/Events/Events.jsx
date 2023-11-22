@@ -82,7 +82,8 @@ const Events = () => {
             <button
               onClick={() => setFilterBy("")}
               type="button"
-              class=" hover:text-white hover:bg-red-400 focus:ring-2 border focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-5 mr-2 mb-2 focus:bg-red-400 focus:text-white   focus:outline-none dark:focus:ring-red-600"
+              autoFocus
+              class=" hover:text-white hover:bg-red-400  focus:ring-2 border focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-5 mr-2 mb-2 focus:bg-red-400 focus:text-white  focus:outline-none dark:focus:ring-red-600"
             >
               All
             </button>
