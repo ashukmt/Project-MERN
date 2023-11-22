@@ -10,33 +10,7 @@ import { getUser } from "../redux/RewardReducer/action";
 function Invite() {
   const [copied, setCopied] = useState(false);
   const otherCopy = () => setCopied(true);
-  // const UserData =  [
-  //           {
-  //             "Name":"Tushar Sapate",
-  //             "Coin":4000,
-  //           },
-  //           {
-  //             "Name":"Karan Kotai",
-  //             "Coin":3700,
-  //           },
-  //           {
-  //             "Name":"Ashutosh Kumawat",
-  //             "Coin":3000,
-  //           },
-  //           {
-  //             "Name":"Sanjeev Kushwaha",
-  //             "Coin":2900,
-  //           },
-  //           {
-  //             "Name":"Abhishek Kumar",
-  //             "Coin":2500,
-  //           },
-  //           {
-  //             "Name":"Ankur Yadav",
-  //             "Coin":2000,
-  //           }
-          
-  //         ]
+ 
 
   const UserData = useSelector(state => state.Reward.Users)
   console.log(UserData)
@@ -46,9 +20,6 @@ function Invite() {
 
   const dispatch = useDispatch();
  
-
-
-
     useEffect(() => {
       animateScroll.scrollToTop({ smooth: true })
       dispatch(getUser());
