@@ -45,9 +45,7 @@ color: rgb(230, 14, 14);
     background-color: #b6f1f3;
 }
 
-.link:nth-child(1){
-    padding-top: 40px;
-}
+
 /* #navbar-hamburger{
     position: absolute;
 } */
@@ -80,7 +78,11 @@ color: rgb(230, 14, 14);
        margin-left: -10%;
        margin-top: 50px;
       
-    }.link{
+    }
+    .link:nth-child(1){
+        padding-top: 40px;
+    }
+    .link{
         color: black;
        width: 100%;
        /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
