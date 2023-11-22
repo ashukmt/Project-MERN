@@ -242,6 +242,7 @@ const Register = () => {
                   height="20"
                   version="1.1"
                 >
+                  
                   <defs id="SvgjsDefs1027" />
                   <g id="SvgjsG1028">
                     <svg
