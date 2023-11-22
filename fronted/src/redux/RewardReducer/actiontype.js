@@ -5,6 +5,8 @@ export const ADD_ADDRESS_ERROR = "ADD_ADDRESS_ERROR"
 export const GET_FAQS="GET_FAQS"
 export const LOAD = "LOAD"
 export const ERROR = "ERROR"
+export const GETUSER = "GETUSER"
+
 
 // export const ADD_ADDRESS_REQUEST = "ADD_ADDRESS_REQUEST";
 // export const ADD_ADDRESS_SUCCESS = "ADD_ADDRESS_SUCCESS";

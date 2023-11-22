@@ -1,5 +1,5 @@
 import axios from "axios"
-import { GET_REWARDS,ERROR,LOAD, GET_FAQS, ADD_ADDRESS_REQUEST, ADD_ADDRESS_SUCCESS, ADD_ADDRESS_ERROR } from "./actiontype"
+import { GET_REWARDS,ERROR,LOAD, GET_FAQS, ADD_ADDRESS_REQUEST, ADD_ADDRESS_SUCCESS, ADD_ADDRESS_ERROR, GETUSER } from "./actiontype"
 
 export const getReward = () => async(dispatch)=> {
     try{
@@ -34,3 +34,14 @@ export const PostData=(payload)=>async(dispatch)=>{
        dispatch({type:ADD_ADDRESS_ERROR})
     }
   }
+
+  export const getUser = () => async(dispatch)=> {
+    try{
+        dispatch({type:LOAD})
+        const res = await axios.get(`${process.env.REACT_APP_SERVER_URL}/user`)
+        dispatch({type:GETUSER,payload:res.data})
+    }catch(error){
+        console.log(error)
+        dispatch({type:ERROR})
+    }
+}
