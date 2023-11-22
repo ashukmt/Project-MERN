@@ -6,17 +6,29 @@ import RewardLeaderBCard from "./RewardLeaderBCard";
 import { useDispatch, useSelector } from "react-redux";
 import { animateScroll } from "react-scroll";
 import { getUser } from "../redux/RewardReducer/action";
+import { useToast } from "@chakra-ui/react";
+
+
 
 function Invite() {
   const [copied, setCopied] = useState(false);
   const otherCopy = () => setCopied(true);
  
-
+  const curr_user = useSelector(state=>state.user.user)
   const UserData = useSelector(state => state.Reward.Users)
-  console.log(UserData)
+  // console.log(UserData)
   const UserArr=UserData.sort((a,b)=>{
     return b.coin-a.coin
   })
+  const toast = useToast();
+  const handleToast = ()=>{
+    toast({
+      title: "Referral Code Copied !!",
+      status: "success",
+      duration: 3000,
+      isClosable: true,
+    });
+  }
 
   const dispatch = useDispatch();
  
@@ -119,8 +131,8 @@ function Invite() {
     </div>
     <div className="flex justify-center py-4" >
     <div className="bg-[#ffe180] px-10 py-2 rounded-[10px] mt-[-40px]">
-    <CopyToClipboard onCopy={otherCopy} text='grm445'>
-        <span>grm445<button className="bg-[#3670e4] p-[5px] ml-2 px-4 text-[white] text-[14px] font-[600] rounded-[10px]">COPY CODE</button></span>
+    <CopyToClipboard onCopy={otherCopy} text={curr_user?.referalCode}>
+        <span>{curr_user?.referalCode}<button onClick={handleToast} className="bg-[#3670e4] p-[5px] ml-2 px-4 text-[white] text-[14px] font-[600] rounded-[10px]">COPY CODE</button></span>
           
         </CopyToClipboard>
     </div>
