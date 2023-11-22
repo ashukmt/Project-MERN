@@ -13,7 +13,7 @@ const Sec4 = () => {
       </div> */}
        <Box className='text-center' py='5%' px='7%'>
                 
-                <Text className='font-bold text-2xl'>Best-in-Class<span className='text-red-600'>Curriculum</span > & <span className='text-red-600'>Pedagogy</span ></Text>
+                <Text className='font-bold text-2xl'>Best-in-Class <span className='text-red-600'>Curriculum</span > & <span className='text-red-600'>Pedagogy</span ></Text>
                
             </Box>
       <div className="flex justify-between subb44">

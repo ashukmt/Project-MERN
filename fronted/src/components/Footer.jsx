@@ -146,11 +146,11 @@ function Footer() {
 
    <div className='border-t w-3/4'>
     <div className='mt-6 mb-3'>
-        <Link to={'http://localhost:3000/courses/Full-Stack-Web-Development'}><button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mr-4 mb-4'>Full Stack Web Development - Full Time</button></Link>
-        <Link to={'http://localhost:3000/courses/Data-Analytics'}> <button buttom className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mr-4 mb-4'>Data Analytics Course - Full Time</button></Link>
-       <Link to={'http://localhost:3000/courses/Mobile-Development'}> <button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mb-4 mr-4'>Mobile Development - Full Time</button></Link>
-        <Link to={'http://localhost:3000/courses/Become-a-Software-Testing-&-Automation'}><button  className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mt-5 mr-4 mb-4'>Software Testing & Automation - Full Time</button></Link>
-        <Link to={'http://localhost:3000/courses/Backend-Development'}><button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mb-4'>Backend Development - Full Time</button></Link>
+        <Link to={'/courses/Full-Stack-Web-Development'}><button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mr-4 mb-4'>Full Stack Web Development - Full Time</button></Link>
+        <Link to={'/courses/Data-Analytics'}> <button buttom className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mr-4 mb-4'>Data Analytics Course - Full Time</button></Link>
+       <Link to={'/courses/Mobile-Development'}> <button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mb-4 mr-4'>Mobile Development - Full Time</button></Link>
+        <Link to={'/courses/Become-a-Software-Testing-&-Automation'}><button  className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mt-5 mr-4 mb-4'>Software Testing & Automation - Full Time</button></Link>
+        <Link to={'/courses/Backend-Development'}><button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mb-4'>Backend Development - Full Time</button></Link>
     </div>
    <div
       class="grid grid-cols-2 gap-8  border-gray-100 pt-5 dark:border-gray-800 sm:grid-cols-2 lg:grid-cols-4 lg:pt-5"
