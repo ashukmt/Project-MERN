@@ -53,6 +53,7 @@ const StartMsat = () => {
         setMarks(t)
         setIncorrect(i)
         setCorrect(c)
+        return t;
     }
     const [processing, setProcessing] = useState(false)
     const [ended, setEnded] = useState(false);
@@ -64,12 +65,13 @@ const StartMsat = () => {
         setTimeout(() => {
             navigate('/')
         }, 14000)
-        setTotal();
-        updateCoin()
+        let marks = setTotal();
+        updateCoin(marks);
         onClose();
         setProcessing(true);
     }
-    const updateCoin = () => {
+    const updateCoin = (marks) => {
+        console.log(marks)
         dispatch(editUser({ ...user, msatDay: new Date(), msatScore: marks, coin: +user.coin + (+marks * 10) }));
     }
     const navigate = useNavigate();
