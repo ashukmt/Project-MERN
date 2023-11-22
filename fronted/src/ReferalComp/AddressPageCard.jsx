@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 
 function AddressPageCard() {
 
-  const Add=useSelector(state=>state.Reward. Address)
+  const Add=useSelector(state=>state.Reward.Address)
   console.log(Add)
 
   return (

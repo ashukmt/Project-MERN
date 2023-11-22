@@ -100,16 +100,16 @@ function Navbar() {
             >
               <ul
                 className="flex flex-col font-medium mt-[4rem]
-          ml-[-33px] rounded-lg bg-white"
+          ml-[-33px] rounded-lg bg-white shad "
               >
                 {edit?.map((el) =>
                   el.type ? (
-                    <Link className="link" onClick={toggleNavbar} to={el.path}>
+                    <Link className="link pb-1" onClick={toggleNavbar} to={el.path}>
                       {el.title}
                     </Link>
                   ) : location.pathname === "/" ? (
                     <SL
-                      className="link"
+                      className="link pb-1"
                       to={el.path}
                       smooth={true}
                       duration={500}
@@ -118,7 +118,7 @@ function Navbar() {
                       {el.title}
                     </SL>
                   ) : (
-                    <Link className="link" to="/">
+                    <Link className="link " to="/">
                       {el.title}
                     </Link>
                   )
