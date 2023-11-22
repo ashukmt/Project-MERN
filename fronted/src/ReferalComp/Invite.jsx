@@ -3,41 +3,26 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import { FaBeer } from 'react-icons/fa';
 import RewardLeaderBCard from "./RewardLeaderBCard";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { animateScroll } from "react-scroll";
+import { getUser } from "../redux/RewardReducer/action";
 
 function Invite() {
   const [copied, setCopied] = useState(false);
   const otherCopy = () => setCopied(true);
-  const UserData =  [
-            {
-              "Name":"Tushar Sapate",
-              "Coin":4000,
-            },
-            {
-              "Name":"Karan Kotai",
-              "Coin":3700,
-            },
-            {
-              "Name":"Ashutosh Kumawat",
-              "Coin":3000,
-            },
-            {
-              "Name":"Sanjeev Kushwaha",
-              "Coin":2900,
-            },
-            {
-              "Name":"Abhishek Kumar",
-              "Coin":2500,
-            },
-            {
-              "Name":"Ankur Yadav",
-              "Coin":2000,
-            }
-          
-          ]
+ 
+
+  const UserData = useSelector(state => state.Reward.Users)
+  console.log(UserData)
+  const UserArr=UserData.sort((a,b)=>{
+    return b.coin-a.coin
+  })
+
+  const dispatch = useDispatch();
+ 
     useEffect(() => {
       animateScroll.scrollToTop({ smooth: true })
+      dispatch(getUser());
   }, [])
   return (
     <div className="flex items-center gap-10 pt-[30px]" style={{width:"70%", margin:"auto"}}>
@@ -146,7 +131,7 @@ function Invite() {
     <div className="mt-[-35px] py-6 rounded-[10px]" style={{boxShadow:"rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"}}>
     <h1 className="text-center text-left font-[700] md:text-[16px] leading-40 tracking-wider text-[#777bf2] text-[15px]">Current Leaderboard</h1>
     {
-      UserData?.map((el,i)=>{
+      UserArr.slice(0,5)?.map((el,i)=>{
         return   <RewardLeaderBCard key={i} {...el} />
       })
     }

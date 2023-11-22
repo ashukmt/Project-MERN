@@ -35,6 +35,7 @@ function ReferalReward() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
   const Reward = useSelector((state) => state.Reward.Rewards);
+ 
   console.log(Reward);
 
 
@@ -77,6 +78,7 @@ function ReferalReward() {
     }
   };
 
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getReward());
@@ -108,6 +110,7 @@ function ReferalReward() {
           _hover={{ bg: "red.400" }}
           onClick={() => {
             Navigate("/Profile");
+            
           }}
           bg="#ed0331"
         >

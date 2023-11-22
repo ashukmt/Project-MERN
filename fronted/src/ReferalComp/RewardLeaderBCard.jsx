@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaBeer } from 'react-icons/fa'
 
-function RewardLeaderBCard({ Name,Coin }) {
+function RewardLeaderBCard({ username,coin }) {
   return (
     
    <div className='px-4'>
@@ -10,10 +10,10 @@ function RewardLeaderBCard({ Name,Coin }) {
           <div className="flex items-center">
           
             <img src='https://cdn-icons-png.flaticon.com/128/3177/3177440.png?ga=GA1.1.144022409.1691515271' width={30}/>
-            <h1 className='text-left pl-2 font-[600] md:text-[16px] leading-40 tracking-wider text-[#000000] text-[15px]'>{Name}</h1>
+            <h1 className='text-left pl-2 font-[600] md:text-[16px] leading-40 tracking-wider text-[#000000] text-[15px]'>{username}</h1>
           </div>
           <div>
-            <h1 className='text-left pl-2 font-[600] md:text-[16px] leading-40 tracking-wider text-[#000000] text-[15px]'><span className='text-[green] px-[4px]'>+</span>{Coin} Coin</h1>
+            <h1 className='text-left pl-2 font-[600] md:text-[16px] leading-40 tracking-wider text-[#000000] text-[15px]'><span className='text-[green] px-[4px]'>+</span>{coin} Coin</h1>
           </div>
         </div>
       </div>
