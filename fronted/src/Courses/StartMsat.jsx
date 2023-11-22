@@ -61,13 +61,13 @@ const StartMsat = () => {
             setProcessing(false)
             setEnded(true)
         }, 7000)
-        setTimeout(()=>{
+        setTimeout(() => {
             navigate('/')
-        },14000)
+        }, 14000)
         setTotal();
         onClose();
         setProcessing(true);
-        dispatch(editUser({ ...user, msatDay: new Date(), msatScore: marks, coin: user.coin + (marks * 10) }));  
+        dispatch(editUser({ ...user, msatDay: new Date(), msatScore: marks, coin: user.coin + (marks * 10) }));
     }
     const navigate = useNavigate();
 
@@ -78,13 +78,13 @@ const StartMsat = () => {
                 <Text className='font-semibold text-xl text-center p-3'>You Can only attempt the test in a pc/laptop</Text>
             </AlertDialogBody>
             <AlertDialogFooter alignItems={'center'} justifyContent={'center'} className='text-center flex justify-center w-full'>
-                <Button colorScheme='red' onClick={()=>navigate('/')}>
+                <Button colorScheme='red' onClick={() => navigate('/')}>
                     Ok
                 </Button>
             </AlertDialogFooter>
         </AlertDialogContent>
     </AlertDialog>
-    if (user.msatDay.getDate() == new Date().getDate()) return <>
+    if (!processing && !ended && user.msatDay && user.msatDay.getDate() == new Date().getDate()) return <>
         <AlreadyDone />
     </>
     return (
