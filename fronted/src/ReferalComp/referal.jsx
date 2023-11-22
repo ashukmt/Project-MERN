@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Referal1 from "./Referal1";
 import ReferalReward from "./Referal&Reward";
 import axios from "axios"
-import { Link, animateScroll } from "react-scroll";
+import { animateScroll } from "react-scroll";
 import {
   Drawer,
   DrawerBody,
@@ -41,10 +41,14 @@ function Referal() {
   const toast=useToast()
 const dispatch=useDispatch();
 
-  const PhoneNumber="+917379249116"
-  console.log(fname)
+useEffect(() => {
+  animateScroll.scrollToTop({ smooth: true })
+}, [])
 
- console.log("object")
+  const PhoneNumber="+917379249116"
+  // console.log(fname)
+
+//  console.log("object")
 
   const handleSubmit=async()=>{
    var refform={
@@ -52,6 +56,7 @@ const dispatch=useDispatch();
       Email:email,
       Ph_number:phoneNumber,
       R_Code:rcode
+
   }
 
   if (refform.F_name === "" || refform.Email === "" || refform.Ph_number === "") {
@@ -63,7 +68,7 @@ const dispatch=useDispatch();
     });
     
   }
-
+  
 else
      try {
         console.log("Hii")
@@ -86,9 +91,15 @@ else
           Ph_number:"",
           R_Code:""
       }
-       
+       onClose();
      } catch (error) {
         console.log(error)
+        toast({
+          title: "User Already Referred",
+          status: "error",
+          duration: 3000,
+          isClosable: true,
+        });
      }
   
 }
@@ -145,12 +156,12 @@ else
             animateScroll.scrollToTop({ smooth: true })
         } 
           else{
-            toast({
-                    title: "You have registered already.",
-                    status: "success",
-                    duration: 3000,
-                    isClosable: true,
-                });
+            // toast({
+            //         title: "You have registered already.",
+            //         status: "success",
+            //         duration: 3000,
+            //         isClosable: true,
+            //     });
                 // navigate('/msat/confirm')
                 onOpen()
           }
@@ -191,7 +202,7 @@ else
 
   />
   <FormLabel>Referral Code (Optional)</FormLabel>
-  <Input placeholder='Enter referral Code' name='R_Code'
+  <Input placeholder='Enter referral Code' value={curr_user?.referalCode ?curr_user?.referalCode : ""} name='R_Code'
    onChange={(e)=>setRcode(e.target.value)}
     />
   <Button
