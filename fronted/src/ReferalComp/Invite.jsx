@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-
+import './Invite.css'
 import { FaBeer } from 'react-icons/fa';
 import RewardLeaderBCard from "./RewardLeaderBCard";
 import { useDispatch, useSelector } from "react-redux";
@@ -25,7 +25,7 @@ function Invite() {
       dispatch(getUser());
   }, [])
   return (
-    <div className="flex items-center gap-10 pt-[30px]" style={{width:"70%", margin:"auto"}}>
+    <div className="Invite_Main flex lg:flex-row items-center gap-10 pt-[30px] md:flex-col sm:flex-col" >
                <div>
             <div className="px-4 pb-8 pt-4 rounded-[10px]" style={{boxShadow:"rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"}} >
       <h1 className="text-left pb-4 font-[700] md:text-[16px] leading-40 tracking-wider text-[#777bf2] text-[15px]">
