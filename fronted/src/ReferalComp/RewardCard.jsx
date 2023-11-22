@@ -152,7 +152,7 @@ console.log(DateA)
           }
           else{
             Dispatch(PostData(addObj));
-            Dispatch(PostData(true))
+            // Dispatch(PostData(true))
             Dispatch(editUser({...curr_user,coin:claimbtn-(+Coin_Req)}));
             Navigate("/Profile");
             onClose();
