@@ -23,7 +23,8 @@ import {
 import Accordionist from "./Accordionist";
 
 import { AiOutlineInfoCircle } from "react-icons/ai";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { editUser } from "../redux/userReducer/action";
 
 function Referal() {
   const[fname,setFname]=useState("")
@@ -38,7 +39,7 @@ function Referal() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
   const toast=useToast()
-
+const dispatch=useDispatch();
 
   const PhoneNumber="+917379249116"
   console.log(fname)
@@ -66,12 +67,13 @@ function Referal() {
 else
      try {
         console.log("Hii")
-      const PostData = await axios.post("http://localhost:8080/sharelink/sharereferal", { ...refform });
+      const PostData = await axios.post(`${process.env.REACT_APP_SERVER_URL}/sharelink/sharereferal`,{ ...refform });
      console.log(PostData.status)
       if (PostData.status == "200") {
         const message = `https://masaiClone.com/${7796}`;
         const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
         window.open(url, "_blank");
+        dispatch(editUser({...curr_user,coin:curr_user.coin+500}))
       } else if (PostData.status == "409") {
         alert("User already registered with this Number");
         console.log("User already registered with this Number")
@@ -142,8 +144,8 @@ else
             });
             animateScroll.scrollToTop({ smooth: true })
         } 
-          else if (curr_user.registered) {
-                toast({
+          else{
+            toast({
                     title: "You have registered already.",
                     status: "success",
                     duration: 3000,
@@ -151,7 +153,9 @@ else
                 });
                 // navigate('/msat/confirm')
                 onOpen()
-        }
+          }
+            
+        
               }}
 
             >

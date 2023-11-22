@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, Flex, Heading, Image, Text, Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalFooter, ModalBody, AlertIcon, Alert, AlertTitle, AlertDescription, useToast } from "@chakra-ui/react";
 import Leaderboard from './Leaderboard';
 import { Navigate, useNavigate } from "react-router-dom";
@@ -15,8 +15,9 @@ import {
   FormControl,
   FormLabel,
 } from '@chakra-ui/react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { PostData } from '../redux/RewardReducer/action';
+import { editUser } from '../redux/userReducer/action';
 
 
 function RewardCard({ Coin_Req, Gift_name, Gift_url }) {
@@ -27,7 +28,16 @@ function RewardCard({ Coin_Req, Gift_name, Gift_url }) {
   const [phoneNumber, setPhnumber] = useState("")
   const [rcode, setRcode] = useState("")
   const [imgurl, setImgurl] = useState("")
-  const [claibtn, setClaimbtn] = useState(3000)
+  const [claimbtn, setClaimbtn] = useState(0)
+  const curr_user = useSelector(state => state.user.user)
+  console.log(claimbtn,Coin_Req)
+
+
+  useEffect(()=>{
+    setClaimbtn(curr_user.coin)
+    
+  },[curr_user])
+ 
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [bagEmpty,setBagEmpty]=useState(false);
   const [showAlert, setShowAlert] = useState(false);
@@ -89,7 +99,8 @@ console.log(DateA)
             setImgurl(Gift_url);
             onOpen();
           }}
-          isDisabled={Coin_Req>claibtn}
+
+          isDisabled={claimbtn?+Coin_Req>claimbtn:true}
 
         >CLAIM FOR {Coin_Req} COIN</Button>
 
@@ -141,6 +152,8 @@ console.log(DateA)
           }
           else{
             Dispatch(PostData(addObj));
+            Dispatch(PostData(true))
+            Dispatch(editUser({...curr_user,coin:claimbtn-(+Coin_Req)}));
             Navigate("/Profile");
             onClose();
           }
