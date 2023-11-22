@@ -1,6 +1,5 @@
 import React from "react";
 import "../Style/homes.css";
-import video from "../video/Cab Driver became Software Engineer – Meet Ashish Raj from Munger, Bihar.mp4"
 function Contain1() {
   return (
     <div>
@@ -8,18 +7,29 @@ function Contain1() {
         Launch A Sustainable Career
       </div>
       <div className="flex cont1">
-        <div className="ml-7 sm:ml-1 my-3  ">
-         <video width="500" height="250" controls poster="https://avatars.mds.yandex.net/i?id=a9e3ca8360d90dcaebb016901b2624a98c84866b-6639666-images-thumbs&n=13" >
-            <source src={video} type="video/mp4" />
+ 
+        <div className="w-[90%] m-auto video1">
+        <div className="video_div flex justify-center">
+          {/* <iframe
+            className="rounded-md custom-iframe"
             
-          </video>
+            src="https://youtu.be/TVpsKp-WsLM?si=o51MFXb0QV6ITe0O"
+            
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe> */}
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/bRPtI_MJrts?si=CiYVNOdv9lnh0I1j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
         </div>
         <div>
           <div className="flex div1 p-3 font-bold ml-5 mt-3 text-lg lg:mr-[11%] lg:justify-around">
-            <div className="text-yellow-500 text-2xl">₹6.9 LPA</div>
+            <div className="text-yellow-500 text-xl">₹6.9 LPA</div>
             <div className="ml-4 text-lg text-white">Average CTC</div>
           </div>
-          
+
           <div className="flex div1 p-3 font-bold ml-5 mt-4 text-lg lg:mr-[11%] lg:justify-around">
             <div className="text-yellow-500 text-1xl">3500+</div>
             <div className="ml-4 text-lg text-white">Careers Launched</div>
@@ -45,7 +55,7 @@ function Contain1() {
             alt="dream11"
           />
         </div>
-      
+
         <div>
           <img
             className="wit"

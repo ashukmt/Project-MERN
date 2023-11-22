@@ -13,11 +13,15 @@ import LeaderBr_Invite_Referal from './ReferalComp/LeaderBr&Invite&Referal'
 import StartMsat from './Courses/StartMsat'
 import Login from './components/Login'
 import MsatConfirm from './Courses/MsatConfirm'
+import { useSelector } from 'react-redux'
+import { Spinner } from '@chakra-ui/react'
 
 const AllRoutes = () => {
+  const isLoading = useSelector(state=>state.user.isLoading)
   useEffect(()=>{
     animateScroll.scrollToTop({smooth:true})
   },[])
+  if(isLoading) return <Spinner my='30vh' mx={'50vw'} size={'xl'}/>
   return (
     <Routes>
         <Route path='/'element={<Homes/>}/>

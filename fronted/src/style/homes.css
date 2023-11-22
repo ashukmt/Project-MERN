@@ -128,7 +128,7 @@
   margin-bottom: 50px;
 }
 .widt71 {
-  width: 48%;
+  width: 75%;
 }
 
 .widt77 {
@@ -213,9 +213,7 @@
     margin: auto;
     margin-top: 4%;
   }
-  .cont1 > div:nth-child(1) {
-    margin-left: -5px;
-  }
+  
   .div1 {
     margin-left: -3px;
   }
@@ -238,16 +236,12 @@
     margin-left: 3rem;
   }
 }
-@media only screen and (max-width: 800px) and (min-width: 600px) {
+@media only screen and (max-width: 800px) and (min-width: 300px) {
   .dat {
-    width: 47%;
+    width: 80%;
   }
 }
-/* @media only screen and (max-width: 725px) and (min-width: 600px) {
-  .dat {
-    width: 47%;
-  }
-} */
+
 
 @media only screen and (max-width: 370px) {
   .last > button:nth-child(1) {
@@ -332,5 +326,22 @@
   }
   .gids > div {
     margin-bottom: 20px;
+  }
+}
+
+
+@media only screen and (max-width: 600px) and (min-width: 500px){
+  .slider7{
+    height: 280px;
+  }
+}
+@media only screen and (max-width: 480px) and (min-width: 400px){
+  .video1{
+    margin-left: 7%;
+  }
+}
+@media only screen and (max-width: 400px) and (min-width: 300px){
+  .video1{
+    margin-left: 5%;
   }
 }
