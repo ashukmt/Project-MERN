@@ -31,7 +31,7 @@ Access comprehensive information about Masai School, its history, mission, and v
 
 <p align='center'>
 
-  ![image](https://github.com/karnking/Masai-Flow/assets/68837552/791940a6-f10d-45a1-9054-9548f5897b2c)
+  ![image](https://github.com/karnking/Masai-Flow/assets/68837552/bd607a38-5d7b-4c95-8459-9e54c80dc650)
 </p>
 
 3. Course Details
