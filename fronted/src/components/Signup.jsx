@@ -80,7 +80,6 @@ const Signup = ({ onClose, onOpen }) => {
 
 
     if (password !== "") {
-      console.log(validref.current.children)
       validref.current.style.display = "flex"
       let temp = validref.current.children[1]
       temp.innerHTML = ""
@@ -116,7 +115,7 @@ const Signup = ({ onClose, onOpen }) => {
       return;
     }
 
-    // dispatch(addUser(user))
+    dispatch(addUser(user))
 
   }
 

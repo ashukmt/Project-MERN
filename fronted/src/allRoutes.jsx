@@ -17,11 +17,14 @@ import { useSelector } from 'react-redux'
 import { Spinner } from '@chakra-ui/react'
 
 const AllRoutes = () => {
-  const isLoading = useSelector(state=>state.user.isLoading)
+  const isLoading1 = useSelector(state=>state.user.isLoading) 
+  const isLoading2 = useSelector(state=>state.reward.isLoading) 
+  const isLoading3 = useSelector(state=>state.event.isLoading) 
+  
   useEffect(()=>{
     animateScroll.scrollToTop({smooth:true})
   },[])
-  if(isLoading) return <Spinner my='30vh' mx={'50vw'} size={'xl'}/>
+  if(isLoading1||isLoading2||isLoading3) return <Spinner my='30vh' mx={'50vw'} size={'xl'}/>
   return (
     <Routes>
         <Route path='/'element={<Homes/>}/>

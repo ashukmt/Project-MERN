@@ -6,6 +6,8 @@ export const GET_FAQS="GET_FAQS"
 export const LOAD = "LOAD"
 export const ERROR = "ERROR"
 export const GETUSER = "GETUSER"
+export const LOADING = "LOADING";
+export const NOT_LOADING = "NOT_LOADING";
 
 
 // export const ADD_ADDRESS_REQUEST = "ADD_ADDRESS_REQUEST";

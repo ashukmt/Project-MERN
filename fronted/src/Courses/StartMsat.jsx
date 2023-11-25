@@ -71,7 +71,6 @@ const StartMsat = () => {
         setProcessing(true);
     }
     const updateCoin = (marks) => {
-        console.log(marks)
         dispatch(editUser({ ...user, msatDay: new Date(), msatScore: marks, coin: +user.coin + (+marks * 10) }));
     }
     const navigate = useNavigate();

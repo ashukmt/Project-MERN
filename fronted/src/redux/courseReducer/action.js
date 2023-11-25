@@ -1,15 +1,16 @@
 import axios from "axios"
-import { ERROR, GET_COURSES, GET_QUESTIONS, LOAD } from "./actionType"
+import { ERROR, GET_COURSES, GET_QUESTIONS, LOAD, NOT_LOAD } from "./actionType"
 
 export const getCourse = () => async(dispatch)=> {
+    dispatch({type:LOAD})
     try{
-        dispatch({type:LOAD})
         const res = await axios.get(`${process.env.REACT_APP_SERVER_URL}/course`)
         dispatch({type:GET_COURSES,payload:res.data})
     }catch(error){
         console.log(error)
         dispatch({type:ERROR})
     }
+    dispatch({type:NOT_LOAD})
 }
 
 function shuffleArray(array) {
