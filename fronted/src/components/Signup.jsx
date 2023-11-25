@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import {
   AbsoluteCenter,
@@ -29,7 +29,7 @@ const Signup = ({ onClose, onOpen }) => {
   const dispatch = useDispatch()
   const status = useSelector(state => state.user.status);
   const toast = useToast()
-  
+
   const [user, setUser] = useState({
     username: "",
     email: "",
@@ -52,6 +52,7 @@ const Signup = ({ onClose, onOpen }) => {
 
   const handleChange = (e) => {
     e.preventDefault();
+    validref.current.style.display = "none"
     setUser({ ...user, [e.target.name]: e.target.value })
   }
 
@@ -78,24 +79,49 @@ const Signup = ({ onClose, onOpen }) => {
     }
 
 
-    if (password === "" || password.length < 10) {
+    if (password !== "") {
+      console.log(validref.current.children)
+      validref.current.style.display = "flex"
+      let temp = validref.current.children[1]
+      temp.innerHTML = ""
+      if(!password.match(new RegExp('^.{8,}$'))){
+        temp.innerHTML+="<p>*8 characters</p>"
+      }
+      if(!password.match(new RegExp('^(?=.*[a-z]).+$'))){
+        temp.innerHTML+="<p>*1 lowercase</p>"
+      }
+      if(!password.match(new RegExp('^(?=.*[A-Z]).+$'))){
+        temp.innerHTML+="<p>*1 uppercase</p>"
+      }
+      if(!password.match(new RegExp('^(?=.*[0-9]).+$'))){
+        temp.innerHTML+="<p>*1 digit</p>"
+      }
+      if(!password.match(new RegExp('^(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]).+$'))){
+        temp.innerHTML+="<p>*1 symbol</p>"
+      }
       toast({
         title: 'Enter valid password',
         status: 'error',
         duration: 3000,
         isClosable: true,
       })
-
+      return;
+    }else if(password===""){
+      toast({
+        title: 'Password cannot be left empty',
+        status: 'error',
+        duration: 3000,
+        isClosable: true,
+      })
       return;
     }
 
-    dispatch(addUser(user))
-
+    // dispatch(addUser(user))
 
   }
 
   useEffect(() => {
-    if(status=='201'){
+    if (status == '201') {
       toast({
         title: 'Login successfull',
         status: 'success',
@@ -111,7 +137,7 @@ const Signup = ({ onClose, onOpen }) => {
         duration: 3000,
         isClosable: true,
       })
-      onClose(); 
+      onClose();
       onOpen();
     }
     else if (status == "409") {
@@ -125,6 +151,7 @@ const Signup = ({ onClose, onOpen }) => {
     dispatch({ type: RESET_USER, payload: "" })
   }, [status])
 
+  const validref = useRef(null)
 
   return (
     <>
@@ -177,7 +204,12 @@ const Signup = ({ onClose, onOpen }) => {
                 onChange={handleChange}
               />
             </Box>
-
+            <div className="w-full hidden gap-5 px-5" ref={validref}>
+              <p className='w-[44%] font-semibold'>Password must contain :</p>
+              <div className="grid grid-cols-2 text-red-500 w-[55%] gap-1">
+                
+              </div>
+            </div>
             <Button className="w-[77%] " colorScheme="red" size={"lg"} onClick={handleSubmit}>Submit</Button>
             <Box position='relative' className="mt-5">
               <Divider w='25vw' borderColor={'black'} />
