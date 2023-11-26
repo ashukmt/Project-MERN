@@ -8,7 +8,6 @@ import Container4 from "../container/Container4";
 
 function Sec2() {
   const[num,setNum]=useState(1);
-  console.log(num);
   return (
     <div className="mb-1">
       <div className="sec2Main">

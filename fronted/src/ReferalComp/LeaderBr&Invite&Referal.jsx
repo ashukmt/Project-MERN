@@ -1,13 +1,13 @@
-import React from 'react'
-import Leaderboard from './Leaderboard'
+// import React from 'react'
+// import Leaderboard from './Leaderboard'
 
 
-function LeaderBr_Invite_Referal() {
-  return (
-    <div className=''>
-    <Leaderboard/>
-    </div>
-  )
-}
+// function () {
+//   return (
+//     <div className=''>
+//     <Leaderboard/>
+//     </div>
+//   )
+// }
 
-export default LeaderBr_Invite_Referal
+// export default 

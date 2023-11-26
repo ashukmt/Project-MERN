@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {
   Box,
-  Flex,
-  Heading,
   Image,
-  Text,
   Button,
   Modal,
   ModalOverlay,
@@ -13,27 +10,13 @@ import {
   ModalCloseButton,
   ModalFooter,
   ModalBody,
-  AlertIcon,
-  Alert,
-  AlertTitle,
-  AlertDescription,
   useToast,
-} from "@chakra-ui/react";
-import Leaderboard from "./Leaderboard";
-import { Navigate, useNavigate } from "react-router-dom";
-import {
-  Drawer,
-  DrawerBody,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
   Input,
   useDisclosure,
   FormControl,
   FormLabel,
 } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { PostData } from "../redux/RewardReducer/action";
 import { editUser } from "../redux/userReducer/action";
@@ -47,15 +30,13 @@ function RewardCard({ Coin_Req, Gift_name, Gift_url }) {
   const [imgurl, setImgurl] = useState("");
   const [claimbtn, setClaimbtn] = useState(0);
   const curr_user = useSelector((state) => state.user.user);
-  console.log(claimbtn, Coin_Req);
-
+  
   useEffect(() => {
     setClaimbtn(curr_user.coin);
   }, [curr_user]);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [bagEmpty, setBagEmpty] = useState(false);
-  const [showAlert, setShowAlert] = useState(false);
   const toast = useToast();
 
   const today = new Date();
@@ -85,8 +66,7 @@ function RewardCard({ Coin_Req, Gift_name, Gift_url }) {
     e.preventDefault();
     setAddObj({ ...addObj, [e.target.name]: e.target.value });
   };
-  console.log(addObj);
-
+  
   return (
     <div
       className="border-solid items-center rounded-xl justify-center"

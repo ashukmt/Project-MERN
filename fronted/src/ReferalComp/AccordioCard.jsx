@@ -1,9 +1,4 @@
 import React from 'react'
-// import Accordion from '@mui/material/Accordion';
-// import AccordionSummary from '@mui/material/AccordionSummary';
-// import AccordionDetails from '@mui/material/AccordionDetails';
-// import Typography from '@mui/material/Typography';
-// import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import {
     Accordion,
     AccordionItem,
@@ -15,7 +10,6 @@ import {
 
 
 function AccordioCard({Que,Ans}) {
-    console.log('Masai')
   return (
     <Box width={{ base: "100%", md: "80%" }} margin="auto">
   <Accordion allowToggle>

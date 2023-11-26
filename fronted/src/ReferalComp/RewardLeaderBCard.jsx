@@ -1,5 +1,4 @@
 import React from 'react'
-import { FaBeer } from 'react-icons/fa'
 
 function RewardLeaderBCard({ username,coin }) {
   return (

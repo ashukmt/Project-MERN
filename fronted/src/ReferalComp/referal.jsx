@@ -27,72 +27,58 @@ import { useDispatch, useSelector } from "react-redux";
 import { editUser } from "../redux/userReducer/action";
 
 function Referal() {
-  const[fname,setFname]=useState("")
-  const[email,setEmail]=useState("")
-  const[phoneNumber,setPhnumber]=useState("")
-  const[rcode,setRcode]=useState("")
+  const [fname, setFname] = useState("")
+  const [email, setEmail] = useState("")
+  const [phoneNumber, setPhnumber] = useState("")
+  const [rcode, setRcode] = useState("")
   const [showAlert, setShowAlert] = useState(false);
-  const [register, setRegister] = useState(false);
   const curr_user = useSelector(state => state.user.user)
-   
+
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
-  const toast=useToast()
-const dispatch=useDispatch();
+  const toast = useToast()
+  const dispatch = useDispatch();
 
-useEffect(() => {
-  animateScroll.scrollToTop({ smooth: true })
-}, [])
+  useEffect(() => {
+    animateScroll.scrollToTop({ smooth: true })
+  }, [])
 
-  const PhoneNumber="+917379249116"
-  // console.log(fname)
+  const handleSubmit = async () => {
+    var refform = {
+      F_name: fname,
+      Email: email,
+      Ph_number: phoneNumber,
+      R_Code: rcode
 
-//  console.log("object")
+    }
 
-  const handleSubmit=async()=>{
-   var refform={
-      F_name:fname,
-      Email:email,
-      Ph_number:phoneNumber,
-      R_Code:rcode
+    if (refform.F_name === "" || refform.Email === "" || refform.Ph_number === "") {
+      toast({
+        title: "All inpute fill are required",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+      });
 
-  }
+    }
 
-  if (refform.F_name === "" || refform.Email === "" || refform.Ph_number === "") {
-    toast({
-      title: "All inpute fill are required",
-      status: "error",
-      duration: 3000,
-      isClosable: true,
-    });
-    
-  }
-  
-else
-     try {
-        console.log("Hii")
-      const PostData = await axios.post(`${process.env.REACT_APP_SERVER_URL}/sharelink/sharereferal`,{ ...refform });
-     console.log(PostData.status)
-      if (PostData.status == "200") {
-        const message = `https://masaiClone.com/${7796}`;
-        const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-        window.open(url, "_blank");
-        dispatch(editUser({...curr_user,coin:curr_user.coin+500}))
-      } else if (PostData.status == "409") {
-        alert("User already registered with this Number");
-        console.log("User already registered with this Number")
-      } else {
-        console.log("Unexpected response:", PostData);
-      }
-        var refform={
-          F_name:"",
-          Email:"",
-          Ph_number:"",
-          R_Code:""
-      }
-       onClose();
-     } catch (error) {
+    else
+      try {
+        const PostData = await axios.post(`${process.env.REACT_APP_SERVER_URL}/sharelink/sharereferal`, { ...refform });
+        if (PostData.status == "200") {
+          const message = `https://masaiClone.com/${7796}`;
+          const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+          window.open(url, "_blank");
+          dispatch(editUser({ ...curr_user, coin: curr_user.coin + 500 }))
+        } else if (PostData.status == "409") {
+          alert("User already registered with this Number");
+          console.log("User already registered with this Number")
+        } else {
+          console.log("Unexpected response:", PostData);
+        }
+        onClose();
+      } catch (error) {
         console.log(error)
         toast({
           title: "User Already Referred",
@@ -100,9 +86,9 @@ else
           duration: 3000,
           isClosable: true,
         });
-     }
-  
-}
+      }
+
+  }
 
 
 
@@ -145,28 +131,21 @@ else
               display="inline-block"
               // onClick={onOpen}
 
-              onClick={()=>{
+              onClick={() => {
                 if (!curr_user.email) {
-            toast({
-                title: "Please Login First",
-                status: "error",
-                duration: 3000,
-                isClosable: true,
-            });
-            animateScroll.scrollToTop({ smooth: true })
-        } 
-          else{
-            // toast({
-            //         title: "You have registered already.",
-            //         status: "success",
-            //         duration: 3000,
-            //         isClosable: true,
-            //     });
-                // navigate('/msat/confirm')
-                onOpen()
-          }
-            
-        
+                  toast({
+                    title: "Please Login First",
+                    status: "error",
+                    duration: 3000,
+                    isClosable: true,
+                  });
+                  animateScroll.scrollToTop({ smooth: true })
+                }
+                else {
+                  onOpen()
+                }
+
+
               }}
 
             >
@@ -182,50 +161,50 @@ else
               <DrawerOverlay />
               <DrawerContent>
                 <DrawerCloseButton />
-                <DrawerHeader style={{ fontSize:"25px", fontWeight: '600' }}>
+                <DrawerHeader style={{ fontSize: "25px", fontWeight: '600' }}>
                   Referring To
                 </DrawerHeader>
 
                 <DrawerBody>
-                <FormControl isRequired>
-  <FormLabel>Full Name</FormLabel>
-  <Input placeholder='Enter full name' name='F_name'
-   onChange={(e)=>setFname(e.target.value)}
-    />
-  <FormLabel>Email address</FormLabel>
-  <Input placeholder='Enter email address' name='Email'
-   onChange={(e)=>setEmail(e.target.value)}
-    />
-  <FormLabel>Phone Number</FormLabel>
-  <Input placeholder='Enter your whatsapp number' name='Ph_number' 
-  onChange={(e)=>setPhnumber(e.target.value)}
+                  <FormControl isRequired>
+                    <FormLabel>Full Name</FormLabel>
+                    <Input placeholder='Enter full name' name='F_name'
+                      onChange={(e) => setFname(e.target.value)}
+                    />
+                    <FormLabel>Email address</FormLabel>
+                    <Input placeholder='Enter email address' name='Email'
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <FormLabel>Phone Number</FormLabel>
+                    <Input placeholder='Enter your whatsapp number' name='Ph_number'
+                      onChange={(e) => setPhnumber(e.target.value)}
 
-  />
-  <FormLabel>Referral Code (Optional)</FormLabel>
-  <Input placeholder='Enter referral Code' value={curr_user?.referalCode ?curr_user?.referalCode : ""} name='R_Code'
-   onChange={(e)=>setRcode(e.target.value)}
-    />
-  <Button
-            mt={4}
-            colorScheme='teal'
-            w={'full'}
-            type='submit'
-            onClick={handleSubmit}
-            
-          >
-            Submit
-          </Button>
+                    />
+                    <FormLabel>Referral Code (Optional)</FormLabel>
+                    <Input placeholder='Enter referral Code' value={curr_user?.referalCode ? curr_user?.referalCode : ""} name='R_Code'
+                      onChange={(e) => setRcode(e.target.value)}
+                    />
+                    <Button
+                      mt={4}
+                      colorScheme='teal'
+                      w={'full'}
+                      type='submit'
+                      onClick={handleSubmit}
 
-          {showAlert && (
-        <Alert status="success" variant="subtle" onClose={() => setShowAlert(false)}>
-        <AlertIcon />
-   All input filed required
-        </Alert>
-      )}
+                    >
+                      Submit
+                    </Button>
+
+                    {showAlert && (
+                      <Alert status="success" variant="subtle" onClose={() => setShowAlert(false)}>
+                        <AlertIcon />
+                        All input filed required
+                      </Alert>
+                    )}
 
 
 
-</FormControl>
+                  </FormControl>
                 </DrawerBody>
               </DrawerContent>
             </Drawer>
@@ -247,17 +226,17 @@ else
       <Referal1 />
       <ReferalReward />
       <div className="flex justify-center bg-[#cfeedf]">
-      <span style={{ display: 'inline-flex', alignItems: 'center' }}>
-      <AiOutlineInfoCircle style={{ marginRight: '8px', color: '#00cc6d', fontSize: '30px',fontWeight:'800' }} />
+        <span style={{ display: 'inline-flex', alignItems: 'center' }}>
+          <AiOutlineInfoCircle style={{ marginRight: '8px', color: '#00cc6d', fontSize: '30px', fontWeight: '800' }} />
 
-  <h1 className="py-4 text-[25px] font-[700]">
-    Want to refer students for our Prepleaf courses?
-    <span className="text-[#3470e4]" style={{ marginLeft: '8px' }}>
-      Click Here
-    </span>
-  </h1>
-</span>
-        
+          <h1 className="py-4 text-[25px] font-[700]">
+            Want to refer students for our Prepleaf courses?
+            <span className="text-[#3470e4]" style={{ marginLeft: '8px' }}>
+              Click Here
+            </span>
+          </h1>
+        </span>
+
       </div>
       <Accordionist />
     </>

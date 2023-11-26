@@ -6,9 +6,7 @@ import { useNavigate } from 'react-router'
 
 function AddressPage() {
 
-  const [arr,setArr]=useState([])
   const cart=useSelector(state=>state.Reward.cartStatus)
-  console.log(cart)
   const navigate = useNavigate();
   return (
     <div className='rounded-xl'  style={{width:"70%",margin:"auto",marginTop:"20px", boxShadow:"rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",

@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "../Style/Events.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { animateScroll } from "react-scroll";
 import { useToast } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
 const Events = () => {
   const [eventData, setEventData] = useState([]);
-  const [register, setRegister] = useState(false);
   const [filterBy, setFilterBy] = useState("");
   const [searchBy, setSearchBy] = useState("");
   const toast = useToast();
@@ -27,7 +26,6 @@ const Events = () => {
       const myUrl = myApi(`${process.env.REACT_APP_SERVER_URL}/event/`, filterBy, searchBy);
       const response = await fetch(myUrl);
       const data = await response.json();
-      console.log(data);
       setEventData(data);
     } catch (err) {
       console.log(err);
@@ -60,8 +58,6 @@ const Events = () => {
   useEffect(() => {
     animateScroll.scrollToTop({ smooth: true });
   }, []);
-
-  console.log("random console");
 
   return (
     <div>
@@ -216,9 +212,6 @@ const Events = () => {
                     <p className="duration_p font-medium">Duration</p>
                   </div>
                 </div>
-                {/* <div className="rec_div">
-                <button type="button" class="btn fw-medium rec_btn">RECORDING</button>
-                </div> */}
               </div>
               <hr className="hr_here" />
               <div className="btm_div">

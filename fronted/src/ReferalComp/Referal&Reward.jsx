@@ -3,20 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import RewardCard from "./RewardCard";
 import axios from "axios";
 
-import { Navigate, useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import {
-  Drawer,
-  DrawerBody,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
-  Input,
   Button,
-  useDisclosure,
-  FormControl,
-  FormLabel,
+  useDisclosure
 } from "@chakra-ui/react";
 import { getReward } from "../redux/RewardReducer/action";
 
@@ -32,16 +22,8 @@ function ReferalReward() {
     Ph_number: phoneNumber,
     R_Code: rcode,
   });
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = React.useRef();
   const Reward = useSelector((state) => state.Reward.Rewards);
  
-  console.log(Reward);
-
-
-  const PhoneNumber = "+917379249116";
-  console.log(fname);
-
   const handleSubmit = async () => {
     var refform = {
       F_name: fname,

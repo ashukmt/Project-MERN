@@ -7,7 +7,6 @@ import { getFaq } from '../redux/RewardReducer/action';
 
 function Accordionist() {
     const FAQ=useSelector(state=>state.Reward.FAQs)
-    console.log(FAQ)
 
     const dispatch = useDispatch()
 useEffect(()=>{

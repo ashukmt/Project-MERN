@@ -9,9 +9,6 @@ import { animateScroll } from "react-scroll";
 import { Link } from "react-router-dom";
 const Register = () => {
   let { id } = useParams();
-
-  const [myRegisterData, setMyRegisterData] = useState({});
-
   const dispatch = useDispatch();
 
   const { events } = useSelector((pre) => pre);
@@ -148,8 +145,6 @@ const Register = () => {
               <div className="wtsp_icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  // xmlns:xlink="http://www.w3.org/1999/xlink"
-                  // xmlns:svgjs="http://svgjs.com/svgjs"
                   id="SvgjsSvg1026"
                   width="50"
                   height="50"

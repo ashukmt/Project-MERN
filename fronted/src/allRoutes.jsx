@@ -9,7 +9,7 @@ import Referal from './ReferalComp/referal'
 import MsatDetails from './Courses/MsatDetails'
 import { animateScroll } from 'react-scroll'
 import Register from './Events/Register'
-import LeaderBr_Invite_Referal from './ReferalComp/LeaderBr&Invite&Referal'
+import LeaderBrInviteReferal from './ReferalComp/LeaderBr&Invite&Referal'
 import StartMsat from './Courses/StartMsat'
 import Login from './components/Login'
 import MsatConfirm from './Courses/MsatConfirm'
@@ -18,13 +18,14 @@ import { Spinner } from '@chakra-ui/react'
 
 const AllRoutes = () => {
   const isLoading1 = useSelector(state=>state.user.isLoading) 
-  const isLoading2 = useSelector(state=>state.reward.isLoading) 
-  const isLoading3 = useSelector(state=>state.event.isLoading) 
-  
+  const isLoading2 = useSelector(state=>state.Reward.isLoading)
+  const isLoading3 = useSelector(state=>state.events.isLoading) 
+  const isLoading4 = useSelector(state=>state.course.isLoading) 
+  console.log(isLoading4)
   useEffect(()=>{
     animateScroll.scrollToTop({smooth:true})
   },[])
-  if(isLoading1||isLoading2||isLoading3) return <Spinner my='30vh' mx={'50vw'} size={'xl'}/>
+  if(isLoading1||isLoading2||isLoading3||isLoading4) return <Spinner my='30vh' mx={'50vw'} size={'xl'}/>
   return (
     <Routes>
         <Route path='/'element={<Homes/>}/>
@@ -37,7 +38,7 @@ const AllRoutes = () => {
         <Route path='/msat' element={<MsatDetails />} />
         <Route path='/msat/confirm' element={<MsatConfirm />} />
         <Route path='/msat/test' element={<StartMsat />} />
-        <Route path='/Profile' element={<LeaderBr_Invite_Referal/>}/>
+        <Route path='/Profile' element={<LeaderBrInviteReferal/>}/>
         <Route path='/sign' element={<Login/>}/>
     </Routes>
   )
