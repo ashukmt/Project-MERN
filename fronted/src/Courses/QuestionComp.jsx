@@ -10,11 +10,9 @@ const QuestionComp = ({ section, ques, setScore, score }) => {
   questions = section === 1 ? questions?.filter((ques) => ques.category === 'aptitude') : questions?.filter((ques) => ques.category === 'coding')
   const question = questions[ques]
   useEffect(() => {
-    console.log(ans,question,selected)
     if (selected) {
       ans == question?.ans ? setScore((prev) => ({ ...prev, [ques]: { point: 3, option: ans } })) : ans == 0 ? setScore((prev) => ({ ...prev, [ques]: { point: 0, option: ans } })) : setScore((prev) => ({ ...prev, [ques]: { point: -1, option: ans } }))
     }
-    console.log(score)
   }, [ans])
   useEffect(() => {
     if (score[ques]){

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import '../Style/footer.css'
 
 function Footer() {
   return (
@@ -7,13 +8,15 @@ function Footer() {
   <div
     class="mx-auto max-w-screen-xl space-y-8 px-4 pt-16 sm:px-6 lg:space-y-16 lg:px-8"
   >
-    <div className='sm:flex sm:items-center flex justify-center'>
-        <img className='w-16 mr-4' src="https://www.masaischool.com/images/footer/arrow-gif.gif" alt="" />
+    <div className='sm:flex sm:items-center flex justify-center part1 items-center side11'>
+      <Link to={"/"}> <div className='footerimg'>
+       <img className='w-16 mr-4' src="https://www.masaischool.com/images/footer/arrow-gif.gif" alt="" />
+       </div></Link>
        <div>
        <p className='text-yellow-100 font-bold text-2xl '>Get Started</p>
         <p className='text-yellow-300 mr-4'>Join the Program</p>
        </div>
-       <div className='bg-red-600 p-2 rounded-lg'><button >GET YOUR DREAM JOB</button></div>
+       <div className='bg-red-600 p-2 rounded-lg part2'><Link to={'/courses'}><button >GET YOUR DREAM JOB</button></Link></div>
     </div>
     <div class="sm:flex sm:items-center sm:justify-between border-t pt-6">
       <Link to={'/'}><div class="text-teal-600 dark:text-teal-300">
@@ -23,7 +26,7 @@ function Footer() {
       <ul class="mt-8 flex justify-start gap-6 sm:mt-0 sm:justify-end">
         <li>
           <a
-            href="/"
+            href="https://www.facebook.com"
             rel="noreferrer"
             target="_blank"
             class="text-gray-200 transition hover:opacity-75 dark:text-gray-200"
@@ -47,7 +50,7 @@ function Footer() {
 
         <li>
           <a
-            href="/"
+            href="https://www.instagram.com/"
             rel="noreferrer"
             target="_blank"
             class="text-gray-200 transition hover:opacity-75 dark:text-gray-200"
@@ -71,7 +74,7 @@ function Footer() {
 
         <li>
           <a
-            href="/"
+            href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiZW4ifQ%3D%3D%22%7D"
             rel="noreferrer"
             target="_blank"
             class="text-gray-200 transition hover:opacity-75 dark:text-gray-200"
@@ -93,7 +96,7 @@ function Footer() {
 
         <li>
           <a
-            href="/"
+            href="https://github.com/"
             rel="noreferrer"
             target="_blank"
             class="text-gray-200 transition hover:opacity-75 dark:text-gray-200"
@@ -117,7 +120,7 @@ function Footer() {
 
         <li>
           <a
-            href="/"
+            href="https://dribbble.com/"
             rel="noreferrer"
             target="_blank"
             class="text-gray-200 transition hover:opacity-75 dark:text-gray-200"
@@ -143,14 +146,14 @@ function Footer() {
 
    <div className='border-t w-3/4'>
     <div className='mt-6 mb-3'>
-        <button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mr-4 mb-4'>Full Stack Web Development - Full Time</button>
-        <button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mr-4 mb-4'>Data Analytics - Full Time</button>
-        <button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mb-4 mr-4'>Mobile Development - Full Time</button>
-        <button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mt-5 mr-4 mb-4'>Software Testing & Automation - Full Time</button>
-        <button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mb-4'>Backend Development - Full Time</button>
+        <Link to={'/courses/Full-Stack-Web-Development'}><button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mr-4 mb-4'>Full Stack Web Development - Full Time</button></Link>
+        <Link to={'/courses/Data-Analytics'}> <button buttom className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mr-4 mb-4'>Data Analytics Course - Full Time</button></Link>
+       <Link to={'/courses/Mobile-Development'}> <button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mb-4 mr-4'>Mobile Development - Full Time</button></Link>
+        <Link to={'/courses/Become-a-Software-Testing-&-Automation'}><button  className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mt-5 mr-4 mb-4'>Software Testing & Automation - Full Time</button></Link>
+        <Link to={'/courses/Backend-Development'}><button className='bg-blue-100 p-3 rounded-3xl text-black font-semibold mb-4'>Backend Development - Full Time</button></Link>
     </div>
    <div
-      class="grid grid-cols-1 gap-8  border-gray-100 pt-5 dark:border-gray-800 sm:grid-cols-2 lg:grid-cols-4 lg:pt-5"
+      class="grid grid-cols-2 gap-8  border-gray-100 pt-5 dark:border-gray-800 sm:grid-cols-2 lg:grid-cols-4 lg:pt-5"
     >
         
       <div>
@@ -159,48 +162,25 @@ function Footer() {
         <ul class="mt-6 space-y-4 text-sm">
           <li>
             <a
-              href="#"
+              href="https://www.masaischool.com/success-stories"
+              class="text-white  transition hover:opacity-75 dark:text-gray-200"
+              target='_blank'
+            >
+              Success Stories
+            </a>
+          </li>
+          <li>
+           <Link to={'/msat'}>
+           <a
+              
               class="text-white  transition hover:opacity-75 dark:text-gray-200"
             >
-              1on1 Coaching
+            Masai School Admissions Test (MSAT)
             </a>
+           </Link>
           </li>
 
-          <li>
-            <a
-              href="#"
-              class="text-white  transition hover:opacity-75 dark:text-gray-200"
-            >
-              Company Review
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="#"
-              class="text-white  transition hover:opacity-75 dark:text-gray-200"
-            >
-              Accounts Review
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="#"
-              class="text-white  transition hover:opacity-75 dark:text-gray-200"
-            >
-              HR Consulting
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="#"
-              class="text-white  transition hover:opacity-75 dark:text-gray-200"
-            >
-              SEO Optimisation
-            </a>
-          </li>
+        
         </ul>
       </div>
 
@@ -210,8 +190,9 @@ function Footer() {
         <ul class="mt-6 space-y-4 text-sm">
           <li>
             <a
-              href="#"
+              href="https://www.masaischool.com/about"
               class="text-white  transition hover:opacity-75 dark:text-gray-200"
+              target='_blank'
             >
               About
             </a>
@@ -219,7 +200,7 @@ function Footer() {
 
           <li>
             <a
-              href="#"
+              href="https://www.masaischool.com/teams"
               class="text-white  transition hover:opacity-75 dark:text-gray-200"
             >
               Meet the Team
@@ -228,10 +209,11 @@ function Footer() {
 
           <li>
             <a
-              href="#"
+              href="https://www.masaischool.com/blog/"
               class="text-white  transition hover:opacity-75 dark:text-gray-200"
+              target='_blank'
             >
-              Accounts Review
+             Masai Blogs
             </a>
           </li>
         </ul>
@@ -243,28 +225,31 @@ function Footer() {
         <ul class="mt-6 space-y-4 text-sm">
           <li>
             <a
-              href="#"
+              href="https://www.masaischool.com/contact"
               class="text-white  transition hover:opacity-75 dark:text-gray-200"
+              target='_blank'
             >
-              Contact
+              Contact Us
             </a>
           </li>
 
           <li>
             <a
-              href="#"
+              href="https://www.masaischool.com/media?page=1"
               class="text-white  transition hover:opacity-75 dark:text-gray-200"
+              target='_blank'
             >
-              FAQs
+             Newsroom
             </a>
           </li>
 
           <li>
             <a
-              href="#"
+              href="https://www.masaischool.com/our-investors"
               class="text-white  transition hover:opacity-75 dark:text-gray-200"
+              target='_blank'
             >
-              Live Chat
+             Our Investors
             </a>
           </li>
         </ul>
@@ -276,46 +261,41 @@ function Footer() {
         <ul class="mt-6 space-y-4 text-sm">
           <li>
             <a
-              href="#"
+              href="/Referal"
               class="text-white  transition hover:opacity-75 dark:text-gray-200"
             >
-              Accessibility
+              Referral Program
             </a>
           </li>
 
           <li>
             <a
-              href="#"
+              href="https://www.masaischool.com/hire-masai-graduates"
               class="text-white  transition hover:opacity-75 dark:text-gray-200"
+              target='_blank'
             >
-              Returns Policy
+           Hire From Us
             </a>
           </li>
 
           <li>
             <a
-              href="#"
+              href="https://www.masaischool.com/industry-mentors"
               class="text-white  transition hover:opacity-75 dark:text-gray-200"
+              target='_blank'
             >
-              Refund Policy
+             Industry Mentors
             </a>
           </li>
 
-          <li>
-            <a
-              href="#"
-              class="text-white transition hover:opacity-75 dark:text-gray-200"
-            >
-              Hiring Statistics
-            </a>
-          </li>
+        
         </ul>
       </div>
     </div>
    </div>
 
     <p class="text-xs text-white  dark:text-gray-400">
-      &copy; 2022. Masai School. All rights reserved.
+      &copy; 2023. Masai School. All rights reserved.
     </p>
   </div>
 </footer>

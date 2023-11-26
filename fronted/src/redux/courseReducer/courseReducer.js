@@ -1,4 +1,4 @@
-import { ERROR, GET_COURSES, GET_QUESTIONS, LOAD } from "./actionType"
+import { ERROR, GET_COURSES, GET_QUESTIONS, LOAD, NOT_LOAD } from "./actionType"
 
 const iniState = {
     courses: [],
@@ -13,6 +13,7 @@ export const courseReducer = (state = iniState, {
 }) => {
     switch (type) {
         case LOAD: return {...state,isLoading:true}
+        case NOT_LOAD: return {...state,isLoading:false}
         case ERROR: return {...state,isError:true}
         case GET_COURSES: return {...state,isLoading:false,courses:payload}
         case GET_QUESTIONS: return {...state,isLoading:false,questions:payload}

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import "/Style/navbar.css";
+import "../Style/navbar.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Link as SL } from "react-scroll";
 import { Avatar, Button, Drawer, Menu, MenuButton, MenuItem, MenuList, useDisclosure, useToast } from "@chakra-ui/react";
@@ -29,6 +29,7 @@ function Navbar() {
     { path: "news", title: "MASAI NEWS", type: false },
     { path: "success", title: "SUCCESS STORIES", type: false },
     { path: "hirefromus", title: "HIRE FROM US", type: false },
+    
   ];
   const curr_user = useSelector((state) => state.user.user);
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
@@ -99,16 +100,16 @@ function Navbar() {
             >
               <ul
                 className="flex flex-col font-medium mt-[4rem]
-          ml-[-33px] rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700"
+          ml-[-33px] rounded-lg bg-white shad "
               >
                 {edit?.map((el) =>
                   el.type ? (
-                    <Link className="link" to={el.path}>
+                    <Link className="link pb-1 cursor-pointer" onClick={toggleNavbar} to={el.path}>
                       {el.title}
                     </Link>
                   ) : location.pathname === "/" ? (
                     <SL
-                      className="link"
+                      className="link pb-1 cursor-pointer"
                       to={el.path}
                       smooth={true}
                       duration={500}
@@ -117,11 +118,12 @@ function Navbar() {
                       {el.title}
                     </SL>
                   ) : (
-                    <Link className="link" to="/">
+                    <Link className="link cursor-pointer" to="/">
                       {el.title}
                     </Link>
                   )
                 )}
+                <Link onClick={toggleNavbar} className="ref2 link cursor-pointer" to={"/Referal"}>REFER & EARN</Link>
               </ul>
             </div>
           </div>
@@ -137,12 +139,12 @@ function Navbar() {
       <div className="middle dt11">
         {edit?.map((el) =>
           el.type ? (
-            <Link className="link" to={el.path}>
+            <Link className="link cursor-pointer" to={el.path}>
               {el.title}
             </Link>
           ) : location.pathname === "/" ? (
             <SL
-              className="link"
+              className="link cursor-pointer"
               to={el.path}
               smooth={true}
               duration={500}
@@ -151,7 +153,7 @@ function Navbar() {
               {el.title}
             </SL>
           ) : (
-            <Link className="link" to="/">
+            <Link className="link cursor-pointer" to="/">
               {el.title}
             </Link>
           )
@@ -165,7 +167,7 @@ function Navbar() {
             Navigate("/Referal");
           }}
         >
-          <Link className="-pt-2" to={"/Refer"}>
+          <Link className="-pt-2 cursor-pointer" to={"/Refer"}>
             REFER & EARN
           </Link>
         </button>

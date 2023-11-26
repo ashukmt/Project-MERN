@@ -20,10 +20,10 @@ const MsatConfirm = () => {
                     <Stack mt='6' spacing='3' className='text-center'>
                         <Heading size='md'>Not Ready yet</Heading>
                         <Heading size='md' color='red.400'>Prepare for Msat</Heading>
-                        <a className='underline text-blue-500' href='https://leetcode.com/discuss/general-discussion/460599/blind-75-leetcode-questions'>
+                        <a className='underline text-blue-500' target='_blank' rel='noreferrer' href='https://leetcode.com/discuss/general-discussion/460599/blind-75-leetcode-questions'>
                             Top DSA Questions Combined here
                         </a>
-                        <a className='underline text-blue-500' href='https://www.geeksforgeeks.org/aptitude-questions-and-answers/'>
+                        <a className='underline text-blue-500' target='_blank' rel='noreferrer' href='https://www.geeksforgeeks.org/aptitude-questions-and-answers/'>
                             Top Aptitude Questions Combined here
                         </a>
                     </Stack>

@@ -2,6 +2,7 @@ import React from "react";
 import SubSec4 from "./subPart/SubSec4";
 import SubSec4b from "./subPart/SubSec4b";
 import { Box, Heading, Text } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 const Sec4 = () => {
   return (
@@ -12,7 +13,7 @@ const Sec4 = () => {
       </div> */}
        <Box className='text-center' py='5%' px='7%'>
                 
-                <Text className='font-bold text-2xl'>Best-in-Class<span className='text-red-600'>Curriculum</span > & <span className='text-red-600'>Pedagogy</span ></Text>
+                <Text className='font-bold text-2xl'>Best-in-Class <span className='text-red-600'>Curriculum</span > & <span className='text-red-600'>Pedagogy</span ></Text>
                
             </Box>
       <div className="flex justify-between subb44">
@@ -24,7 +25,7 @@ const Sec4 = () => {
         </div>
       </div>
       <div className="bg-red-600 text-white font-bold text-lg w-56 m-auto p-3 my-4 rounded-lg flex justify-center">
-        <button className="">GET YOUR DREAM JOB</button>
+       <Link to={'/courses'}> <button className="">GET YOUR DREAM JOB</button></Link>
       </div>
     </div>
   );

@@ -25,30 +25,23 @@ const EventDetails = () => {
 
   useEffect(() => {
     animateScroll.scrollToTop({ smooth: true })
-}, [])
+  }, [])
 
-console.log("random clg")
 
   return (
     <div>
       <div className="edParent grid grid-cols gap-20 place-content-center">
         <div className="w-[90%] m-auto">
-        <div className="video_div flex justify-center">
-          <iframe
-            className="rounded-md custom-iframe"
-            // width="90%"
-            // height="200%"
-            // width="1400"
-            // height="600"
-            // poster={myDetailsData.img}
-            
-            src={myDetailsData.video}
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
-        </div>
+          <div className="video_div flex justify-center">
+            <iframe
+              className="rounded-md custom-iframe"
+              src={myDetailsData.video}
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
 
         </div>
 
@@ -96,13 +89,13 @@ console.log("random clg")
           <div className="flex inside_div justify-center">
             <div className="about_event_spk flex justify-center items-center">
               <div>
-              <p className="font-sans inst_p">Know Your Speaker</p>
-              <h1 className="font-sans inst_h2 text-xl mt-2 md:text-2xl font-bold">
-                Meet
-              </h1>
-              <p className="font-sans inst_p2 text-3xl mt-2 font-bold">
-                {myDetailsData.speaker}
-              </p>
+                <p className="font-sans inst_p">Know Your Speaker</p>
+                <h1 className="font-sans inst_h2 text-xl mt-2 md:text-2xl font-bold">
+                  Meet
+                </h1>
+                <p className="font-sans inst_p2 text-3xl mt-2 font-bold">
+                  {myDetailsData.speaker}
+                </p>
               </div>
             </div>
 
@@ -114,8 +107,8 @@ console.log("random clg")
               </p>
             </div>
           </div>
-          
-            
+
+
           <div className="inst_img_div">
             <img
               className="inst_img_class"
@@ -124,8 +117,8 @@ console.log("random clg")
               alt="instructor_img"
             />
           </div>
-          
-          
+
+
         </div>
       </div>
     </div>

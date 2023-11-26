@@ -1,4 +1,5 @@
 export const GET_COURSES = "GET_COURSES"
 export const GET_QUESTIONS = "GET_QUESTIONS"
 export const LOAD = "LOAD"
+export const NOT_LOAD = "NOT_LOAD"
 export const ERROR = "ERROR"

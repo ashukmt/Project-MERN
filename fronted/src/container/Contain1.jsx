@@ -7,12 +7,26 @@ function Contain1() {
         Launch A Sustainable Career
       </div>
       <div className="flex cont1">
-        <div className="ml-7 sm:ml-0 my-3 overflow-hidden">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/0867JeIfyLY?si=VogUqzRt5qycicqI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+ 
+        <div className="w-[90%] m-auto video1">
+        <div className="video_div flex justify-center">
+          {/* <iframe
+            className="rounded-md custom-iframe"
+            
+            src="https://youtu.be/TVpsKp-WsLM?si=o51MFXb0QV6ITe0O"
+            
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe> */}
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/bRPtI_MJrts?si=CiYVNOdv9lnh0I1j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
         </div>
         <div>
           <div className="flex div1 p-3 font-bold ml-5 mt-3 text-lg lg:mr-[11%] lg:justify-around">
-            <div className="text-yellow-500 text-2xl">₹6.9 LPA</div>
+            <div className="text-yellow-500 text-xl">₹6.9 LPA</div>
             <div className="ml-4 text-lg text-white">Average CTC</div>
           </div>
 

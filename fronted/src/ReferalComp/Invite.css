@@ -1,0 +1,12 @@
+.Invite_Main {
+    width:70%;
+         margin:auto;
+  }
+
+@media (max-width: 768px) {
+    .Invite_Main {
+      flex-direction: column;
+      align-items: center;
+      width: 90%;
+    }
+  }

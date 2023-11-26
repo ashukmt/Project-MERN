@@ -22,6 +22,7 @@
     color: black;
     text-decoration: none;
     font-weight: 500;
+    left: 0;
 }
 .link:hover{
 color: rgb(230, 14, 14);
@@ -44,6 +45,11 @@ color: rgb(230, 14, 14);
     background-color: #b6f1f3;
 }
 
+
+/* #navbar-hamburger{
+    position: absolute;
+} */
+
 /* .last >button:nth-child(2){
     padding: 10px 20px;
     border-radius: 8px;
@@ -62,6 +68,32 @@ color: rgb(230, 14, 14);
 @media screen and ( max-width: 960px){ 
     .dt11{
         display: none;
+    }
+    .shad{
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+       position: absolute;
+       width: 100vw;
+       margin-bottom: 10px;
+       padding: 7px;
+       margin-left: -10%;
+       margin-top: 50px;
+       z-index: 1000;
+      
+    }
+    .link:nth-child(1){
+        padding-top: 40px;
+    }
+    .link{
+        color: black;
+       width: 100%;
+       /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+        text-decoration: none;
+        font-weight: 500;
+        padding: 20px;
+        margin-left: 0px;
+       
+        margin-top: -29px;
+        
     }
 }
 @media screen and ( max-width: 470px){ 
@@ -109,6 +141,18 @@ color: rgb(230, 14, 14);
     .refd{
         display: block;
     }
+}
+
+@media only screen and (min-width: 470px){
+    .ref2{
+        display: none;
+    }
+}
+@media only screen and (min-width: 300px)and (max-width: 570px){
+   .shad{
+    margin-left: -14%;
+    z-index: 1000;
+   }
 }
 
 

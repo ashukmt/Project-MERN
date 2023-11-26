@@ -1,7 +1,8 @@
-import { GETEVENT } from "./ActionType" 
+import { GETEVENT, LOADING, NOT_LOADING } from "./ActionType" 
 
 const iniState = {
-    eventData: []
+    eventData: [],
+    isLoading: false
 }
 
 export const eventReducer = (state = iniState, {
@@ -11,6 +12,8 @@ export const eventReducer = (state = iniState, {
     switch (type) {
         
         case GETEVENT: return {...state,eventData:payload}
+        case LOADING: return {...state,isLoading:true}
+        case NOT_LOADING: return {...state,isLoading:false}
         default:
             return state
     }
