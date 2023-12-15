@@ -57,36 +57,36 @@ const Signup = ({ onClose, onOpen }) => {
 
   const handleSubmit = async () => {
     const { username, email, password } = user
-    if (username === "" || username.length < 7) {
-      toast({
+    if (username == "" || username.length < 3) {
+      return toast({
         title: 'Enter Full Name',
         status: 'error',
         duration: 3000,
         isClosable: true,
       })
-      return
+     
     }
 
-    if (email === "" || email.length < 12) {
-      toast({
+    if (!email.includes('@') || !email.includes('.com') || email.length<12) {
+      return toast({
         title: 'Enter valid email',
         status: 'error',
         duration: 3000,
         isClosable: true,
       })
-      return
+     
     }
-
+  
 
     if (password === "" || password.length < 10) {
-      toast({
+      return toast({
         title: 'Enter valid password',
         status: 'error',
         duration: 3000,
         isClosable: true,
       })
 
-      return;
+      
     }
 
     dispatch(addUser(user))
