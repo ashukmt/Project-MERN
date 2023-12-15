@@ -44,7 +44,7 @@ const Login = ({ onClose, onOpen }) => {
   const handleSubmit = async () => {
     const { email, password } = user;
 
-    if (email === "" || email.length < 12) {
+    if (!email.includes('@') || !email.includes('.com') ) {
       toast({
         title: "Enter valid email",
         status: "error",

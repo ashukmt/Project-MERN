@@ -40,6 +40,7 @@ export const addUser = (user) => async (dispatch) => {
   }
 }
 
+
 // <------------ Login User ---------------------->
 export const LoginUser = (user) => async (dispatch) => {
 
@@ -60,6 +61,8 @@ export const LoginUser = (user) => async (dispatch) => {
 
   }
 }
+
+
 export const setUser = (_id) => async (dispatch) => {
 
   try {
